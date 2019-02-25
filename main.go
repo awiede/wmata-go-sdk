@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"github.com/awiede/where-is-wmata/wmata"
 	"log"
@@ -10,7 +11,6 @@ import (
 
 func main() {
 	wmataKey := flag.String("wmata_key", "", "API key used to access WMATA API")
-	metroLine := flag.String("metro_line", "", "The metro line to get information for")
 
 	flag.Parse()
 
@@ -24,21 +24,73 @@ func main() {
 			Timeout: time.Second * 30,
 		},
 	}
+	
+	http.HandleFunc("/GetStationsByLine", logRequestMiddleware(getStationInfoHandler(&wmataService)))
+	http.HandleFunc("/GetTrainPredictions", logRequestMiddleware(getTrainPredictionsHandler(&wmataService)))
 
-	stations, err := wmataService.GetStationsByLine(*metroLine)
+	serverAddress := ":8080"
 
-	if err != nil {
-		log.Fatalf("unable to retrieve station information, got error: %s", err)
+	log.Printf("Launching Server at %s", serverAddress)
+	http.ListenAndServe(serverAddress, nil)
+
+}
+
+func logRequestMiddleware(next http.HandlerFunc) http.HandlerFunc {
+	return func(writer http.ResponseWriter, request *http.Request) {
+		log.Printf("[%s] [%s]", request.Method, request.URL)
+		next.ServeHTTP(writer, request)
 	}
+}
 
-	log.Println(stations)
+func getStationInfoHandler(service *wmata.Service) http.HandlerFunc {
+	return func(writer http.ResponseWriter, request *http.Request) {
+		line := request.URL.Query().Get("MetroLine")
 
-	trains, err := wmataService.GetTrainPredictionsByStation("B03")
+		stations, err := service.GetStationsByLine(line)
 
-	if err != nil {
-		log.Fatalf("unable to retrieve train predictions for station %s - go error: %s", "B03", err)
+		if err != nil {
+			log.Printf("error retrieving station information: %s", err)
+			http.Error(writer, "error processing request", http.StatusInternalServerError)
+			return
+		}
+
+		response, err := json.Marshal(stations)
+
+		if err != nil {
+			log.Printf("error marshalling json: %s", err)
+			http.Error(writer, "error processing request", http.StatusInternalServerError)
+			return
+		}
+
+		writer.Header().Set("Content-Type", "application/json")
+		writer.Write(response)
+
+
 	}
+}
 
-	log.Println(trains)
+func getTrainPredictionsHandler(service *wmata.Service) http.HandlerFunc {
+	return func(writer http.ResponseWriter, request *http.Request) {
+		stationCode := request.URL.Query().Get("StationCode")
 
+		trains, err := service.GetTrainPredictionsByStation(stationCode)
+
+		if err != nil {
+			log.Printf("error retrieving train predictions: %s", err)
+			http.Error(writer, "error processing request", http.StatusInternalServerError)
+			return
+		}
+
+		response, err := json.Marshal(trains)
+
+		if err != nil {
+			log.Printf("error marshalling json: %s", err)
+			http.Error(writer, "error processing request", http.StatusInternalServerError)
+			return
+		}
+
+		writer.Header().Set("Content-Type", "application/json")
+		writer.Write(response)
+
+	}
 }
