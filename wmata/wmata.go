@@ -3,9 +3,11 @@ package wmata
 import (
 	"encoding/json"
 	"io/ioutil"
+	"log"
 	"net/http"
 )
 
+// StationInformation holds high level information about metro stations
 type StationInformation struct {
 	StationCode string `json:"Code"`
 	LineCode1   string `json:"LineCode1"`
@@ -15,18 +17,17 @@ type StationInformation struct {
 	StationName string `json:"Name"`
 }
 
+// StationInformationListResponse is a response wrapper for API requests for multiple stations
 type StationInformationListResponse struct {
 	Stations []StationInformation `json:"Stations"`
 }
 
+// Service encapsulates all dependencies needed to run the WMATA service
 type Service struct {
-	apiKey string
+	APIKey string
 }
 
-func NewService(apiKey string) *Service {
-	return &Service{apiKey: apiKey}
-}
-
+// GetStationsByLine retrieves all the metro stations by line code. If no line code specified all stations will be retrieved
 func (service *Service) GetStationsByLine(lineCode string) (*StationInformationListResponse, error) {
 	client := &http.Client{}
 
@@ -36,7 +37,7 @@ func (service *Service) GetStationsByLine(lineCode string) (*StationInformationL
 		return nil, err
 	}
 
-	request.Header.Set("api_key", service.apiKey)
+	request.Header.Set("api_key", service.APIKey)
 
 	query := request.URL.Query()
 	query.Add("LineCode", lineCode)
@@ -49,7 +50,11 @@ func (service *Service) GetStationsByLine(lineCode string) (*StationInformationL
 		return nil, err
 	}
 
-	defer response.Body.Close()
+	defer func() {
+		if closeErr := response.Body.Close(); closeErr != nil {
+			log.Printf("error closing response body: %s", closeErr)
+		}
+	}()
 
 	body, err := ioutil.ReadAll(response.Body)
 

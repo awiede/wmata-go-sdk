@@ -17,7 +17,7 @@ func main() {
 		log.Fatalf("flag: wmata_key is required")
 	}
 
-	wmataService := wmata.NewService(*wmataKey)
+	wmataService := wmata.Service{APIKey: *wmataKey}
 
 	stations, err := wmataService.GetStationsByLine(*metroLine)
 
