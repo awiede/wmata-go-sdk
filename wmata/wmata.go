@@ -83,6 +83,7 @@ func (service *Service) GetStationsByLine(lineCode string) (*StationInformationL
 	return &stations, err
 }
 
+// GetTrainPredictionsByStation retrieves all predicted train arrivals by station
 func (service *Service) GetTrainPredictionsByStation(stationCode string) (*TrainPredictionsResponse, error) {
 	url := "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/"
 
