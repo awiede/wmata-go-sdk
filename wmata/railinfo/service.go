@@ -6,6 +6,7 @@ import (
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 )
 
 // RailStationInfo provides all API methods for Rail Station Information from WMATA
@@ -75,10 +76,38 @@ type GetStationEntrancesRequest struct {
 	radius    float64
 }
 
+type StationEntrance struct {
+	Description string `json:"Description"`
+	// Deprecated: ID response field is deprecated
+	ID           string  `json:"ID"`
+	Latitude     float64 `json:"Lat"`
+	Longitude    float64 `json:"Lon"`
+	Name         string  `json:"Name"`
+	StationCode1 string  `json:"StationCode1"`
+	StationCode2 string  `json:"StationCode2"`
+}
+
 type GetStationEntrancesResponse struct {
+	Entrances []StationEntrance `json:"Entrances"`
+}
+
+type StationAddress struct {
+	City   string `json:"City"`
+	State  string `json:"State"`
+	Street string `json:"Street"`
+	Zip    string `json:"Zip"`
 }
 
 type GetStationInformationResponse struct {
+	Address          StationAddress `json:"Address"`
+	Latitude         float64        `json:"Lat"`
+	LineCode1        wmata.LineCode `json:"LineCode1"`
+	LineCode2        wmata.LineCode `json:"LineCode2"`
+	Longitude        float64        `json:"Lon"`
+	Name             string         `json:"Name"`
+	StationCode      string         `json:"Code"`
+	StationTogether1 string         `json:"StationTogether1"`
+	StationTogether2 string         `json:"StationTogether2"`
 }
 
 type GetStationListResponse struct {
@@ -197,12 +226,82 @@ func (railService *RailStationInfo) GetPathBetweenStations(fromStation, toStatio
 	return &path, unmarshalErr
 }
 
-func (railService *RailStationInfo) GetStationEntrances(request *GetStationEntrancesRequest) (*GetStationEntrancesResponse, error) {
-	return nil, nil
+func (railService *RailStationInfo) GetStationEntrances(getStationEntranceRequest *GetStationEntrancesRequest) (*GetStationEntrancesResponse, error) {
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jStationEntrances", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Set(wmata.APIKeyHeader, railService.client.APIKey)
+
+	if getStationEntranceRequest != nil {
+		query := request.URL.Query()
+		query.Add("Lat", strconv.FormatFloat(getStationEntranceRequest.latitude, 'g', -1, 64))
+		query.Add("Lon", strconv.FormatFloat(getStationEntranceRequest.longitude, 'g', -1, 64))
+		query.Add("Radius", strconv.FormatFloat(getStationEntranceRequest.radius, 'g', -1, 64))
+
+		request.URL.RawQuery = query.Encode()
+	}
+
+	response, responseErr := railService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	entrances := GetStationEntrancesResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &entrances)
+
+	return &entrances, unmarshalErr
 }
 
 func (railService *RailStationInfo) GetStationInformation(stationCode string) (*GetStationInformationResponse, error) {
-	return nil, nil
+	if stationCode == "" {
+		return nil, errors.New("stationCode is a required parameter")
+	}
+
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jStationInfo", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Set(wmata.APIKeyHeader, railService.client.APIKey)
+
+	query := request.URL.Query()
+	query.Add("StationCode", stationCode)
+
+	request.URL.RawQuery = query.Encode()
+
+	response, responseErr := railService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	stationInformation := GetStationInformationResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &stationInformation)
+
+	return &stationInformation, unmarshalErr
 }
 
 func (railService *RailStationInfo) GetStationList(line wmata.LineCode) (*GetStationListResponse, error) {
