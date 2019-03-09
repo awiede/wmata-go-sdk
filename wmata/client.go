@@ -6,16 +6,16 @@ import (
 )
 
 type Client struct {
-	apiKey     string
-	httpClient *http.Client
+	APIKey     string
+	HTTPClient *http.Client
 }
 
 // NewWMATADefaultClient returns a new client to make requests to the WMATA API
 // This creates a default http.Client with a 30 second timeout
 func NewWMATADefaultClient(apiKey string) *Client {
 	return &Client{
-		apiKey: apiKey,
-		httpClient: &http.Client{
+		APIKey: apiKey,
+		HTTPClient: &http.Client{
 			Timeout: time.Second * 30,
 		},
 	}
@@ -24,7 +24,7 @@ func NewWMATADefaultClient(apiKey string) *Client {
 // NewWMATAClient returns a new client to make requests to the WMATA API
 func NewWMATAClient(apiKey string, httpClient http.Client) *Client {
 	return &Client{
-		apiKey:     apiKey,
-		httpClient: &httpClient,
+		APIKey:     apiKey,
+		HTTPClient: &httpClient,
 	}
 }

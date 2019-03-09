@@ -1,16 +1,16 @@
 package railinfo
 
-import "github.com/awiede/where-is-wmata/wmata"
+import "github.com/awiede/wmata-go-sdk/wmata"
 
 type RailStationInfoAPI interface {
-	GetLines(lines []string) (*GetLinesResponse, error)
+	GetLines() (*GetLinesResponse, error)
 	GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error)
-	GetPathBetweenStations(startingStation, endingStation string) (*GetPathBetweenStationsResponse, error)
+	GetPathBetweenStations(fromStation, toStation string) (*GetPathBetweenStationsResponse, error)
 	GetStationEntrances(request *GetStationEntrancesRequest) (*GetStationEntrancesResponse, error)
 	GetStationInformation(stationCode string) (*GetStationInformationResponse, error)
 	GetStationList(line wmata.LineCode) (*GetStationListResponse, error)
 	GetStationTimings(stationCode string) (*GetStationTimingsResponse, error)
-	GetStationToStationInformation(startingStation, endingStation string) (*GetStationToStationInformationResponse, error)
+	GetStationToStationInformation(fromStation, toStation string) (*GetStationToStationInformationResponse, error)
 }
 
 var _ RailStationInfoAPI = (*RailStationInfo)(nil)

@@ -10,3 +10,5 @@ const (
 	Silver LineCode = "SV"
 	Yellow LineCode = "YL"
 )
+
+const APIKeyHeader = "api_key"
