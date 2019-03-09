@@ -43,8 +43,8 @@ type Service struct {
 	HTTPClient *http.Client
 }
 
-// GetStationsByLine retrieves all the metro stations by line code. If no line code specified all stations will be retrieved
-func (service *Service) GetStationsByLine(lineCode string) (*StationInformationListResponse, error) {
+// StationList retrieves all the metro stations by line code. If no line code specified all stations will be retrieved
+func (service *Service) StationList(lineCode string) (*StationInformationListResponse, error) {
 	request, err := http.NewRequest("GET", "https://api.wmata.com/Rail.svc/json/jStations", nil)
 
 	if err != nil {

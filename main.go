@@ -25,7 +25,7 @@ func main() {
 		},
 	}
 	
-	http.HandleFunc("/GetStationsByLine", logRequestMiddleware(getStationInfoHandler(&wmataService)))
+	http.HandleFunc("/StationList", logRequestMiddleware(getStationInfoHandler(&wmataService)))
 	http.HandleFunc("/GetTrainPredictions", logRequestMiddleware(getTrainPredictionsHandler(&wmataService)))
 
 	serverAddress := ":8080"
@@ -46,7 +46,7 @@ func getStationInfoHandler(service *wmata.Service) http.HandlerFunc {
 	return func(writer http.ResponseWriter, request *http.Request) {
 		line := request.URL.Query().Get("MetroLine")
 
-		stations, err := service.GetStationsByLine(line)
+		stations, err := service.StationList(line)
 
 		if err != nil {
 			log.Printf("error retrieving station information: %s", err)

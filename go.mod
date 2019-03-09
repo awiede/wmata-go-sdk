@@ -1,1 +1,1 @@
-module github.com/awiede/where-is-wmata
+module github.com/awiede/wmata-go-sdk
