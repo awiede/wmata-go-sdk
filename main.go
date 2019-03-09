@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"flag"
-	"github.com/awiede/where-is-wmata/wmata"
+	"github.com/awiede/wmata-go-sdk/wmata"
 	"log"
 	"net/http"
 	"time"
@@ -24,7 +24,7 @@ func main() {
 			Timeout: time.Second * 30,
 		},
 	}
-	
+
 	http.HandleFunc("/StationList", logRequestMiddleware(getStationInfoHandler(&wmataService)))
 	http.HandleFunc("/GetTrainPredictions", logRequestMiddleware(getTrainPredictionsHandler(&wmataService)))
 
@@ -64,7 +64,6 @@ func getStationInfoHandler(service *wmata.Service) http.HandlerFunc {
 
 		writer.Header().Set("Content-Type", "application/json")
 		writer.Write(response)
-
 
 	}
 }

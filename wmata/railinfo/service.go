@@ -22,12 +22,12 @@ func NewService(client *wmata.Client) *RailStationInfo {
 }
 
 type LineResponse struct {
-	DisplayName          string         `json:"DisplayName"`
-	EndStationCode       string         `json:"EndStationCode"`
-	InternalDestination1 string         `json:"InternalDestination1"`
-	InternalDestination2 string         `json:"InternalDestination2"`
-	LineCode             wmata.LineCode `json:"LineCode"`
-	StartStationCode     string         `json:"StartStationCode"`
+	DisplayName          string `json:"DisplayName"`
+	EndStationCode       string `json:"EndStationCode"`
+	InternalDestination1 string `json:"InternalDestination1"`
+	InternalDestination2 string `json:"InternalDestination2"`
+	LineCode             string `json:"LineCode"`
+	StartStationCode     string `json:"StartStationCode"`
 }
 
 type GetLinesResponse struct {
@@ -59,11 +59,11 @@ type GetParkingInformationResponse struct {
 }
 
 type PathItem struct {
-	DistanceToPreviousStation int            `json:"DistanceToPrev"`
-	LineCode                  wmata.LineCode `json:"LineCode"`
-	SequenceNumber            int            `json:"SeqNum"`
-	StationCode               string         `json:"StationCode"`
-	StationName               string         `json:"StationName"`
+	DistanceToPreviousStation int    `json:"DistanceToPrev"`
+	LineCode                  string `json:"LineCode"`
+	SequenceNumber            int    `json:"SeqNum"`
+	StationCode               string `json:"StationCode"`
+	StationName               string `json:"StationName"`
 }
 
 type GetPathBetweenStationsResponse struct {
@@ -101,8 +101,8 @@ type StationAddress struct {
 type GetStationInformationResponse struct {
 	Address          StationAddress `json:"Address"`
 	Latitude         float64        `json:"Lat"`
-	LineCode1        wmata.LineCode `json:"LineCode1"`
-	LineCode2        wmata.LineCode `json:"LineCode2"`
+	LineCode1        string         `json:"LineCode1"`
+	LineCode2        string         `json:"LineCode2"`
 	Longitude        float64        `json:"Lon"`
 	Name             string         `json:"Name"`
 	StationCode      string         `json:"Code"`
@@ -111,12 +111,62 @@ type GetStationInformationResponse struct {
 }
 
 type GetStationListResponse struct {
+	Address          StationAddress `json:"Address"`
+	StationCode      string         `json:"Code"`
+	Latitude         float64        `json:"Lat"`
+	LineCode1        string         `json:"LineCode1"`
+	LineCode2        string         `json:"LineCode2"`
+	LineCode3        string         `json:"LineCode3"`
+	LineCode4        string         `json:"LineCode4"`
+	Longitude        float64        `json:"Lon"`
+	Name             string         `json:"Name"`
+	StationTogether1 string         `json:"StationTogether1"`
+	StationTogether2 string         `json:"StationTogether2"`
+}
+
+type StationTrainInformation struct {
+	Time               string `json:"Time"`
+	DestinationStation string `json:"DestinationStation"`
+}
+
+type StationDayItem struct {
+	OpeningTime string                    `json:"OpeningTime"`
+	FirstTrains []StationTrainInformation `json:"FirstTrains"`
+	LastTrains  []StationTrainInformation `json:"LastTrains"`
+}
+
+type StationTime struct {
+	StationCode string         `json:"Code"`
+	StationName string         `json:"StationName"`
+	Monday      StationDayItem `json:"Monday"`
+	Tuesday     StationDayItem `json:"Tuesday"`
+	Wednesday   StationDayItem `json:"Wednesday"`
+	Thursday    StationDayItem `json:"Thursday"`
+	Friday      StationDayItem `json:"Friday"`
+	Saturday    StationDayItem `json:"Saturday"`
+	Sunday      StationDayItem `json:"Sunday"`
 }
 
 type GetStationTimingsResponse struct {
+	StationTimes []StationTime `json:"StationTimes"`
+}
+
+type RailFare struct {
+	OffPeakTime    float64 `json:"OffPeakTime"`
+	PeakTime       float64 `json:"PeakTime"`
+	SeniorDisabled float64 `json:"SeniorDisabled"`
+}
+
+type StationToStation struct {
+	CompositeMiles     float64  `json:"CompositeMiles"`
+	DestinationStation string   `json:"DestinationStation"`
+	Fare               RailFare `json:"RailFare"`
+	Time               int      `json:"RailTime"`
+	SourceStation      string   `json:"SourceStation"`
 }
 
 type GetStationToStationInformationResponse struct {
+	StationToStationInformation []StationToStation `json:"StationToStationInfos"`
 }
 
 func (railService *RailStationInfo) GetLines() (*GetLinesResponse, error) {
@@ -304,14 +354,118 @@ func (railService *RailStationInfo) GetStationInformation(stationCode string) (*
 	return &stationInformation, unmarshalErr
 }
 
-func (railService *RailStationInfo) GetStationList(line wmata.LineCode) (*GetStationListResponse, error) {
-	return nil, nil
+func (railService *RailStationInfo) GetStationList(lineCode string) (*GetStationListResponse, error) {
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jStations", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Add(wmata.APIKeyHeader, railService.client.APIKey)
+
+	if lineCode != wmata.LineCodeAll {
+		query := request.URL.Query()
+		query.Add("LineCode", lineCode)
+
+		request.URL.RawQuery = query.Encode()
+	}
+
+	response, responseErr := railService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	stationList := GetStationListResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &stationList)
+
+	return &stationList, unmarshalErr
 }
 
 func (railService *RailStationInfo) GetStationTimings(stationCode string) (*GetStationTimingsResponse, error) {
-	return nil, nil
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jStationTimes", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Add(wmata.APIKeyHeader, railService.client.APIKey)
+
+	if stationCode != "" {
+		query := request.URL.Query()
+		query.Add("StationCode", stationCode)
+
+		request.URL.RawQuery = query.Encode()
+	}
+
+	response, responseErr := railService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	stationTimings := GetStationTimingsResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &stationTimings)
+
+	return &stationTimings, unmarshalErr
 }
 
 func (railService *RailStationInfo) GetStationToStationInformation(fromStation, toStation string) (*GetStationToStationInformationResponse, error) {
-	return nil, nil
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jSrcStationToDstStationInfo", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Add(wmata.APIKeyHeader, railService.client.APIKey)
+
+	query := request.URL.Query()
+
+	if fromStation != "" {
+		query.Add("FromStationCode", fromStation)
+	}
+
+	if toStation != "" {
+		query.Add("ToStationCode", toStation)
+	}
+
+	request.URL.RawQuery = query.Encode()
+
+	response, responseErr := railService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	stationToStation := GetStationToStationInformationResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &stationToStation)
+
+	return &stationToStation, unmarshalErr
 }
