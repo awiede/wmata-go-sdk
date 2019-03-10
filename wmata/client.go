@@ -1,6 +1,8 @@
 package wmata
 
 import (
+	"encoding/json"
+	"io/ioutil"
 	"net/http"
 	"time"
 )
@@ -27,4 +29,40 @@ func NewWMATAClient(apiKey string, httpClient http.Client) *Client {
 		APIKey:     apiKey,
 		HTTPClient: &httpClient,
 	}
+}
+
+func (client *Client) BuildAndSendGetRequest(url string, queryParams map[string]string, apiResponse *interface{}) error {
+	request, requestErr := http.NewRequest(http.MethodGet, url, nil)
+
+	if requestErr != nil {
+		return requestErr
+	}
+
+	request.Header.Add(APIKeyHeader, client.APIKey)
+
+	if queryParams != nil {
+		query := request.URL.Query()
+
+		for key, value := range queryParams {
+			query.Add(key, value)
+		}
+
+		request.URL.RawQuery = query.Encode()
+	}
+
+	response, responseErr := client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return responseErr
+	}
+
+	defer CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return readErr
+	}
+
+	return json.Unmarshal(body, apiResponse)
 }
