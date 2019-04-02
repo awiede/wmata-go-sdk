@@ -5,6 +5,7 @@ import (
 	"errors"
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -35,10 +36,10 @@ type GetLinesResponse struct {
 }
 
 type StationParking struct {
-	StationCode      string `json:"Code"`
-	Notes            string `json:"Notes"`
-	AllDayParking    `json:"AllDayParking"`
-	ShortTermParking `json:"ShortTermParking"`
+	StationCode string           `json:"Code"`
+	Notes       string           `json:"Notes"`
+	AllDay      AllDayParking    `json:"AllDayParking"`
+	ShortTerm   ShortTermParking `json:"ShortTermParking"`
 }
 
 type AllDayParking struct {
@@ -170,70 +171,15 @@ type GetStationToStationInformationResponse struct {
 }
 
 func (railService *RailStationInfo) GetLines() (*GetLinesResponse, error) {
-	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jLines", nil)
-
-	if requestErr != nil {
-		return nil, requestErr
-	}
-
-	request.Header.Set(wmata.APIKeyHeader, railService.client.APIKey)
-
-	response, responseErr := railService.client.HTTPClient.Do(request)
-
-	if responseErr != nil {
-		return nil, responseErr
-	}
-
-	defer wmata.CloseResponseBody(response)
-
-	body, readErr := ioutil.ReadAll(response.Body)
-
-	if readErr != nil {
-		return nil, readErr
-	}
-
 	lines := GetLinesResponse{}
 
-	unmarshalErr := json.Unmarshal(body, &lines)
-
-	return &lines, unmarshalErr
+	return &lines, railService.client.BuildAndSendGetRequest("https://api.wmata.com/Rail.svc/json/jLines", nil, &lines)
 }
 
 func (railService *RailStationInfo) GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error) {
-	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Rail.svc/json/jStationParking", nil)
-
-	if requestErr != nil {
-		return nil, requestErr
-	}
-
-	request.Header.Set(wmata.APIKeyHeader, railService.client.APIKey)
-
-	if stationCode != "" {
-		query := request.URL.Query()
-		query.Add("StationCode", stationCode)
-
-		request.URL.RawQuery = query.Encode()
-	}
-
-	response, responseErr := railService.client.HTTPClient.Do(request)
-
-	if responseErr != nil {
-		return nil, responseErr
-	}
-
-	defer wmata.CloseResponseBody(response)
-
-	body, readErr := ioutil.ReadAll(response.Body)
-
-	if readErr != nil {
-		return nil, readErr
-	}
-
 	parkingInformation := GetParkingInformationResponse{}
 
-	unmarshalErr := json.Unmarshal(body, &parkingInformation)
-
-	return &parkingInformation, unmarshalErr
+	return &parkingInformation, railService.client.BuildAndSendGetRequest("https://api.wmata.com/Rail.svc/json/jStationParking", map[string]string{"StationCode": stationCode}, &parkingInformation)
 }
 
 func (railService *RailStationInfo) GetPathBetweenStations(fromStation, toStation string) (*GetPathBetweenStationsResponse, error) {
@@ -268,6 +214,8 @@ func (railService *RailStationInfo) GetPathBetweenStations(fromStation, toStatio
 	if readErr != nil {
 		return nil, readErr
 	}
+
+	log.Println(body)
 
 	path := GetPathBetweenStationsResponse{}
 

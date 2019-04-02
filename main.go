@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"flag"
 	"github.com/awiede/wmata-go-sdk/wmata"
+	"github.com/awiede/wmata-go-sdk/wmata/railinfo"
 	"log"
 	"net/http"
 	"time"
@@ -18,20 +19,27 @@ func main() {
 		log.Fatalf("flag: wmata_key is required")
 	}
 
-	wmataService := wmata.Service{
-		APIKey: *wmataKey,
-		HTTPClient: &http.Client{
-			Timeout: time.Second * 30,
-		},
-	}
+	railService := railinfo.NewService(wmata.NewWMATAClient(*wmataKey, http.Client{Timeout: time.Second * 30}))
 
-	http.HandleFunc("/StationList", logRequestMiddleware(getStationInfoHandler(&wmataService)))
-	http.HandleFunc("/GetTrainPredictions", logRequestMiddleware(getTrainPredictionsHandler(&wmataService)))
+	response, err := railService.GetPathBetweenStations("G05", "A01")
 
-	serverAddress := ":8080"
+	log.Println(response)
+	log.Println(err)
 
-	log.Printf("Launching Server at %s", serverAddress)
-	http.ListenAndServe(serverAddress, nil)
+	//wmataService := wmata.Service{
+	//	APIKey: *wmataKey,
+	//	HTTPClient: &http.Client{
+	//		Timeout: time.Second * 30,
+	//	},
+	//}
+	//
+	//http.HandleFunc("/StationList", logRequestMiddleware(getStationInfoHandler(&wmataService)))
+	//http.HandleFunc("/GetTrainPredictions", logRequestMiddleware(getTrainPredictionsHandler(&wmataService)))
+	//
+	//serverAddress := ":8080"
+	//
+	//log.Printf("Launching Server at %s", serverAddress)
+	//http.ListenAndServe(serverAddress, nil)
 
 }
 
