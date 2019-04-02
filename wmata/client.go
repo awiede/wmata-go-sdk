@@ -7,9 +7,14 @@ import (
 	"time"
 )
 
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+
+// Client is a wmata specific http client that includes authentication information
 type Client struct {
 	APIKey     string
-	HTTPClient *http.Client
+	HTTPClient HTTPClient
 }
 
 // NewWMATADefaultClient returns a new client to make requests to the WMATA API
@@ -31,7 +36,8 @@ func NewWMATAClient(apiKey string, httpClient http.Client) *Client {
 	}
 }
 
-func (client *Client) BuildAndSendGetRequest(url string, queryParams map[string]string, apiResponse *interface{}) error {
+// BuildAndSendGetRequest constructs and sends a generic HTTP GET request against the WMATA API
+func (client *Client) BuildAndSendGetRequest(url string, queryParams map[string]string, apiResponse interface{}) error {
 	request, requestErr := http.NewRequest(http.MethodGet, url, nil)
 
 	if requestErr != nil {
@@ -64,5 +70,5 @@ func (client *Client) BuildAndSendGetRequest(url string, queryParams map[string]
 		return readErr
 	}
 
-	return json.Unmarshal(body, apiResponse)
+	return json.Unmarshal(body, &apiResponse)
 }

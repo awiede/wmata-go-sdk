@@ -23,4 +23,3 @@ func CloseResponseBody(response *http.Response) {
 		log.Printf("error closing response body: %s", closeErr)
 	}
 }
-
