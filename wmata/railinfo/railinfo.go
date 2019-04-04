@@ -10,6 +10,19 @@ import (
 	"strconv"
 )
 
+type RailStationInfoAPI interface {
+	GetLines() (*GetLinesResponse, error)
+	GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error)
+	GetPathBetweenStations(fromStation, toStation string) (*GetPathBetweenStationsResponse, error)
+	GetStationEntrances(getStationEntranceRequest *GetStationEntrancesRequest) (*GetStationEntrancesResponse, error)
+	GetStationInformation(stationCode string) (*GetStationInformationResponse, error)
+	GetStationList(lineCode string) (*GetStationListResponse, error)
+	GetStationTimings(stationCode string) (*GetStationTimingsResponse, error)
+	GetStationToStationInformation(fromStation, toStation string) (*GetStationToStationInformationResponse, error)
+}
+
+var _ RailStationInfoAPI = (*RailStationInfo)(nil)
+
 // RailStationInfo provides all API methods for Rail Station Information from WMATA
 type RailStationInfo struct {
 	client *wmata.Client
