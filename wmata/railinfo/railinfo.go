@@ -112,6 +112,10 @@ type GetStationInformationResponse struct {
 }
 
 type GetStationListResponse struct {
+	Stations []GetStationListResponseItem `json:"Stations"`
+}
+
+type GetStationListResponseItem struct {
 	Address          StationAddress `json:"Address"`
 	StationCode      string         `json:"Code"`
 	Latitude         float64        `json:"Lat"`
