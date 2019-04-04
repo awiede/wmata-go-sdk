@@ -41,7 +41,6 @@ type testResponseData struct {
 	stringParam1         string
 	stringParam2         string
 	requestType          interface{}
-	requestParams        []interface{}
 	jsonResponse         string
 	unmarshalledResponse interface{}
 }
@@ -265,6 +264,48 @@ var testData = map[string][]testResponseData{
 			},
 		},
 	},
+	"/Rail.svc/json/jStationEntrances": {
+		{
+			rawQuery: "Lat=38.897383&Lon=-77.007262&Radius=500",
+			requestType: GetStationEntrancesRequest{
+				latitude:  38.897383,
+				longitude: -77.007262,
+				radius:    500,
+			},
+			jsonResponse: `{"Entrances":[{"ID":"54","Name":"SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST & MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from 1st St NE to southeast corner of the Union station building.","Lat":38.897383,"Lon":-77.007262},{"ID":"55","Name":"NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.","Lat":38.89845,"Lon":-77.007243},{"ID":"53","Name":"ENTRANCE FROM AMTRAK, MARC, VRE TRAINS","StationCode1":"B03","StationCode2":"","Description":"Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS","Lat":38.898541,"Lon":-77.006984}]}`,
+			unmarshalledResponse: &GetStationEntrancesResponse{
+				Entrances: []StationEntrance{
+					{
+						ID:           "54",
+						Name:         "SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST & MASSACHUSETTS AVE)",
+						StationCode1: "B03",
+						StationCode2: "",
+						Description:  "Station entrance from 1st St NE to southeast corner of the Union station building.",
+						Latitude:     38.897383,
+						Longitude:    -77.007262,
+					},
+					{
+						ID:           "55",
+						Name:         "NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)",
+						StationCode1: "B03",
+						StationCode2: "",
+						Description:  "Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.",
+						Latitude:     38.89845,
+						Longitude:    -77.007243,
+					},
+					{
+						ID:           "53",
+						Name:         "ENTRANCE FROM AMTRAK, MARC, VRE TRAINS",
+						StationCode1: "B03",
+						StationCode2: "",
+						Description:  "Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS",
+						Latitude:     38.898541,
+						Longitude:    -77.006984,
+					},
+				},
+			},
+		},
+	},
 }
 
 // setupTestService creates a service struct with a mock http client
@@ -340,11 +381,37 @@ func TestGetPathBetweenStations(t *testing.T) {
 		response, err := testService.GetPathBetweenStations(request.stringParam1, request.stringParam2)
 
 		if err != nil {
-			t.Errorf("error calling GetPathBetweenStations for FromStation: %s ToStation: %s Error: %s", request.stringParam1, request.stringParam2, err.Error())
+			t.Errorf("error calling GetPathBetweenStations for FromStation: %s ToStation: %s error: %s", request.stringParam1, request.stringParam2, err.Error())
 		}
 
 		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
 			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
 		}
 	}
+}
+
+func TestGetStationEntrances(t *testing.T) {
+	testService := setupTestService()
+
+	testRequests, exist := testData["/Rail.svc/json/jStationEntrances"]
+
+	if !exist {
+		t.Errorf("no data found for GetStationEntrances")
+		return
+	}
+
+	for _, request := range testRequests {
+		getStationRequest := request.requestType.(GetStationEntrancesRequest)
+		response, err := testService.GetStationEntrances(&getStationRequest)
+
+		if err != nil {
+			t.Errorf("error calling GetStationEntrances for request: %v error: %s", request, err.Error())
+		}
+
+		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
+		}
+
+	}
+
 }
