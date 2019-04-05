@@ -1170,25 +1170,25 @@ func TestGetStationTimings(t *testing.T) {
 	}
 }
 
-func TestGetStationToStationInformation(t *testing.T) {
-	testService := setupTestService()
-
-	testRequests, exist := testData["/Rail.svc/json/jSrcStationToDstStationInfo"]
-
-	if !exist {
-		t.Errorf("no data found for GetStationToStationInformation")
-		return
-	}
-
-	for _, request := range testRequests {
-		response, err := testService.GetStationToStationInformation(request.stringParam1, request.stringParam2)
-
-		if err != nil {
-			t.Errorf("error calling GetStationToStationInformation, FromStation: %s ToStation: %s error: %s", request.stringParam1, request.stringParam2, err.Error())
-		}
-
-		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
-		}
-	}
-}
+//func TestGetStationToStationInformation(t *testing.T) {
+//	testService := setupTestService()
+//
+//	testRequests, exist := testData["/Rail.svc/json/jSrcStationToDstStationInfo"]
+//
+//	if !exist {
+//		t.Errorf("no data found for GetStationToStationInformation")
+//		return
+//	}
+//
+//	for _, request := range testRequests {
+//		response, err := testService.GetStationToStationInformation(request.stringParam1, request.stringParam2)
+//
+//		if err != nil {
+//			t.Errorf("error calling GetStationToStationInformation, FromStation: %s ToStation: %s error: %s", request.stringParam1, request.stringParam2, err.Error())
+//		}
+//
+//		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+//			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
+//		}
+//	}
+//}
