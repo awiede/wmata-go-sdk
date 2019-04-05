@@ -306,6 +306,50 @@ var testData = map[string][]testResponseData{
 			},
 		},
 	},
+	"/Rail.svc/json/jStationInfo": {
+		{
+			rawQuery:     "StationCode=A07",
+			stringParam1: "A07",
+			jsonResponse: `{"Code":"A07","Name":"Tenleytown-AU","StationTogether1":"","StationTogether2":"","LineCode1":"RD","LineCode2":null,"LineCode3":null,"LineCode4":null,"Lat":38.947808,"Lon":-77.079615,"Address":{"Street":"4501 Wisconsin Avenue NW","City":"Washington","State":"DC","Zip":"20016"}}`,
+			unmarshalledResponse: &GetStationInformationResponse{
+				Address: StationAddress{
+					Street: "4501 Wisconsin Avenue NW",
+					City:   "Washington",
+					State:  "DC",
+					Zip:    "20016",
+				},
+				Latitude:         38.947808,
+				LineCode1:        "RD",
+				LineCode2:        "",
+				Longitude:        -77.079615,
+				Name:             "Tenleytown-AU",
+				StationCode:      "A07",
+				StationTogether1: "",
+				StationTogether2: "",
+			},
+		},
+		{
+			rawQuery:     "StationCode=F01",
+			stringParam1: "F01",
+			jsonResponse: `{"Code":"F01","Name":"Gallery Pl-Chinatown","StationTogether1":"B01","StationTogether2":"","LineCode1":"GR","LineCode2":"YL","LineCode3":null,"LineCode4":null,"Lat":38.89834,"Lon":-77.021851,"Address":{"Street":"630 H St. NW","City":"Washington","State":"DC","Zip":"20001"}}`,
+			unmarshalledResponse: &GetStationInformationResponse{
+				Address: StationAddress{
+					Street: "630 H St. NW",
+					City:   "Washington",
+					State:  "DC",
+					Zip:    "20001",
+				},
+				Latitude:         38.89834,
+				LineCode1:        "GR",
+				LineCode2:        "YL",
+				Longitude:        -77.021851,
+				Name:             "Gallery Pl-Chinatown",
+				StationCode:      "F01",
+				StationTogether1: "B01",
+				StationTogether2: "",
+			},
+		},
+	},
 	"/Rail.svc/json/jStations": {
 		{
 			rawQuery:     "LineCode=GR",
@@ -695,6 +739,261 @@ var testData = map[string][]testResponseData{
 			},
 		},
 	},
+	"/Rail.svc/json/jStationTimes": {
+		{
+			rawQuery:     "StationCode=F01",
+			stringParam1: "F01",
+			jsonResponse: `{"StationTimes":[{"Code":"F01","StationName":"Gallery Pl-Chinatown","Monday":{"OpeningTime":"05:15","FirstTrains":[{"Time":"05:25","DestinationStation":"E10"},{"Time":"05:26","DestinationStation":"F11"},{"Time":"05:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"23:19","DestinationStation":"C15"},{"Time":"23:28","DestinationStation":"F11"},{"Time":"23:48","DestinationStation":"E10"}]},"Tuesday":{"OpeningTime":"05:15","FirstTrains":[{"Time":"05:25","DestinationStation":"E10"},{"Time":"05:26","DestinationStation":"F11"},{"Time":"05:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"23:19","DestinationStation":"C15"},{"Time":"23:28","DestinationStation":"F11"},{"Time":"23:48","DestinationStation":"E10"}]},"Wednesday":{"OpeningTime":"05:15","FirstTrains":[{"Time":"05:25","DestinationStation":"E10"},{"Time":"05:26","DestinationStation":"F11"},{"Time":"05:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"23:19","DestinationStation":"C15"},{"Time":"23:28","DestinationStation":"F11"},{"Time":"23:48","DestinationStation":"E10"}]},"Thursday":{"OpeningTime":"05:15","FirstTrains":[{"Time":"05:25","DestinationStation":"E10"},{"Time":"05:26","DestinationStation":"F11"},{"Time":"05:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"23:19","DestinationStation":"C15"},{"Time":"23:28","DestinationStation":"F11"},{"Time":"23:48","DestinationStation":"E10"}]},"Friday":{"OpeningTime":"05:15","FirstTrains":[{"Time":"05:25","DestinationStation":"E10"},{"Time":"05:26","DestinationStation":"F11"},{"Time":"05:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"00:49","DestinationStation":"C15"},{"Time":"00:58","DestinationStation":"F11"},{"Time":"01:18","DestinationStation":"E10"}]},"Saturday":{"OpeningTime":"07:15","FirstTrains":[{"Time":"07:25","DestinationStation":"E10"},{"Time":"07:26","DestinationStation":"F11"},{"Time":"07:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"00:49","DestinationStation":"C15"},{"Time":"00:58","DestinationStation":"F11"},{"Time":"01:18","DestinationStation":"E10"}]},"Sunday":{"OpeningTime":"08:15","FirstTrains":[{"Time":"08:25","DestinationStation":"E10"},{"Time":"08:26","DestinationStation":"F11"},{"Time":"08:32","DestinationStation":"C15"}],"LastTrains":[{"Time":"22:49","DestinationStation":"C15"},{"Time":"22:58","DestinationStation":"F11"},{"Time":"23:18","DestinationStation":"E10"}]}}]}`,
+			unmarshalledResponse: &GetStationTimingsResponse{
+				StationTimes: []StationTime{
+					{
+						StationCode: "F01",
+						StationName: "Gallery Pl-Chinatown",
+						Monday: StationDayItem{
+							OpeningTime: "05:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "05:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "05:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "05:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "23:19",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "23:28",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "23:48",
+									DestinationStation: "E10",
+								},
+							},
+						},
+						Tuesday: StationDayItem{
+							OpeningTime: "05:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "05:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "05:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "05:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "23:19",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "23:28",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "23:48",
+									DestinationStation: "E10",
+								},
+							},
+						},
+						Wednesday: StationDayItem{
+							OpeningTime: "05:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "05:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "05:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "05:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "23:19",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "23:28",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "23:48",
+									DestinationStation: "E10",
+								},
+							},
+						},
+						Thursday: StationDayItem{
+							OpeningTime: "05:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "05:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "05:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "05:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "23:19",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "23:28",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "23:48",
+									DestinationStation: "E10",
+								},
+							},
+						},
+						Friday: StationDayItem{
+							OpeningTime: "05:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "05:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "05:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "05:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "00:49",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "00:58",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "01:18",
+									DestinationStation: "E10",
+								},
+							},
+						},
+						Saturday: StationDayItem{
+							OpeningTime: "07:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "07:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "07:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "07:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "00:49",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "00:58",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "01:18",
+									DestinationStation: "E10",
+								},
+							},
+						},
+						Sunday: StationDayItem{
+							OpeningTime: "08:15",
+							FirstTrains: []StationTrainInformation{
+								{
+									Time:               "08:25",
+									DestinationStation: "E10",
+								},
+								{
+									Time:               "08:26",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "08:32",
+									DestinationStation: "C15",
+								},
+							},
+							LastTrains: []StationTrainInformation{
+								{
+									Time:               "22:49",
+									DestinationStation: "C15",
+								},
+								{
+									Time:               "22:58",
+									DestinationStation: "F11",
+								},
+								{
+									Time:               "23:18",
+									DestinationStation: "E10",
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	},
+	"/Rail.svc/json/jSrcStationToDstStationInfo": {
+		{
+			rawQuery:     "FromStationCode=F01&ToStationCode=A07",
+			stringParam1: "F01",
+			stringParam2: "A07",
+			jsonResponse: `{"StationToStationInfos":[{"SourceStation":"F01","DestinationStation":"A07","CompositeMiles":4.93,"RailTime":15,"RailFare":{"PeakTime":2.9,"OffPeakTime":2.45,"SeniorDisabled":1.45}}]}`,
+			unmarshalledResponse: &GetStationToStationInformationResponse{
+				StationToStationInformation: []StationToStation{
+					{
+						CompositeMiles:     4.93,
+						DestinationStation: "A07",
+						Fare: RailFare{
+							OffPeakTime:    2.45,
+							PeakTime:       2.9,
+							SeniorDisabled: 1.45,
+						},
+						Time:          15,
+						SourceStation: "F01",
+					},
+				},
+			},
+		},
+	},
 }
 
 // setupTestService creates a service struct with a mock http client
@@ -728,7 +1027,6 @@ func TestGetLines(t *testing.T) {
 			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
 		}
 	}
-
 }
 
 func TestGetParkingInformation(t *testing.T) {
@@ -753,7 +1051,6 @@ func TestGetParkingInformation(t *testing.T) {
 			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
 		}
 	}
-
 }
 
 func TestGetPathBetweenStations(t *testing.T) {
@@ -800,9 +1097,31 @@ func TestGetStationEntrances(t *testing.T) {
 		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
 			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
 		}
-
 	}
 
+}
+
+func TestGetStationInformation(t *testing.T) {
+	testService := setupTestService()
+
+	testRequest, exist := testData["/Rail.svc/json/jStationInfo"]
+
+	if !exist {
+		t.Errorf("no data found for GetStationInformation")
+		return
+	}
+
+	for _, request := range testRequest {
+		response, err := testService.GetStationInformation(request.stringParam1)
+
+		if err != nil {
+			t.Errorf("error calling GetStationInfromation for station code: %s error: %s", request.stringParam1, err.Error())
+		}
+
+		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
+		}
+	}
 }
 
 func TestGetStationList(t *testing.T) {
@@ -819,13 +1138,57 @@ func TestGetStationList(t *testing.T) {
 		response, err := testService.GetStationList(request.stringParam1)
 
 		if err != nil {
-			t.Errorf("error calling GetstationList for line code: %s error: %s", request.stringParam1, err.Error())
+			t.Errorf("error calling GetStationList for line code: %s error: %s", request.stringParam1, err.Error())
 		}
 
 		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
 			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
 		}
+	}
+}
 
+func TestGetStationTimings(t *testing.T) {
+	testService := setupTestService()
+
+	testRequests, exist := testData["/Rail.svc/json/jStationTimes"]
+
+	if !exist {
+		t.Errorf("no data found for GetStationTimings")
+		return
 	}
 
+	for _, request := range testRequests {
+		response, err := testService.GetStationTimings(request.stringParam1)
+
+		if err != nil {
+			t.Errorf("error calling GetStationTimings for station: %s error: %s", request.stringParam1, err.Error())
+		}
+
+		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
+		}
+	}
+}
+
+func TestGetStationToStationInformation(t *testing.T) {
+	testService := setupTestService()
+
+	testRequests, exist := testData["/Rail.svc/json/jSrcStationToDstStationInfo"]
+
+	if !exist {
+		t.Errorf("no data found for GetStationToStationInformation")
+		return
+	}
+
+	for _, request := range testRequests {
+		response, err := testService.GetStationToStationInformation(request.stringParam1, request.stringParam2)
+
+		if err != nil {
+			t.Errorf("error calling GetStationToStationInformation, FromStation: %s ToStation: %s error: %s", request.stringParam1, request.stringParam2, err.Error())
+		}
+
+		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+			t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
+		}
+	}
 }
