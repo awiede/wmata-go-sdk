@@ -736,7 +736,6 @@ func TestGetElevatorEscalatorOutages(t *testing.T) {
 		}
 
 		if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-			//t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
 			t.Error(pretty.Diff(response, request.unmarshalledResponse))
 		}
 	}
