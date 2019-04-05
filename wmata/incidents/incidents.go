@@ -1,10 +1,11 @@
 package incidents
 
-type Incidents interface {
-	GetBusIncidents(route string) (*GetBusIncidentsResponse, error)
-	GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error)
-	GetRailIncidents()
-}
+import (
+	"encoding/json"
+	"github.com/awiede/wmata-go-sdk/wmata"
+	"io/ioutil"
+	"net/http"
+)
 
 type GetBusIncidentsResponse struct {
 	BusIncidents []BusIncident `json:"BusIncidents"`
@@ -62,4 +63,117 @@ type RailIncident struct {
 	PassengerDelay int `json:"PassengerDelay"`
 	// Deprecated: StartLocationFullName response field is deprecated
 	StartLocationFullName string `json:"StartLocationFullName"`
+}
+
+type Incidents interface {
+	GetBusIncidents(route string) (*GetBusIncidentsResponse, error)
+	GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error)
+	GetRailIncidents() (*GetRailIncidentsResponse, error)
+}
+
+var _ Incidents = (*Service)(nil)
+
+type Service struct {
+	client *wmata.Client
+}
+
+func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsResponse, error) {
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Incidents.svc/json/BusIncidents", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Set(wmata.APIKeyHeader, incidentService.client.APIKey)
+
+	query := request.URL.Query()
+	query.Add("Route", route)
+
+	request.URL.RawQuery = query.Encode()
+
+	response, responseErr := incidentService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	busIncident := GetBusIncidentsResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &busIncident)
+
+	return &busIncident, unmarshalErr
+
+}
+
+func (incidentService *Service) GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error) {
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Incidents.svc/json/ElevatorIncidents", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Set(wmata.APIKeyHeader, incidentService.client.APIKey)
+
+	query := request.URL.Query()
+	query.Add("StationCode", stationCode)
+
+	request.URL.RawQuery = query.Encode()
+
+	response, responseErr := incidentService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	outages := GetElevatorEscalatorOutagesResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &outages)
+
+	return &outages, unmarshalErr
+}
+
+func (incidentService *Service) GetRailIncidents() (*GetRailIncidentsResponse, error) {
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Incidents.svc/json/Incidents", nil)
+
+	if requestErr != nil {
+		return nil, requestErr
+	}
+
+	request.Header.Set(wmata.APIKeyHeader, incidentService.client.APIKey)
+
+	response, responseErr := incidentService.client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return nil, responseErr
+	}
+
+	defer wmata.CloseResponseBody(response)
+
+	body, readErr := ioutil.ReadAll(response.Body)
+
+	if readErr != nil {
+		return nil, readErr
+	}
+
+	railIncidents := GetRailIncidentsResponse{}
+
+	unmarshalErr := json.Unmarshal(body, &railIncidents)
+
+	return &railIncidents, unmarshalErr
 }
