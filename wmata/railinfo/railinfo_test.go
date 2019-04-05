@@ -9,14 +9,14 @@ import (
 	"testing"
 )
 
-// TestClient is a mock implementation of wmata.HTTPClient interface used for testing purposes
-type TestClient struct{}
+// testClient is a mock implementation of wmata.HTTPClient interface used for testing purposes
+type testClient struct{}
 
-// ensure TestClient implements wmata.HTTPClient interface
-var _ wmata.HTTPClient = (*TestClient)(nil)
+// ensure testClient implements wmata.HTTPClient interface
+var _ wmata.HTTPClient = (*testClient)(nil)
 
 // Do stubs out an httpClient.Do request
-func (client *TestClient) Do(req *http.Request) (*http.Response, error) {
+func (client *testClient) Do(req *http.Request) (*http.Response, error) {
 	testResponses, exist := testData[req.URL.Path]
 
 	if !exist {
@@ -1000,7 +1000,7 @@ var testData = map[string][]testResponseData{
 func setupTestService() *RailStationInfo {
 	return &RailStationInfo{
 		client: &wmata.Client{
-			HTTPClient: &TestClient{},
+			HTTPClient: &testClient{},
 		},
 	}
 }

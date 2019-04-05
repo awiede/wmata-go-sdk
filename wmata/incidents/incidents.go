@@ -31,10 +31,11 @@ type ElevatorIncident struct {
 	EstimatedReturnToService string `json:"EstimatedReturnToService"`
 	LocationDescription      string `json:"LocationDescription"`
 	StationCode              string `json:"StationCode"`
+	StationName              string `json:"StationName"`
 	// Deprecated: SymptomCode response field is deprecated
 	SymptomCode        string `json:"SymptomCode"`
 	SymptomDescription string `json:"SymptomDescription"`
-	// Deprecated: TimeOutOfService response field is deprecated, use time portion of DateOutOfServ
+	// Deprecated: TimeOutOfService response field is deprecated, use time portion of DateOutOfService
 	TimeOutOfService string `json:"TimeOutOfService"`
 	UnitName         string `json:"UnitName"`
 	// Deprecated: UnitStatus response field is deprecated
