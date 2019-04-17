@@ -31,6 +31,14 @@ type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
+type ResponseType int
+
+//TODO make client toggle between json and xml endpoints
+const (
+	JSON ResponseType = iota
+	XML
+)
+
 // Client is a wmata specific http client that includes authentication information
 type Client struct {
 	APIKey     string
