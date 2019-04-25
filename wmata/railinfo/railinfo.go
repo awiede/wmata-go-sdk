@@ -4,7 +4,10 @@ import (
 	"errors"
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"strconv"
+	"strings"
 )
+
+const railServiceBaseURL  = "https://api.wmata.com/Rail.svc"
 
 type RailStationInfoAPI interface {
 	GetLines() (*GetLinesResponse, error)
@@ -21,13 +24,15 @@ var _ RailStationInfoAPI = (*RailStationInfo)(nil)
 
 // RailStationInfo provides all API methods for Rail Station Information from WMATA
 type RailStationInfo struct {
-	client *wmata.Client
+	client       *wmata.Client
+	responseType wmata.ResponseType
 }
 
 // NewService returns a new RailStationInfo service with a reference to an existing wmata.Client
-func NewService(client *wmata.Client) *RailStationInfo {
+func NewService(client *wmata.Client, responseType wmata.ResponseType) *RailStationInfo {
 	return &RailStationInfo{
 		client: client,
+		responseType: responseType,
 	}
 }
 
@@ -184,15 +189,35 @@ type GetStationToStationInformationResponse struct {
 }
 
 func (railService *RailStationInfo) GetLines() (*GetLinesResponse, error) {
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jLines")
+	case wmata.XML:
+		requestUrl.WriteString("/Lines")
+	}
+
 	lines := GetLinesResponse{}
 
-	return &lines, railService.client.BuildAndSendGetRequest("https://api.wmata.com/Rail.svc/json/jLines", nil, &lines)
+	return &lines, railService.client.BuildAndSendGetRequest(requestUrl.String(), nil, &lines)
 }
 
 func (railService *RailStationInfo) GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error) {
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStationParking")
+	case wmata.XML:
+		requestUrl.WriteString("/StationParking")
+	}
+
 	parkingInformation := GetParkingInformationResponse{}
 
-	return &parkingInformation, railService.client.BuildAndSendGetRequest("https://api.wmata.com/Rail.svc/json/jStationParking", map[string]string{"StationCode": stationCode}, &parkingInformation)
+	return &parkingInformation, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &parkingInformation)
 }
 
 func (railService *RailStationInfo) GetPathBetweenStations(fromStation, toStation string) (*GetPathBetweenStationsResponse, error) {
@@ -200,14 +225,32 @@ func (railService *RailStationInfo) GetPathBetweenStations(fromStation, toStatio
 		return nil, errors.New("fromStation and toStation are required parameters")
 	}
 
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jPath")
+	case wmata.XML:
+		requestUrl.WriteString("/Path")
+	}
+
 	path := GetPathBetweenStationsResponse{}
 
-	return &path, railService.client.BuildAndSendGetRequest("https://api.wmata.com/Rail.svc/json/jPath", map[string]string{"FromStationCode": fromStation, "ToStationCode": toStation}, &path)
+	return &path, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"FromStationCode": fromStation, "ToStationCode": toStation}, &path)
 
 }
 
 func (railService *RailStationInfo) GetStationEntrances(getStationEntranceRequest *GetStationEntrancesRequest) (*GetStationEntrancesResponse, error) {
-	requestUrl := "https://api.wmata.com/Rail.svc/json/jStationEntrances"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStationEntrances")
+	case wmata.XML:
+		requestUrl.WriteString("/StationEntrances")
+	}
 
 	var queryParams map[string]string
 
@@ -220,7 +263,7 @@ func (railService *RailStationInfo) GetStationEntrances(getStationEntranceReques
 	}
 	entrances := GetStationEntrancesResponse{}
 
-	return &entrances, railService.client.BuildAndSendGetRequest(requestUrl, queryParams, &entrances)
+	return &entrances, railService.client.BuildAndSendGetRequest(requestUrl.String(), queryParams, &entrances)
 }
 
 func (railService *RailStationInfo) GetStationInformation(stationCode string) (*GetStationInformationResponse, error) {
@@ -228,31 +271,63 @@ func (railService *RailStationInfo) GetStationInformation(stationCode string) (*
 		return nil, errors.New("stationCode is a required parameter")
 	}
 
-	requestUrl := "https://api.wmata.com/Rail.svc/json/jStationInfo"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStationInfo")
+	case wmata.XML:
+		requestUrl.WriteString("/StationInfo")
+	}
 
 	stationInformation := GetStationInformationResponse{}
 
-	return &stationInformation, railService.client.BuildAndSendGetRequest(requestUrl, map[string]string{"StationCode": stationCode}, &stationInformation)
+	return &stationInformation, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationInformation)
 }
 
 func (railService *RailStationInfo) GetStationList(lineCode string) (*GetStationListResponse, error) {
-	requestUrl := "https://api.wmata.com/Rail.svc/json/jStations"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStations")
+	case wmata.XML:
+		requestUrl.WriteString("/Stations")
+	}
 
 	stationList := GetStationListResponse{}
 
-	return &stationList, railService.client.BuildAndSendGetRequest(requestUrl, map[string]string{"LineCode": lineCode}, &stationList)
+	return &stationList, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"LineCode": lineCode}, &stationList)
 }
 
 func (railService *RailStationInfo) GetStationTimings(stationCode string) (*GetStationTimingsResponse, error) {
-	requestUrl := "https://api.wmata.com/Rail.svc/json/jStationTimes"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStationTimes")
+	case wmata.XML:
+		requestUrl.WriteString("/StationTimes")
+	}
 
 	stationTimings := GetStationTimingsResponse{}
 
-	return &stationTimings, railService.client.BuildAndSendGetRequest(requestUrl, map[string]string{"StationCode": stationCode}, &stationTimings)
+	return &stationTimings, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationTimings)
 }
 
 func (railService *RailStationInfo) GetStationToStationInformation(fromStation, toStation string) (*GetStationToStationInformationResponse, error) {
-	requestUrl := "https://api.wmata.com/Rail.svc/json/jSrcStationToDstStationInfo"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(railServiceBaseURL)
+
+	switch railService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jSrcStationToDstStationInfo")
+	case wmata.XML:
+		requestUrl.WriteString("/SrcStationToDstStationInfo")
+	}
 
 	queryParams := make(map[string]string)
 
@@ -266,5 +341,5 @@ func (railService *RailStationInfo) GetStationToStationInformation(fromStation, 
 
 	stationToStation := GetStationToStationInformationResponse{}
 
-	return &stationToStation, railService.client.BuildAndSendGetRequest(requestUrl, queryParams, &stationToStation)
+	return &stationToStation, railService.client.BuildAndSendGetRequest(requestUrl.String(), queryParams, &stationToStation)
 }
