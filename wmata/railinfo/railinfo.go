@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const railServiceBaseURL  = "https://api.wmata.com/Rail.svc"
+const railServiceBaseURL = "https://api.wmata.com/Rail.svc"
 
 type RailStationInfoAPI interface {
 	GetLines() (*GetLinesResponse, error)
@@ -31,7 +31,7 @@ type RailStationInfo struct {
 // NewService returns a new RailStationInfo service with a reference to an existing wmata.Client
 func NewService(client *wmata.Client, responseType wmata.ResponseType) *RailStationInfo {
 	return &RailStationInfo{
-		client: client,
+		client:       client,
 		responseType: responseType,
 	}
 }

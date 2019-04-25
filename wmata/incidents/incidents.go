@@ -77,7 +77,7 @@ var _ Incidents = (*Service)(nil)
 // NewService returns a new Incidents service with a reference to an existing wmata.Client
 func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service {
 	return &Service{
-		client: client,
+		client:       client,
 		responseType: responseType,
 	}
 }
