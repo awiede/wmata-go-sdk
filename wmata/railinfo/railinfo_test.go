@@ -997,8 +997,8 @@ var testData = map[string][]testResponseData{
 }
 
 // setupTestService creates a service struct with a mock http client
-func setupTestService() *RailStationInfo {
-	return &RailStationInfo{
+func setupTestService() *Service {
+	return &Service{
 		client: &wmata.Client{
 			HTTPClient: &testClient{},
 		},
