@@ -2,7 +2,10 @@ package incidents
 
 import (
 	"github.com/awiede/wmata-go-sdk/wmata"
+	"strings"
 )
+
+const incidentsServiceBaseURL = "https://api.wmata.com/Incidents.svc"
 
 type GetBusIncidentsResponse struct {
 	BusIncidents []BusIncident `json:"BusIncidents" xml:"BusIncidents"`
@@ -72,30 +75,55 @@ type Incidents interface {
 var _ Incidents = (*Service)(nil)
 
 type Service struct {
-	client *wmata.Client
+	client       *wmata.Client
+	responseType wmata.ResponseType
 }
 
 func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsResponse, error) {
-	requestUrl := "https://api.wmata.com/Incidents.svc/json/BusIncidents"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(incidentsServiceBaseURL)
+
+	switch incidentService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/BusIncidents")
+	case wmata.XML:
+		requestUrl.WriteString("/BusIncidents")
+	}
 
 	busIncident := GetBusIncidentsResponse{}
 
-	return &busIncident, incidentService.client.BuildAndSendGetRequest(requestUrl, map[string]string{"Route": route}, &busIncident)
+	return &busIncident, incidentService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"Route": route}, &busIncident)
 
 }
 
 func (incidentService *Service) GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error) {
-	requestUrl := "https://api.wmata.com/Incidents.svc/json/ElevatorIncidents"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(incidentsServiceBaseURL)
+
+	switch incidentService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/ElevatorIncidents")
+	case wmata.XML:
+		requestUrl.WriteString("/ElevatorIncidents")
+	}
 
 	outages := GetElevatorEscalatorOutagesResponse{}
 
-	return &outages, incidentService.client.BuildAndSendGetRequest(requestUrl, map[string]string{"StationCode": stationCode}, &outages)
+	return &outages, incidentService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &outages)
 }
 
 func (incidentService *Service) GetRailIncidents() (*GetRailIncidentsResponse, error) {
-	requestUrl := "https://api.wmata.com/Incidents.svc/json/Incidents"
+	var requestUrl strings.Builder
+	requestUrl.WriteString(incidentsServiceBaseURL)
+
+	switch incidentService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/Incidents")
+	case wmata.XML:
+		requestUrl.WriteString("/Incidents")
+	}
 
 	railIncidents := GetRailIncidentsResponse{}
 
-	return &railIncidents, incidentService.client.BuildAndSendGetRequest(requestUrl, nil, &railIncidents)
+	return &railIncidents, incidentService.client.BuildAndSendGetRequest(requestUrl.String(), nil, &railIncidents)
 }
