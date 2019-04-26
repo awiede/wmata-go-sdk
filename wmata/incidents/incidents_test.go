@@ -1,6 +1,7 @@
 package incidents
 
 import (
+	"encoding/xml"
 	"errors"
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"github.com/kr/pretty"
@@ -89,6 +90,10 @@ var testData = map[string][]testResponseData{
 			param:    "D6",
 			response: `<BusIncidentsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><BusIncidents><BusIncident><DateUpdated>2019-04-25T17:19:21</DateUpdated><Description>Due to earlier police activity on Massachusetts Ave NE at First St, buses are experiencing delays.</Description><IncidentID>539AC746-6434-447F-9A7A-33363AAD1126</IncidentID><IncidentType>Alert</IncidentType><RoutesAffected xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>D6</a:string></RoutesAffected></BusIncident></BusIncidents></BusIncidentsResp>`,
 			unmarshalledResponse: &GetBusIncidentsResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "BusIncidentsResp",
+				},
 				BusIncidents: []BusIncident{
 					{
 						IncidentID:   "539AC746-6434-447F-9A7A-33363AAD1126",
@@ -806,21 +811,22 @@ var testData = map[string][]testResponseData{
 }
 
 // setupTestService creates a service struct with a mock http client
-func setupTestService() *Service {
+func setupTestService(responseType wmata.ResponseType) *Service {
 	return &Service{
 		client: &wmata.Client{
 			HTTPClient: &testClient{},
 		},
+		responseType: responseType,
 	}
 }
 
 // TODO fix XML response type
 func TestGetBusIncidents(t *testing.T) {
-	testService := setupTestService()
-
 	jsonAndXmlPaths := []string{"/Incidents.svc/json/BusIncidents"/*, "/Incidents.svc/BusIncidents"*/}
+	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
-	for _, path := range jsonAndXmlPaths {
+	for i, path := range jsonAndXmlPaths {
+		testService := setupTestService(responseFormats[i])
 		testRequests, exist := testData[path]
 
 		if !exist {
@@ -836,18 +842,18 @@ func TestGetBusIncidents(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", response, request.unmarshalledResponse)
+				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
 			}
 		}
 	}
 }
 
 func TestGetElevatorEscalatorOutages(t *testing.T) {
-	testService := setupTestService()
-
 	jsonAndXmlPaths := []string{"/Incidents.svc/json/ElevatorIncidents"/*, "/Incidents.svc/ElevatorIncidents"*/}
+	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
-	for _, path := range jsonAndXmlPaths {
+	for i, path := range jsonAndXmlPaths {
+		testService := setupTestService(responseFormats[i])
 		testRequests, exist := testData[path]
 
 		if !exist {
@@ -870,11 +876,11 @@ func TestGetElevatorEscalatorOutages(t *testing.T) {
 }
 
 func TestGetRailIncidents(t *testing.T) {
-	testService := setupTestService()
-
 	jsonAndXmlPaths := []string{"/Incidents.svc/json/Incidents"/*, "/Incidents.svc/Incidents"*/}
+	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
-	for _, path := range jsonAndXmlPaths {
+	for i, path := range jsonAndXmlPaths {
+		testService := setupTestService(responseFormats[i])
 		testRequests, exist := testData[path]
 
 		if !exist {
@@ -895,3 +901,22 @@ func TestGetRailIncidents(t *testing.T) {
 		}
 	}
 }
+
+//func TestMarshal(t *testing.T) {
+//	test := GetBusIncidentsResponse{
+//		BusIncidents: []BusIncident{
+//			{
+//				IncidentID:   "539AC746-6434-447F-9A7A-33363AAD1126",
+//				IncidentType: "Alert",
+//				RoutesAffected: []string{
+//					"D6",
+//				},
+//				Description: "Due to earlier police activity on Massachusetts Ave NE at First St, buses are experiencing delays.",
+//				DateUpdated: "2019-04-25T17:19:21",
+//			},
+//		},
+//	}
+//
+//	marshal, _ := xml.Marshal(test)
+//	t.Error(string(marshal))
+//}

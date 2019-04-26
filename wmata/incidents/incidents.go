@@ -1,13 +1,20 @@
 package incidents
 
 import (
+	"encoding/xml"
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"strings"
 )
 
 const incidentsServiceBaseURL = "https://api.wmata.com/Incidents.svc"
 
+type wmataAttr struct {
+	Key string `xml:"xmlns-i,attr"`
+}
+
 type GetBusIncidentsResponse struct {
+	XMLName      xml.Name      `json:"-" xml:"http://www.wmata.com BusIncidentsResp"`
+	//XMLAttr      string        `json:"-" xml:"xmlns-i,attr"`
 	BusIncidents []BusIncident `json:"BusIncidents" xml:"BusIncidents"`
 }
 
@@ -91,14 +98,14 @@ func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsR
 	var requestUrl strings.Builder
 	requestUrl.WriteString(incidentsServiceBaseURL)
 
+	busIncident := GetBusIncidentsResponse{}
+
 	switch incidentService.responseType {
 	case wmata.JSON:
 		requestUrl.WriteString("/json/BusIncidents")
 	case wmata.XML:
 		requestUrl.WriteString("/BusIncidents")
 	}
-
-	busIncident := GetBusIncidentsResponse{}
 
 	return &busIncident, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), map[string]string{"Route": route}, &busIncident)
 

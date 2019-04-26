@@ -126,7 +126,7 @@ type GetStationInformationResponse struct {
 }
 
 type GetStationListResponse struct {
-	Stations []GetStationListResponseItem `json:"Stations" xml:"Stations"`
+	Stations []GetStationListResponseItem `json:"Stations" xml:"StationsResp>Stations"`
 }
 
 type GetStationListResponseItem struct {
