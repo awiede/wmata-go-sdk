@@ -100,7 +100,7 @@ func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsR
 
 	busIncident := GetBusIncidentsResponse{}
 
-	return &busIncident, incidentService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"Route": route}, &busIncident)
+	return &busIncident, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), map[string]string{"Route": route}, &busIncident)
 
 }
 
@@ -117,7 +117,7 @@ func (incidentService *Service) GetOutages(stationCode string) (*GetElevatorEsca
 
 	outages := GetElevatorEscalatorOutagesResponse{}
 
-	return &outages, incidentService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &outages)
+	return &outages, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &outages)
 }
 
 func (incidentService *Service) GetRailIncidents() (*GetRailIncidentsResponse, error) {
@@ -133,5 +133,5 @@ func (incidentService *Service) GetRailIncidents() (*GetRailIncidentsResponse, e
 
 	railIncidents := GetRailIncidentsResponse{}
 
-	return &railIncidents, incidentService.client.BuildAndSendGetRequest(requestUrl.String(), nil, &railIncidents)
+	return &railIncidents, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), nil, &railIncidents)
 }

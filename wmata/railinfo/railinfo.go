@@ -201,7 +201,7 @@ func (railService *Service) GetLines() (*GetLinesResponse, error) {
 
 	lines := GetLinesResponse{}
 
-	return &lines, railService.client.BuildAndSendGetRequest(requestUrl.String(), nil, &lines)
+	return &lines, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), nil, &lines)
 }
 
 func (railService *Service) GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error) {
@@ -217,7 +217,7 @@ func (railService *Service) GetParkingInformation(stationCode string) (*GetParki
 
 	parkingInformation := GetParkingInformationResponse{}
 
-	return &parkingInformation, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &parkingInformation)
+	return &parkingInformation, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &parkingInformation)
 }
 
 func (railService *Service) GetPathBetweenStations(fromStation, toStation string) (*GetPathBetweenStationsResponse, error) {
@@ -237,7 +237,7 @@ func (railService *Service) GetPathBetweenStations(fromStation, toStation string
 
 	path := GetPathBetweenStationsResponse{}
 
-	return &path, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"FromStationCode": fromStation, "ToStationCode": toStation}, &path)
+	return &path, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"FromStationCode": fromStation, "ToStationCode": toStation}, &path)
 
 }
 
@@ -263,7 +263,7 @@ func (railService *Service) GetStationEntrances(getStationEntranceRequest *GetSt
 	}
 	entrances := GetStationEntrancesResponse{}
 
-	return &entrances, railService.client.BuildAndSendGetRequest(requestUrl.String(), queryParams, &entrances)
+	return &entrances, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), queryParams, &entrances)
 }
 
 func (railService *Service) GetStationInformation(stationCode string) (*GetStationInformationResponse, error) {
@@ -283,7 +283,7 @@ func (railService *Service) GetStationInformation(stationCode string) (*GetStati
 
 	stationInformation := GetStationInformationResponse{}
 
-	return &stationInformation, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationInformation)
+	return &stationInformation, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationInformation)
 }
 
 func (railService *Service) GetStationList(lineCode string) (*GetStationListResponse, error) {
@@ -299,7 +299,7 @@ func (railService *Service) GetStationList(lineCode string) (*GetStationListResp
 
 	stationList := GetStationListResponse{}
 
-	return &stationList, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"LineCode": lineCode}, &stationList)
+	return &stationList, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"LineCode": lineCode}, &stationList)
 }
 
 func (railService *Service) GetStationTimings(stationCode string) (*GetStationTimingsResponse, error) {
@@ -315,7 +315,7 @@ func (railService *Service) GetStationTimings(stationCode string) (*GetStationTi
 
 	stationTimings := GetStationTimingsResponse{}
 
-	return &stationTimings, railService.client.BuildAndSendGetRequest(requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationTimings)
+	return &stationTimings, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationTimings)
 }
 
 func (railService *Service) GetStationToStationInformation(fromStation, toStation string) (*GetStationToStationInformationResponse, error) {
@@ -341,5 +341,5 @@ func (railService *Service) GetStationToStationInformation(fromStation, toStatio
 
 	stationToStation := GetStationToStationInformationResponse{}
 
-	return &stationToStation, railService.client.BuildAndSendGetRequest(requestUrl.String(), queryParams, &stationToStation)
+	return &stationToStation, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), queryParams, &stationToStation)
 }
