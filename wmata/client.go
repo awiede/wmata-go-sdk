@@ -43,8 +43,8 @@ const (
 
 // Client is a wmata specific http client that includes authentication information
 type Client struct {
-	APIKey         string
-	HTTPClient     HTTPClient
+	APIKey     string
+	HTTPClient HTTPClient
 }
 
 // NewWMATADefaultClient returns a new client to make requests to the WMATA API

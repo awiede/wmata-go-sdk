@@ -47,7 +47,7 @@ type ElevatorIncident struct {
 }
 
 type GetRailIncidentsResponse struct {
-	XMLName xml.Name `json:"-" xml:"http://www.wmata.com IncidentsResp"`
+	XMLName       xml.Name       `json:"-" xml:"http://www.wmata.com IncidentsResp"`
 	RailIncidents []RailIncident `json:"Incidents" xml:"Incidents>Incident"`
 }
 
