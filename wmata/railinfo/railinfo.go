@@ -264,10 +264,18 @@ func (railService *Service) GetStationEntrances(getStationEntranceRequest *GetSt
 	var queryParams map[string]string
 
 	if getStationEntranceRequest != nil {
-		queryParams = map[string]string{
-			"Lat":    strconv.FormatFloat(getStationEntranceRequest.Latitude, 'g', -1, 64),
-			"Lon":    strconv.FormatFloat(getStationEntranceRequest.Longitude, 'g', -1, 64),
-			"Radius": strconv.FormatFloat(getStationEntranceRequest.Radius, 'g', -1, 64),
+		queryParams = make(map[string]string)
+
+		if getStationEntranceRequest.Latitude != 0 {
+			queryParams["Lat"] = strconv.FormatFloat(getStationEntranceRequest.Latitude, 'g', -1, 64)
+		}
+
+		if getStationEntranceRequest.Longitude != 0 {
+			queryParams["Lon"] = strconv.FormatFloat(getStationEntranceRequest.Longitude, 'g', -1, 64)
+		}
+
+		if getStationEntranceRequest.Radius != 0 {
+			queryParams["Radius"] = strconv.FormatFloat(getStationEntranceRequest.Radius, 'g', -1, 64)
 		}
 	}
 	entrances := GetStationEntrancesResponse{}
