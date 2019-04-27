@@ -8,14 +8,9 @@ import (
 
 const incidentsServiceBaseURL = "https://api.wmata.com/Incidents.svc"
 
-type wmataAttr struct {
-	Key string `xml:"xmlns-i,attr"`
-}
-
 type GetBusIncidentsResponse struct {
 	XMLName      xml.Name      `json:"-" xml:"http://www.wmata.com BusIncidentsResp"`
-	//XMLAttr      string        `json:"-" xml:"xmlns-i,attr"`
-	BusIncidents []BusIncident `json:"BusIncidents" xml:"BusIncidents"`
+	BusIncidents []BusIncident `json:"BusIncidents" xml:"BusIncidents>BusIncident"`
 }
 
 type BusIncident struct {
@@ -23,11 +18,12 @@ type BusIncident struct {
 	Description    string   `json:"Description" xml:"Description"`
 	IncidentID     string   `json:"IncidentID" xml:"IncidentID"`
 	IncidentType   string   `json:"IncidentType" xml:"IncidentType"`
-	RoutesAffected []string `json:"RoutesAffected" xml:"RoutesAffected"`
+	RoutesAffected []string `json:"RoutesAffected" xml:"RoutesAffected>string"`
 }
 
 type GetElevatorEscalatorOutagesResponse struct {
-	ElevatorIncidents []ElevatorIncident `json:"ElevatorIncidents" xml:"ElevatorIncidents"`
+	XMLName           xml.Name           `json:"-" xml:"http://www.wmata.com ElevatorIncidentsResp"`
+	ElevatorIncidents []ElevatorIncident `json:"ElevatorIncidents" xml:"ElevatorIncidents>ElevatorIncident"`
 }
 
 type ElevatorIncident struct {
@@ -51,7 +47,8 @@ type ElevatorIncident struct {
 }
 
 type GetRailIncidentsResponse struct {
-	RailIncidents []RailIncident `json:"Incidents" xml:"Incidents"`
+	XMLName xml.Name `json:"-" xml:"http://www.wmata.com IncidentsResp"`
+	RailIncidents []RailIncident `json:"Incidents" xml:"Incidents>Incident"`
 }
 
 type RailIncident struct {

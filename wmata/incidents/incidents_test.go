@@ -710,6 +710,10 @@ var testData = map[string][]testResponseData{
 			param:    "A01",
 			response: `<ElevatorIncidentsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><ElevatorIncidents><ElevatorIncident><DateOutOfServ>2019-04-25T17:24:00</DateOutOfServ><DateUpdated>2019-04-25T17:25:51</DateUpdated><DisplayOrder>0</DisplayOrder><EstimatedReturnToService>2019-04-27T23:59:59</EstimatedReturnToService><LocationDescription>Escalator between street and mezzanine</LocationDescription><StationCode>A01</StationCode><StationName>Metro Center, G and 11th St Entrance</StationName><SymptomCode i:nil="true"/><SymptomDescription>Service Call</SymptomDescription><TimeOutOfService>1724</TimeOutOfService><UnitName>A01E02</UnitName><UnitStatus i:nil="true"/><UnitType>ESCALATOR</UnitType></ElevatorIncident><ElevatorIncident><DateOutOfServ>2019-04-25T16:58:00</DateOutOfServ><DateUpdated>2019-04-25T17:24:47</DateUpdated><DisplayOrder>0</DisplayOrder><EstimatedReturnToService>2019-04-27T23:59:59</EstimatedReturnToService><LocationDescription>Escalator between street and mezzanine</LocationDescription><StationCode>A01</StationCode><StationName>Metro Center, G and 11th St Entrance</StationName><SymptomCode i:nil="true"/><SymptomDescription>Service Call</SymptomDescription><TimeOutOfService>1658</TimeOutOfService><UnitName>A01E03</UnitName><UnitStatus i:nil="true"/><UnitType>ESCALATOR</UnitType></ElevatorIncident><ElevatorIncident><DateOutOfServ>2019-04-23T05:21:00</DateOutOfServ><DateUpdated>2019-04-25T06:39:23</DateUpdated><DisplayOrder>0</DisplayOrder><EstimatedReturnToService>2019-04-27T23:59:59</EstimatedReturnToService><LocationDescription>Escalator between mezzanine and platform to Glenmont</LocationDescription><StationCode>A01</StationCode><StationName>Metro Center, G and 11th St Entrance</StationName><SymptomCode i:nil="true"/><SymptomDescription>Other</SymptomDescription><TimeOutOfService>0521</TimeOutOfService><UnitName>A01E04</UnitName><UnitStatus i:nil="true"/><UnitType>ESCALATOR</UnitType></ElevatorIncident><ElevatorIncident><DateOutOfServ>2019-04-24T21:44:00</DateOutOfServ><DateUpdated>2019-04-25T14:52:18</DateUpdated><DisplayOrder>0</DisplayOrder><EstimatedReturnToService>2019-04-26T23:59:59</EstimatedReturnToService><LocationDescription>Escalator between mezzanine and platform to Shady Grove</LocationDescription><StationCode>A01</StationCode><StationName>Metro Center, G and 11th St Entrance</StationName><SymptomCode i:nil="true"/><SymptomDescription>Minor Repair</SymptomDescription><TimeOutOfService>2144</TimeOutOfService><UnitName>A01E06</UnitName><UnitStatus i:nil="true"/><UnitType>ESCALATOR</UnitType></ElevatorIncident></ElevatorIncidents></ElevatorIncidentsResp>`,
 			unmarshalledResponse: &GetElevatorEscalatorOutagesResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "ElevatorIncidentsResp",
+				},
 				ElevatorIncidents: []ElevatorIncident{
 					{
 						UnitName:                 "A01E02",
@@ -799,12 +803,103 @@ var testData = map[string][]testResponseData{
 		},
 	},
 	"/Incidents.svc/Incidents": {
+		//{
+		//	rawQuery: "",
+		//	param: "",
+		//	response: `<IncidentsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Incidents/></IncidentsResp>`,
+		//	unmarshalledResponse: &GetRailIncidentsResponse{
+		//		XMLName: xml.Name{
+		//			Space: "http://www.wmata.com",
+		//			Local: "IncidentsResp",
+		//		},
+		//		RailIncidents: []RailIncident{
+		//			{},
+		//		},
+		//	},
+		//},
 		{
 			rawQuery: "",
 			param: "",
-			response: `<IncidentsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Incidents/></IncidentsResp>`,
+			response: `<IncidentsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Incidents><Incident><DateUpdated>2019-04-27T06:59:16</DateUpdated><DelaySeverity i:nil="true"/><Description>The last Fort Totten-bound train times have changed due to scheduled maintenance. Info: wmata.com/weekend</Description><EmergencyText i:nil="true"/><EndLocationFullName i:nil="true"/><IncidentID>1BA9C893-8B0A-413F-ADE4-7C85C1ED43AE</IncidentID><IncidentType>Alert</IncidentType><LinesAffected>YL;</LinesAffected><PassengerDelay>0</PassengerDelay><StartLocationFullName i:nil="true"/></Incident><Incident><DateUpdated>2019-04-27T06:55:31</DateUpdated><DelaySeverity i:nil="true"/><Description>Sat &amp; Sun until 10pm, trains operate btwn Huntington &amp; Mt Vernon Sq only due to scheduled maintenance. Use Grn Line to continue trip.</Description><EmergencyText i:nil="true"/><EndLocationFullName i:nil="true"/><IncidentID>5F7356AE-6381-4A5C-B759-B39E6DE4907E</IncidentID><IncidentType>Alert</IncidentType><LinesAffected>YL;</LinesAffected><PassengerDelay>0</PassengerDelay><StartLocationFullName i:nil="true"/></Incident><Incident><DateUpdated>2019-04-27T06:51:19</DateUpdated><DelaySeverity i:nil="true"/><Description>Trains operating every 20 min w/ single tracking btwn Pentagon City &amp; Nat'l Airport due to scheduled maintenance.</Description><EmergencyText i:nil="true"/><EndLocationFullName i:nil="true"/><IncidentID>A826AB2E-A8EE-4EF4-81FF-9F4CB12192F8</IncidentID><IncidentType>Alert</IncidentType><LinesAffected>BL; YL;</LinesAffected><PassengerDelay>0</PassengerDelay><StartLocationFullName i:nil="true"/></Incident><Incident><DateUpdated>2019-04-27T06:57:00</DateUpdated><DelaySeverity i:nil="true"/><Description>Trains operating every 6-12 mins w/ single tracking btwn Judiciary Square &amp; Union Station.</Description><EmergencyText i:nil="true"/><EndLocationFullName i:nil="true"/><IncidentID>3ACFB7F3-DB24-4CCB-B491-60BB1915E43A</IncidentID><IncidentType>Alert</IncidentType><LinesAffected>RD;</LinesAffected><PassengerDelay>0</PassengerDelay><StartLocationFullName i:nil="true"/></Incident><Incident><DateUpdated>2019-04-27T06:46:39</DateUpdated><DelaySeverity i:nil="true"/><Description>Vienna and Dunn Loring stations are closed due to scheduled maintenance. Buses are available.</Description><EmergencyText i:nil="true"/><EndLocationFullName i:nil="true"/><IncidentID>DBDFCF8F-BCB6-4F13-9E70-BB9A772E213A</IncidentID><IncidentType>Alert</IncidentType><LinesAffected>OR;</LinesAffected><PassengerDelay>0</PassengerDelay><StartLocationFullName i:nil="true"/></Incident><Incident><DateUpdated>2019-04-27T06:45:02</DateUpdated><DelaySeverity i:nil="true"/><Description>Thru Sunday's closing, buses replace trains btwn Vienna &amp; West Falls Church due to scheduled maintenance.</Description><EmergencyText i:nil="true"/><EndLocationFullName i:nil="true"/><IncidentID>D0380A69-5A4B-4B46-80AB-897AA94C56E3</IncidentID><IncidentType>Alert</IncidentType><LinesAffected>OR;</LinesAffected><PassengerDelay>0</PassengerDelay><StartLocationFullName i:nil="true"/></Incident></Incidents></IncidentsResp>`,
 			unmarshalledResponse: &GetRailIncidentsResponse{
-				RailIncidents: []RailIncident{},
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "IncidentsResp",
+				},
+				RailIncidents: []RailIncident {
+					{
+						IncidentID: "1BA9C893-8B0A-413F-ADE4-7C85C1ED43AE",
+						Description: "The last Fort Totten-bound train times have changed due to scheduled maintenance. Info: wmata.com/weekend",
+						StartLocationFullName: "",
+						EndLocationFullName: "",
+						PassengerDelay: 0,
+						DelaySeverity: "",
+						IncidentType: "Alert",
+						EmergencyText: "",
+						LinesAffected: "YL;",
+						DateUpdated: "2019-04-27T06:59:16",
+					},
+					{
+						IncidentID: "5F7356AE-6381-4A5C-B759-B39E6DE4907E",
+						Description: "Sat & Sun until 10pm, trains operate btwn Huntington & Mt Vernon Sq only due to scheduled maintenance. Use Grn Line to continue trip.",
+						StartLocationFullName: "",
+						EndLocationFullName: "",
+						PassengerDelay: 0,
+						DelaySeverity: "",
+						IncidentType: "Alert",
+						EmergencyText: "",
+						LinesAffected: "YL;",
+						DateUpdated: "2019-04-27T06:55:31",
+					},
+					{
+						IncidentID: "A826AB2E-A8EE-4EF4-81FF-9F4CB12192F8",
+						Description: "Trains operating every 20 min w/ single tracking btwn Pentagon City & Nat'l Airport due to scheduled maintenance.",
+						StartLocationFullName: "",
+						EndLocationFullName: "",
+						PassengerDelay: 0,
+						DelaySeverity: "",
+						IncidentType: "Alert",
+						EmergencyText: "",
+						LinesAffected: "BL; YL;",
+						DateUpdated: "2019-04-27T06:51:19",
+					},
+					{
+						IncidentID: "3ACFB7F3-DB24-4CCB-B491-60BB1915E43A",
+						Description: "Trains operating every 6-12 mins w/ single tracking btwn Judiciary Square & Union Station.",
+						StartLocationFullName: "",
+						EndLocationFullName: "",
+						PassengerDelay: 0,
+						DelaySeverity: "",
+						IncidentType: "Alert",
+						EmergencyText: "",
+						LinesAffected: "RD;",
+						DateUpdated: "2019-04-27T06:57:00",
+					},
+					{
+						IncidentID: "DBDFCF8F-BCB6-4F13-9E70-BB9A772E213A",
+						Description: "Vienna and Dunn Loring stations are closed due to scheduled maintenance. Buses are available.",
+						StartLocationFullName: "",
+						EndLocationFullName: "",
+						PassengerDelay: 0,
+						DelaySeverity: "",
+						IncidentType: "Alert",
+						EmergencyText: "",
+						LinesAffected: "OR;",
+						DateUpdated: "2019-04-27T06:46:39",
+					},
+					{
+						IncidentID: "D0380A69-5A4B-4B46-80AB-897AA94C56E3",
+						Description: "Thru Sunday's closing, buses replace trains btwn Vienna & West Falls Church due to scheduled maintenance.",
+						StartLocationFullName: "",
+						EndLocationFullName: "",
+						PassengerDelay: 0,
+						DelaySeverity: "",
+						IncidentType: "Alert",
+						EmergencyText: "",
+						LinesAffected: "OR;",
+						DateUpdated: "2019-04-27T06:45:02",
+					},
+				},
 			},
 		},
 	},
@@ -822,7 +917,7 @@ func setupTestService(responseType wmata.ResponseType) *Service {
 
 // TODO fix XML response type
 func TestGetBusIncidents(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Incidents.svc/json/BusIncidents"/*, "/Incidents.svc/BusIncidents"*/}
+	jsonAndXmlPaths := []string{"/Incidents.svc/json/BusIncidents", "/Incidents.svc/BusIncidents"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -842,14 +937,14 @@ func TestGetBusIncidents(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetElevatorEscalatorOutages(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Incidents.svc/json/ElevatorIncidents"/*, "/Incidents.svc/ElevatorIncidents"*/}
+	jsonAndXmlPaths := []string{"/Incidents.svc/json/ElevatorIncidents", "/Incidents.svc/ElevatorIncidents"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -876,7 +971,7 @@ func TestGetElevatorEscalatorOutages(t *testing.T) {
 }
 
 func TestGetRailIncidents(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Incidents.svc/json/Incidents"/*, "/Incidents.svc/Incidents"*/}
+	jsonAndXmlPaths := []string{"/Incidents.svc/json/Incidents", "/Incidents.svc/Incidents"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -901,22 +996,3 @@ func TestGetRailIncidents(t *testing.T) {
 		}
 	}
 }
-
-//func TestMarshal(t *testing.T) {
-//	test := GetBusIncidentsResponse{
-//		BusIncidents: []BusIncident{
-//			{
-//				IncidentID:   "539AC746-6434-447F-9A7A-33363AAD1126",
-//				IncidentType: "Alert",
-//				RoutesAffected: []string{
-//					"D6",
-//				},
-//				Description: "Due to earlier police activity on Massachusetts Ave NE at First St, buses are experiencing delays.",
-//				DateUpdated: "2019-04-25T17:19:21",
-//			},
-//		},
-//	}
-//
-//	marshal, _ := xml.Marshal(test)
-//	t.Error(string(marshal))
-//}
