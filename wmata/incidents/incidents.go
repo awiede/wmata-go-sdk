@@ -1,69 +1,73 @@
 package incidents
 
 import (
-	"encoding/json"
+	"encoding/xml"
 	"github.com/awiede/wmata-go-sdk/wmata"
-	"io/ioutil"
-	"net/http"
+	"strings"
 )
 
+const incidentsServiceBaseURL = "https://api.wmata.com/Incidents.svc"
+
 type GetBusIncidentsResponse struct {
-	BusIncidents []BusIncident `json:"BusIncidents"`
+	XMLName      xml.Name      `json:"-" xml:"http://www.wmata.com BusIncidentsResp"`
+	BusIncidents []BusIncident `json:"BusIncidents" xml:"BusIncidents>BusIncident"`
 }
 
 type BusIncident struct {
-	DateUpdated    string   `json:"DateUpdated"`
-	Description    string   `json:"Description"`
-	IncidentID     string   `json:"IncidentID"`
-	IncidentType   string   `json:"IncidentType"`
-	RoutesAffected []string `json:"RoutesAffected"`
+	DateUpdated    string   `json:"DateUpdated" xml:"DateUpdated"`
+	Description    string   `json:"Description" xml:"Description"`
+	IncidentID     string   `json:"IncidentID" xml:"IncidentID"`
+	IncidentType   string   `json:"IncidentType" xml:"IncidentType"`
+	RoutesAffected []string `json:"RoutesAffected" xml:"RoutesAffected>string"`
 }
 
 type GetElevatorEscalatorOutagesResponse struct {
-	ElevatorIncidents []ElevatorIncident `json:"ElevatorIncidents"`
+	XMLName           xml.Name           `json:"-" xml:"http://www.wmata.com ElevatorIncidentsResp"`
+	ElevatorIncidents []ElevatorIncident `json:"ElevatorIncidents" xml:"ElevatorIncidents>ElevatorIncident"`
 }
 
 type ElevatorIncident struct {
-	DateOutOfService string `json:"DateOutOfServ"`
-	DateUpdated      string `json:"DateUpdated"`
+	DateOutOfService string `json:"DateOutOfServ" xml:"DateOutOfServ"`
+	DateUpdated      string `json:"DateUpdated" xml:"DateUpdated"`
 	// Deprecated: DisplayOrder response field is deprecated
-	DisplayOrder             int    `json:"DisplayOrder"`
-	EstimatedReturnToService string `json:"EstimatedReturnToService"`
-	LocationDescription      string `json:"LocationDescription"`
-	StationCode              string `json:"StationCode"`
-	StationName              string `json:"StationName"`
+	DisplayOrder             int    `json:"DisplayOrder" xml:"DisplayOrder"`
+	EstimatedReturnToService string `json:"EstimatedReturnToService" xml:"EstimatedReturnToService"`
+	LocationDescription      string `json:"LocationDescription" xml:"LocationDescription"`
+	StationCode              string `json:"StationCode" xml:"StationCode"`
+	StationName              string `json:"StationName" xml:"StationName"`
 	// Deprecated: SymptomCode response field is deprecated
-	SymptomCode        string `json:"SymptomCode"`
-	SymptomDescription string `json:"SymptomDescription"`
+	SymptomCode        string `json:"SymptomCode" xml:"SymptomCode"`
+	SymptomDescription string `json:"SymptomDescription" xml:"SymptomDescription"`
 	// Deprecated: TimeOutOfService response field is deprecated, use time portion of DateOutOfService
-	TimeOutOfService string `json:"TimeOutOfService"`
-	UnitName         string `json:"UnitName"`
+	TimeOutOfService string `json:"TimeOutOfService" xml:"TimeOutOfService"`
+	UnitName         string `json:"UnitName" xml:"UnitName"`
 	// Deprecated: UnitStatus response field is deprecated
-	UnitStatus string `json:"UnitStatus"`
-	UnitType   string `json:"UnitType"`
+	UnitStatus string `json:"UnitStatus" xml:"UnitStatus"`
+	UnitType   string `json:"UnitType" xml:"UnitType"`
 }
 
 type GetRailIncidentsResponse struct {
-	RailIncidents []RailIncident `json:"Incidents"`
+	XMLName       xml.Name       `json:"-" xml:"http://www.wmata.com IncidentsResp"`
+	RailIncidents []RailIncident `json:"Incidents" xml:"Incidents>Incident"`
 }
 
 type RailIncident struct {
-	DateUpdated string `json:"DateUpdated"`
+	DateUpdated string `json:"DateUpdated" xml:"DateUpdated"`
 	// Deprecated: DelaySeverity response field is deprecated
-	DelaySeverity string `json:"DelaySeverity"`
-	Description   string `json:"Description"`
+	DelaySeverity string `json:"DelaySeverity" xml:"DelaySeverity"`
+	Description   string `json:"Description" xml:"Description"`
 	// Deprecated: EmergencyText response field is deprecated
-	EmergencyText string `json:"EmergencyText"`
+	EmergencyText string `json:"EmergencyText" xml:"EmergencyText"`
 	// Deprecated: EndLocationFullName response field is deprecated
-	EndLocationFullName string `json:"EndLocationFullName"`
-	IncidentID          string `json:"IncidentID"`
-	IncidentType        string `json:"IncidentType"`
+	EndLocationFullName string `json:"EndLocationFullName" xml:"EndLocationFullName"`
+	IncidentID          string `json:"IncidentID" xml:"IncidentID"`
+	IncidentType        string `json:"IncidentType" xml:"IncidentType"`
 	// LinesAffected returns a semi-colon and space separated list of line codes - will be updated to an array eventually
-	LinesAffected string `json:"LinesAffected"`
+	LinesAffected string `json:"LinesAffected" xml:"LinesAffected"`
 	// Deprecated: PassengerDelay response field is deprecated
-	PassengerDelay int `json:"PassengerDelay"`
+	PassengerDelay int `json:"PassengerDelay" xml:"PassengerDelay"`
 	// Deprecated: StartLocationFullName response field is deprecated
-	StartLocationFullName string `json:"StartLocationFullName"`
+	StartLocationFullName string `json:"StartLocationFullName" xml:"StartLocationFullName"`
 }
 
 type Incidents interface {
@@ -74,107 +78,64 @@ type Incidents interface {
 
 var _ Incidents = (*Service)(nil)
 
+// NewService returns a new Incidents service with a reference to an existing wmata.Client
+func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service {
+	return &Service{
+		client:       client,
+		responseType: responseType,
+	}
+}
+
 type Service struct {
-	client *wmata.Client
+	client       *wmata.Client
+	responseType wmata.ResponseType
 }
 
 func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsResponse, error) {
-	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Incidents.svc/json/BusIncidents", nil)
-
-	if requestErr != nil {
-		return nil, requestErr
-	}
-
-	request.Header.Set(wmata.APIKeyHeader, incidentService.client.APIKey)
-
-	query := request.URL.Query()
-	query.Add("Route", route)
-
-	request.URL.RawQuery = query.Encode()
-
-	response, responseErr := incidentService.client.HTTPClient.Do(request)
-
-	if responseErr != nil {
-		return nil, responseErr
-	}
-
-	defer wmata.CloseResponseBody(response)
-
-	body, readErr := ioutil.ReadAll(response.Body)
-
-	if readErr != nil {
-		return nil, readErr
-	}
+	var requestUrl strings.Builder
+	requestUrl.WriteString(incidentsServiceBaseURL)
 
 	busIncident := GetBusIncidentsResponse{}
 
-	unmarshalErr := json.Unmarshal(body, &busIncident)
+	switch incidentService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/BusIncidents")
+	case wmata.XML:
+		requestUrl.WriteString("/BusIncidents")
+	}
 
-	return &busIncident, unmarshalErr
+	return &busIncident, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), map[string]string{"Route": route}, &busIncident)
 
 }
 
 func (incidentService *Service) GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error) {
-	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Incidents.svc/json/ElevatorIncidents", nil)
+	var requestUrl strings.Builder
+	requestUrl.WriteString(incidentsServiceBaseURL)
 
-	if requestErr != nil {
-		return nil, requestErr
-	}
-
-	request.Header.Set(wmata.APIKeyHeader, incidentService.client.APIKey)
-
-	query := request.URL.Query()
-	query.Add("StationCode", stationCode)
-
-	request.URL.RawQuery = query.Encode()
-
-	response, responseErr := incidentService.client.HTTPClient.Do(request)
-
-	if responseErr != nil {
-		return nil, responseErr
-	}
-
-	defer wmata.CloseResponseBody(response)
-
-	body, readErr := ioutil.ReadAll(response.Body)
-
-	if readErr != nil {
-		return nil, readErr
+	switch incidentService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/ElevatorIncidents")
+	case wmata.XML:
+		requestUrl.WriteString("/ElevatorIncidents")
 	}
 
 	outages := GetElevatorEscalatorOutagesResponse{}
 
-	unmarshalErr := json.Unmarshal(body, &outages)
-
-	return &outages, unmarshalErr
+	return &outages, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &outages)
 }
 
 func (incidentService *Service) GetRailIncidents() (*GetRailIncidentsResponse, error) {
-	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Incidents.svc/json/Incidents", nil)
+	var requestUrl strings.Builder
+	requestUrl.WriteString(incidentsServiceBaseURL)
 
-	if requestErr != nil {
-		return nil, requestErr
-	}
-
-	request.Header.Set(wmata.APIKeyHeader, incidentService.client.APIKey)
-
-	response, responseErr := incidentService.client.HTTPClient.Do(request)
-
-	if responseErr != nil {
-		return nil, responseErr
-	}
-
-	defer wmata.CloseResponseBody(response)
-
-	body, readErr := ioutil.ReadAll(response.Body)
-
-	if readErr != nil {
-		return nil, readErr
+	switch incidentService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/Incidents")
+	case wmata.XML:
+		requestUrl.WriteString("/Incidents")
 	}
 
 	railIncidents := GetRailIncidentsResponse{}
 
-	unmarshalErr := json.Unmarshal(body, &railIncidents)
-
-	return &railIncidents, unmarshalErr
+	return &railIncidents, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), nil, &railIncidents)
 }

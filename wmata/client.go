@@ -2,6 +2,8 @@ package wmata
 
 import (
 	"encoding/json"
+	"encoding/xml"
+	"errors"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -31,6 +33,14 @@ type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
+type ResponseType int
+
+//TODO make client toggle between json and xml endpoints
+const (
+	JSON ResponseType = iota
+	XML
+)
+
 // Client is a wmata specific http client that includes authentication information
 type Client struct {
 	APIKey     string
@@ -49,7 +59,7 @@ func NewWMATADefaultClient(apiKey string) *Client {
 }
 
 // NewWMATAClient returns a new client to make requests to the WMATA API
-func NewWMATAClient(apiKey string, httpClient http.Client) *Client {
+func NewWMATAClient(apiKey string, httpClient http.Client, responseFormat ResponseType) *Client {
 	return &Client{
 		APIKey:     apiKey,
 		HTTPClient: &httpClient,
@@ -57,7 +67,7 @@ func NewWMATAClient(apiKey string, httpClient http.Client) *Client {
 }
 
 // BuildAndSendGetRequest constructs and sends a generic HTTP GET request against the WMATA API
-func (client *Client) BuildAndSendGetRequest(url string, queryParams map[string]string, apiResponse interface{}) error {
+func (client *Client) BuildAndSendGetRequest(responseFormat ResponseType, url string, queryParams map[string]string, apiResponse interface{}) error {
 	request, requestErr := http.NewRequest(http.MethodGet, url, nil)
 
 	if requestErr != nil {
@@ -90,5 +100,13 @@ func (client *Client) BuildAndSendGetRequest(url string, queryParams map[string]
 		return readErr
 	}
 
-	return json.Unmarshal(body, &apiResponse)
+	switch responseFormat {
+	case JSON:
+		return json.Unmarshal(body, &apiResponse)
+	case XML:
+		return xml.Unmarshal(body, &apiResponse)
+	default:
+		return errors.New("invalid response type")
+	}
+
 }
