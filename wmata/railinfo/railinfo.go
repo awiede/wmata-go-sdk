@@ -90,9 +90,9 @@ type GetPathBetweenStationsResponse struct {
 }
 
 type GetStationEntrancesRequest struct {
-	latitude  float64
-	longitude float64
-	radius    float64
+	Latitude  float64
+	Longitude float64
+	Radius    float64
 }
 
 type StationEntrance struct {
@@ -265,9 +265,9 @@ func (railService *Service) GetStationEntrances(getStationEntranceRequest *GetSt
 
 	if getStationEntranceRequest != nil {
 		queryParams = map[string]string{
-			"Lat":    strconv.FormatFloat(getStationEntranceRequest.latitude, 'g', -1, 64),
-			"Lon":    strconv.FormatFloat(getStationEntranceRequest.longitude, 'g', -1, 64),
-			"Radius": strconv.FormatFloat(getStationEntranceRequest.radius, 'g', -1, 64),
+			"Lat":    strconv.FormatFloat(getStationEntranceRequest.Latitude, 'g', -1, 64),
+			"Lon":    strconv.FormatFloat(getStationEntranceRequest.Longitude, 'g', -1, 64),
+			"Radius": strconv.FormatFloat(getStationEntranceRequest.Radius, 'g', -1, 64),
 		}
 	}
 	entrances := GetStationEntrancesResponse{}
