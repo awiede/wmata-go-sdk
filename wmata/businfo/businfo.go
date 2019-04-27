@@ -3,6 +3,8 @@ package businfo
 import (
 	"encoding/xml"
 	"github.com/awiede/wmata-go-sdk/wmata"
+	"strconv"
+	"strings"
 )
 
 const busInfoBaseUrl = "https://api.wmata.com/Bus.svc"
@@ -33,25 +35,32 @@ func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service 
 }
 
 type GetPositionsRequest struct {
-	routeID   string
-	latitude  float64
-	longitude float64
-	radius    float64
+	RouteID   string
+	Latitude  float64
+	Longitude float64
+	Radius    float64
 }
 
 type GetPositionsResponse struct {
-	XMLName      xml.Name      `xml:"http://www.wmata.com BusPositionResp"`
+	XMLName      xml.Name      `json:"-" xml:"http://www.wmata.com BusPositionsResp"`
 	BusPositions []BusPosition `json:"BusPositions" xml:"BusPositions>BusPosition"`
 }
 
 type BusPosition struct {
-	DateTime  string `json:"DateTime" xml:"DateTime"`
-	Deviation string `json:"Deviation" xml:"Deviation"`
+	BlockNumber string `json:"BlockNumber" xml:"BlockNumber"`
+	DateTime    string `json:"DateTime" xml:"DateTime"`
+	Deviation   int    `json:"Deviation" xml:"Deviation"`
 	// Deprecated: DirectionNumber response field is deprecated, use DirectionText
-	DirectionNumber string `json:"DirectionNum" xml:"DirectionNum"`
-	DirectionText string `json:"DirectionText" xml:"DirectionText"`
-	Latitude
-
+	DirectionNumber int     `json:"DirectionNum" xml:"DirectionNum"`
+	DirectionText   string  `json:"DirectionText" xml:"DirectionText"`
+	Latitude        float64 `json:"Lat" xml:"Lat"`
+	Longitude       float64 `json:"Lon" xml:"Lon"`
+	RouteID         string  `json:"RouteID" xml:"RouteID"`
+	TripEndTime     string  `json:"TripEndTime" xml:"TripEndTime"`
+	TripDestination string  `json:"TripHeadsign" xml:"TripHeadsign"`
+	TripID          string  `json:"TripID" xml:"TripID"`
+	TripStartTime   string  `json:"TripStartTime" xml:"TripStartTime"`
+	VehicleID       string  `json:"VehicleID" xml:"VehicleID"`
 }
 
 type GetPathDetailsResponse struct {
@@ -73,7 +82,40 @@ type GetStopsResponse struct {
 }
 
 func (busService *Service) GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error) {
-	panic("implement me")
+	var requestUrl strings.Builder
+	requestUrl.WriteString(busInfoBaseUrl)
+
+	switch busService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jBusPositions")
+	case wmata.XML:
+		requestUrl.WriteString("/BusPositions")
+	}
+
+	var queryParams map[string]string
+	if request != nil {
+		queryParams = make(map[string]string)
+
+		if request.RouteID != "" {
+			queryParams["RouteID"] = request.RouteID
+		}
+
+		if request.Latitude != 0 {
+			queryParams["Lat"] = strconv.FormatFloat(request.Latitude, 'g', -1, 64)
+		}
+
+		if request.Longitude != 0 {
+			queryParams["Lon"] = strconv.FormatFloat(request.Longitude, 'g', -1, 64)
+		}
+
+		if request.Radius != 0 {
+			queryParams["Radius"] = strconv.FormatFloat(request.Radius, 'g', -1, 64)
+		}
+	}
+
+	positions := GetPositionsResponse{}
+
+	return &positions, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &positions)
 }
 
 func (busService *Service) GetPathDetails(routeID, date string) (*GetPathDetailsResponse, error) {
