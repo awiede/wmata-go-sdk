@@ -1,8 +1,10 @@
 package railinfo
 
 import (
+	"encoding/xml"
 	"errors"
 	"github.com/awiede/wmata-go-sdk/wmata"
+	"github.com/kr/pretty"
 	"net/http"
 	"net/http/httptest"
 	"reflect"
@@ -49,9 +51,9 @@ type testResponseData struct {
 var testData = map[string][]testResponseData{
 	"/Rail.svc/json/jLines": {
 		testResponseData{
-			path:        "/Rail.svc/json/jLines",
-			rawQuery:    "",
-			response:    `{"Lines":[{"LineCode":"BL","DisplayName":"Blue","StartStationCode":"J03","EndStationCode":"G05","InternalDestination1":"","InternalDestination2":""},{"LineCode":"GR","DisplayName":"Green","StartStationCode":"F11","EndStationCode":"E10","InternalDestination1":"","InternalDestination2":""},{"LineCode":"OR","DisplayName":"Orange","StartStationCode":"K08","EndStationCode":"D13","InternalDestination1":"","InternalDestination2":""},{"LineCode":"RD","DisplayName":"Red","StartStationCode":"A15","EndStationCode":"B11","InternalDestination1":"A11","InternalDestination2":"B08"},{"LineCode":"SV","DisplayName":"Silver","StartStationCode":"N06","EndStationCode":"G05","InternalDestination1":"","InternalDestination2":""},{"LineCode":"YL","DisplayName":"Yellow","StartStationCode":"C15","EndStationCode":"E06","InternalDestination1":"E01","InternalDestination2":""}]}`,
+			path:     "/Rail.svc/json/jLines",
+			rawQuery: "",
+			response: `{"Lines":[{"LineCode":"BL","DisplayName":"Blue","StartStationCode":"J03","EndStationCode":"G05","InternalDestination1":"","InternalDestination2":""},{"LineCode":"GR","DisplayName":"Green","StartStationCode":"F11","EndStationCode":"E10","InternalDestination1":"","InternalDestination2":""},{"LineCode":"OR","DisplayName":"Orange","StartStationCode":"K08","EndStationCode":"D13","InternalDestination1":"","InternalDestination2":""},{"LineCode":"RD","DisplayName":"Red","StartStationCode":"A15","EndStationCode":"B11","InternalDestination1":"A11","InternalDestination2":"B08"},{"LineCode":"SV","DisplayName":"Silver","StartStationCode":"N06","EndStationCode":"G05","InternalDestination1":"","InternalDestination2":""},{"LineCode":"YL","DisplayName":"Yellow","StartStationCode":"C15","EndStationCode":"E06","InternalDestination1":"E01","InternalDestination2":""}]}`,
 			unmarshalledResponse: &GetLinesResponse{
 				Lines: []LineResponse{
 					{
@@ -278,7 +280,7 @@ var testData = map[string][]testResponseData{
 				longitude: -77.007262,
 				radius:    500,
 			},
-			response:    `{"Entrances":[{"ID":"54","Name":"SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST & MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from 1st St NE to southeast corner of the Union station building.","Lat":38.897383,"Lon":-77.007262},{"ID":"55","Name":"NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.","Lat":38.89845,"Lon":-77.007243},{"ID":"53","Name":"ENTRANCE FROM AMTRAK, MARC, VRE TRAINS","StationCode1":"B03","StationCode2":"","Description":"Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS","Lat":38.898541,"Lon":-77.006984}]}`,
+			response: `{"Entrances":[{"ID":"54","Name":"SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST & MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from 1st St NE to southeast corner of the Union station building.","Lat":38.897383,"Lon":-77.007262},{"ID":"55","Name":"NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.","Lat":38.89845,"Lon":-77.007243},{"ID":"53","Name":"ENTRANCE FROM AMTRAK, MARC, VRE TRAINS","StationCode1":"B03","StationCode2":"","Description":"Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS","Lat":38.898541,"Lon":-77.006984}]}`,
 			unmarshalledResponse: &GetStationEntrancesResponse{
 				Entrances: []StationEntrance{
 					{
@@ -1011,6 +1013,10 @@ var testData = map[string][]testResponseData{
 			rawQuery: "",
 			response: `<LinesResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Lines><Line><DisplayName>Blue</DisplayName><EndStationCode>G05</EndStationCode><InternalDestination1/><InternalDestination2/><LineCode>BL</LineCode><StartStationCode>J03</StartStationCode></Line><Line><DisplayName>Green</DisplayName><EndStationCode>E10</EndStationCode><InternalDestination1/><InternalDestination2/><LineCode>GR</LineCode><StartStationCode>F11</StartStationCode></Line><Line><DisplayName>Orange</DisplayName><EndStationCode>D13</EndStationCode><InternalDestination1/><InternalDestination2/><LineCode>OR</LineCode><StartStationCode>K08</StartStationCode></Line><Line><DisplayName>Red</DisplayName><EndStationCode>B11</EndStationCode><InternalDestination1>A11</InternalDestination1><InternalDestination2>B08</InternalDestination2><LineCode>RD</LineCode><StartStationCode>A15</StartStationCode></Line><Line><DisplayName>Silver</DisplayName><EndStationCode>G05</EndStationCode><InternalDestination1/><InternalDestination2/><LineCode>SV</LineCode><StartStationCode>N06</StartStationCode></Line><Line><DisplayName>Yellow</DisplayName><EndStationCode>E06</EndStationCode><InternalDestination1>E01</InternalDestination1><InternalDestination2/><LineCode>YL</LineCode><StartStationCode>C15</StartStationCode></Line></Lines></LinesResp>`,
 			unmarshalledResponse: &GetLinesResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "LinesResp",
+				},
 				Lines: []LineResponse{
 					{
 						LineCode:             "BL",
@@ -1071,6 +1077,10 @@ var testData = map[string][]testResponseData{
 			stringParam1: "B08",
 			response:     `<StationParkingResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><StationsParking><StationParking><Code>B08</Code><Notes>Parking is available at Montgomery County lots and garages.</Notes><AllDayParking><TotalCount>0</TotalCount><RiderCost i:nil="true"/><NonRiderCost i:nil="true"/><SaturdayRiderCost i:nil="true"/><SaturdayNonRiderCost i:nil="true"/></AllDayParking><ShortTermParking><TotalCount>0</TotalCount><Notes i:nil="true"/></ShortTermParking></StationParking></StationsParking></StationParkingResp>`,
 			unmarshalledResponse: &GetParkingInformationResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StationParkingResp",
+				},
 				ParkingInformation: []StationParking{
 					{
 						StationCode: "B08",
@@ -1096,6 +1106,10 @@ var testData = map[string][]testResponseData{
 			stringParam1: "K08",
 			response:     `<StationParkingResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><StationsParking><StationParking><Code>K08</Code><Notes>North Kiss &amp; Ride - 45 short term metered spaces. South Kiss &amp; Ride - 26 short term metered spaces.  101 spaces metered for 12-hr. max @ $1.00 per 60 mins. 17 spaces metered for 7-hr. max. @ $1.00 per 60 mins. Parking available from 8:30 AM to 2 AM.</Notes><AllDayParking><TotalCount>5169</TotalCount><RiderCost>4.95</RiderCost><NonRiderCost>4.95</NonRiderCost><SaturdayRiderCost>0</SaturdayRiderCost><SaturdayNonRiderCost>0</SaturdayNonRiderCost></AllDayParking><ShortTermParking><TotalCount>71</TotalCount><Notes>Parking available in section B between 8:30 AM - 3:30 PM and 7 PM - 2 AM, in section D between 10 AM - 2 PM.</Notes></ShortTermParking></StationParking></StationsParking></StationParkingResp>`,
 			unmarshalledResponse: &GetParkingInformationResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StationParkingResp",
+				},
 				ParkingInformation: []StationParking{
 					{
 						StationCode: "K08",
@@ -1124,6 +1138,10 @@ var testData = map[string][]testResponseData{
 			stringParam2: "B04",
 			response:     `<PathResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Path><MetroPathItem><DistanceToPrev>0</DistanceToPrev><LineCode>RD</LineCode><SeqNum>1</SeqNum><StationCode>A09</StationCode><StationName>Bethesda</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>9095</DistanceToPrev><LineCode>RD</LineCode><SeqNum>2</SeqNum><StationCode>A08</StationCode><StationName>Friendship Heights</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>4135</DistanceToPrev><LineCode>RD</LineCode><SeqNum>3</SeqNum><StationCode>A07</StationCode><StationName>Tenleytown-AU</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>5841</DistanceToPrev><LineCode>RD</LineCode><SeqNum>4</SeqNum><StationCode>A06</StationCode><StationName>Van Ness-UDC</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>3320</DistanceToPrev><LineCode>RD</LineCode><SeqNum>5</SeqNum><StationCode>A05</StationCode><StationName>Cleveland Park</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>3740</DistanceToPrev><LineCode>RD</LineCode><SeqNum>6</SeqNum><StationCode>A04</StationCode><StationName>Woodley Park-Zoo/Adams Morgan</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>6304</DistanceToPrev><LineCode>RD</LineCode><SeqNum>7</SeqNum><StationCode>A03</StationCode><StationName>Dupont Circle</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>2711</DistanceToPrev><LineCode>RD</LineCode><SeqNum>8</SeqNum><StationCode>A02</StationCode><StationName>Farragut North</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>4178</DistanceToPrev><LineCode>RD</LineCode><SeqNum>9</SeqNum><StationCode>A01</StationCode><StationName>Metro Center</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>1505</DistanceToPrev><LineCode>RD</LineCode><SeqNum>10</SeqNum><StationCode>B01</StationCode><StationName>Gallery Pl-Chinatown</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>1875</DistanceToPrev><LineCode>RD</LineCode><SeqNum>11</SeqNum><StationCode>B02</StationCode><StationName>Judiciary Square</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>3446</DistanceToPrev><LineCode>RD</LineCode><SeqNum>12</SeqNum><StationCode>B03</StationCode><StationName>Union Station</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>3553</DistanceToPrev><LineCode>RD</LineCode><SeqNum>13</SeqNum><StationCode>B35</StationCode><StationName>NoMa-Gallaudet U</StationName></MetroPathItem><MetroPathItem><DistanceToPrev>5771</DistanceToPrev><LineCode>RD</LineCode><SeqNum>14</SeqNum><StationCode>B04</StationCode><StationName>Rhode Island Ave-Brentwood</StationName></MetroPathItem></Path></PathResp>`,
 			unmarshalledResponse: &GetPathBetweenStationsResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "PathResp",
+				},
 				Path: []PathItem{
 					{
 						LineCode:                  "RD",
@@ -1238,6 +1256,10 @@ var testData = map[string][]testResponseData{
 			},
 			response: `<StationEntrancesResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Entrances><StationEntrance><Description>Station entrance from 1st St NE to southeast corner of the Union station building.</Description><ID>54</ID><Lat>38.897383</Lat><Lon>-77.007262</Lon><Name>SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST &amp; MASSACHUSETTS AVE)</Name><StationCode1>B03</StationCode1><StationCode2/></StationEntrance><StationEntrance><Description>Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.</Description><ID>55</ID><Lat>38.89845</Lat><Lon>-77.007243</Lon><Name>NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)</Name><StationCode1>B03</StationCode1><StationCode2/></StationEntrance><StationEntrance><Description>Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS</Description><ID>53</ID><Lat>38.898541</Lat><Lon>-77.006984</Lon><Name>ENTRANCE FROM AMTRAK, MARC, VRE TRAINS</Name><StationCode1>B03</StationCode1><StationCode2/></StationEntrance></Entrances></StationEntrancesResp>`,
 			unmarshalledResponse: &GetStationEntrancesResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StationEntrancesResp",
+				},
 				Entrances: []StationEntrance{
 					{
 						ID:           "54",
@@ -1277,6 +1299,10 @@ var testData = map[string][]testResponseData{
 			stringParam1: "A07",
 			response:     `<Station xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Address><City>Washington</City><State>DC</State><Street>4501 Wisconsin Avenue NW</Street><Zip>20016</Zip></Address><Code>A07</Code><Lat>38.947808</Lat><LineCode1>RD</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.079615</Lon><Name>Tenleytown-AU</Name><StationTogether1/><StationTogether2/></Station>`,
 			unmarshalledResponse: &GetStationInformationResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "Station",
+				},
 				Address: StationAddress{
 					Street: "4501 Wisconsin Avenue NW",
 					City:   "Washington",
@@ -1299,6 +1325,10 @@ var testData = map[string][]testResponseData{
 			stringParam1: "F01",
 			response:     `<Station xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Address><City>Washington</City><State>DC</State><Street>630 H St. NW</Street><Zip>20001</Zip></Address><Code>F01</Code><Lat>38.89834</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.021851</Lon><Name>Gallery Pl-Chinatown</Name><StationTogether1>B01</StationTogether1><StationTogether2/></Station>`,
 			unmarshalledResponse: &GetStationInformationResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "Station",
+				},
 				Address: StationAddress{
 					Street: "630 H St. NW",
 					City:   "Washington",
@@ -1323,6 +1353,10 @@ var testData = map[string][]testResponseData{
 			stringParam1: "GR",
 			response:     `<StationsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Stations><Station><Address><City>Washington</City><State>DC</State><Street>700 M St. NW</Street><Zip>20001</Zip></Address><Code>E01</Code><Lat>38.905604</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.022256</Lon><Name>Mt Vernon Sq 7th St-Convention Center</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>1701 8th St. NW</Street><Zip>20001</Zip></Address><Code>E02</Code><Lat>38.912919</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.022194</Lon><Name>Shaw-Howard U</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>1240 U Street NW</Street><Zip>20009</Zip></Address><Code>E03</Code><Lat>38.916489</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.028938</Lon><Name>U Street/African-Amer Civil War Memorial/Cardozo</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>3030 14th St. NW</Street><Zip>20009</Zip></Address><Code>E04</Code><Lat>38.928672</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.032775</Lon><Name>Columbia Heights</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>3700 Georgia Avenue NW</Street><Zip>20010</Zip></Address><Code>E05</Code><Lat>38.936077</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.024728</Lon><Name>Georgia Ave-Petworth</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>550 Galloway Street NE</Street><Zip>20011</Zip></Address><Code>E06</Code><Lat>38.951777</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.002174</Lon><Name>Fort Totten</Name><StationTogether1>B06</StationTogether1><StationTogether2/></Station><Station><Address><City>Hyattsville</City><State>MD</State><Street>2700 Hamilton St.</Street><Zip>20782</Zip></Address><Code>E07</Code><Lat>38.954931</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.969881</Lon><Name>West Hyattsville</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Hyattsville</City><State>MD</State><Street>3575 East West Highway</Street><Zip>20782</Zip></Address><Code>E08</Code><Lat>38.965276</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.956182</Lon><Name>Prince George's Plaza</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>College Park</City><State>MD</State><Street>4931 Calvert Road</Street><Zip>20740</Zip></Address><Code>E09</Code><Lat>38.978523</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.928432</Lon><Name>College Park-U of Md</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Greenbelt</City><State>MD</State><Street>5717 Greenbelt Metro Drive</Street><Zip>20740</Zip></Address><Code>E10</Code><Lat>39.011036</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.911362</Lon><Name>Greenbelt</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>630 H St. NW</Street><Zip>20001</Zip></Address><Code>F01</Code><Lat>38.89834</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.021851</Lon><Name>Gallery Pl-Chinatown</Name><StationTogether1>B01</StationTogether1><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>701 Pennsylvania Avenue NW</Street><Zip>20004</Zip></Address><Code>F02</Code><Lat>38.893893</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.021902</Lon><Name>Archives-Navy Memorial-Penn Quarter</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>600 Maryland Avenue SW</Street><Zip>20024</Zip></Address><Code>F03</Code><Lat>38.884775</Lat><LineCode1>GR</LineCode1><LineCode2>YL</LineCode2><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.021964</Lon><Name>L'Enfant Plaza</Name><StationTogether1>D03</StationTogether1><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>399 M Street SW</Street><Zip>20024</Zip></Address><Code>F04</Code><Lat>38.876221</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.017491</Lon><Name>Waterfront</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>200 M Street SE</Street><Zip>20003</Zip></Address><Code>F05</Code><Lat>38.876588</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-77.005086</Lon><Name>Navy Yard-Ballpark</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>1101 Howard Road SE</Street><Zip>20020</Zip></Address><Code>F06</Code><Lat>38.862072</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.995648</Lon><Name>Anacostia</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Washington</City><State>DC</State><Street>1290 Alabama Avenue SE</Street><Zip>20020</Zip></Address><Code>F07</Code><Lat>38.845334</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.98817</Lon><Name>Congress Heights</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Temple Hills</City><State>MD</State><Street>1411 Southern Avenue</Street><Zip>20748</Zip></Address><Code>F08</Code><Lat>38.840974</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.97536</Lon><Name>Southern Avenue</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Temple Hills</City><State>MD</State><Street>3101 Branch Avenue</Street><Zip>20748</Zip></Address><Code>F09</Code><Lat>38.851187</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.956565</Lon><Name>Naylor Road</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Suitland</City><State>MD</State><Street>4500 Silver Hill Road</Street><Zip>20746</Zip></Address><Code>F10</Code><Lat>38.843891</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.932022</Lon><Name>Suitland</Name><StationTogether1/><StationTogether2/></Station><Station><Address><City>Suitland</City><State>MD</State><Street>4704 Old Soper Road</Street><Zip>20746</Zip></Address><Code>F11</Code><Lat>38.826995</Lat><LineCode1>GR</LineCode1><LineCode2 i:nil="true"/><LineCode3 i:nil="true"/><LineCode4 i:nil="true"/><Lon>-76.912134</Lon><Name>Branch Ave</Name><StationTogether1/><StationTogether2/></Station></Stations></StationsResp>`,
 			unmarshalledResponse: &GetStationListResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StationsResp",
+				},
 				Stations: []GetStationListResponseItem{
 					{
 						StationCode:      "E01",
@@ -1713,6 +1747,10 @@ var testData = map[string][]testResponseData{
 			stringParam1: "F01",
 			response:     `<StationTimeResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><StationTimes><StationTime><Code>F01</Code><StationName>Gallery Pl-Chinatown</StationName><Monday><OpeningTime>05:15</OpeningTime><FirstTrains><Train><Time>05:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>05:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>05:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>23:19</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>23:28</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>23:48</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Monday><Tuesday><OpeningTime>05:15</OpeningTime><FirstTrains><Train><Time>05:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>05:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>05:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>23:19</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>23:28</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>23:48</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Tuesday><Wednesday><OpeningTime>05:15</OpeningTime><FirstTrains><Train><Time>05:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>05:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>05:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>23:19</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>23:28</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>23:48</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Wednesday><Thursday><OpeningTime>05:15</OpeningTime><FirstTrains><Train><Time>05:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>05:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>05:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>23:19</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>23:28</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>23:48</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Thursday><Friday><OpeningTime>05:15</OpeningTime><FirstTrains><Train><Time>05:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>05:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>05:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>00:49</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>00:58</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>01:18</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Friday><Saturday><OpeningTime>07:15</OpeningTime><FirstTrains><Train><Time>07:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>07:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>07:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>00:49</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>00:58</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>01:18</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Saturday><Sunday><OpeningTime>08:15</OpeningTime><FirstTrains><Train><Time>08:25</Time><DestinationStation>E10</DestinationStation></Train><Train><Time>08:26</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>08:32</Time><DestinationStation>C15</DestinationStation></Train></FirstTrains><LastTrains><Train><Time>22:49</Time><DestinationStation>C15</DestinationStation></Train><Train><Time>22:58</Time><DestinationStation>F11</DestinationStation></Train><Train><Time>23:18</Time><DestinationStation>E10</DestinationStation></Train></LastTrains></Sunday></StationTime></StationTimes></StationTimeResp>`,
 			unmarshalledResponse: &GetStationTimingsResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StationTimeResp",
+				},
 				StationTimes: []StationTime{
 					{
 						StationCode: "F01",
@@ -1947,6 +1985,10 @@ var testData = map[string][]testResponseData{
 			stringParam2: "A07",
 			response:     `<StationToStationInfoResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><StationToStationInfos><StationToStationInfo><CompositeMiles>4.93</CompositeMiles><DestinationStation>A07</DestinationStation><RailFare><OffPeakTime>2.45</OffPeakTime><PeakTime>2.90</PeakTime><SeniorDisabled>1.45</SeniorDisabled></RailFare><RailTime>15</RailTime><SourceStation>F01</SourceStation></StationToStationInfo></StationToStationInfos></StationToStationInfoResp>`,
 			unmarshalledResponse: &GetStationToStationInformationResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StationToStationInfoResp",
+				},
 				StationToStationInformation: []StationToStation{
 					{
 						CompositeMiles:     4.93,
@@ -1976,7 +2018,7 @@ func setupTestService(responseType wmata.ResponseType) *Service {
 }
 
 func TestGetLines(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jLines"/*, "/Rail.svc/Lines"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jLines", "/Rail.svc/Lines"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -1997,14 +2039,14 @@ func TestGetLines(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetParkingInformation(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationParking"/*, "/Rail.svc/StationParking"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationParking", "/Rail.svc/StationParking"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2025,14 +2067,14 @@ func TestGetParkingInformation(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetPathBetweenStations(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jPath"/*, "/Rail.svc/Path"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jPath", "/Rail.svc/Path"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2052,14 +2094,14 @@ func TestGetPathBetweenStations(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetStationEntrances(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationEntrances"/*, "/Rail.svc/StationEntrances"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationEntrances", "/Rail.svc/StationEntrances"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2080,14 +2122,14 @@ func TestGetStationEntrances(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetStationInformation(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationInfo"/*, "/Rail.svc/StationInfo"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationInfo", "/Rail.svc/StationInfo"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2107,14 +2149,14 @@ func TestGetStationInformation(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetStationList(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jStations"/*, "/Rail.svc/Stations"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jStations", "/Rail.svc/Stations"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2134,14 +2176,14 @@ func TestGetStationList(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetStationTimings(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationTimes"/*, "/Rail.svc/StationTimes"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jStationTimes", "/Rail.svc/StationTimes"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2161,14 +2203,14 @@ func TestGetStationTimings(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}
 }
 
 func TestGetStationToStationInformation(t *testing.T) {
-	jsonAndXmlPaths := []string{"/Rail.svc/json/jSrcStationToDstStationInfo"/*, "/Rail.svc/SrcStationToDstStationInfo"*/}
+	jsonAndXmlPaths := []string{"/Rail.svc/json/jSrcStationToDstStationInfo", "/Rail.svc/SrcStationToDstStationInfo"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
 
 	for i, path := range jsonAndXmlPaths {
@@ -2188,7 +2230,7 @@ func TestGetStationToStationInformation(t *testing.T) {
 			}
 
 			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
-				t.Errorf("unexpected response. Expected: %v but got: %v", request.unmarshalledResponse, response)
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
 			}
 		}
 	}

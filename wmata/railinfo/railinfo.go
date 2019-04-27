@@ -1,6 +1,7 @@
 package railinfo
 
 import (
+	"encoding/xml"
 	"errors"
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"strconv"
@@ -46,7 +47,8 @@ type LineResponse struct {
 }
 
 type GetLinesResponse struct {
-	Lines []LineResponse `json:"Lines" xml:"Lines"`
+	XMLName xml.Name       `json:"-" xml:"http://www.wmata.com LinesResp"`
+	Lines   []LineResponse `json:"Lines" xml:"Lines>Line"`
 }
 
 type StationParking struct {
@@ -70,7 +72,8 @@ type ShortTermParking struct {
 }
 
 type GetParkingInformationResponse struct {
-	ParkingInformation []StationParking `json:"StationsParking" xml:"StationsParking"`
+	XMLName            xml.Name         `json:"-" xml:"http://www.wmata.com StationParkingResp"`
+	ParkingInformation []StationParking `json:"StationsParking" xml:"StationsParking>StationParking"`
 }
 
 type PathItem struct {
@@ -82,7 +85,8 @@ type PathItem struct {
 }
 
 type GetPathBetweenStationsResponse struct {
-	Path []PathItem `json:"Path" xml:"Path"`
+	XMLName xml.Name   `json:"-" xml:"http://www.wmata.com PathResp"`
+	Path    []PathItem `json:"Path" xml:"Path>MetroPathItem"`
 }
 
 type GetStationEntrancesRequest struct {
@@ -103,7 +107,8 @@ type StationEntrance struct {
 }
 
 type GetStationEntrancesResponse struct {
-	Entrances []StationEntrance `json:"Entrances" xml:"Entrances"`
+	XMLName   xml.Name          `json:"-" xml:"http://www.wmata.com StationEntrancesResp"`
+	Entrances []StationEntrance `json:"Entrances" xml:"Entrances>StationEntrance"`
 }
 
 type StationAddress struct {
@@ -114,6 +119,7 @@ type StationAddress struct {
 }
 
 type GetStationInformationResponse struct {
+	XMLName          xml.Name       `json:"-" xml:"http://www.wmata.com Station"`
 	Address          StationAddress `json:"Address" xml:"Address"`
 	Latitude         float64        `json:"Lat" xml:"Lat"`
 	LineCode1        string         `json:"LineCode1" xml:"LineCode1"`
@@ -126,7 +132,8 @@ type GetStationInformationResponse struct {
 }
 
 type GetStationListResponse struct {
-	Stations []GetStationListResponseItem `json:"Stations" xml:"StationsResp>Stations"`
+	XMLName  xml.Name                     `json:"-" xml:"http://www.wmata.com StationsResp"`
+	Stations []GetStationListResponseItem `json:"Stations" xml:"Stations>Station"`
 }
 
 type GetStationListResponseItem struct {
@@ -150,8 +157,8 @@ type StationTrainInformation struct {
 
 type StationDayItem struct {
 	OpeningTime string                    `json:"OpeningTime" xml:"OpeningTime"`
-	FirstTrains []StationTrainInformation `json:"FirstTrains" xml:"FirstTrains"`
-	LastTrains  []StationTrainInformation `json:"LastTrains" xml:"LastTrains"`
+	FirstTrains []StationTrainInformation `json:"FirstTrains" xml:"FirstTrains>Train"`
+	LastTrains  []StationTrainInformation `json:"LastTrains" xml:"LastTrains>Train"`
 }
 
 type StationTime struct {
@@ -167,7 +174,8 @@ type StationTime struct {
 }
 
 type GetStationTimingsResponse struct {
-	StationTimes []StationTime `json:"StationTimes" xml:"StationTimes"`
+	XMLName      xml.Name      `json:"-" xml:"http://www.wmata.com StationTimeResp"`
+	StationTimes []StationTime `json:"StationTimes" xml:"StationTimes>StationTime"`
 }
 
 type RailFare struct {
@@ -185,7 +193,8 @@ type StationToStation struct {
 }
 
 type GetStationToStationInformationResponse struct {
-	StationToStationInformation []StationToStation `json:"StationToStationInfos" xml:"StationToStationInfos"`
+	XMLName                     xml.Name           `json:"-" xml:"http://www.wmata.com StationToStationInfoResp"`
+	StationToStationInformation []StationToStation `json:"StationToStationInfos" xml:"StationToStationInfos>StationToStationInfo"`
 }
 
 func (railService *Service) GetLines() (*GetLinesResponse, error) {
