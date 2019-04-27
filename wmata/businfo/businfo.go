@@ -2,6 +2,7 @@ package businfo
 
 import (
 	"encoding/xml"
+	"errors"
 	"github.com/awiede/wmata-go-sdk/wmata"
 	"strconv"
 	"strings"
@@ -11,7 +12,7 @@ const busInfoBaseUrl = "https://api.wmata.com/Bus.svc"
 
 type BusInfo interface {
 	GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error)
-	GetPathDetails(routeID, date string) (*GetPathDetailsResponse, error)
+	GetRouteDetails(routeID, date string) (*GetRouteDetailsResponse, error)
 	GetRoutes() (*GetRoutesResponse, error)
 	GetSchedule(routeID, date string, includeVariations bool) (*GetScheduleResponse, error)
 	GetScheduleAtStop(stopID, date string) (*GetScheduleAtStopResponse, error)
@@ -63,7 +64,35 @@ type BusPosition struct {
 	VehicleID       string  `json:"VehicleID" xml:"VehicleID"`
 }
 
-type GetPathDetailsResponse struct {
+type GetRouteDetailsResponse struct {
+	XMLName    xml.Name  `json:"-" xml:"http://www.wmata.com RouteDetailsInfo"`
+	Direction0 Direction `json:"Direction0" xml:"Direction0"`
+	Direction1 Direction `json:"Direction1" xml:"Direction1"`
+	Name       string    `json:"Name" xml:"Name"`
+	RouteID    string    `json:"RouteID" xml:"RouteID"`
+}
+
+type Direction struct {
+	// Deprecated: DirectionNumber response field is deprecated, use DirectionText
+	DirectionNumber string       `json:"DirectionNum" xml:"DirectionNum"`
+	DirectionText   string       `json:"DirectionText" xml:"DirectionText"`
+	Shapes          []ShapePoint `json:"Shape" xml:"Shape>ShapePoint"`
+	Stops           []Stop       `json:"Stops" xml:"Stops>Stop"`
+	TripDestination string       `json:"TripHeadsign" xml:"TripHeadsign"`
+}
+
+type ShapePoint struct {
+	Latitude       float64 `json:"Lat" xml:"Lat"`
+	Longitude      float64 `json:"Lon" xml:"Lon"`
+	SequenceNumber int     `json:"SeqNum" xml:"SeqNum"`
+}
+
+type Stop struct {
+	Latitude  float64  `json:"Lat" xml:"Lat"`
+	Longitude float64  `json:"Lon" xml:"Lon"`
+	Name      string   `json:"Name" xml:"Name"`
+	Routes    []string `json:"Routes" xml:"Routes>string"`
+	StopID    string   `json:"StopID" xml:"StopID"`
 }
 
 type GetRoutesResponse struct {
@@ -118,8 +147,32 @@ func (busService *Service) GetPositions(request *GetPositionsRequest) (*GetPosit
 	return &positions, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &positions)
 }
 
-func (busService *Service) GetPathDetails(routeID, date string) (*GetPathDetailsResponse, error) {
-	panic("implement me")
+func (busService *Service) GetRouteDetails(routeID, date string) (*GetRouteDetailsResponse, error) {
+	if routeID == "" {
+		return nil, errors.New("routeID is required")
+	}
+
+	var requestUrl strings.Builder
+	requestUrl.WriteString(busInfoBaseUrl)
+
+	switch busService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jRouteDetails")
+	case wmata.XML:
+		requestUrl.WriteString("/RouteDetails")
+	}
+
+	queryParams := map[string]string{
+		"RouteID": routeID,
+	}
+
+	if date != "" {
+		queryParams["Date"] = date
+	}
+
+	path := GetRouteDetailsResponse{}
+
+	return &path, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &path)
 }
 
 func (busService *Service) GetRoutes() (*GetRoutesResponse, error) {
