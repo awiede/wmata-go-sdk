@@ -276,9 +276,9 @@ var testData = map[string][]testResponseData{
 			path:     "/Rail.svc/json/jStationEntrances",
 			rawQuery: "Lat=38.897383&Lon=-77.007262&Radius=500",
 			requestType: GetStationEntrancesRequest{
-				latitude:  38.897383,
-				longitude: -77.007262,
-				radius:    500,
+				Latitude:  38.897383,
+				Longitude: -77.007262,
+				Radius:    500,
 			},
 			response: `{"Entrances":[{"ID":"54","Name":"SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST & MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from 1st St NE to southeast corner of the Union station building.","Lat":38.897383,"Lon":-77.007262},{"ID":"55","Name":"NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)","StationCode1":"B03","StationCode2":"","Description":"Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.","Lat":38.89845,"Lon":-77.007243},{"ID":"53","Name":"ENTRANCE FROM AMTRAK, MARC, VRE TRAINS","StationCode1":"B03","StationCode2":"","Description":"Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS","Lat":38.898541,"Lon":-77.006984}]}`,
 			unmarshalledResponse: &GetStationEntrancesResponse{
@@ -1250,9 +1250,9 @@ var testData = map[string][]testResponseData{
 			path:     "/Rail.svc/StationEntrances",
 			rawQuery: "Lat=38.897383&Lon=-77.007262&Radius=500",
 			requestType: GetStationEntrancesRequest{
-				latitude:  38.897383,
-				longitude: -77.007262,
-				radius:    500,
+				Latitude:  38.897383,
+				Longitude: -77.007262,
+				Radius:    500,
 			},
 			response: `<StationEntrancesResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Entrances><StationEntrance><Description>Station entrance from 1st St NE to southeast corner of the Union station building.</Description><ID>54</ID><Lat>38.897383</Lat><Lon>-77.007262</Lon><Name>SOUTH ENTRANCE (MASS AVE EXIT, NORTHEAST CORNER OF 1ST ST &amp; MASSACHUSETTS AVE)</Name><StationCode1>B03</StationCode1><StationCode2/></StationEntrance><StationEntrance><Description>Station entrance from northeast corner of Massachusetts Ave NE and 1st NE.</Description><ID>55</ID><Lat>38.89845</Lat><Lon>-77.007243</Lon><Name>NORTH ENTRANCE (1ST ST EXIT, WEST SIDE OF 1ST ST BETWEEN G ST AND MASSACHUSETTS AVE)</Name><StationCode1>B03</StationCode1><StationCode2/></StationEntrance><StationEntrance><Description>Escalator entrance from the passageway to  AMTRAK, MARC, VRE TRAINS</Description><ID>53</ID><Lat>38.898541</Lat><Lon>-77.006984</Lon><Name>ENTRANCE FROM AMTRAK, MARC, VRE TRAINS</Name><StationCode1>B03</StationCode1><StationCode2/></StationEntrance></Entrances></StationEntrancesResp>`,
 			unmarshalledResponse: &GetStationEntrancesResponse{
