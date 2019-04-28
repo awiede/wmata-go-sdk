@@ -58,7 +58,7 @@ func NewWMATADefaultClient(apiKey string) *Client {
 }
 
 // NewWMATAClient returns a new client to make requests to the WMATA API
-func NewWMATAClient(apiKey string, httpClient http.Client, responseFormat ResponseType) *Client {
+func NewWMATAClient(apiKey string, httpClient http.Client) *Client {
 	return &Client{
 		APIKey:     apiKey,
 		HTTPClient: &httpClient,
