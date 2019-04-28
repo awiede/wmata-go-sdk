@@ -22,6 +22,13 @@ const (
 	APIKeyHeader = "api_key"
 )
 
+type ResponseType int
+
+const (
+	JSON ResponseType = iota
+	XML
+)
+
 // CloseResponseBody is a helper function to close response body and log error
 func CloseResponseBody(response *http.Response) {
 	if closeErr := response.Body.Close(); closeErr != nil {
@@ -32,14 +39,6 @@ func CloseResponseBody(response *http.Response) {
 type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
-
-type ResponseType int
-
-//TODO make client toggle between json and xml endpoints
-const (
-	JSON ResponseType = iota
-	XML
-)
 
 // Client is a wmata specific http client that includes authentication information
 type Client struct {
@@ -64,6 +63,40 @@ func NewWMATAClient(apiKey string, httpClient http.Client, responseFormat Respon
 		APIKey:     apiKey,
 		HTTPClient: &httpClient,
 	}
+}
+
+// ValidateAPIKey sends a validation request to the WMATA API to verify the given API works and that WMATA is available.
+// Returns 200, nil if able to connect and receive a success (200) response from WMATA - otherwise returns status code and error message
+func (client *Client) ValidateAPIKey() (int, error) {
+	request, requestErr := http.NewRequest(http.MethodGet, "https://api.wmata.com/Misc/Validate", nil)
+
+	if requestErr != nil {
+		return http.StatusInternalServerError, requestErr
+	}
+
+	request.Header.Add(APIKeyHeader, client.APIKey)
+
+	response, responseErr := client.HTTPClient.Do(request)
+
+	if responseErr != nil {
+		return response.StatusCode, responseErr
+	}
+
+	defer CloseResponseBody(response)
+
+	if response.StatusCode != http.StatusOK {
+		body, readErr := ioutil.ReadAll(response.Body)
+
+		if readErr != nil {
+			return response.StatusCode, readErr
+		}
+
+		return response.StatusCode, errors.New(string(body))
+
+	}
+
+	return response.StatusCode, nil
+
 }
 
 // BuildAndSendGetRequest constructs and sends a generic HTTP GET request against the WMATA API

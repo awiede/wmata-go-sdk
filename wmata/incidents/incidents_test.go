@@ -907,12 +907,10 @@ var testData = map[string][]testResponseData{
 
 // setupTestService creates a service struct with a mock http client
 func setupTestService(responseType wmata.ResponseType) *Service {
-	return &Service{
-		client: &wmata.Client{
-			HTTPClient: &testClient{},
-		},
-		responseType: responseType,
+	wmataClient := wmata.Client{
+		HTTPClient: &testClient{},
 	}
+	return NewService(&wmataClient, responseType)
 }
 
 // TODO fix XML response type
