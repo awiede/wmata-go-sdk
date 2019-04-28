@@ -96,6 +96,14 @@ type Stop struct {
 }
 
 type GetRoutesResponse struct {
+	XMLName xml.Name `json:"-" xml:"http://www.wmata.com RoutesResp"`
+	Routes  []Route  `json:"Routes" xml:"Routes>Route"`
+}
+
+type Route struct {
+	Name            string `json:"Name" xml:"Name"`
+	RouteID         string `json:"RouteID" xml:"RouteID"`
+	LineDescription string `json:"LineDescription" xml:"LineDescription"`
 }
 
 type GetScheduleResponse struct {
@@ -176,7 +184,20 @@ func (busService *Service) GetRouteDetails(routeID, date string) (*GetRouteDetai
 }
 
 func (busService *Service) GetRoutes() (*GetRoutesResponse, error) {
-	panic("implement me")
+	var requestUrl strings.Builder
+	requestUrl.WriteString(busInfoBaseUrl)
+
+	switch busService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jRoutes")
+	case wmata.XML:
+		requestUrl.WriteString("/Routes")
+	}
+
+	routes := GetRoutesResponse{}
+
+	return &routes, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), nil, &routes)
+
 }
 
 func (busService *Service) GetSchedule(routeID, date string, includeVariations bool) (*GetScheduleResponse, error) {

@@ -2566,6 +2566,4760 @@ var testData = map[string][]testResponseData{
 			},
 		},
 	},
+	"/Bus.svc/json/jRoutes": {
+		{
+			rawQuery: "",
+			response: `{"Routes":[{"RouteID":"10A","Name":"10A - HUNTINGTON STA - PENTAGON","LineDescription":"Alexandria-Pentagon Line"},{"RouteID":"10B","Name":"10B - HUNTING POINT - BALLSTON STA","LineDescription":"Hunting Point-Ballston Line"},{"RouteID":"10E","Name":"10E - HUNTING POINT - PENTAGON","LineDescription":"Alexandria-Pentagon Line"},{"RouteID":"10N","Name":"10N - NATIONAL AIRPORT - PENTAGON","LineDescription":"Alexandria-Pentagon Line"},{"RouteID":"11Y","Name":"11Y - MOUNT VERNON - POTOMAC PARK","LineDescription":"Mt Vernon Express Line"},{"RouteID":"11Yv1","Name":"11Y - POTOMAC PARK - HUNTING POINT","LineDescription":"Mt Vernon Express Line"},{"RouteID":"11Yv2","Name":"11Y - HUNTING POINT - POTOMAC PARK","LineDescription":"Mt Vernon Express Line"},{"RouteID":"15K","Name":"15K - E FALLS CH STA-MCLEAN LANGLEY","LineDescription":"Chain Bridge Road Line"},{"RouteID":"15Kv1","Name":"15K - CIA - EAST FALLS CHURCH STA","LineDescription":"Chain Bridge Road Line"},{"RouteID":"16A","Name":"16A - PATRIOT+AMERICANA - PENTAGON","LineDescription":"Columbia Pike Line"},{"RouteID":"16C","Name":"16C - CULMORE - PENTAGON","LineDescription":"Columbia Pike Line"},{"RouteID":"16Cv1","Name":"16C - CULMORE - FEDERAL TRIANGLE","LineDescription":"Columbia Pike Line"},{"RouteID":"16E","Name":"16E - GLN CARLYN+VISTA - FRANKLIN SQ","LineDescription":"Columbia Pike Line"},{"RouteID":"16G","Name":"16G - DINWIDDIE+COLUMBIA - PENTAGON CITY","LineDescription":"Columbia Pike-Pentagon City Line"},{"RouteID":"16Gv1","Name":"16G - COL PIKE+CARLIN SPR - DINWD+COL PK","LineDescription":"Columbia Pike-Pentagon City Line"},{"RouteID":"16H","Name":"16H - SKYLINE CITY - PENTAGON CITY STA","LineDescription":"Columbia Pike-Pentagon City Line"},{"RouteID":"16L","Name":"16L - ANNANDALE - PENTAGON HOV","LineDescription":"Annandale-Skyline City-Pentagon Line"},{"RouteID":"16Y","Name":"16Y - FOUR MILE+COLUMBIA - MCPHERSON SQ","LineDescription":"Columbia Pike-Farragut Square Line"},{"RouteID":"16Yv1","Name":"16Y - COLUMBIA PIKE - MCPHERSON SQ","LineDescription":"Columbia Pike-Farragut Square Line"},{"RouteID":"17B","Name":"17B - BURKE CENTRE - PENTAGON HOV","LineDescription":"Kings Park-North Springfield Line"},{"RouteID":"17G","Name":"17G - G MASON UNIV - PENTAGON","LineDescription":"Kings Park Express Line"},{"RouteID":"17H","Name":"17H - TWNBRK RD+TWNBRK RN- PENTAGON","LineDescription":"Kings Park Express Line"},{"RouteID":"17K","Name":"17K - TWNBRK RD+TWNBRK RN- PENTAGON","LineDescription":"Kings Park Express Line"},{"RouteID":"17L","Name":"17L - TWNBRK RD+TWNBRK RUN-PENTAGON","LineDescription":"Kings Park Express Line"},{"RouteID":"17M","Name":"17M - EDSALL+CANARD - PENTAGON","LineDescription":"Kings Park-North Springfield Line"},{"RouteID":"18G","Name":"18G - ROLLING VALLEY - PENTAGON","LineDescription":"Orange Hunt Line"},{"RouteID":"18H","Name":"18H - HUNTSMAN+CORK CTY - PENTAGON","LineDescription":"Orange Hunt Line"},{"RouteID":"18J","Name":"18J - ROLLING VALLEY - PENTAGON","LineDescription":"Orange Hunt Line"},{"RouteID":"18P","Name":"18P - BURKE CENTRE - PENTAGON","LineDescription":"Burke Centre Line"},{"RouteID":"18Pv1","Name":"18P - PENTAGON - ROLLING VALLEY MALL","LineDescription":"Burke Centre Line"},{"RouteID":"18Pv2","Name":"18P - ROLLING VALLEY P+R - PENTAGON","LineDescription":"Burke Centre Line"},{"RouteID":"1A","Name":"1A - VIENNA-BALLSTON (7 CORNERS)","LineDescription":"Wilson Blvd-Vienna Line"},{"RouteID":"1B","Name":"1B - DUNN LORING  - BALLSTON","LineDescription":"Wilson Blvd-Vienna Line"},{"RouteID":"1C","Name":"1C - WEST OX DIV-DUNN LORING (VIA MALL)","LineDescription":"Fair Oaks-Fairfax Blvd Line"},{"RouteID":"1Cv1","Name":"1C - FAIRFAX CO GOV CTR - DUNN LORING","LineDescription":"Fair Oaks-Fairfax Blvd Line"},{"RouteID":"1Cv2","Name":"1C - WEST OX DIV - DUNN LORING (NO MALL)","LineDescription":"Fair Oaks-Fairfax Blvd Line"},{"RouteID":"1Cv3","Name":"1C - FAIR OAKS MALL - DUNN LORING","LineDescription":"Fair Oaks-Fairfax Blvd Line"},{"RouteID":"1Cv4","Name":"1C - DUNN LORING - FAIR OAKS MALL","LineDescription":"Fair Oaks-Fairfax Blvd Line"},{"RouteID":"21A","Name":"21A - S REYNOLDS+EOS 21 CONDOS - PENTAGON","LineDescription":"Landmark-Bren Mar Park-Pentagon Line"},{"RouteID":"21D","Name":"21D - LANDMARK MEWS -PENTAGON","LineDescription":"Landmark-Bren Mar Park-Pentagon Line"},{"RouteID":"22A","Name":"22A - BALLSTON STA - PENTAGON","LineDescription":"Barcroft-South Fairlington Line"},{"RouteID":"22Av1","Name":"22A - SHIRLINGTON - BALLSTON  STA","LineDescription":"Barcroft-South Fairlington Line"},{"RouteID":"22C","Name":"22C - BALLSTON STA - PENTAGON","LineDescription":"Barcroft-South Fairlington Line"},{"RouteID":"22F","Name":"22F - NVCC - PENTAGON VIA HOV","LineDescription":"Barcroft-South Fairlington Line"},{"RouteID":"23A","Name":"23A - TYSONS CORNER CTR - CRYSTAL CTY","LineDescription":"McLean-Crystal City Line"},{"RouteID":"23B","Name":"23B - BALLSTON STA - CRYSTAL CTY","LineDescription":"McLean-Crystal City Line"},{"RouteID":"23Bv1","Name":"23B - LINDEN RESOURCES - BALLSTON STATION","LineDescription":"McLean-Crystal City Line"},{"RouteID":"23T","Name":"23T - TYSONS CORNER CTR - SHIRLINGTON","LineDescription":"McLean-Crystal City Line"},{"RouteID":"25B","Name":"25B - VAN DORN - BALLSTON","LineDescription":"Landmark-Ballston Line"},{"RouteID":"25Bv1","Name":"25B - SOUTHERN TOWERS - BALLSTON","LineDescription":"Landmark-Ballston Line"},{"RouteID":"25Bv2","Name":"25B - VAN DORN - BALLSTON/NO LDMRK CTR","LineDescription":"Landmark-Ballston Line"},{"RouteID":"25Bv3","Name":"25B - BALLSTON - SOUTHERN TOWERS","LineDescription":"Landmark-Ballston Line"},{"RouteID":"26A","Name":"26A - NVCC ANNANDALE - E FALLS CHURCH STA","LineDescription":"Annandale-East Falls Church Line"},{"RouteID":"28A","Name":"28A - TYSONS CORNER STA-KING ST STA","LineDescription":"Leesburg Pike Line"},{"RouteID":"28Av1","Name":"28A - SOUTHERN TOWERS-TYSONS CORNER STA","LineDescription":"Leesburg Pike Line"},{"RouteID":"28F","Name":"28F - BLDG 5113 G MASON DR - PENTAGON","LineDescription":"Skyline City Line"},{"RouteID":"28G","Name":"28G - BLDG 5113 G MASON DR - PENTAGON","LineDescription":"Skyline City Line"},{"RouteID":"29C","Name":"29C - NVCC ANNANDALE - PENTAGON","LineDescription":"Annandale Line"},{"RouteID":"29G","Name":"29G - AMERICANA+HERITAGE - PENTAGON","LineDescription":"Annandale Line"},{"RouteID":"29K","Name":"29K - GMU - KING ST STA","LineDescription":"Alexandria-Fairfax Line"},{"RouteID":"29Kv1","Name":"29K - GMU - KING ST/NO LDMRK","LineDescription":"Alexandria-Fairfax Line"},{"RouteID":"29N","Name":"29N - VIENNA STA - KING ST (VIA MALL)","LineDescription":"Alexandria-Fairfax Line"},{"RouteID":"29Nv1","Name":"29N - VIENNA STA-KING ST (NO MALL)","LineDescription":"Alexandria-Fairfax Line"},{"RouteID":"29W","Name":"29W - NVCC ANNANDALE - PENTAGON","LineDescription":"Braeburn Drive-Pentagon Express Line"},{"RouteID":"2A","Name":"2A - DUNN LORING STA - BALLSTON STA","LineDescription":"Washington Blvd.-Dunn Loring Line"},{"RouteID":"2B","Name":"2B - WEST OX RD DIV-DUNN LORING STATION","LineDescription":"Fair Oaks-Jermantown Road Line"},{"RouteID":"2Bv1","Name":"2B - WEST OX RD-DUNN LORING STA(NO MALL)","LineDescription":"Fair Oaks-Jermantown Road Line"},{"RouteID":"2Bv2","Name":"2B - FAIR OAKS MALL-DUNN LORING STATION","LineDescription":"Fair Oaks-Jermantown Road Line"},{"RouteID":"2Bv3","Name":"2B - DUNN LORING STA - FAIR OAKS MALL","LineDescription":"Fair Oaks-Jermantown Road Line"},{"RouteID":"30N","Name":"30N - FRIENDSHIP HGTS- NAYLOR RD STA","LineDescription":"Friendship Heights-Southeast Line"},{"RouteID":"30S","Name":"30S - FRIENDSHIP HGTS- SOUTHRN AVE STA","LineDescription":"Friendship Heights-Southeast Line"},{"RouteID":"31","Name":"31 - POTOMAC PARK-FRIENDSHIP HGTS","LineDescription":"Wisconsin Avenue Line"},{"RouteID":"32","Name":"32 - VIRGINIA AVE+E ST- SOUTHRN AVE","LineDescription":"Pennsylvania Avenue Line"},{"RouteID":"32v1","Name":"32 - PENN AVE + 8TH ST - SOUTHRN AVE","LineDescription":"Pennsylvania Avenue Line"},{"RouteID":"33","Name":"33 - 10TH ST+PA AV NW - FRIENDSHIP HGTS","LineDescription":"Wisconsin Avenue Line"},{"RouteID":"34","Name":"34 - 10TH ST + PA AVE- NAYLOR RD STA","LineDescription":"Pennsylvania Avenue Line"},{"RouteID":"36","Name":"36 - VIRGINIA AVE+E ST - NAYLOR RD STA","LineDescription":"Pennsylvania Avenue Line"},{"RouteID":"37","Name":"37 - 10TH ST+PA AV NW - FRIENDSHIP HGTS","LineDescription":"Wisconsin Avenue Limited Line"},{"RouteID":"38B","Name":"38B - BALLSTON - FARRAGUT","LineDescription":"Ballston-Farragut Square Line"},{"RouteID":"38Bv1","Name":"38B - WASH & QUINCY - FARRAGUT","LineDescription":"Ballston-Farragut Square Line"},{"RouteID":"38Bv2","Name":"38B - WASHINGTON-LEE HS - FARRAGUT SQ","LineDescription":"Ballston-Farragut Square Line"},{"RouteID":"39","Name":"39 - VIRGINIA AVE+21ST NW- NAYLOR RD STA","LineDescription":"Pennsylvania Avenue Limited Line"},{"RouteID":"3A","Name":"3A - ANNANDALE - E FALLS CHURCH","LineDescription":"Annandale Road Line"},{"RouteID":"3Av1","Name":"3A - ANNANDALE - 7 CORNERS","LineDescription":"Annandale Road Line"},{"RouteID":"3T","Name":"3T - MCLEAN STATION - E FALLS CH STA","LineDescription":"Pimmit Hills Line"},{"RouteID":"3Tv1","Name":"3T - MCLEAN STATION - W FALLS CHURCH","LineDescription":"Pimmit Hills Line"},{"RouteID":"3Y","Name":"3Y - E FALLS CHURCH - MCPHERSON SQ","LineDescription":"Lee Highway-Farragut Square Line"},{"RouteID":"42","Name":"42 - 9TH + F ST  - MT PLEASANT","LineDescription":"Mount Pleasant Line"},{"RouteID":"43","Name":"43 - I + 13TH NW - MT PLEASANT","LineDescription":"Mount Pleasant Line"},{"RouteID":"4A","Name":"4A - SEVEN CORNERS - ROSSLYN","LineDescription":"Pershing Dr-Arlington Blvd Line"},{"RouteID":"4B","Name":"4B - SEVEN CORNERS - ROSSLYN","LineDescription":"Pershing Dr-Arlington Blvd Line"},{"RouteID":"52","Name":"52 - L ENFNT PLAZA - TAKOMA STATION","LineDescription":"14th Street Line"},{"RouteID":"52v1","Name":"52 - L ENFNT PLAZA - 14TH+COLORADO","LineDescription":"14th Street Line"},{"RouteID":"52v2","Name":"52 - 14TH+COLORADO - L ENFANT PLAZA","LineDescription":"14th Street Line"},{"RouteID":"52v3","Name":"52 - 14TH & U - TAKOMA STATION","LineDescription":"14th Street Line"},{"RouteID":"54","Name":"54 - METRO CENTER - TAKOMA STA","LineDescription":"14th Street Line"},{"RouteID":"54v1","Name":"54 - 14TH+COLORADO - METRO CENTER","LineDescription":"14th Street Line"},{"RouteID":"59","Name":"59 - FEDERAL TRIANGLE - TAKOMA STATION","LineDescription":"14th Street Limited Line"},{"RouteID":"5A","Name":"5A - DULLES AIRPORT - LENFANT PLAZA","LineDescription":"DC-Dulles Line"},{"RouteID":"60","Name":"60 - GEORGIA + PETWORTH - FT TOTTEN","LineDescription":"Fort Totten-Petworth Line"},{"RouteID":"62","Name":"62 - GEORGIA+PETWORTH - TAKOMA STATION","LineDescription":"Takoma-Petworth Line"},{"RouteID":"62v1","Name":"62 - COOLIDGE HS - GEORGIA + PETWORTH","LineDescription":"Takoma-Petworth Line"},{"RouteID":"63","Name":"63 - FED TRIANGLE - TAKOMA STA","LineDescription":"Takoma-Petworth Line"},{"RouteID":"64","Name":"64 - FEDERAL TRIANGLE -FORT TOTTEN","LineDescription":"Fort Totten-Petworth Line"},{"RouteID":"64v1","Name":"64 - GEORGIA + PETWOTH - FT TOTTEN","LineDescription":"Fort Totten-Petworth Line"},{"RouteID":"70","Name":"70 - ARCHIVES - SILVER SPRING","LineDescription":"Georgia Avenue-7th Street Line"},{"RouteID":"70v1","Name":"70 - GEORGIA & EUCLID  - ARCHIVES","LineDescription":"Georgia Avenue-7th Street Line"},{"RouteID":"74","Name":"74 - NATIONALS PARK - CONVENTION CTR","LineDescription":"Convention Center-Southwest Waterfront Line"},{"RouteID":"79","Name":"79 - ARCHIVES - SILVER SPRING STA","LineDescription":"Georgia Avenue MetroExtra Line"},{"RouteID":"7A","Name":"7A - LINCOLNIA+QUANTRELL - PENTAGON","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7Av1","Name":"7A - PENTAGON - SOUTHERN TWRS","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7Av2","Name":"7A - SOUTHERN TWRS - PENTAGON","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7Av3","Name":"7A - LINCOLNIA/QUANTRELL - PENT VIA PENT","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7C","Name":"7C - PARK CENTER - PENTAGON","LineDescription":"Park Center-Pentagon Line"},{"RouteID":"7F","Name":"7F - LINCOLNIA+QUANTRELL - PENTAGON","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7Fv1","Name":"7F - LINC + QUANT - PENT CITY - PENTAGON","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7M","Name":"7M - MARK CENTER - PENTAGON (NON-HOV)","LineDescription":"Mark Center-Pentagon Line"},{"RouteID":"7Mv1","Name":"7M - MARK CENTER - PENTAGON (HOV)","LineDescription":"Mark Center-Pentagon Line"},{"RouteID":"7P","Name":"7P - PARK CTR - PENTAGON","LineDescription":"Park Center-Pentagon Line"},{"RouteID":"7W","Name":"7W - LNCLNA+QUANTRLL- PENTAGON","LineDescription":"Lincolnia-Pentagon Line"},{"RouteID":"7Y","Name":"7Y - SOUTHERN TWRS - H+17TH ST","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"7Yv1","Name":"7Y - PENTAGON - H+17TH ST","LineDescription":"Lincolnia-North Fairlington Line"},{"RouteID":"80","Name":"80 - KENNEDY CTR   - FORT TOTTEN STA","LineDescription":"North Capitol Street Line"},{"RouteID":"80v1","Name":"80 - MCPHERSON SQ  - BROOKLAND","LineDescription":"North Capitol Street Line"},{"RouteID":"80v2","Name":"80 - MCPHERSON SQ  - FORT TOTTEN STA","LineDescription":"North Capitol Street Line"},{"RouteID":"80v3","Name":"80 - KENNEDY CTR   - BROOKLAND STA","LineDescription":"North Capitol Street Line"},{"RouteID":"83","Name":"83 - RHODE ISLAND AVE STA-CHERRY HILL","LineDescription":"College Park Line"},{"RouteID":"83v1","Name":"83 - MT RAINIER - RHODE ISLAND","LineDescription":"College Park Line"},{"RouteID":"83v2","Name":"83 - RHODE ISLAND - MT RAINIER","LineDescription":"College Park Line"},{"RouteID":"83v3","Name":"83 - RHODE ISLAND AVE STA-COLLEGE PARK","LineDescription":"College Park Line"},{"RouteID":"83v4","Name":"83 - COLLEGE PARK-RHODE ISLAND AVE STA","LineDescription":"College Park Line"},{"RouteID":"86","Name":"86 - RHODE ISLAND AVE STA- CALVERTON","LineDescription":"College Park Line"},{"RouteID":"86v1","Name":"86 - RHODE ISLAND AVE STA- COLLEGE PARK","LineDescription":"College Park Line"},{"RouteID":"86v2","Name":"86 - MT RAINIER   - CALVERTON","LineDescription":"College Park Line"},{"RouteID":"87","Name":"87 - NEW CARROLTON -CYPRESS+LAURL LAKES","LineDescription":"Laurel Express Line"},{"RouteID":"87v1","Name":"87 - GRNBELT STA -CYPRESS+LAURL LAKES","LineDescription":"Laurel Express Line"},{"RouteID":"87v2","Name":"87 - GRNBELT-CYP+LRL LAKES (NO P&R)","LineDescription":"Laurel Express Line"},{"RouteID":"87v3","Name":"87 - GRNBELT STA - BALTIMORE+MAIN ST","LineDescription":"Laurel Express Line"},{"RouteID":"87v4","Name":"87 - BALTIMORE+MAIN ST - GRNBELT STA","LineDescription":"Laurel Express Line"},{"RouteID":"87v5","Name":"87 - CYPRESS+LAURL LAKES -GRNBELT STA","LineDescription":"Laurel Express Line"},{"RouteID":"89","Name":"89 - GREENBELT STA - 4TH & GREEN HILL","LineDescription":"Laurel Line"},{"RouteID":"89v1","Name":"89 - GREENBELT STA - CHERRY LA+4TH ST","LineDescription":"Laurel Line"},{"RouteID":"89M","Name":"89M - GREENBELT STA - S LAUREL P+R","LineDescription":"Laurel Line"},{"RouteID":"8S","Name":"8S - RADFORD+QUAKER - PENTAGON","LineDescription":"Foxchase-Seminary Valley Line"},{"RouteID":"8W","Name":"8W - MARK CENTER - PENTAGON V FOXCHASE","LineDescription":"Foxchase-Seminary Valley Line"},{"RouteID":"8Z","Name":"8Z - QUAKER+OSAGE - PENTAGON","LineDescription":"Foxchase-Seminary Valley Line"},{"RouteID":"90","Name":"90 - ANACOSTIA - DK ELLNGTN BRDG","LineDescription":"U Street-Garfield Line"},{"RouteID":"90v1","Name":"90 - 8TH ST + L ST  - DK ELLNGTN BRDG","LineDescription":"U Street-Garfield Line"},{"RouteID":"90v2","Name":"90 - KIPP DC PREP- ANACOSTIA","LineDescription":"U Street-Garfield Line"},{"RouteID":"92","Name":"92 - CONGRESS HTS STA - REEVES CTR","LineDescription":"U Street-Garfield Line"},{"RouteID":"92v1","Name":"92 - EASTERN MARKET - CONGRESS HGTS STA","LineDescription":"U Street-Garfield Line"},{"RouteID":"92v2","Name":"92 - CONGRESS HTS STA- EASTERN MARKET","LineDescription":"U Street-Garfield Line"},{"RouteID":"96","Name":"96 - TENLEYTOWN STA - CAPITOL HTS STA","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"96v1","Name":"96 - ELLINGTON BR - CAPITOL HTS","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"96v2","Name":"96 - CAPITOL HTS  - REEVES CTR","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"96v3","Name":"96 - CAPITOL HTS - ELLINGTON BRDG","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"96v4","Name":"96 - REEVES CTR  - CAPITOL HTS","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"96v5","Name":"96 - TENLEYTOWN STA - STADIUM ARMORY STA","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"97","Name":"97 - UNION STATION - CAPITOL HTS","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"97v1","Name":"97 - EASTERN HS - CAPITOL HTS","LineDescription":"East Capitol Street-Cardoza Line"},{"RouteID":"A12","Name":"A12 - ADDISON RD STA - CAPITAL PLAZA","LineDescription":"Martin Luther King Jr Highway Line"},{"RouteID":"A12v1","Name":"A12 - BARLWE+MATHEW HENSON - ADDISON RD","LineDescription":"Martin Luther King Jr Highway Line"},{"RouteID":"A12v2","Name":"A12 - CAPITOL HTS STA - CAPITAL PLAZA","LineDescription":"Martin Luther King Jr Highway Line"},{"RouteID":"A12v3","Name":"A12 - CAPITAL PLAZA - CAPITOL HTS","LineDescription":"Martin Luther King Jr Highway Line"},{"RouteID":"A2","Name":"A2 - SOUTHERN AVE - ANACOSTIA (VIA HOSP)","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A2v1","Name":"A2 - ANACOSTIA - MISS+ATLANTIC","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A2v2","Name":"A2 - SOUTHERN AVE STA - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A2v3","Name":"A2 - MISS+ATLANTIC - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A31","Name":"A31 - ANACOSTIA HIGH - MINNESOTA STA","LineDescription":"Minnesota Ave-Anacostia Line"},{"RouteID":"A32","Name":"A32 - ANACOSTIA HIGH - SOUTHRN AVE STA","LineDescription":"Minnesota Ave-Anacostia Line"},{"RouteID":"A33","Name":"A33 - ANACOSTIA HIGH - ANACOSTIA STA","LineDescription":"Minnesota Ave-Anacostia Line"},{"RouteID":"A4","Name":"A4 - DC VILLAGE - ANACOSTIA","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"A4v1","Name":"A4 - USCG-FT DRUM (VIA ANAC)","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"A4v2","Name":"A4 - FT DRUM - ANACOSTIA","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"A4v3","Name":"A4 - ANACOSTIA - FT DRUM","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"A4v4","Name":"A4 - FT DRUM-USCG (VIA ANAC)","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"A4v5","Name":"A4 - DC VILL-USCG (VIA ANAC)","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"A6","Name":"A6 - 4501 3RD ST - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A6v1","Name":"A6 - SOUTHERN AVE+S CAPITOL - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A7","Name":"A7 - SOUTHRN+S CAPITOL - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A8","Name":"A8 - 4501 3RD ST - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A8v1","Name":"A8 - SOUTHERN + S CAPITOL - ANACOSTIA","LineDescription":"Anacostia-Congress Heights Line"},{"RouteID":"A9","Name":"A9 - LIVINGSTON - MCPHERSON SQUARE","LineDescription":"Martin Luther King Jr Ave Limited Line"},{"RouteID":"B2","Name":"B2 - ANACOSTIA STA - MOUNT RAINIER","LineDescription":"Bladensburg Road-Anacostia Line"},{"RouteID":"B2v1","Name":"B2 - ANACOSTIA STA - BLDNSGRG+VST NE","LineDescription":"Bladensburg Road-Anacostia Line"},{"RouteID":"B2v2","Name":"B2 - POTOMAC AVE - MOUNT RAINIER","LineDescription":"Bladensburg Road-Anacostia Line"},{"RouteID":"B2v3","Name":"B2 - BLDNSBRG+26TH - ANACOSTIA STA","LineDescription":"Bladensburg Road-Anacostia Line"},{"RouteID":"B2v4","Name":"B2 - EASTERN HS - ANACOSTIA STA","LineDescription":"Bladensburg Road-Anacostia Line"},{"RouteID":"B21","Name":"B21 - NEW CARROLTON STA - BOWIE STATE","LineDescription":"Bowie State University Line"},{"RouteID":"B22","Name":"B22 - NEW CARROLTON STA - BOWIE STATE","LineDescription":"Bowie State University Line"},{"RouteID":"B22v1","Name":"B22 - OLD CHAPEL & 197 - NEW CARRLTN STA","LineDescription":"Bowie State University Line"},{"RouteID":"B24","Name":"B24 - NEW CARLTN STA-BOWIE P+R(VIA BHC)","LineDescription":"Bowie-Belair Line"},{"RouteID":"B24v1","Name":"B24 - NEW CARROLTON STA - BOWIE P+R","LineDescription":"Bowie-Belair Line"},{"RouteID":"B27","Name":"B27 - NEW CARROLTON STA - BOWIE STATE","LineDescription":"Bowie-New Carrollton Line"},{"RouteID":"B29","Name":"B29 - NEW CARROLTON - CROFTON CC (PM)(PR)","LineDescription":"Crofton-New Carrollton Line"},{"RouteID":"B29v1","Name":"B29 - NEW CARROLLTON STA - GATEWAY CTR","LineDescription":"Crofton-New Carrollton Line"},{"RouteID":"B29v2","Name":"B29 - NEW CARROLTON - CROFTON CC (NO PR)","LineDescription":"Crofton-New Carrollton Line"},{"RouteID":"B30","Name":"B30 - GREENBELT STA - BWI LT RAIL STA","LineDescription":"Greenbelt-BWI Thurgood Marshall Airport Express Line"},{"RouteID":"B8","Name":"B8 - RHODE ISLAND AV -PETERSBRG APTS","LineDescription":"Fort Lincoln Shuttle Line"},{"RouteID":"B8v1","Name":"B8 - BLDNSBRG+S DKTA -PETERSBRG APTS","LineDescription":"Fort Lincoln Shuttle Line"},{"RouteID":"B8v2","Name":"B8 - PETERSBRG APTS  -BLDNSBRG+S DKTA","LineDescription":"Fort Lincoln Shuttle Line"},{"RouteID":"B9","Name":"B9 - RHODE ISLAND AVE - COLMAR MANOR","LineDescription":"Fort Lincoln Shuttle Line"},{"RouteID":"C11","Name":"C11 - CLINTON P+R - BRANCH AVE STA","LineDescription":"Clinton Line"},{"RouteID":"C12","Name":"C12 - NAYLOR RD STA  - BRANCH AVE STA","LineDescription":"Hillcrest Heights Line"},{"RouteID":"C13","Name":"C13 - CLINTON P+R - BRANCH AVE STA","LineDescription":"Clinton Line"},{"RouteID":"C14","Name":"C14 - NAYLOR RD STA  - BRANCH AVE STA","LineDescription":"Hillcrest Heights Line"},{"RouteID":"C2","Name":"C2 - WHEATN STA - GRNBELT STA UMD ALT","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C2v1","Name":"C2 - TAKOMA LANGLEY XROADS - GRNBELT STA","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C2v2","Name":"C2 - GREENBELT STA - RANDOLPH + PARKLAWN","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C2v3","Name":"C2 - TAKOMA LANGLEY XROADS - WHEATON","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C21","Name":"C21 - ADDISON RD STA - COLLINGTON","LineDescription":"Central Avenue Line"},{"RouteID":"C21v1","Name":"C21 - ADDISON RD STA - POINTER RIDGE","LineDescription":"Central Avenue Line"},{"RouteID":"C21v2","Name":"C21 - ADDISON RD STA - CAMPUS WAY S","LineDescription":"Central Avenue Line"},{"RouteID":"C22","Name":"C22 - ADDISON RD STA - COLLINGTON","LineDescription":"Central Avenue Line"},{"RouteID":"C22v1","Name":"C22 - ADDISON RD STA- POINTER RIDGE","LineDescription":"Central Avenue Line"},{"RouteID":"C26","Name":"C26 - LARGO TOWN CTR - WATKNS+CHESTERTON","LineDescription":"Central Avenue Line"},{"RouteID":"C26v1","Name":"C26 - LARGO TOWN CTR-WATKINS+CAMBLETON","LineDescription":"Central Avenue Line"},{"RouteID":"C28","Name":"C28 - PT RIDGE -NEW CAROLTN VIA HLTH CTR","LineDescription":"Pointer Ridge Line"},{"RouteID":"C28v1","Name":"C28 - PT RIDGE - NEW CARROLLTON STA","LineDescription":"Pointer Ridge Line"},{"RouteID":"C29*1","Name":"C29 - POINTER RIDGE - ADDISON RD STA","LineDescription":"Central Avenue Line"},{"RouteID":"C29*2","Name":"C29 - WATKNS+CAMBLETON - ADDISN RD STA","LineDescription":"Central Avenue Line"},{"RouteID":"C29*4","Name":"C29 - ADDISON RD STA - BOWIE STATE","LineDescription":"Central Avenue Line"},{"RouteID":"C29/","Name":"C29 - ADDISON RD STA - POINTER RIDGE","LineDescription":"Central Avenue Line"},{"RouteID":"C4","Name":"C4 - TWINBROOK STA - PG PLAZA STA","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C4v1","Name":"C4 - TLTC-TWINBROOK","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C4v2","Name":"C4 - TWINBROOK STA - WHEATON STA","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C4v3","Name":"C4 - PG PLAZA STA - WHEATON STA","LineDescription":"Greenbelt-Twinbrook Line"},{"RouteID":"C8","Name":"C8 - WHITE FLINT - COLLEGE PARK","LineDescription":"College Park-White Flint Line"},{"RouteID":"C8v1","Name":"C8 - WHITE FLNT-COLLEGE PK (NO FDA/ARCH)","LineDescription":"College Park-White Flint Line"},{"RouteID":"C8v2","Name":"C8 - WHITE FLINT-COLLEGE PARK (NO FDA)","LineDescription":"College Park-White Flint Line"},{"RouteID":"C8v3","Name":"C8 - GLENMONT-COLLEGE PK (NO FDA/ARCH)","LineDescription":"College Park-White Flint Line"},{"RouteID":"D1","Name":"D1 - GLOVER PARK - FRANKLIN SQUARE","LineDescription":"Glover Park-Franklin Square Line"},{"RouteID":"D12","Name":"D12 - SOUTHERN AVE STA - SUITLAND STA","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D12v1","Name":"D12 - SUITLAND STA - SOUTHERN AVE STA","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D12v2","Name":"D12 - ST BARNABAS RD   - SUITLAND STA","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D13","Name":"D13 - SOUTHERN AVE STA - SUITLAND STA","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D13v1","Name":"D13 - SOUTHRN STA - ALLENTWN+OLD BRNCH","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D14","Name":"D14 - SOUTHERN AVE STA - SUITLAND STA","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D14v1","Name":"D14 - ALLENTWN+OLD BRNCH - SUITLND STA","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D14v2","Name":"D14 - SUITLND STA - ALLENTWN+OLD BRNCH","LineDescription":"Oxon Hill-Suitland Line"},{"RouteID":"D2","Name":"D2 - GLOVER PARK   - CONNETICUT +Q ST","LineDescription":"Glover Park-Dupont Circle Line"},{"RouteID":"D2v1","Name":"D2 - DUPONT CIR - GLOVER PARK","LineDescription":"Glover Park-Dupont Circle Line"},{"RouteID":"D31","Name":"D31 - TENLEYTOWN STA - 16TH + EASTERN","LineDescription":"16th Street-Tenleytown Line"},{"RouteID":"D32","Name":"D32 - TENLEYTOWN STA - COLUMBIA HTS STA","LineDescription":"16th Street-Tenleytown Line"},{"RouteID":"D33","Name":"D33 - TENLEYTOWN STA - 16TH + SHEPHERD","LineDescription":"16th Street-Tenleytown Line"},{"RouteID":"D34","Name":"D34 - TENLEYTOWN STA - 14TH + COLORADO","LineDescription":"16th Street-Tenleytown Line"},{"RouteID":"D4","Name":"D4 - DUPONT CIRCLE - IVY CITY","LineDescription":"Ivy City-Franklin Square Line"},{"RouteID":"D4v1","Name":"D4 - FRANKLIN SQUARE - IVY CITY","LineDescription":"Ivy City-Franklin Square Line"},{"RouteID":"D4v2","Name":"D4 - IVY CITY - FRANKLIN SQUARE","LineDescription":"Ivy City-Franklin Square Line"},{"RouteID":"D5","Name":"D5 - MASS LTTL FLWR CHRCH- FARRGT SQR","LineDescription":"MacArthur Blvd-Georgetown Line"},{"RouteID":"D6","Name":"D6 - SIBLEY HOSP - STADIUM ARMRY","LineDescription":"Sibley Hospital–Stadium-Armory Line"},{"RouteID":"D6v1","Name":"D6 - STADIUM ARMRY STA - FARRAGUT SQUARE","LineDescription":"Sibley Hospital–Stadium-Armory Line"},{"RouteID":"D6v2","Name":"D6 - SIBLEY HOSP - FARRAGUT SQ","LineDescription":"Sibley Hospital–Stadium-Armory Line"},{"RouteID":"D6v3","Name":"D6 - FARRAGUT SQUARE - STADIUM ARMRY","LineDescription":"Sibley Hospital–Stadium-Armory Line"},{"RouteID":"D8","Name":"D8 - UNION STATION - VA MED CTR","LineDescription":"Hospital Center Line"},{"RouteID":"D8v1","Name":"D8 - RHODE ISLAND STA - UNION STA","LineDescription":"Hospital Center Line"},{"RouteID":"E2","Name":"E2 - IVY CITY - FT TOTTEN","LineDescription":"Ivy City-Fort Totten Line"},{"RouteID":"E4","Name":"E4 - FRIENDSHP HTS - RIGGS PK","LineDescription":"Military Road-Crosstown Line"},{"RouteID":"E4v1","Name":"E4 - FRIENDSHP HTS - FT TOTTEN","LineDescription":"Military Road-Crosstown Line"},{"RouteID":"E4v2","Name":"E4 - FT TOTTEN - FRIENDSHP HTS","LineDescription":"Military Road-Crosstown Line"},{"RouteID":"E6","Name":"E6 - FRIENDSHP HTS  -KNOLLWOOD","LineDescription":"Chevy Chase Line"},{"RouteID":"F1","Name":"F1 - CHEVERLY STA - TAKOMA STA","LineDescription":"Chillum Road Line"},{"RouteID":"F12","Name":"F12 - CHEVERLY STA - NEW CARROLTON STA","LineDescription":"Ardwick Industrial Park Shuttle Line"},{"RouteID":"F12v1","Name":"F12 - CHEVERLY STA - LANDOVER STA","LineDescription":"Ardwick Industrial Park Shuttle Line"},{"RouteID":"F13","Name":"F13 - CHEVERLY STA-WASHINGTON BUS PARK","LineDescription":"Cheverly-Washington Business Park Line"},{"RouteID":"F13v1","Name":"F13 - CHEVERLY STA - WASHINGTON BUS PARK","LineDescription":"Cheverly-Washington Business Park Line"},{"RouteID":"F13v2","Name":"F13 - NEW CARROLTON - WASHINGTON BUS PARK","LineDescription":"Cheverly-Washington Business Park Line"},{"RouteID":"F13v3","Name":"F13 - WHITFIELD + VOLTA - CHEVERLY STA","LineDescription":"Cheverly-Washington Business Park Line"},{"RouteID":"F14","Name":"F14 - NAYLOR RD STA -NEW CARROLTON STA","LineDescription":"Sheriff Road-Capitol Heights Line"},{"RouteID":"F14v1","Name":"F14 - BRADBURY HGTS -NEW CARROLTON STA","LineDescription":"Sheriff Road-Capitol Heights Line"},{"RouteID":"F2","Name":"F2 - CHEVERLY STA - TAKOMA STA","LineDescription":"Chillum Road Line"},{"RouteID":"F2v1","Name":"F2 - CHEVRLY STA-QUEENS CHAPL+CARSN CIR","LineDescription":"Chillum Road Line"},{"RouteID":"F2v2","Name":"F2 - 34TH + OTIS - TAKOMA STA","LineDescription":"Chillum Road Line"},{"RouteID":"F4","Name":"F4 - SILVR SPRING STA - NEW CARRLLTON","LineDescription":"New Carrollton-Silver Spring Line"},{"RouteID":"F4v1","Name":"F4 - PG PLAZA STA -NEW CARROLTON STA","LineDescription":"New Carrollton-Silver Spring Line"},{"RouteID":"F4v2","Name":"F4 - NEW CARRLLTON - PG PLAZA STA","LineDescription":"New Carrollton-Silver Spring Line"},{"RouteID":"F6","Name":"F6 - FT TOTTEN - NEW CARROLLTN","LineDescription":"New Carrollton-Fort Totten Line"},{"RouteID":"F6v1","Name":"F6 - PG PLAZA - NEW CARROLLTON STA","LineDescription":"New Carrollton-Fort Totten Line"},{"RouteID":"F6v2","Name":"F6 - NEW CARROLLTON - PG PLAZA STA","LineDescription":"New Carrollton-Fort Totten Line"},{"RouteID":"F8","Name":"F8 - CHEVERLY STA - TLTC","LineDescription":"Langley Park-Cheverly Line"},{"RouteID":"G12","Name":"G12 - GREENBELT STA - NEW CARROLLTON STA","LineDescription":"Greenbelt-New Carrollton Line"},{"RouteID":"G12v1","Name":"G12 - GREENBELT STA - ROOSEVELT CENTER","LineDescription":"Greenbelt-New Carrollton Line"},{"RouteID":"G12v2","Name":"G12 - ROOSEVELT CTR - NEW CARROLLTON STA","LineDescription":"Greenbelt-New Carrollton Line"},{"RouteID":"G14","Name":"G14 - GREENBELT STA -NEW CARROLTON STA","LineDescription":"Greenbelt-New Carrollton Line"},{"RouteID":"G14v1","Name":"G14 - ROOSEVELT CTR -NEW CARROLTON STA","LineDescription":"Greenbelt-New Carrollton Line"},{"RouteID":"G14v2","Name":"G14 - GREENBELT STA - NEW CARROLTON STA","LineDescription":"Greenbelt-New Carrollton Line"},{"RouteID":"G2","Name":"G2 - GEORGETOWN UNIV - HOWARD UNIV","LineDescription":"P Street-LeDroit Park Line"},{"RouteID":"G2v1","Name":"G2 - GEORGETOWN UNIV - P+14TH ST","LineDescription":"P Street-LeDroit Park Line"},{"RouteID":"G8","Name":"G8 - FARRAGUT SQUARE - AVONDALE","LineDescription":"Rhode Island Avenue Line"},{"RouteID":"G8v1","Name":"G8 - RHODE ISLAND AVE STA-FARRAGUT SQ","LineDescription":"Rhode Island Avenue Line"},{"RouteID":"G8v2","Name":"G8 - FARRAGUT SQ - RHODE ISLAND STA","LineDescription":"Rhode Island Avenue Line"},{"RouteID":"G8v3","Name":"G8 - BROOKLAND STA - AVONDALE","LineDescription":"Rhode Island Avenue Line"},{"RouteID":"G9","Name":"G9 - FRANKLIN SQ - RHODE ISLD + EAST PM","LineDescription":"Rhode Island Avenue Limited Line"},{"RouteID":"G9v1","Name":"G9 - FRANKLIN SQ - RHODE ISLD + EASTERN","LineDescription":"Rhode Island Avenue Limited Line"},{"RouteID":"H1","Name":"H1 - C + 17TH ST - BROOKLAND CUA STA","LineDescription":"Brookland-Potomac Park Line"},{"RouteID":"H11","Name":"H11 - HEATHER HILL - NAYLOR RD STA","LineDescription":"Marlow Heights-Temple Hills Line"},{"RouteID":"H12","Name":"H12 - HEATHER HILL-NAYLOR RD (MACYS)","LineDescription":"Marlow Heights-Temple Hills Line"},{"RouteID":"H12v1","Name":"H12 - HEATHER HILL-NAYLOR RD STA (P&R)","LineDescription":"Marlow Heights-Temple Hills Line"},{"RouteID":"H13","Name":"H13 - HEATHER HILL - NAYLOR RD STA","LineDescription":"Marlow Heights-Temple Hills Line"},{"RouteID":"H2","Name":"H2 - TENLEYTOWN AU-ST - BROOKLND CUA STA","LineDescription":"Crosstown Line"},{"RouteID":"H3","Name":"H3 - TENLEYTOWN STA -BROOKLND CUA STA","LineDescription":"Crosstown Line"},{"RouteID":"H4","Name":"H4 - TENLEYTWN AU-STA -BROOKLAND CUA STA","LineDescription":"Crosstown Line"},{"RouteID":"H4v1","Name":"H4 - COLUMBIA RD+14TH -TENLEYTOWN-AU STA","LineDescription":"Crosstown Line"},{"RouteID":"H6","Name":"H6 - BROOKLAND CUA STA - FORT LINCOLN","LineDescription":"Brookland-Fort Lincoln Line"},{"RouteID":"H6v1","Name":"H6 - FORT LINCOLN - FORT LINCOLN","LineDescription":"Brookland-Fort Lincoln Line"},{"RouteID":"H8","Name":"H8 - MT PLEASANT+17TH - RHODE ISLAND","LineDescription":"Park Road-Brookland Line"},{"RouteID":"H9","Name":"H9 - RHODE ISLAND - FORT DR + 1ST","LineDescription":"Park Road-Brookland Line"},{"RouteID":"J1","Name":"J1 - MEDCAL CTR STA - SILVR SPRNG STA","LineDescription":"Bethesda-Silver Spring Line"},{"RouteID":"J1v1","Name":"J1 - SILVR SPRNG STA - MONT MALL/BAT LN","LineDescription":"Bethesda-Silver Spring Line"},{"RouteID":"J12","Name":"J12 - ADDISON RD STA - FORESTVILLE","LineDescription":"Marlboro Pike Line"},{"RouteID":"J12v1","Name":"J12 - ADDISON RD-FORESTVILLE VIA PRES PKY","LineDescription":"Marlboro Pike Line"},{"RouteID":"J2","Name":"J2 - MONTGOMRY MALL - SILVR SPRNG STA","LineDescription":"Bethesda-Silver Spring Line"},{"RouteID":"J2v1","Name":"J2 - MEDICAL CTR STA - SILVR SPRNG STA","LineDescription":"Bethesda-Silver Spring Line"},{"RouteID":"J2v2","Name":"J2 - SILVER SPRNG - MONT MALL/BATTRY LA","LineDescription":"Bethesda-Silver Spring Line"},{"RouteID":"J4","Name":"J4 - BETHESDA STA - COLLEGE PARK STA","LineDescription":"College Park-Bethesda Limited"},{"RouteID":"K12","Name":"K12 - BRANCH AVE ST-SUITLAND ST","LineDescription":"Forestville Line"},{"RouteID":"K12v1","Name":"K12 - PENN MAR - SUITLAND ST","LineDescription":"Forestville Line"},{"RouteID":"K12v2","Name":"K12 - BRANCH AVE - PENN MAR","LineDescription":"Forestville Line"},{"RouteID":"K2","Name":"K2 - FT TOTTEN STA - TAKOMA STA","LineDescription":"Takoma-Fort Totten Line"},{"RouteID":"K6","Name":"K6 - FORT TOTTEN STA - WHITE OAK","LineDescription":"New Hampshire Ave-Maryland Line"},{"RouteID":"K6v1","Name":"K6 - TLTC - FORT TOTTEN STA","LineDescription":"New Hampshire Ave-Maryland Line"},{"RouteID":"K9","Name":"K9 - FORT TOTTEN STA - FDA/FRC (PM)","LineDescription":"New Hampshire Ave-Maryland Limited Line"},{"RouteID":"K9v1","Name":"K9 - FORT TOTTEN STA - FDA/FRC (AM)","LineDescription":"New Hampshire Ave-Maryland Limited Line"},{"RouteID":"L1","Name":"L1 - POTOMAC PK  - CHEVY CHASE","LineDescription":"Connecticut Ave Line"},{"RouteID":"L2","Name":"L2 - FARRAGUT SQ - CHEVY CHASE","LineDescription":"Connecticut Ave Line"},{"RouteID":"L2v1","Name":"L2 - VAN NESS-UDC STA - CHEVY CHASE","LineDescription":"Connecticut Ave Line"},{"RouteID":"L2v2","Name":"L2 - FARRAGUT SQ - BETHESDA","LineDescription":"Connecticut Ave Line"},{"RouteID":"L8","Name":"L8 - FRIENDSHIP HTS STA - ASPEN HILL","LineDescription":"Connecticut Ave-Maryland Line"},{"RouteID":"M4","Name":"M4 - SIBLEY HOSPITAL - TENLEYTOWN/AU STA","LineDescription":"Nebraska Ave Line"},{"RouteID":"M4v1","Name":"M4 - TENLEYTOWN   - PINEHRST CIR","LineDescription":"Nebraska Ave Line"},{"RouteID":"M4v2","Name":"M4 - PINEHRST CIR - TENLEYTOWN","LineDescription":"Nebraska Ave Line"},{"RouteID":"M6","Name":"M6 - POTOMAC AVE - ALABAMA + PENN","LineDescription":"Fairfax Village Line"},{"RouteID":"M6v1","Name":"M6 - ALABAMA + PENN - FAIRFAX VILLAGE","LineDescription":"Fairfax Village Line"},{"RouteID":"MW1","Name":"MW1 - BRADDOCK RD - PENTAGON CITY","LineDescription":"Metroway-Potomac Yard Line"},{"RouteID":"MW1v1","Name":"MW1 - POTOMAC YARD - CRYSTAL CITY","LineDescription":"Metroway-Potomac Yard Line"},{"RouteID":"MW1v2","Name":"MW1 - CRYSTAL CITY - BRADDOCK RD","LineDescription":"Metroway-Potomac Yard Line"},{"RouteID":"MW1v3","Name":"MW1 - BRADDOCK RD - CRYSTAL CITY","LineDescription":"Metroway-Potomac Yard Line"},{"RouteID":"N2","Name":"N2 - FRIENDSHIP HTS - FARRAGUT SQ","LineDescription":"Massachusetts Ave Line"},{"RouteID":"N4","Name":"N4 - FRIENDSHP HTS - POTOMAC PARK","LineDescription":"Massachusetts Ave Line"},{"RouteID":"N4v1","Name":"N4 - FRIENDSHP HTS - FARRAGUT  SQ","LineDescription":"Massachusetts Ave Line"},{"RouteID":"N6","Name":"N6 - FRNDSHIP HTS - FARRAGUT SQ","LineDescription":"Massachusetts Ave Line"},{"RouteID":"NH1","Name":"NH1 - NATIONAL HARBOR-SOUTHERN AVE STA","LineDescription":"National Harbor-Southern Avenue Line"},{"RouteID":"NH2","Name":"NH2 - HUNTINGTON STA-NATIONAL HARBOR","LineDescription":"National Harbor-Alexandria Line"},{"RouteID":"P12","Name":"P12 - EASTOVER - ADDISON RD STA (NO HOSP)","LineDescription":"Eastover-Addison Road Line"},{"RouteID":"P12v1","Name":"P12 - IVERSON MALL - ADDISON RD STA","LineDescription":"Eastover-Addison Road Line"},{"RouteID":"P12v2","Name":"P12 - SUITLAND STA - ADDISON RD STA","LineDescription":"Eastover-Addison Road Line"},{"RouteID":"P18","Name":"P18 - FT WASH P+R LOT - SOUTHERN AVE","LineDescription":"Oxon Hill-Fort Washington Line"},{"RouteID":"P19","Name":"P19 - FT WASH P+R LOT-SOUTHERN AVE STA","LineDescription":"Oxon Hill-Fort Washington Line"},{"RouteID":"P6","Name":"P6 - ANACOSTIA STA - RHODE ISLAND STA","LineDescription":"Anacostia-Eckington Line"},{"RouteID":"P6v1","Name":"P6 - ECKINGTON - RHODE ISLAND AVE","LineDescription":"Anacostia-Eckington Line"},{"RouteID":"P6v2","Name":"P6 - RHODE ISLAND AVE - ECKINGTON","LineDescription":"Anacostia-Eckington Line"},{"RouteID":"P6v3","Name":"P6 - ANACOSTIA STA - ARCHIVES","LineDescription":"Anacostia-Eckington Line"},{"RouteID":"P6v4","Name":"P6 - ARCHIVES - ANACOSTIA","LineDescription":"Anacostia-Eckington Line"},{"RouteID":"Q1","Name":"Q1 - SILVR SPRNG STA - SHADY GRVE STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q2","Name":"Q2 - SILVR SPRNG STA - SHADY GRVE STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q2v1","Name":"Q2 - MONT COLLEGE - SILVR SPRNG STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q2v2","Name":"Q2 - SILVR SPRNG STA - MONT COLLEGE","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q4","Name":"Q4 - SILVER SPRNG STA - ROCKVILLE STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q4v1","Name":"Q4 - WHEATON STA - ROCKVILLE STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q5","Name":"Q5 - WHEATON STA - SHADY GRVE STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q6","Name":"Q6 - WHEATON STA - SHADY GRVE STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"Q6v1","Name":"Q6 - ROCKVILLE STA - WHEATON STA","LineDescription":"Viers Mill Road Line"},{"RouteID":"R1","Name":"R1 - FORT TOTTEN STA - ADELPHI","LineDescription":"Riggs Road Line"},{"RouteID":"R12","Name":"R12 - DEANWOOD STA - GREENBELT STA","LineDescription":"Kenilworth Avenue Line"},{"RouteID":"R12v1","Name":"R12 - DEANWOOD STA - GREENBELT STA","LineDescription":"Kenilworth Avenue Line"},{"RouteID":"R2","Name":"R2 - FORT TOTTEN - CALVERTON","LineDescription":"Riggs Road Line"},{"RouteID":"R2v1","Name":"R2 - HIGH POINT HS - FORT TOTTEN","LineDescription":"Riggs Road Line"},{"RouteID":"R2v2","Name":"R2 - POWDER MILL+CHERRY HILL - CALVERTON","LineDescription":"Riggs Road Line"},{"RouteID":"R4","Name":"R4 - BROOKLAND STA- HIGHVIEW","LineDescription":"Queens Chapel Road Line"},{"RouteID":"REX","Name":"REX - FT BELVOIR POST - KING ST STA","LineDescription":"Richmond Highway Express"},{"RouteID":"REXv1","Name":"REX - FT BELVOIR COMM HOSP - KING ST STA","LineDescription":"Richmond Highway Express"},{"RouteID":"REXv2","Name":"REX - KING ST STA - FT BELVOIR COMM HOSP","LineDescription":"Richmond Highway Express"},{"RouteID":"REXv3","Name":"REX - KING ST STA - WOODLAWN","LineDescription":"Richmond Highway Express"},{"RouteID":"REXv4","Name":"REX - WOODLAWN - KING ST STA","LineDescription":"Richmond Highway Express"},{"RouteID":"S1","Name":"S1 - NORTHERN DIVISION - POTOMAC PK","LineDescription":"16th Street-Potomac Park Line"},{"RouteID":"S1v1","Name":"S1 - VIRGINIA+E - COLORDO+16TH","LineDescription":"16th Street-Potomac Park Line"},{"RouteID":"S2","Name":"S2 - FED TRIANGLE  - SILVER SPRNG","LineDescription":"16th Street Line"},{"RouteID":"S2v1","Name":"S2 - 16TH & HARVARD - MCPHERSON SQ","LineDescription":"16th Street Line"},{"RouteID":"S35","Name":"S35 - BRANCH + RANDLE CIR - FT DUPONT","LineDescription":"Fort Dupont Shuttle Line"},{"RouteID":"S4","Name":"S4 - FED TRIANGLE - SILVER SPRNG","LineDescription":"16th Street Line"},{"RouteID":"S4v1","Name":"S4 - SILVER SPRING STA - FRANKLIN SQ","LineDescription":"16th Street Line"},{"RouteID":"S41","Name":"S41 - CARVER TERRACE - RHODE ISLAND AVE","LineDescription":"Rhode Island Ave-Carver Terrace Line"},{"RouteID":"S80","Name":"S80 - FRANCONIA-SPRNGFLD - METRO PARK","LineDescription":"Springfield Circulator-Metro Park Shuttle (TAGS)"},{"RouteID":"S80v1","Name":"S80 - FRANCONIA-SPRINGFLD - HILTON","LineDescription":"Springfield Circulator-Metro Park Shuttle (TAGS)"},{"RouteID":"S80v2","Name":"S80 - HILTON - FRANCONIA-SPRNGFLD","LineDescription":"Springfield Circulator-Metro Park Shuttle (TAGS)"},{"RouteID":"S9","Name":"S9 - FRANKLIN SQ - SILVER SPRING STA","LineDescription":"16th Street Limited Line"},{"RouteID":"S9v1","Name":"S9 - FRANKLIN SQ - COLORADO + 16TH","LineDescription":"16th Street Limited Line"},{"RouteID":"S91","Name":"S91 - FRANCONIA SPRINGFLD STA SHUTTLE","LineDescription":"Springfield Circulator-Metro Park Shuttle (TAGS)"},{"RouteID":"S91v1","Name":"S91 - FRANCONIA SPRINGFLD STA SHUTTLE","LineDescription":"Springfield Circulator-Metro Park Shuttle (TAGS)"},{"RouteID":"T14","Name":"T14 - RHD ISLND AVE STA-NEW CARRLTN STA","LineDescription":"Rhode Island Ave-New Carrollton Line"},{"RouteID":"T14v1","Name":"T14 - MT RAINIER - NEW CARRLTN STA","LineDescription":"Rhode Island Ave-New Carrollton Line"},{"RouteID":"T18","Name":"T18 - R I AVE STA - NEW CARROLLTON STA","LineDescription":"Annapolis Road Line"},{"RouteID":"T18v1","Name":"T18 - BLADENSBURG HS - NEW CARROLLTON STA","LineDescription":"Annapolis Road Line"},{"RouteID":"T2","Name":"T2 - FRIENDSHIP HTS - ROCKVILLE STA","LineDescription":"River Road Line"},{"RouteID":"U4","Name":"U4 - MINNESOTA AVE - SHERIFF RD","LineDescription":"Sheriff Road-River Terrace Line"},{"RouteID":"U4v1","Name":"U4 - SHERIFF RD - MINNESOTA STA","LineDescription":"Sheriff Road-River Terrace Line"},{"RouteID":"U4v2","Name":"U4 - RIVER TERRACE - MINNESOTA AVE","LineDescription":"Sheriff Road-River Terrace Line"},{"RouteID":"U5","Name":"U5 - MINNESOTA AVE-MARSHALL HTS","LineDescription":"Marshall Heights Line"},{"RouteID":"U6","Name":"U6 - MINNESOTA - LINCOLN HEIGHTS","LineDescription":"Marshall Heights Line"},{"RouteID":"U6v1","Name":"U6 - 37TH + RIDGE - PLUMMER ES","LineDescription":"Marshall Heights Line"},{"RouteID":"U6v2","Name":"U6 - LINCOLN HTS - E CAP + 47TH ST NE","LineDescription":"Marshall Heights Line"},{"RouteID":"U7","Name":"U7 - RIDGE + ANACOSTIA - DEANWOOD","LineDescription":"Deanwood-Minnesota Ave Line"},{"RouteID":"U7v1","Name":"U7 - MINNESOTA STA - KENILWORTH HAYES","LineDescription":"Deanwood-Minnesota Ave Line"},{"RouteID":"U7v2","Name":"U7 - KENILWORTH HAYES - MINNESOTA STA","LineDescription":"Deanwood-Minnesota Ave Line"},{"RouteID":"U7v3","Name":"U7 - MINNESOTA STA - DEANWOOD","LineDescription":"Deanwood-Minnesota Ave Line"},{"RouteID":"U7v4","Name":"U7 - DEANWOOD - MINNESOTA AVE","LineDescription":"Deanwood-Minnesota Ave Line"},{"RouteID":"V1","Name":"V1 - BUR OF ENGRVNG - BENNING HTS","LineDescription":"Benning Heights-M Street Line"},{"RouteID":"V12","Name":"V12 - SUITLAND STA - ADDISON RD STA","LineDescription":"District Heights-Suitland Line"},{"RouteID":"V14","Name":"V14 - PENN MAR - DEANWOOD STA","LineDescription":"District Heights - Seat Pleasant Line"},{"RouteID":"V14v1","Name":"V14 - PENN MAR  - ADDISON RD STA","LineDescription":"District Heights - Seat Pleasant Line"},{"RouteID":"V2","Name":"V2 - ANACOSTIA - CAPITOL HGTS","LineDescription":"Capitol Heights-Minnesota Avenue Line"},{"RouteID":"V2v1","Name":"V2 - MINNESOTA AVE - ANACOSTIA","LineDescription":"Capitol Heights-Minnesota Avenue Line"},{"RouteID":"V4","Name":"V4 - 1ST + K ST SE - CAPITOL HGTS","LineDescription":"Capitol Heights-Minnesota Avenue Line"},{"RouteID":"V4v1","Name":"V4 - MINN AVE STA-CAPITOL HGTS","LineDescription":"Capitol Heights-Minnesota Avenue Line"},{"RouteID":"V7","Name":"V7 - CONGRESS HGTS - MINN STA","LineDescription":"Benning Heights-Alabama Ave Line"},{"RouteID":"V8","Name":"V8 - BENNING HGTS - MINN STA","LineDescription":"Benning Heights-Alabama Ave Line"},{"RouteID":"W1","Name":"W1 - FORT DRUM  - SOUTHERN AVE STA","LineDescription":"Shipley Terrace - Fort Drum Line"},{"RouteID":"W14","Name":"W14 - FT WASHINGTON-SOUTHERN AVE STA","LineDescription":"Bock Road Line"},{"RouteID":"W14v1","Name":"W14 - SOUTHERN AVE - FRIENDLY","LineDescription":"Bock Road Line"},{"RouteID":"W14v2","Name":"W14 - FRIENDLY - SOUTHERN AVE","LineDescription":"Bock Road Line"},{"RouteID":"W2","Name":"W2 - MALCOM X+OAKWD - UNITED MEDICAL CTR","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v1","Name":"W2 - NYLDR+GOOD HOP- HOWARD+ANACOSTIA","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v2","Name":"W2 - NAYLOR+GOODHOPE - MALCM X+OAKWOOD","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v3","Name":"W2 - HOWRD+ANACOSTIA-NAYLOR+GOODHOPE","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v4","Name":"W2 - ANACOSTIA STA - UNITED MEDICAL CTR","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v5","Name":"W2 - ANACOSTIA STA - SOUTHERN AVE STA","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v6","Name":"W2 - MELLN+M L KNG - UNITED MEDICAL CTR","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W2v7","Name":"W2 - SOUTHERN AVE-WASHINGTON OVERLOOK","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W3","Name":"W3 - MALCOM X+OAKWD - UNITED MEDICAL CTR","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W3v1","Name":"W3 - MELLN+M L KNG - UNITED MEDICAL CTR","LineDescription":"United Medical Center-Anacostia Line"},{"RouteID":"W4","Name":"W4 - ANACOSTIA STA - DEANWOOD STA","LineDescription":"Deanwood-Alabama Ave Line"},{"RouteID":"W4v1","Name":"W4 - MALCOLM X & PORTLAND - DEANWOOD","LineDescription":"Deanwood-Alabama Ave Line"},{"RouteID":"W4v2","Name":"W4 - DEANWOOD STA - MALCLM X+ ML KING","LineDescription":"Deanwood-Alabama Ave Line"},{"RouteID":"W45","Name":"W45 - TENLEYTOWN STA - 16TH + SHEPHERD","LineDescription":"Mt Pleasant-Tenleytown Line"},{"RouteID":"W47","Name":"W47 - TENLEYTOWN STA - COLUMBIA HTS STA","LineDescription":"Mt Pleasant-Tenleytown Line"},{"RouteID":"W5","Name":"W5 - DC VILLAGE-USCG (VIA ANAC)","LineDescription":"Anacostia-Fort Drum Line"},{"RouteID":"W6","Name":"W6 - ANACOSTIA - ANACOSTIA","LineDescription":"Garfield-Anacostia Loop Line"},{"RouteID":"W6v1","Name":"W6 - NAYLOR+GOODHOPE - ANACOSTIA","LineDescription":"Garfield-Anacostia Loop Line"},{"RouteID":"W8","Name":"W8 - ANACOSTIA - ANACOSTIA","LineDescription":"Garfield-Anacostia Loop Line"},{"RouteID":"W8v1","Name":"W8 - ANACOSTIA-NAYLOR+GOODHOPE","LineDescription":"Garfield-Anacostia Loop Line"},{"RouteID":"W8v2","Name":"W8 - NAYLOR+GOODHOPE - ANACOSTIA","LineDescription":"Garfield-Anacostia Loop Line"},{"RouteID":"X1","Name":"X1 - FOGGY BOTTOM+GWU- MINNESOTA STA","LineDescription":"Benning Road Line"},{"RouteID":"X2","Name":"X2 - LAFAYETTE SQ - MINNESOTA STA","LineDescription":"Benning Road-H Street Line"},{"RouteID":"X2v1","Name":"X2 - PHELPS HS - MINNESOTA STA","LineDescription":"Benning Road-H Street Line"},{"RouteID":"X2v2","Name":"X2 - FRIENDSHIP EDISON PCS-MINNESOTA STA","LineDescription":"Benning Road-H Street Line"},{"RouteID":"X2v3","Name":"X2 - PHELPS HS - LAFAYTTE SQ","LineDescription":"Benning Road-H Street Line"},{"RouteID":"X3","Name":"X3 - DUKE ELLINGTON BR - MINNESOTA STN","LineDescription":"Benning Road Line"},{"RouteID":"X3v1","Name":"X3 - KIPP DC - MINNESOTA AVE STN","LineDescription":"Benning Road Line"},{"RouteID":"X8","Name":"X8 - UNION STATION - CARVER TERR","LineDescription":"Maryland Ave Line"},{"RouteID":"X9","Name":"X9 - NY AVE & 12TH NW - CAPITOL HTS STA","LineDescription":"Benning Road-H Street Limited Line"},{"RouteID":"X9v1","Name":"X9 - NY AVE & 12TH ST NW - MINNESOTA AVE","LineDescription":"Benning Road-H Street Limited Line"},{"RouteID":"X9v2","Name":"X9 - MINNESOTA AVE ST - NY AVE & 12TH ST","LineDescription":"Benning Road-H Street Limited Line"},{"RouteID":"Y2","Name":"Y2 - SILVER SPRING STA - MONTG MED CTR","LineDescription":"Georgia Ave-Maryland Line"},{"RouteID":"Y7","Name":"Y7 - SILVER SPRING STA - ICC P&R","LineDescription":"Georgia Ave-Maryland Line"},{"RouteID":"Y8","Name":"Y8 - SILVER SPR STA - MONTGOMERY MED CTR","LineDescription":"Georgia Ave-Maryland Line"},{"RouteID":"Z11","Name":"Z11 - SILVR SPRING - BURTONSVILLE P&R","LineDescription":"Greencastle-Briggs Chaney Express Line"},{"RouteID":"Z11v1","Name":"Z11 - GREENCASTLE - SILVR SPRING","LineDescription":"Greencastle-Briggs Chaney Express Line"},{"RouteID":"Z2","Name":"Z2 - SILVR SPRING - OLNEY (NO BLAKE HS)","LineDescription":"Colesville - Ashton Line"},{"RouteID":"Z2v1","Name":"Z2 - SILVER SPRING - BONIFANT & NH","LineDescription":"Colesville - Ashton Line"},{"RouteID":"Z2v2","Name":"Z2 - SILVER SPRING STA-OLNEY (BLAKE HS)","LineDescription":"Colesville - Ashton Line"},{"RouteID":"Z2v3","Name":"Z2 - COLESVILLE-SILVER SPRING","LineDescription":"Colesville - Ashton Line"},{"RouteID":"Z6","Name":"Z6 - SILVR SPRNG STA - BURTONSVILLE","LineDescription":"Calverton-Westfarm Line"},{"RouteID":"Z6v1","Name":"Z6 - CASTLE BLVD - SILVER SPRING STA","LineDescription":"Calverton-Westfarm Line"},{"RouteID":"Z6v2","Name":"Z6 - SILVER SPRING -CASTLE BLVD","LineDescription":"Calverton-Westfarm Line"},{"RouteID":"Z7","Name":"Z7 - SLVER SPRNG STA-S LAUREL P&R (4COR)","LineDescription":"Laurel-Burtonsville Express Line"},{"RouteID":"Z7v1","Name":"Z7 - S LAUREL P&R-SILVR SPR (NO 4COR)","LineDescription":"Laurel-Burtonsville Express Line"},{"RouteID":"Z8","Name":"Z8 - SILVER SRING STA - BRIGGS CHANEY","LineDescription":"Fairland Line"},{"RouteID":"Z8v1","Name":"Z8 - WHITE OAK - SILVER SPRING STA","LineDescription":"Fairland Line"},{"RouteID":"Z8v2","Name":"Z8 - SILVR SPRNG - CSTLE BLVD VERIZON","LineDescription":"Fairland Line"},{"RouteID":"Z8v3","Name":"Z8 - SILVER SPRING STA - CASTLE BLVD","LineDescription":"Fairland Line"},{"RouteID":"Z8v4","Name":"Z8 - SILVER SPRING - GRNCSTLE (VERIZON)","LineDescription":"Fairland Line"},{"RouteID":"Z8v5","Name":"Z8 - SILVER SPRING STA - GREENCASTLE","LineDescription":"Fairland Line"},{"RouteID":"Z8v6","Name":"Z8 - SILVER SPRING STA - WHITE OAK","LineDescription":"Fairland Line"}]}`,
+			unmarshalledResponse: &GetRoutesResponse{
+				Routes: []Route{
+					{
+						RouteID:         "10A",
+						Name:            "10A - HUNTINGTON STA - PENTAGON",
+						LineDescription: "Alexandria-Pentagon Line",
+					},
+					{
+						RouteID:         "10B",
+						Name:            "10B - HUNTING POINT - BALLSTON STA",
+						LineDescription: "Hunting Point-Ballston Line",
+					},
+					{
+						RouteID:         "10E",
+						Name:            "10E - HUNTING POINT - PENTAGON",
+						LineDescription: "Alexandria-Pentagon Line",
+					},
+					{
+						RouteID:         "10N",
+						Name:            "10N - NATIONAL AIRPORT - PENTAGON",
+						LineDescription: "Alexandria-Pentagon Line",
+					},
+					{
+						RouteID:         "11Y",
+						Name:            "11Y - MOUNT VERNON - POTOMAC PARK",
+						LineDescription: "Mt Vernon Express Line",
+					},
+					{
+						RouteID:         "11Yv1",
+						Name:            "11Y - POTOMAC PARK - HUNTING POINT",
+						LineDescription: "Mt Vernon Express Line",
+					},
+					{
+						RouteID:         "11Yv2",
+						Name:            "11Y - HUNTING POINT - POTOMAC PARK",
+						LineDescription: "Mt Vernon Express Line",
+					},
+					{
+						RouteID:         "15K",
+						Name:            "15K - E FALLS CH STA-MCLEAN LANGLEY",
+						LineDescription: "Chain Bridge Road Line",
+					},
+					{
+						RouteID:         "15Kv1",
+						Name:            "15K - CIA - EAST FALLS CHURCH STA",
+						LineDescription: "Chain Bridge Road Line",
+					},
+					{
+						RouteID:         "16A",
+						Name:            "16A - PATRIOT+AMERICANA - PENTAGON",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16C",
+						Name:            "16C - CULMORE - PENTAGON",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16Cv1",
+						Name:            "16C - CULMORE - FEDERAL TRIANGLE",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16E",
+						Name:            "16E - GLN CARLYN+VISTA - FRANKLIN SQ",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16G",
+						Name:            "16G - DINWIDDIE+COLUMBIA - PENTAGON CITY",
+						LineDescription: "Columbia Pike-Pentagon City Line",
+					},
+					{
+						RouteID:         "16Gv1",
+						Name:            "16G - COL PIKE+CARLIN SPR - DINWD+COL PK",
+						LineDescription: "Columbia Pike-Pentagon City Line",
+					},
+					{
+						RouteID:         "16H",
+						Name:            "16H - SKYLINE CITY - PENTAGON CITY STA",
+						LineDescription: "Columbia Pike-Pentagon City Line",
+					},
+					{
+						RouteID:         "16L",
+						Name:            "16L - ANNANDALE - PENTAGON HOV",
+						LineDescription: "Annandale-Skyline City-Pentagon Line",
+					},
+					{
+						RouteID:         "16Y",
+						Name:            "16Y - FOUR MILE+COLUMBIA - MCPHERSON SQ",
+						LineDescription: "Columbia Pike-Farragut Square Line",
+					},
+					{
+						RouteID:         "16Yv1",
+						Name:            "16Y - COLUMBIA PIKE - MCPHERSON SQ",
+						LineDescription: "Columbia Pike-Farragut Square Line",
+					},
+					{
+						RouteID:         "17B",
+						Name:            "17B - BURKE CENTRE - PENTAGON HOV",
+						LineDescription: "Kings Park-North Springfield Line",
+					},
+					{
+						RouteID:         "17G",
+						Name:            "17G - G MASON UNIV - PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17H",
+						Name:            "17H - TWNBRK RD+TWNBRK RN- PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17K",
+						Name:            "17K - TWNBRK RD+TWNBRK RN- PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17L",
+						Name:            "17L - TWNBRK RD+TWNBRK RUN-PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17M",
+						Name:            "17M - EDSALL+CANARD - PENTAGON",
+						LineDescription: "Kings Park-North Springfield Line",
+					},
+					{
+						RouteID:         "18G",
+						Name:            "18G - ROLLING VALLEY - PENTAGON",
+						LineDescription: "Orange Hunt Line",
+					},
+					{
+						RouteID:         "18H",
+						Name:            "18H - HUNTSMAN+CORK CTY - PENTAGON",
+						LineDescription: "Orange Hunt Line",
+					},
+					{
+						RouteID:         "18J",
+						Name:            "18J - ROLLING VALLEY - PENTAGON",
+						LineDescription: "Orange Hunt Line",
+					},
+					{
+						RouteID:         "18P",
+						Name:            "18P - BURKE CENTRE - PENTAGON",
+						LineDescription: "Burke Centre Line",
+					},
+					{
+						RouteID:         "18Pv1",
+						Name:            "18P - PENTAGON - ROLLING VALLEY MALL",
+						LineDescription: "Burke Centre Line",
+					},
+					{
+						RouteID:         "18Pv2",
+						Name:            "18P - ROLLING VALLEY P+R - PENTAGON",
+						LineDescription: "Burke Centre Line",
+					},
+					{
+						RouteID:         "1A",
+						Name:            "1A - VIENNA-BALLSTON (7 CORNERS)",
+						LineDescription: "Wilson Blvd-Vienna Line",
+					},
+					{
+						RouteID:         "1B",
+						Name:            "1B - DUNN LORING  - BALLSTON",
+						LineDescription: "Wilson Blvd-Vienna Line",
+					},
+					{
+						RouteID:         "1C",
+						Name:            "1C - WEST OX DIV-DUNN LORING (VIA MALL)",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv1",
+						Name:            "1C - FAIRFAX CO GOV CTR - DUNN LORING",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv2",
+						Name:            "1C - WEST OX DIV - DUNN LORING (NO MALL)",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv3",
+						Name:            "1C - FAIR OAKS MALL - DUNN LORING",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv4",
+						Name:            "1C - DUNN LORING - FAIR OAKS MALL",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "21A",
+						Name:            "21A - S REYNOLDS+EOS 21 CONDOS - PENTAGON",
+						LineDescription: "Landmark-Bren Mar Park-Pentagon Line",
+					},
+					{
+						RouteID:         "21D",
+						Name:            "21D - LANDMARK MEWS -PENTAGON",
+						LineDescription: "Landmark-Bren Mar Park-Pentagon Line",
+					},
+					{
+						RouteID:         "22A",
+						Name:            "22A - BALLSTON STA - PENTAGON",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "22Av1",
+						Name:            "22A - SHIRLINGTON - BALLSTON  STA",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "22C",
+						Name:            "22C - BALLSTON STA - PENTAGON",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "22F",
+						Name:            "22F - NVCC - PENTAGON VIA HOV",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "23A",
+						Name:            "23A - TYSONS CORNER CTR - CRYSTAL CTY",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "23B",
+						Name:            "23B - BALLSTON STA - CRYSTAL CTY",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "23Bv1",
+						Name:            "23B - LINDEN RESOURCES - BALLSTON STATION",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "23T",
+						Name:            "23T - TYSONS CORNER CTR - SHIRLINGTON",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "25B",
+						Name:            "25B - VAN DORN - BALLSTON",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "25Bv1",
+						Name:            "25B - SOUTHERN TOWERS - BALLSTON",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "25Bv2",
+						Name:            "25B - VAN DORN - BALLSTON/NO LDMRK CTR",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "25Bv3",
+						Name:            "25B - BALLSTON - SOUTHERN TOWERS",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "26A",
+						Name:            "26A - NVCC ANNANDALE - E FALLS CHURCH STA",
+						LineDescription: "Annandale-East Falls Church Line",
+					},
+					{
+						RouteID:         "28A",
+						Name:            "28A - TYSONS CORNER STA-KING ST STA",
+						LineDescription: "Leesburg Pike Line",
+					},
+					{
+						RouteID:         "28Av1",
+						Name:            "28A - SOUTHERN TOWERS-TYSONS CORNER STA",
+						LineDescription: "Leesburg Pike Line",
+					},
+					{
+						RouteID:         "28F",
+						Name:            "28F - BLDG 5113 G MASON DR - PENTAGON",
+						LineDescription: "Skyline City Line",
+					},
+					{
+						RouteID:         "28G",
+						Name:            "28G - BLDG 5113 G MASON DR - PENTAGON",
+						LineDescription: "Skyline City Line",
+					},
+					{
+						RouteID:         "29C",
+						Name:            "29C - NVCC ANNANDALE - PENTAGON",
+						LineDescription: "Annandale Line",
+					},
+					{
+						RouteID:         "29G",
+						Name:            "29G - AMERICANA+HERITAGE - PENTAGON",
+						LineDescription: "Annandale Line",
+					},
+					{
+						RouteID:         "29K",
+						Name:            "29K - GMU - KING ST STA",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29Kv1",
+						Name:            "29K - GMU - KING ST/NO LDMRK",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29N",
+						Name:            "29N - VIENNA STA - KING ST (VIA MALL)",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29Nv1",
+						Name:            "29N - VIENNA STA-KING ST (NO MALL)",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29W",
+						Name:            "29W - NVCC ANNANDALE - PENTAGON",
+						LineDescription: "Braeburn Drive-Pentagon Express Line",
+					},
+					{
+						RouteID:         "2A",
+						Name:            "2A - DUNN LORING STA - BALLSTON STA",
+						LineDescription: "Washington Blvd.-Dunn Loring Line",
+					},
+					{
+						RouteID:         "2B",
+						Name:            "2B - WEST OX RD DIV-DUNN LORING STATION",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "2Bv1",
+						Name:            "2B - WEST OX RD-DUNN LORING STA(NO MALL)",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "2Bv2",
+						Name:            "2B - FAIR OAKS MALL-DUNN LORING STATION",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "2Bv3",
+						Name:            "2B - DUNN LORING STA - FAIR OAKS MALL",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "30N",
+						Name:            "30N - FRIENDSHIP HGTS- NAYLOR RD STA",
+						LineDescription: "Friendship Heights-Southeast Line",
+					},
+					{
+						RouteID:         "30S",
+						Name:            "30S - FRIENDSHIP HGTS- SOUTHRN AVE STA",
+						LineDescription: "Friendship Heights-Southeast Line",
+					},
+					{
+						RouteID:         "31",
+						Name:            "31 - POTOMAC PARK-FRIENDSHIP HGTS",
+						LineDescription: "Wisconsin Avenue Line",
+					},
+					{
+						RouteID:         "32",
+						Name:            "32 - VIRGINIA AVE+E ST- SOUTHRN AVE",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "32v1",
+						Name:            "32 - PENN AVE + 8TH ST - SOUTHRN AVE",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "33",
+						Name:            "33 - 10TH ST+PA AV NW - FRIENDSHIP HGTS",
+						LineDescription: "Wisconsin Avenue Line",
+					},
+					{
+						RouteID:         "34",
+						Name:            "34 - 10TH ST + PA AVE- NAYLOR RD STA",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "36",
+						Name:            "36 - VIRGINIA AVE+E ST - NAYLOR RD STA",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "37",
+						Name:            "37 - 10TH ST+PA AV NW - FRIENDSHIP HGTS",
+						LineDescription: "Wisconsin Avenue Limited Line",
+					},
+					{
+						RouteID:         "38B",
+						Name:            "38B - BALLSTON - FARRAGUT",
+						LineDescription: "Ballston-Farragut Square Line",
+					},
+					{
+						RouteID:         "38Bv1",
+						Name:            "38B - WASH & QUINCY - FARRAGUT",
+						LineDescription: "Ballston-Farragut Square Line",
+					},
+					{
+						RouteID:         "38Bv2",
+						Name:            "38B - WASHINGTON-LEE HS - FARRAGUT SQ",
+						LineDescription: "Ballston-Farragut Square Line",
+					},
+					{
+						RouteID:         "39",
+						Name:            "39 - VIRGINIA AVE+21ST NW- NAYLOR RD STA",
+						LineDescription: "Pennsylvania Avenue Limited Line",
+					},
+					{
+						RouteID:         "3A",
+						Name:            "3A - ANNANDALE - E FALLS CHURCH",
+						LineDescription: "Annandale Road Line",
+					},
+					{
+						RouteID:         "3Av1",
+						Name:            "3A - ANNANDALE - 7 CORNERS",
+						LineDescription: "Annandale Road Line",
+					},
+					{
+						RouteID:         "3T",
+						Name:            "3T - MCLEAN STATION - E FALLS CH STA",
+						LineDescription: "Pimmit Hills Line",
+					},
+					{
+						RouteID:         "3Tv1",
+						Name:            "3T - MCLEAN STATION - W FALLS CHURCH",
+						LineDescription: "Pimmit Hills Line",
+					},
+					{
+						RouteID:         "3Y",
+						Name:            "3Y - E FALLS CHURCH - MCPHERSON SQ",
+						LineDescription: "Lee Highway-Farragut Square Line",
+					},
+					{
+						RouteID:         "42",
+						Name:            "42 - 9TH + F ST  - MT PLEASANT",
+						LineDescription: "Mount Pleasant Line",
+					},
+					{
+						RouteID:         "43",
+						Name:            "43 - I + 13TH NW - MT PLEASANT",
+						LineDescription: "Mount Pleasant Line",
+					},
+					{
+						RouteID:         "4A",
+						Name:            "4A - SEVEN CORNERS - ROSSLYN",
+						LineDescription: "Pershing Dr-Arlington Blvd Line",
+					},
+					{
+						RouteID:         "4B",
+						Name:            "4B - SEVEN CORNERS - ROSSLYN",
+						LineDescription: "Pershing Dr-Arlington Blvd Line",
+					},
+					{
+						RouteID:         "52",
+						Name:            "52 - L ENFNT PLAZA - TAKOMA STATION",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "52v1",
+						Name:            "52 - L ENFNT PLAZA - 14TH+COLORADO",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "52v2",
+						Name:            "52 - 14TH+COLORADO - L ENFANT PLAZA",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "52v3",
+						Name:            "52 - 14TH & U - TAKOMA STATION",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "54",
+						Name:            "54 - METRO CENTER - TAKOMA STA",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "54v1",
+						Name:            "54 - 14TH+COLORADO - METRO CENTER",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "59",
+						Name:            "59 - FEDERAL TRIANGLE - TAKOMA STATION",
+						LineDescription: "14th Street Limited Line",
+					},
+					{
+						RouteID:         "5A",
+						Name:            "5A - DULLES AIRPORT - LENFANT PLAZA",
+						LineDescription: "DC-Dulles Line",
+					},
+					{
+						RouteID:         "60",
+						Name:            "60 - GEORGIA + PETWORTH - FT TOTTEN",
+						LineDescription: "Fort Totten-Petworth Line",
+					},
+					{
+						RouteID:         "62",
+						Name:            "62 - GEORGIA+PETWORTH - TAKOMA STATION",
+						LineDescription: "Takoma-Petworth Line",
+					},
+					{
+						RouteID:         "62v1",
+						Name:            "62 - COOLIDGE HS - GEORGIA + PETWORTH",
+						LineDescription: "Takoma-Petworth Line",
+					},
+					{
+						RouteID:         "63",
+						Name:            "63 - FED TRIANGLE - TAKOMA STA",
+						LineDescription: "Takoma-Petworth Line",
+					},
+					{
+						RouteID:         "64",
+						Name:            "64 - FEDERAL TRIANGLE -FORT TOTTEN",
+						LineDescription: "Fort Totten-Petworth Line",
+					},
+					{
+						RouteID:         "64v1",
+						Name:            "64 - GEORGIA + PETWOTH - FT TOTTEN",
+						LineDescription: "Fort Totten-Petworth Line",
+					},
+					{
+						RouteID:         "70",
+						Name:            "70 - ARCHIVES - SILVER SPRING",
+						LineDescription: "Georgia Avenue-7th Street Line",
+					},
+					{
+						RouteID:         "70v1",
+						Name:            "70 - GEORGIA & EUCLID  - ARCHIVES",
+						LineDescription: "Georgia Avenue-7th Street Line",
+					},
+					{
+						RouteID:         "74",
+						Name:            "74 - NATIONALS PARK - CONVENTION CTR",
+						LineDescription: "Convention Center-Southwest Waterfront Line",
+					},
+					{
+						RouteID:         "79",
+						Name:            "79 - ARCHIVES - SILVER SPRING STA",
+						LineDescription: "Georgia Avenue MetroExtra Line",
+					},
+					{
+						RouteID:         "7A",
+						Name:            "7A - LINCOLNIA+QUANTRELL - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Av1",
+						Name:            "7A - PENTAGON - SOUTHERN TWRS",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Av2",
+						Name:            "7A - SOUTHERN TWRS - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Av3",
+						Name:            "7A - LINCOLNIA/QUANTRELL - PENT VIA PENT",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7C",
+						Name:            "7C - PARK CENTER - PENTAGON",
+						LineDescription: "Park Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7F",
+						Name:            "7F - LINCOLNIA+QUANTRELL - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Fv1",
+						Name:            "7F - LINC + QUANT - PENT CITY - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7M",
+						Name:            "7M - MARK CENTER - PENTAGON (NON-HOV)",
+						LineDescription: "Mark Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7Mv1",
+						Name:            "7M - MARK CENTER - PENTAGON (HOV)",
+						LineDescription: "Mark Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7P",
+						Name:            "7P - PARK CTR - PENTAGON",
+						LineDescription: "Park Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7W",
+						Name:            "7W - LNCLNA+QUANTRLL- PENTAGON",
+						LineDescription: "Lincolnia-Pentagon Line",
+					},
+					{
+						RouteID:         "7Y",
+						Name:            "7Y - SOUTHERN TWRS - H+17TH ST",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Yv1",
+						Name:            "7Y - PENTAGON - H+17TH ST",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "80",
+						Name:            "80 - KENNEDY CTR   - FORT TOTTEN STA",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "80v1",
+						Name:            "80 - MCPHERSON SQ  - BROOKLAND",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "80v2",
+						Name:            "80 - MCPHERSON SQ  - FORT TOTTEN STA",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "80v3",
+						Name:            "80 - KENNEDY CTR   - BROOKLAND STA",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "83",
+						Name:            "83 - RHODE ISLAND AVE STA-CHERRY HILL",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v1",
+						Name:            "83 - MT RAINIER - RHODE ISLAND",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v2",
+						Name:            "83 - RHODE ISLAND - MT RAINIER",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v3",
+						Name:            "83 - RHODE ISLAND AVE STA-COLLEGE PARK",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v4",
+						Name:            "83 - COLLEGE PARK-RHODE ISLAND AVE STA",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "86",
+						Name:            "86 - RHODE ISLAND AVE STA- CALVERTON",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "86v1",
+						Name:            "86 - RHODE ISLAND AVE STA- COLLEGE PARK",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "86v2",
+						Name:            "86 - MT RAINIER   - CALVERTON",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "87",
+						Name:            "87 - NEW CARROLTON -CYPRESS+LAURL LAKES",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v1",
+						Name:            "87 - GRNBELT STA -CYPRESS+LAURL LAKES",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v2",
+						Name:            "87 - GRNBELT-CYP+LRL LAKES (NO P&R)",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v3",
+						Name:            "87 - GRNBELT STA - BALTIMORE+MAIN ST",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v4",
+						Name:            "87 - BALTIMORE+MAIN ST - GRNBELT STA",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v5",
+						Name:            "87 - CYPRESS+LAURL LAKES -GRNBELT STA",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "89",
+						Name:            "89 - GREENBELT STA - 4TH & GREEN HILL",
+						LineDescription: "Laurel Line",
+					},
+					{
+						RouteID:         "89v1",
+						Name:            "89 - GREENBELT STA - CHERRY LA+4TH ST",
+						LineDescription: "Laurel Line",
+					},
+					{
+						RouteID:         "89M",
+						Name:            "89M - GREENBELT STA - S LAUREL P+R",
+						LineDescription: "Laurel Line",
+					},
+					{
+						RouteID:         "8S",
+						Name:            "8S - RADFORD+QUAKER - PENTAGON",
+						LineDescription: "Foxchase-Seminary Valley Line",
+					},
+					{
+						RouteID:         "8W",
+						Name:            "8W - MARK CENTER - PENTAGON V FOXCHASE",
+						LineDescription: "Foxchase-Seminary Valley Line",
+					},
+					{
+						RouteID:         "8Z",
+						Name:            "8Z - QUAKER+OSAGE - PENTAGON",
+						LineDescription: "Foxchase-Seminary Valley Line",
+					},
+					{
+						RouteID:         "90",
+						Name:            "90 - ANACOSTIA - DK ELLNGTN BRDG",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "90v1",
+						Name:            "90 - 8TH ST + L ST  - DK ELLNGTN BRDG",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "90v2",
+						Name:            "90 - KIPP DC PREP- ANACOSTIA",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "92",
+						Name:            "92 - CONGRESS HTS STA - REEVES CTR",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "92v1",
+						Name:            "92 - EASTERN MARKET - CONGRESS HGTS STA",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "92v2",
+						Name:            "92 - CONGRESS HTS STA- EASTERN MARKET",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "96",
+						Name:            "96 - TENLEYTOWN STA - CAPITOL HTS STA",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v1",
+						Name:            "96 - ELLINGTON BR - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v2",
+						Name:            "96 - CAPITOL HTS  - REEVES CTR",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v3",
+						Name:            "96 - CAPITOL HTS - ELLINGTON BRDG",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v4",
+						Name:            "96 - REEVES CTR  - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v5",
+						Name:            "96 - TENLEYTOWN STA - STADIUM ARMORY STA",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "97",
+						Name:            "97 - UNION STATION - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "97v1",
+						Name:            "97 - EASTERN HS - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "A12",
+						Name:            "A12 - ADDISON RD STA - CAPITAL PLAZA",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A12v1",
+						Name:            "A12 - BARLWE+MATHEW HENSON - ADDISON RD",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A12v2",
+						Name:            "A12 - CAPITOL HTS STA - CAPITAL PLAZA",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A12v3",
+						Name:            "A12 - CAPITAL PLAZA - CAPITOL HTS",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A2",
+						Name:            "A2 - SOUTHERN AVE - ANACOSTIA (VIA HOSP)",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A2v1",
+						Name:            "A2 - ANACOSTIA - MISS+ATLANTIC",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A2v2",
+						Name:            "A2 - SOUTHERN AVE STA - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A2v3",
+						Name:            "A2 - MISS+ATLANTIC - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A31",
+						Name:            "A31 - ANACOSTIA HIGH - MINNESOTA STA",
+						LineDescription: "Minnesota Ave-Anacostia Line",
+					},
+					{
+						RouteID:         "A32",
+						Name:            "A32 - ANACOSTIA HIGH - SOUTHRN AVE STA",
+						LineDescription: "Minnesota Ave-Anacostia Line",
+					},
+					{
+						RouteID:         "A33",
+						Name:            "A33 - ANACOSTIA HIGH - ANACOSTIA STA",
+						LineDescription: "Minnesota Ave-Anacostia Line",
+					},
+					{
+						RouteID:         "A4",
+						Name:            "A4 - DC VILLAGE - ANACOSTIA",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v1",
+						Name:            "A4 - USCG-FT DRUM (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v2",
+						Name:            "A4 - FT DRUM - ANACOSTIA",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v3",
+						Name:            "A4 - ANACOSTIA - FT DRUM",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v4",
+						Name:            "A4 - FT DRUM-USCG (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v5",
+						Name:            "A4 - DC VILL-USCG (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A6",
+						Name:            "A6 - 4501 3RD ST - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A6v1",
+						Name:            "A6 - SOUTHERN AVE+S CAPITOL - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A7",
+						Name:            "A7 - SOUTHRN+S CAPITOL - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A8",
+						Name:            "A8 - 4501 3RD ST - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A8v1",
+						Name:            "A8 - SOUTHERN + S CAPITOL - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A9",
+						Name:            "A9 - LIVINGSTON - MCPHERSON SQUARE",
+						LineDescription: "Martin Luther King Jr Ave Limited Line",
+					},
+					{
+						RouteID:         "B2",
+						Name:            "B2 - ANACOSTIA STA - MOUNT RAINIER",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v1",
+						Name:            "B2 - ANACOSTIA STA - BLDNSGRG+VST NE",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v2",
+						Name:            "B2 - POTOMAC AVE - MOUNT RAINIER",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v3",
+						Name:            "B2 - BLDNSBRG+26TH - ANACOSTIA STA",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v4",
+						Name:            "B2 - EASTERN HS - ANACOSTIA STA",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B21",
+						Name:            "B21 - NEW CARROLTON STA - BOWIE STATE",
+						LineDescription: "Bowie State University Line",
+					},
+					{
+						RouteID:         "B22",
+						Name:            "B22 - NEW CARROLTON STA - BOWIE STATE",
+						LineDescription: "Bowie State University Line",
+					},
+					{
+						RouteID:         "B22v1",
+						Name:            "B22 - OLD CHAPEL & 197 - NEW CARRLTN STA",
+						LineDescription: "Bowie State University Line",
+					},
+					{
+						RouteID:         "B24",
+						Name:            "B24 - NEW CARLTN STA-BOWIE P+R(VIA BHC)",
+						LineDescription: "Bowie-Belair Line",
+					},
+					{
+						RouteID:         "B24v1",
+						Name:            "B24 - NEW CARROLTON STA - BOWIE P+R",
+						LineDescription: "Bowie-Belair Line",
+					},
+					{
+						RouteID:         "B27",
+						Name:            "B27 - NEW CARROLTON STA - BOWIE STATE",
+						LineDescription: "Bowie-New Carrollton Line",
+					},
+					{
+						RouteID:         "B29",
+						Name:            "B29 - NEW CARROLTON - CROFTON CC (PM)(PR)",
+						LineDescription: "Crofton-New Carrollton Line",
+					},
+					{
+						RouteID:         "B29v1",
+						Name:            "B29 - NEW CARROLLTON STA - GATEWAY CTR",
+						LineDescription: "Crofton-New Carrollton Line",
+					},
+					{
+						RouteID:         "B29v2",
+						Name:            "B29 - NEW CARROLTON - CROFTON CC (NO PR)",
+						LineDescription: "Crofton-New Carrollton Line",
+					},
+					{
+						RouteID:         "B30",
+						Name:            "B30 - GREENBELT STA - BWI LT RAIL STA",
+						LineDescription: "Greenbelt-BWI Thurgood Marshall Airport Express Line",
+					},
+					{
+						RouteID:         "B8",
+						Name:            "B8 - RHODE ISLAND AV -PETERSBRG APTS",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "B8v1",
+						Name:            "B8 - BLDNSBRG+S DKTA -PETERSBRG APTS",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "B8v2",
+						Name:            "B8 - PETERSBRG APTS  -BLDNSBRG+S DKTA",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "B9",
+						Name:            "B9 - RHODE ISLAND AVE - COLMAR MANOR",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "C11",
+						Name:            "C11 - CLINTON P+R - BRANCH AVE STA",
+						LineDescription: "Clinton Line",
+					},
+					{
+						RouteID:         "C12",
+						Name:            "C12 - NAYLOR RD STA  - BRANCH AVE STA",
+						LineDescription: "Hillcrest Heights Line",
+					},
+					{
+						RouteID:         "C13",
+						Name:            "C13 - CLINTON P+R - BRANCH AVE STA",
+						LineDescription: "Clinton Line",
+					},
+					{
+						RouteID:         "C14",
+						Name:            "C14 - NAYLOR RD STA  - BRANCH AVE STA",
+						LineDescription: "Hillcrest Heights Line",
+					},
+					{
+						RouteID:         "C2",
+						Name:            "C2 - WHEATN STA - GRNBELT STA UMD ALT",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C2v1",
+						Name:            "C2 - TAKOMA LANGLEY XROADS - GRNBELT STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C2v2",
+						Name:            "C2 - GREENBELT STA - RANDOLPH + PARKLAWN",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C2v3",
+						Name:            "C2 - TAKOMA LANGLEY XROADS - WHEATON",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C21",
+						Name:            "C21 - ADDISON RD STA - COLLINGTON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C21v1",
+						Name:            "C21 - ADDISON RD STA - POINTER RIDGE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C21v2",
+						Name:            "C21 - ADDISON RD STA - CAMPUS WAY S",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C22",
+						Name:            "C22 - ADDISON RD STA - COLLINGTON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C22v1",
+						Name:            "C22 - ADDISON RD STA- POINTER RIDGE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C26",
+						Name:            "C26 - LARGO TOWN CTR - WATKNS+CHESTERTON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C26v1",
+						Name:            "C26 - LARGO TOWN CTR-WATKINS+CAMBLETON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C28",
+						Name:            "C28 - PT RIDGE -NEW CAROLTN VIA HLTH CTR",
+						LineDescription: "Pointer Ridge Line",
+					},
+					{
+						RouteID:         "C28v1",
+						Name:            "C28 - PT RIDGE - NEW CARROLLTON STA",
+						LineDescription: "Pointer Ridge Line",
+					},
+					{
+						RouteID:         "C29*1",
+						Name:            "C29 - POINTER RIDGE - ADDISON RD STA",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C29*2",
+						Name:            "C29 - WATKNS+CAMBLETON - ADDISN RD STA",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C29*4",
+						Name:            "C29 - ADDISON RD STA - BOWIE STATE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C29/",
+						Name:            "C29 - ADDISON RD STA - POINTER RIDGE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C4",
+						Name:            "C4 - TWINBROOK STA - PG PLAZA STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C4v1",
+						Name:            "C4 - TLTC-TWINBROOK",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C4v2",
+						Name:            "C4 - TWINBROOK STA - WHEATON STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C4v3",
+						Name:            "C4 - PG PLAZA STA - WHEATON STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C8",
+						Name:            "C8 - WHITE FLINT - COLLEGE PARK",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "C8v1",
+						Name:            "C8 - WHITE FLNT-COLLEGE PK (NO FDA/ARCH)",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "C8v2",
+						Name:            "C8 - WHITE FLINT-COLLEGE PARK (NO FDA)",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "C8v3",
+						Name:            "C8 - GLENMONT-COLLEGE PK (NO FDA/ARCH)",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "D1",
+						Name:            "D1 - GLOVER PARK - FRANKLIN SQUARE",
+						LineDescription: "Glover Park-Franklin Square Line",
+					},
+					{
+						RouteID:         "D12",
+						Name:            "D12 - SOUTHERN AVE STA - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D12v1",
+						Name:            "D12 - SUITLAND STA - SOUTHERN AVE STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D12v2",
+						Name:            "D12 - ST BARNABAS RD   - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D13",
+						Name:            "D13 - SOUTHERN AVE STA - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D13v1",
+						Name:            "D13 - SOUTHRN STA - ALLENTWN+OLD BRNCH",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D14",
+						Name:            "D14 - SOUTHERN AVE STA - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D14v1",
+						Name:            "D14 - ALLENTWN+OLD BRNCH - SUITLND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D14v2",
+						Name:            "D14 - SUITLND STA - ALLENTWN+OLD BRNCH",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D2",
+						Name:            "D2 - GLOVER PARK   - CONNETICUT +Q ST",
+						LineDescription: "Glover Park-Dupont Circle Line",
+					},
+					{
+						RouteID:         "D2v1",
+						Name:            "D2 - DUPONT CIR - GLOVER PARK",
+						LineDescription: "Glover Park-Dupont Circle Line",
+					},
+					{
+						RouteID:         "D31",
+						Name:            "D31 - TENLEYTOWN STA - 16TH + EASTERN",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D32",
+						Name:            "D32 - TENLEYTOWN STA - COLUMBIA HTS STA",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D33",
+						Name:            "D33 - TENLEYTOWN STA - 16TH + SHEPHERD",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D34",
+						Name:            "D34 - TENLEYTOWN STA - 14TH + COLORADO",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D4",
+						Name:            "D4 - DUPONT CIRCLE - IVY CITY",
+						LineDescription: "Ivy City-Franklin Square Line",
+					},
+					{
+						RouteID:         "D4v1",
+						Name:            "D4 - FRANKLIN SQUARE - IVY CITY",
+						LineDescription: "Ivy City-Franklin Square Line",
+					},
+					{
+						RouteID:         "D4v2",
+						Name:            "D4 - IVY CITY - FRANKLIN SQUARE",
+						LineDescription: "Ivy City-Franklin Square Line",
+					},
+					{
+						RouteID:         "D5",
+						Name:            "D5 - MASS LTTL FLWR CHRCH- FARRGT SQR",
+						LineDescription: "MacArthur Blvd-Georgetown Line",
+					},
+					{
+						RouteID:         "D6",
+						Name:            "D6 - SIBLEY HOSP - STADIUM ARMRY",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D6v1",
+						Name:            "D6 - STADIUM ARMRY STA - FARRAGUT SQUARE",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D6v2",
+						Name:            "D6 - SIBLEY HOSP - FARRAGUT SQ",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D6v3",
+						Name:            "D6 - FARRAGUT SQUARE - STADIUM ARMRY",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D8",
+						Name:            "D8 - UNION STATION - VA MED CTR",
+						LineDescription: "Hospital Center Line",
+					},
+					{
+						RouteID:         "D8v1",
+						Name:            "D8 - RHODE ISLAND STA - UNION STA",
+						LineDescription: "Hospital Center Line",
+					},
+					{
+						RouteID:         "E2",
+						Name:            "E2 - IVY CITY - FT TOTTEN",
+						LineDescription: "Ivy City-Fort Totten Line",
+					},
+					{
+						RouteID:         "E4",
+						Name:            "E4 - FRIENDSHP HTS - RIGGS PK",
+						LineDescription: "Military Road-Crosstown Line",
+					},
+					{
+						RouteID:         "E4v1",
+						Name:            "E4 - FRIENDSHP HTS - FT TOTTEN",
+						LineDescription: "Military Road-Crosstown Line",
+					},
+					{
+						RouteID:         "E4v2",
+						Name:            "E4 - FT TOTTEN - FRIENDSHP HTS",
+						LineDescription: "Military Road-Crosstown Line",
+					},
+					{
+						RouteID:         "E6",
+						Name:            "E6 - FRIENDSHP HTS  -KNOLLWOOD",
+						LineDescription: "Chevy Chase Line",
+					},
+					{
+						RouteID:         "F1",
+						Name:            "F1 - CHEVERLY STA - TAKOMA STA",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F12",
+						Name:            "F12 - CHEVERLY STA - NEW CARROLTON STA",
+						LineDescription: "Ardwick Industrial Park Shuttle Line",
+					},
+					{
+						RouteID:         "F12v1",
+						Name:            "F12 - CHEVERLY STA - LANDOVER STA",
+						LineDescription: "Ardwick Industrial Park Shuttle Line",
+					},
+					{
+						RouteID:         "F13",
+						Name:            "F13 - CHEVERLY STA-WASHINGTON BUS PARK",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F13v1",
+						Name:            "F13 - CHEVERLY STA - WASHINGTON BUS PARK",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F13v2",
+						Name:            "F13 - NEW CARROLTON - WASHINGTON BUS PARK",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F13v3",
+						Name:            "F13 - WHITFIELD + VOLTA - CHEVERLY STA",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F14",
+						Name:            "F14 - NAYLOR RD STA -NEW CARROLTON STA",
+						LineDescription: "Sheriff Road-Capitol Heights Line",
+					},
+					{
+						RouteID:         "F14v1",
+						Name:            "F14 - BRADBURY HGTS -NEW CARROLTON STA",
+						LineDescription: "Sheriff Road-Capitol Heights Line",
+					},
+					{
+						RouteID:         "F2",
+						Name:            "F2 - CHEVERLY STA - TAKOMA STA",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F2v1",
+						Name:            "F2 - CHEVRLY STA-QUEENS CHAPL+CARSN CIR",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F2v2",
+						Name:            "F2 - 34TH + OTIS - TAKOMA STA",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F4",
+						Name:            "F4 - SILVR SPRING STA - NEW CARRLLTON",
+						LineDescription: "New Carrollton-Silver Spring Line",
+					},
+					{
+						RouteID:         "F4v1",
+						Name:            "F4 - PG PLAZA STA -NEW CARROLTON STA",
+						LineDescription: "New Carrollton-Silver Spring Line",
+					},
+					{
+						RouteID:         "F4v2",
+						Name:            "F4 - NEW CARRLLTON - PG PLAZA STA",
+						LineDescription: "New Carrollton-Silver Spring Line",
+					},
+					{
+						RouteID:         "F6",
+						Name:            "F6 - FT TOTTEN - NEW CARROLLTN",
+						LineDescription: "New Carrollton-Fort Totten Line",
+					},
+					{
+						RouteID:         "F6v1",
+						Name:            "F6 - PG PLAZA - NEW CARROLLTON STA",
+						LineDescription: "New Carrollton-Fort Totten Line",
+					},
+					{
+						RouteID:         "F6v2",
+						Name:            "F6 - NEW CARROLLTON - PG PLAZA STA",
+						LineDescription: "New Carrollton-Fort Totten Line",
+					},
+					{
+						RouteID:         "F8",
+						Name:            "F8 - CHEVERLY STA - TLTC",
+						LineDescription: "Langley Park-Cheverly Line",
+					},
+					{
+						RouteID:         "G12",
+						Name:            "G12 - GREENBELT STA - NEW CARROLLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G12v1",
+						Name:            "G12 - GREENBELT STA - ROOSEVELT CENTER",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G12v2",
+						Name:            "G12 - ROOSEVELT CTR - NEW CARROLLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G14",
+						Name:            "G14 - GREENBELT STA -NEW CARROLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G14v1",
+						Name:            "G14 - ROOSEVELT CTR -NEW CARROLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G14v2",
+						Name:            "G14 - GREENBELT STA - NEW CARROLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G2",
+						Name:            "G2 - GEORGETOWN UNIV - HOWARD UNIV",
+						LineDescription: "P Street-LeDroit Park Line",
+					},
+					{
+						RouteID:         "G2v1",
+						Name:            "G2 - GEORGETOWN UNIV - P+14TH ST",
+						LineDescription: "P Street-LeDroit Park Line",
+					},
+					{
+						RouteID:         "G8",
+						Name:            "G8 - FARRAGUT SQUARE - AVONDALE",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G8v1",
+						Name:            "G8 - RHODE ISLAND AVE STA-FARRAGUT SQ",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G8v2",
+						Name:            "G8 - FARRAGUT SQ - RHODE ISLAND STA",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G8v3",
+						Name:            "G8 - BROOKLAND STA - AVONDALE",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G9",
+						Name:            "G9 - FRANKLIN SQ - RHODE ISLD + EAST PM",
+						LineDescription: "Rhode Island Avenue Limited Line",
+					},
+					{
+						RouteID:         "G9v1",
+						Name:            "G9 - FRANKLIN SQ - RHODE ISLD + EASTERN",
+						LineDescription: "Rhode Island Avenue Limited Line",
+					},
+					{
+						RouteID:         "H1",
+						Name:            "H1 - C + 17TH ST - BROOKLAND CUA STA",
+						LineDescription: "Brookland-Potomac Park Line",
+					},
+					{
+						RouteID:         "H11",
+						Name:            "H11 - HEATHER HILL - NAYLOR RD STA",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H12",
+						Name:            "H12 - HEATHER HILL-NAYLOR RD (MACYS)",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H12v1",
+						Name:            "H12 - HEATHER HILL-NAYLOR RD STA (P&R)",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H13",
+						Name:            "H13 - HEATHER HILL - NAYLOR RD STA",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H2",
+						Name:            "H2 - TENLEYTOWN AU-ST - BROOKLND CUA STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H3",
+						Name:            "H3 - TENLEYTOWN STA -BROOKLND CUA STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H4",
+						Name:            "H4 - TENLEYTWN AU-STA -BROOKLAND CUA STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H4v1",
+						Name:            "H4 - COLUMBIA RD+14TH -TENLEYTOWN-AU STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H6",
+						Name:            "H6 - BROOKLAND CUA STA - FORT LINCOLN",
+						LineDescription: "Brookland-Fort Lincoln Line",
+					},
+					{
+						RouteID:         "H6v1",
+						Name:            "H6 - FORT LINCOLN - FORT LINCOLN",
+						LineDescription: "Brookland-Fort Lincoln Line",
+					},
+					{
+						RouteID:         "H8",
+						Name:            "H8 - MT PLEASANT+17TH - RHODE ISLAND",
+						LineDescription: "Park Road-Brookland Line",
+					},
+					{
+						RouteID:         "H9",
+						Name:            "H9 - RHODE ISLAND - FORT DR + 1ST",
+						LineDescription: "Park Road-Brookland Line",
+					},
+					{
+						RouteID:         "J1",
+						Name:            "J1 - MEDCAL CTR STA - SILVR SPRNG STA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J1v1",
+						Name:            "J1 - SILVR SPRNG STA - MONT MALL/BAT LN",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J12",
+						Name:            "J12 - ADDISON RD STA - FORESTVILLE",
+						LineDescription: "Marlboro Pike Line",
+					},
+					{
+						RouteID:         "J12v1",
+						Name:            "J12 - ADDISON RD-FORESTVILLE VIA PRES PKY",
+						LineDescription: "Marlboro Pike Line",
+					},
+					{
+						RouteID:         "J2",
+						Name:            "J2 - MONTGOMRY MALL - SILVR SPRNG STA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J2v1",
+						Name:            "J2 - MEDICAL CTR STA - SILVR SPRNG STA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J2v2",
+						Name:            "J2 - SILVER SPRNG - MONT MALL/BATTRY LA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J4",
+						Name:            "J4 - BETHESDA STA - COLLEGE PARK STA",
+						LineDescription: "College Park-Bethesda Limited",
+					},
+					{
+						RouteID:         "K12",
+						Name:            "K12 - BRANCH AVE ST-SUITLAND ST",
+						LineDescription: "Forestville Line",
+					},
+					{
+						RouteID:         "K12v1",
+						Name:            "K12 - PENN MAR - SUITLAND ST",
+						LineDescription: "Forestville Line",
+					},
+					{
+						RouteID:         "K12v2",
+						Name:            "K12 - BRANCH AVE - PENN MAR",
+						LineDescription: "Forestville Line",
+					},
+					{
+						RouteID:         "K2",
+						Name:            "K2 - FT TOTTEN STA - TAKOMA STA",
+						LineDescription: "Takoma-Fort Totten Line",
+					},
+					{
+						RouteID:         "K6",
+						Name:            "K6 - FORT TOTTEN STA - WHITE OAK",
+						LineDescription: "New Hampshire Ave-Maryland Line",
+					},
+					{
+						RouteID:         "K6v1",
+						Name:            "K6 - TLTC - FORT TOTTEN STA",
+						LineDescription: "New Hampshire Ave-Maryland Line",
+					},
+					{
+						RouteID:         "K9",
+						Name:            "K9 - FORT TOTTEN STA - FDA/FRC (PM)",
+						LineDescription: "New Hampshire Ave-Maryland Limited Line",
+					},
+					{
+						RouteID:         "K9v1",
+						Name:            "K9 - FORT TOTTEN STA - FDA/FRC (AM)",
+						LineDescription: "New Hampshire Ave-Maryland Limited Line",
+					},
+					{
+						RouteID:         "L1",
+						Name:            "L1 - POTOMAC PK  - CHEVY CHASE",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L2",
+						Name:            "L2 - FARRAGUT SQ - CHEVY CHASE",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L2v1",
+						Name:            "L2 - VAN NESS-UDC STA - CHEVY CHASE",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L2v2",
+						Name:            "L2 - FARRAGUT SQ - BETHESDA",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L8",
+						Name:            "L8 - FRIENDSHIP HTS STA - ASPEN HILL",
+						LineDescription: "Connecticut Ave-Maryland Line",
+					},
+					{
+						RouteID:         "M4",
+						Name:            "M4 - SIBLEY HOSPITAL - TENLEYTOWN/AU STA",
+						LineDescription: "Nebraska Ave Line",
+					},
+					{
+						RouteID:         "M4v1",
+						Name:            "M4 - TENLEYTOWN   - PINEHRST CIR",
+						LineDescription: "Nebraska Ave Line",
+					},
+					{
+						RouteID:         "M4v2",
+						Name:            "M4 - PINEHRST CIR - TENLEYTOWN",
+						LineDescription: "Nebraska Ave Line",
+					},
+					{
+						RouteID:         "M6",
+						Name:            "M6 - POTOMAC AVE - ALABAMA + PENN",
+						LineDescription: "Fairfax Village Line",
+					},
+					{
+						RouteID:         "M6v1",
+						Name:            "M6 - ALABAMA + PENN - FAIRFAX VILLAGE",
+						LineDescription: "Fairfax Village Line",
+					},
+					{
+						RouteID:         "MW1",
+						Name:            "MW1 - BRADDOCK RD - PENTAGON CITY",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "MW1v1",
+						Name:            "MW1 - POTOMAC YARD - CRYSTAL CITY",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "MW1v2",
+						Name:            "MW1 - CRYSTAL CITY - BRADDOCK RD",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "MW1v3",
+						Name:            "MW1 - BRADDOCK RD - CRYSTAL CITY",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "N2",
+						Name:            "N2 - FRIENDSHIP HTS - FARRAGUT SQ",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "N4",
+						Name:            "N4 - FRIENDSHP HTS - POTOMAC PARK",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "N4v1",
+						Name:            "N4 - FRIENDSHP HTS - FARRAGUT  SQ",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "N6",
+						Name:            "N6 - FRNDSHIP HTS - FARRAGUT SQ",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "NH1",
+						Name:            "NH1 - NATIONAL HARBOR-SOUTHERN AVE STA",
+						LineDescription: "National Harbor-Southern Avenue Line",
+					},
+					{
+						RouteID:         "NH2",
+						Name:            "NH2 - HUNTINGTON STA-NATIONAL HARBOR",
+						LineDescription: "National Harbor-Alexandria Line",
+					},
+					{
+						RouteID:         "P12",
+						Name:            "P12 - EASTOVER - ADDISON RD STA (NO HOSP)",
+						LineDescription: "Eastover-Addison Road Line",
+					},
+					{
+						RouteID:         "P12v1",
+						Name:            "P12 - IVERSON MALL - ADDISON RD STA",
+						LineDescription: "Eastover-Addison Road Line",
+					},
+					{
+						RouteID:         "P12v2",
+						Name:            "P12 - SUITLAND STA - ADDISON RD STA",
+						LineDescription: "Eastover-Addison Road Line",
+					},
+					{
+						RouteID:         "P18",
+						Name:            "P18 - FT WASH P+R LOT - SOUTHERN AVE",
+						LineDescription: "Oxon Hill-Fort Washington Line",
+					},
+					{
+						RouteID:         "P19",
+						Name:            "P19 - FT WASH P+R LOT-SOUTHERN AVE STA",
+						LineDescription: "Oxon Hill-Fort Washington Line",
+					},
+					{
+						RouteID:         "P6",
+						Name:            "P6 - ANACOSTIA STA - RHODE ISLAND STA",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v1",
+						Name:            "P6 - ECKINGTON - RHODE ISLAND AVE",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v2",
+						Name:            "P6 - RHODE ISLAND AVE - ECKINGTON",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v3",
+						Name:            "P6 - ANACOSTIA STA - ARCHIVES",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v4",
+						Name:            "P6 - ARCHIVES - ANACOSTIA",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "Q1",
+						Name:            "Q1 - SILVR SPRNG STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q2",
+						Name:            "Q2 - SILVR SPRNG STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q2v1",
+						Name:            "Q2 - MONT COLLEGE - SILVR SPRNG STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q2v2",
+						Name:            "Q2 - SILVR SPRNG STA - MONT COLLEGE",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q4",
+						Name:            "Q4 - SILVER SPRNG STA - ROCKVILLE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q4v1",
+						Name:            "Q4 - WHEATON STA - ROCKVILLE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q5",
+						Name:            "Q5 - WHEATON STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q6",
+						Name:            "Q6 - WHEATON STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q6v1",
+						Name:            "Q6 - ROCKVILLE STA - WHEATON STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "R1",
+						Name:            "R1 - FORT TOTTEN STA - ADELPHI",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R12",
+						Name:            "R12 - DEANWOOD STA - GREENBELT STA",
+						LineDescription: "Kenilworth Avenue Line",
+					},
+					{
+						RouteID:         "R12v1",
+						Name:            "R12 - DEANWOOD STA - GREENBELT STA",
+						LineDescription: "Kenilworth Avenue Line",
+					},
+					{
+						RouteID:         "R2",
+						Name:            "R2 - FORT TOTTEN - CALVERTON",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R2v1",
+						Name:            "R2 - HIGH POINT HS - FORT TOTTEN",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R2v2",
+						Name:            "R2 - POWDER MILL+CHERRY HILL - CALVERTON",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R4",
+						Name:            "R4 - BROOKLAND STA- HIGHVIEW",
+						LineDescription: "Queens Chapel Road Line",
+					},
+					{
+						RouteID:         "REX",
+						Name:            "REX - FT BELVOIR POST - KING ST STA",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv1",
+						Name:            "REX - FT BELVOIR COMM HOSP - KING ST STA",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv2",
+						Name:            "REX - KING ST STA - FT BELVOIR COMM HOSP",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv3",
+						Name:            "REX - KING ST STA - WOODLAWN",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv4",
+						Name:            "REX - WOODLAWN - KING ST STA",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "S1",
+						Name:            "S1 - NORTHERN DIVISION - POTOMAC PK",
+						LineDescription: "16th Street-Potomac Park Line",
+					},
+					{
+						RouteID:         "S1v1",
+						Name:            "S1 - VIRGINIA+E - COLORDO+16TH",
+						LineDescription: "16th Street-Potomac Park Line",
+					},
+					{
+						RouteID:         "S2",
+						Name:            "S2 - FED TRIANGLE  - SILVER SPRNG",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S2v1",
+						Name:            "S2 - 16TH & HARVARD - MCPHERSON SQ",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S35",
+						Name:            "S35 - BRANCH + RANDLE CIR - FT DUPONT",
+						LineDescription: "Fort Dupont Shuttle Line",
+					},
+					{
+						RouteID:         "S4",
+						Name:            "S4 - FED TRIANGLE - SILVER SPRNG",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S4v1",
+						Name:            "S4 - SILVER SPRING STA - FRANKLIN SQ",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S41",
+						Name:            "S41 - CARVER TERRACE - RHODE ISLAND AVE",
+						LineDescription: "Rhode Island Ave-Carver Terrace Line",
+					},
+					{
+						RouteID:         "S80",
+						Name:            "S80 - FRANCONIA-SPRNGFLD - METRO PARK",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S80v1",
+						Name:            "S80 - FRANCONIA-SPRINGFLD - HILTON",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S80v2",
+						Name:            "S80 - HILTON - FRANCONIA-SPRNGFLD",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S9",
+						Name:            "S9 - FRANKLIN SQ - SILVER SPRING STA",
+						LineDescription: "16th Street Limited Line",
+					},
+					{
+						RouteID:         "S9v1",
+						Name:            "S9 - FRANKLIN SQ - COLORADO + 16TH",
+						LineDescription: "16th Street Limited Line",
+					},
+					{
+						RouteID:         "S91",
+						Name:            "S91 - FRANCONIA SPRINGFLD STA SHUTTLE",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S91v1",
+						Name:            "S91 - FRANCONIA SPRINGFLD STA SHUTTLE",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "T14",
+						Name:            "T14 - RHD ISLND AVE STA-NEW CARRLTN STA",
+						LineDescription: "Rhode Island Ave-New Carrollton Line",
+					},
+					{
+						RouteID:         "T14v1",
+						Name:            "T14 - MT RAINIER - NEW CARRLTN STA",
+						LineDescription: "Rhode Island Ave-New Carrollton Line",
+					},
+					{
+						RouteID:         "T18",
+						Name:            "T18 - R I AVE STA - NEW CARROLLTON STA",
+						LineDescription: "Annapolis Road Line",
+					},
+					{
+						RouteID:         "T18v1",
+						Name:            "T18 - BLADENSBURG HS - NEW CARROLLTON STA",
+						LineDescription: "Annapolis Road Line",
+					},
+					{
+						RouteID:         "T2",
+						Name:            "T2 - FRIENDSHIP HTS - ROCKVILLE STA",
+						LineDescription: "River Road Line",
+					},
+					{
+						RouteID:         "U4",
+						Name:            "U4 - MINNESOTA AVE - SHERIFF RD",
+						LineDescription: "Sheriff Road-River Terrace Line",
+					},
+					{
+						RouteID:         "U4v1",
+						Name:            "U4 - SHERIFF RD - MINNESOTA STA",
+						LineDescription: "Sheriff Road-River Terrace Line",
+					},
+					{
+						RouteID:         "U4v2",
+						Name:            "U4 - RIVER TERRACE - MINNESOTA AVE",
+						LineDescription: "Sheriff Road-River Terrace Line",
+					},
+					{
+						RouteID:         "U5",
+						Name:            "U5 - MINNESOTA AVE-MARSHALL HTS",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U6",
+						Name:            "U6 - MINNESOTA - LINCOLN HEIGHTS",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U6v1",
+						Name:            "U6 - 37TH + RIDGE - PLUMMER ES",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U6v2",
+						Name:            "U6 - LINCOLN HTS - E CAP + 47TH ST NE",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U7",
+						Name:            "U7 - RIDGE + ANACOSTIA - DEANWOOD",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v1",
+						Name:            "U7 - MINNESOTA STA - KENILWORTH HAYES",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v2",
+						Name:            "U7 - KENILWORTH HAYES - MINNESOTA STA",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v3",
+						Name:            "U7 - MINNESOTA STA - DEANWOOD",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v4",
+						Name:            "U7 - DEANWOOD - MINNESOTA AVE",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "V1",
+						Name:            "V1 - BUR OF ENGRVNG - BENNING HTS",
+						LineDescription: "Benning Heights-M Street Line",
+					},
+					{
+						RouteID:         "V12",
+						Name:            "V12 - SUITLAND STA - ADDISON RD STA",
+						LineDescription: "District Heights-Suitland Line",
+					},
+					{
+						RouteID:         "V14",
+						Name:            "V14 - PENN MAR - DEANWOOD STA",
+						LineDescription: "District Heights - Seat Pleasant Line",
+					},
+					{
+						RouteID:         "V14v1",
+						Name:            "V14 - PENN MAR  - ADDISON RD STA",
+						LineDescription: "District Heights - Seat Pleasant Line",
+					},
+					{
+						RouteID:         "V2",
+						Name:            "V2 - ANACOSTIA - CAPITOL HGTS",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V2v1",
+						Name:            "V2 - MINNESOTA AVE - ANACOSTIA",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V4",
+						Name:            "V4 - 1ST + K ST SE - CAPITOL HGTS",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V4v1",
+						Name:            "V4 - MINN AVE STA-CAPITOL HGTS",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V7",
+						Name:            "V7 - CONGRESS HGTS - MINN STA",
+						LineDescription: "Benning Heights-Alabama Ave Line",
+					},
+					{
+						RouteID:         "V8",
+						Name:            "V8 - BENNING HGTS - MINN STA",
+						LineDescription: "Benning Heights-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W1",
+						Name:            "W1 - FORT DRUM  - SOUTHERN AVE STA",
+						LineDescription: "Shipley Terrace - Fort Drum Line",
+					},
+					{
+						RouteID:         "W14",
+						Name:            "W14 - FT WASHINGTON-SOUTHERN AVE STA",
+						LineDescription: "Bock Road Line",
+					},
+					{
+						RouteID:         "W14v1",
+						Name:            "W14 - SOUTHERN AVE - FRIENDLY",
+						LineDescription: "Bock Road Line",
+					},
+					{
+						RouteID:         "W14v2",
+						Name:            "W14 - FRIENDLY - SOUTHERN AVE",
+						LineDescription: "Bock Road Line",
+					},
+					{
+						RouteID:         "W2",
+						Name:            "W2 - MALCOM X+OAKWD - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v1",
+						Name:            "W2 - NYLDR+GOOD HOP- HOWARD+ANACOSTIA",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v2",
+						Name:            "W2 - NAYLOR+GOODHOPE - MALCM X+OAKWOOD",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v3",
+						Name:            "W2 - HOWRD+ANACOSTIA-NAYLOR+GOODHOPE",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v4",
+						Name:            "W2 - ANACOSTIA STA - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v5",
+						Name:            "W2 - ANACOSTIA STA - SOUTHERN AVE STA",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v6",
+						Name:            "W2 - MELLN+M L KNG - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v7",
+						Name:            "W2 - SOUTHERN AVE-WASHINGTON OVERLOOK",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W3",
+						Name:            "W3 - MALCOM X+OAKWD - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W3v1",
+						Name:            "W3 - MELLN+M L KNG - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W4",
+						Name:            "W4 - ANACOSTIA STA - DEANWOOD STA",
+						LineDescription: "Deanwood-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W4v1",
+						Name:            "W4 - MALCOLM X & PORTLAND - DEANWOOD",
+						LineDescription: "Deanwood-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W4v2",
+						Name:            "W4 - DEANWOOD STA - MALCLM X+ ML KING",
+						LineDescription: "Deanwood-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W45",
+						Name:            "W45 - TENLEYTOWN STA - 16TH + SHEPHERD",
+						LineDescription: "Mt Pleasant-Tenleytown Line",
+					},
+					{
+						RouteID:         "W47",
+						Name:            "W47 - TENLEYTOWN STA - COLUMBIA HTS STA",
+						LineDescription: "Mt Pleasant-Tenleytown Line",
+					},
+					{
+						RouteID:         "W5",
+						Name:            "W5 - DC VILLAGE-USCG (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "W6",
+						Name:            "W6 - ANACOSTIA - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W6v1",
+						Name:            "W6 - NAYLOR+GOODHOPE - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W8",
+						Name:            "W8 - ANACOSTIA - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W8v1",
+						Name:            "W8 - ANACOSTIA-NAYLOR+GOODHOPE",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W8v2",
+						Name:            "W8 - NAYLOR+GOODHOPE - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "X1",
+						Name:            "X1 - FOGGY BOTTOM+GWU- MINNESOTA STA",
+						LineDescription: "Benning Road Line",
+					},
+					{
+						RouteID:         "X2",
+						Name:            "X2 - LAFAYETTE SQ - MINNESOTA STA",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X2v1",
+						Name:            "X2 - PHELPS HS - MINNESOTA STA",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X2v2",
+						Name:            "X2 - FRIENDSHIP EDISON PCS-MINNESOTA STA",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X2v3",
+						Name:            "X2 - PHELPS HS - LAFAYTTE SQ",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X3",
+						Name:            "X3 - DUKE ELLINGTON BR - MINNESOTA STN",
+						LineDescription: "Benning Road Line",
+					},
+					{
+						RouteID:         "X3v1",
+						Name:            "X3 - KIPP DC - MINNESOTA AVE STN",
+						LineDescription: "Benning Road Line",
+					},
+					{
+						RouteID:         "X8",
+						Name:            "X8 - UNION STATION - CARVER TERR",
+						LineDescription: "Maryland Ave Line",
+					},
+					{
+						RouteID:         "X9",
+						Name:            "X9 - NY AVE & 12TH NW - CAPITOL HTS STA",
+						LineDescription: "Benning Road-H Street Limited Line",
+					},
+					{
+						RouteID:         "X9v1",
+						Name:            "X9 - NY AVE & 12TH ST NW - MINNESOTA AVE",
+						LineDescription: "Benning Road-H Street Limited Line",
+					},
+					{
+						RouteID:         "X9v2",
+						Name:            "X9 - MINNESOTA AVE ST - NY AVE & 12TH ST",
+						LineDescription: "Benning Road-H Street Limited Line",
+					},
+					{
+						RouteID:         "Y2",
+						Name:            "Y2 - SILVER SPRING STA - MONTG MED CTR",
+						LineDescription: "Georgia Ave-Maryland Line",
+					},
+					{
+						RouteID:         "Y7",
+						Name:            "Y7 - SILVER SPRING STA - ICC P&R",
+						LineDescription: "Georgia Ave-Maryland Line",
+					},
+					{
+						RouteID:         "Y8",
+						Name:            "Y8 - SILVER SPR STA - MONTGOMERY MED CTR",
+						LineDescription: "Georgia Ave-Maryland Line",
+					},
+					{
+						RouteID:         "Z11",
+						Name:            "Z11 - SILVR SPRING - BURTONSVILLE P&R",
+						LineDescription: "Greencastle-Briggs Chaney Express Line",
+					},
+					{
+						RouteID:         "Z11v1",
+						Name:            "Z11 - GREENCASTLE - SILVR SPRING",
+						LineDescription: "Greencastle-Briggs Chaney Express Line",
+					},
+					{
+						RouteID:         "Z2",
+						Name:            "Z2 - SILVR SPRING - OLNEY (NO BLAKE HS)",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z2v1",
+						Name:            "Z2 - SILVER SPRING - BONIFANT & NH",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z2v2",
+						Name:            "Z2 - SILVER SPRING STA-OLNEY (BLAKE HS)",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z2v3",
+						Name:            "Z2 - COLESVILLE-SILVER SPRING",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z6",
+						Name:            "Z6 - SILVR SPRNG STA - BURTONSVILLE",
+						LineDescription: "Calverton-Westfarm Line",
+					},
+					{
+						RouteID:         "Z6v1",
+						Name:            "Z6 - CASTLE BLVD - SILVER SPRING STA",
+						LineDescription: "Calverton-Westfarm Line",
+					},
+					{
+						RouteID:         "Z6v2",
+						Name:            "Z6 - SILVER SPRING -CASTLE BLVD",
+						LineDescription: "Calverton-Westfarm Line",
+					},
+					{
+						RouteID:         "Z7",
+						Name:            "Z7 - SLVER SPRNG STA-S LAUREL P&R (4COR)",
+						LineDescription: "Laurel-Burtonsville Express Line",
+					},
+					{
+						RouteID:         "Z7v1",
+						Name:            "Z7 - S LAUREL P&R-SILVR SPR (NO 4COR)",
+						LineDescription: "Laurel-Burtonsville Express Line",
+					},
+					{
+						RouteID:         "Z8",
+						Name:            "Z8 - SILVER SRING STA - BRIGGS CHANEY",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v1",
+						Name:            "Z8 - WHITE OAK - SILVER SPRING STA",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v2",
+						Name:            "Z8 - SILVR SPRNG - CSTLE BLVD VERIZON",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v3",
+						Name:            "Z8 - SILVER SPRING STA - CASTLE BLVD",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v4",
+						Name:            "Z8 - SILVER SPRING - GRNCSTLE (VERIZON)",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v5",
+						Name:            "Z8 - SILVER SPRING STA - GREENCASTLE",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v6",
+						Name:            "Z8 - SILVER SPRING STA - WHITE OAK",
+						LineDescription: "Fairland Line",
+					},
+				},
+			},
+		},
+	},
+	"/Bus.svc/Routes": {
+		{
+			rawQuery: "",
+			response: `<RoutesResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Routes><Route><LineDescription>Alexandria-Pentagon Line</LineDescription><Name>10A - HUNTINGTON STA - PENTAGON</Name><RouteID>10A</RouteID></Route><Route><LineDescription>Hunting Point-Ballston Line</LineDescription><Name>10B - HUNTING POINT - BALLSTON STA</Name><RouteID>10B</RouteID></Route><Route><LineDescription>Alexandria-Pentagon Line</LineDescription><Name>10E - HUNTING POINT - PENTAGON</Name><RouteID>10E</RouteID></Route><Route><LineDescription>Alexandria-Pentagon Line</LineDescription><Name>10N - NATIONAL AIRPORT - PENTAGON</Name><RouteID>10N</RouteID></Route><Route><LineDescription>Mt Vernon Express Line</LineDescription><Name>11Y - MOUNT VERNON - POTOMAC PARK</Name><RouteID>11Y</RouteID></Route><Route><LineDescription>Mt Vernon Express Line</LineDescription><Name>11Y - POTOMAC PARK - HUNTING POINT</Name><RouteID>11Yv1</RouteID></Route><Route><LineDescription>Mt Vernon Express Line</LineDescription><Name>11Y - HUNTING POINT - POTOMAC PARK</Name><RouteID>11Yv2</RouteID></Route><Route><LineDescription>Chain Bridge Road Line</LineDescription><Name>15K - E FALLS CH STA-MCLEAN LANGLEY</Name><RouteID>15K</RouteID></Route><Route><LineDescription>Chain Bridge Road Line</LineDescription><Name>15K - CIA - EAST FALLS CHURCH STA</Name><RouteID>15Kv1</RouteID></Route><Route><LineDescription>Columbia Pike Line</LineDescription><Name>16A - PATRIOT+AMERICANA - PENTAGON</Name><RouteID>16A</RouteID></Route><Route><LineDescription>Columbia Pike Line</LineDescription><Name>16C - CULMORE - PENTAGON</Name><RouteID>16C</RouteID></Route><Route><LineDescription>Columbia Pike Line</LineDescription><Name>16C - CULMORE - FEDERAL TRIANGLE</Name><RouteID>16Cv1</RouteID></Route><Route><LineDescription>Columbia Pike Line</LineDescription><Name>16E - GLN CARLYN+VISTA - FRANKLIN SQ</Name><RouteID>16E</RouteID></Route><Route><LineDescription>Columbia Pike-Pentagon City Line</LineDescription><Name>16G - DINWIDDIE+COLUMBIA - PENTAGON CITY</Name><RouteID>16G</RouteID></Route><Route><LineDescription>Columbia Pike-Pentagon City Line</LineDescription><Name>16G - COL PIKE+CARLIN SPR - DINWD+COL PK</Name><RouteID>16Gv1</RouteID></Route><Route><LineDescription>Columbia Pike-Pentagon City Line</LineDescription><Name>16H - SKYLINE CITY - PENTAGON CITY STA</Name><RouteID>16H</RouteID></Route><Route><LineDescription>Annandale-Skyline City-Pentagon Line</LineDescription><Name>16L - ANNANDALE - PENTAGON HOV</Name><RouteID>16L</RouteID></Route><Route><LineDescription>Columbia Pike-Farragut Square Line</LineDescription><Name>16Y - FOUR MILE+COLUMBIA - MCPHERSON SQ</Name><RouteID>16Y</RouteID></Route><Route><LineDescription>Columbia Pike-Farragut Square Line</LineDescription><Name>16Y - COLUMBIA PIKE - MCPHERSON SQ</Name><RouteID>16Yv1</RouteID></Route><Route><LineDescription>Kings Park-North Springfield Line</LineDescription><Name>17B - BURKE CENTRE - PENTAGON HOV</Name><RouteID>17B</RouteID></Route><Route><LineDescription>Kings Park Express Line</LineDescription><Name>17G - G MASON UNIV - PENTAGON</Name><RouteID>17G</RouteID></Route><Route><LineDescription>Kings Park Express Line</LineDescription><Name>17H - TWNBRK RD+TWNBRK RN- PENTAGON</Name><RouteID>17H</RouteID></Route><Route><LineDescription>Kings Park Express Line</LineDescription><Name>17K - TWNBRK RD+TWNBRK RN- PENTAGON</Name><RouteID>17K</RouteID></Route><Route><LineDescription>Kings Park Express Line</LineDescription><Name>17L - TWNBRK RD+TWNBRK RUN-PENTAGON</Name><RouteID>17L</RouteID></Route><Route><LineDescription>Kings Park-North Springfield Line</LineDescription><Name>17M - EDSALL+CANARD - PENTAGON</Name><RouteID>17M</RouteID></Route><Route><LineDescription>Orange Hunt Line</LineDescription><Name>18G - ROLLING VALLEY - PENTAGON</Name><RouteID>18G</RouteID></Route><Route><LineDescription>Orange Hunt Line</LineDescription><Name>18H - HUNTSMAN+CORK CTY - PENTAGON</Name><RouteID>18H</RouteID></Route><Route><LineDescription>Orange Hunt Line</LineDescription><Name>18J - ROLLING VALLEY - PENTAGON</Name><RouteID>18J</RouteID></Route><Route><LineDescription>Burke Centre Line</LineDescription><Name>18P - BURKE CENTRE - PENTAGON</Name><RouteID>18P</RouteID></Route><Route><LineDescription>Burke Centre Line</LineDescription><Name>18P - PENTAGON - ROLLING VALLEY MALL</Name><RouteID>18Pv1</RouteID></Route><Route><LineDescription>Burke Centre Line</LineDescription><Name>18P - ROLLING VALLEY P+R - PENTAGON</Name><RouteID>18Pv2</RouteID></Route><Route><LineDescription>Wilson Blvd-Vienna Line</LineDescription><Name>1A - VIENNA-BALLSTON (7 CORNERS)</Name><RouteID>1A</RouteID></Route><Route><LineDescription>Wilson Blvd-Vienna Line</LineDescription><Name>1B - DUNN LORING  - BALLSTON</Name><RouteID>1B</RouteID></Route><Route><LineDescription>Fair Oaks-Fairfax Blvd Line</LineDescription><Name>1C - WEST OX DIV-DUNN LORING (VIA MALL)</Name><RouteID>1C</RouteID></Route><Route><LineDescription>Fair Oaks-Fairfax Blvd Line</LineDescription><Name>1C - FAIRFAX CO GOV CTR - DUNN LORING</Name><RouteID>1Cv1</RouteID></Route><Route><LineDescription>Fair Oaks-Fairfax Blvd Line</LineDescription><Name>1C - WEST OX DIV - DUNN LORING (NO MALL)</Name><RouteID>1Cv2</RouteID></Route><Route><LineDescription>Fair Oaks-Fairfax Blvd Line</LineDescription><Name>1C - FAIR OAKS MALL - DUNN LORING</Name><RouteID>1Cv3</RouteID></Route><Route><LineDescription>Fair Oaks-Fairfax Blvd Line</LineDescription><Name>1C - DUNN LORING - FAIR OAKS MALL</Name><RouteID>1Cv4</RouteID></Route><Route><LineDescription>Landmark-Bren Mar Park-Pentagon Line</LineDescription><Name>21A - S REYNOLDS+EOS 21 CONDOS - PENTAGON</Name><RouteID>21A</RouteID></Route><Route><LineDescription>Landmark-Bren Mar Park-Pentagon Line</LineDescription><Name>21D - LANDMARK MEWS -PENTAGON</Name><RouteID>21D</RouteID></Route><Route><LineDescription>Barcroft-South Fairlington Line</LineDescription><Name>22A - BALLSTON STA - PENTAGON</Name><RouteID>22A</RouteID></Route><Route><LineDescription>Barcroft-South Fairlington Line</LineDescription><Name>22A - SHIRLINGTON - BALLSTON  STA</Name><RouteID>22Av1</RouteID></Route><Route><LineDescription>Barcroft-South Fairlington Line</LineDescription><Name>22C - BALLSTON STA - PENTAGON</Name><RouteID>22C</RouteID></Route><Route><LineDescription>Barcroft-South Fairlington Line</LineDescription><Name>22F - NVCC - PENTAGON VIA HOV</Name><RouteID>22F</RouteID></Route><Route><LineDescription>McLean-Crystal City Line</LineDescription><Name>23A - TYSONS CORNER CTR - CRYSTAL CTY</Name><RouteID>23A</RouteID></Route><Route><LineDescription>McLean-Crystal City Line</LineDescription><Name>23B - BALLSTON STA - CRYSTAL CTY</Name><RouteID>23B</RouteID></Route><Route><LineDescription>McLean-Crystal City Line</LineDescription><Name>23B - LINDEN RESOURCES - BALLSTON STATION</Name><RouteID>23Bv1</RouteID></Route><Route><LineDescription>McLean-Crystal City Line</LineDescription><Name>23T - TYSONS CORNER CTR - SHIRLINGTON</Name><RouteID>23T</RouteID></Route><Route><LineDescription>Landmark-Ballston Line</LineDescription><Name>25B - VAN DORN - BALLSTON</Name><RouteID>25B</RouteID></Route><Route><LineDescription>Landmark-Ballston Line</LineDescription><Name>25B - SOUTHERN TOWERS - BALLSTON</Name><RouteID>25Bv1</RouteID></Route><Route><LineDescription>Landmark-Ballston Line</LineDescription><Name>25B - VAN DORN - BALLSTON/NO LDMRK CTR</Name><RouteID>25Bv2</RouteID></Route><Route><LineDescription>Landmark-Ballston Line</LineDescription><Name>25B - BALLSTON - SOUTHERN TOWERS</Name><RouteID>25Bv3</RouteID></Route><Route><LineDescription>Annandale-East Falls Church Line</LineDescription><Name>26A - NVCC ANNANDALE - E FALLS CHURCH STA</Name><RouteID>26A</RouteID></Route><Route><LineDescription>Leesburg Pike Line</LineDescription><Name>28A - TYSONS CORNER STA-KING ST STA</Name><RouteID>28A</RouteID></Route><Route><LineDescription>Leesburg Pike Line</LineDescription><Name>28A - SOUTHERN TOWERS-TYSONS CORNER STA</Name><RouteID>28Av1</RouteID></Route><Route><LineDescription>Skyline City Line</LineDescription><Name>28F - BLDG 5113 G MASON DR - PENTAGON</Name><RouteID>28F</RouteID></Route><Route><LineDescription>Skyline City Line</LineDescription><Name>28G - BLDG 5113 G MASON DR - PENTAGON</Name><RouteID>28G</RouteID></Route><Route><LineDescription>Annandale Line</LineDescription><Name>29C - NVCC ANNANDALE - PENTAGON</Name><RouteID>29C</RouteID></Route><Route><LineDescription>Annandale Line</LineDescription><Name>29G - AMERICANA+HERITAGE - PENTAGON</Name><RouteID>29G</RouteID></Route><Route><LineDescription>Alexandria-Fairfax Line</LineDescription><Name>29K - GMU - KING ST STA</Name><RouteID>29K</RouteID></Route><Route><LineDescription>Alexandria-Fairfax Line</LineDescription><Name>29K - GMU - KING ST/NO LDMRK</Name><RouteID>29Kv1</RouteID></Route><Route><LineDescription>Alexandria-Fairfax Line</LineDescription><Name>29N - VIENNA STA - KING ST (VIA MALL)</Name><RouteID>29N</RouteID></Route><Route><LineDescription>Alexandria-Fairfax Line</LineDescription><Name>29N - VIENNA STA-KING ST (NO MALL)</Name><RouteID>29Nv1</RouteID></Route><Route><LineDescription>Braeburn Drive-Pentagon Express Line</LineDescription><Name>29W - NVCC ANNANDALE - PENTAGON</Name><RouteID>29W</RouteID></Route><Route><LineDescription>Washington Blvd.-Dunn Loring Line</LineDescription><Name>2A - DUNN LORING STA - BALLSTON STA</Name><RouteID>2A</RouteID></Route><Route><LineDescription>Fair Oaks-Jermantown Road Line</LineDescription><Name>2B - WEST OX RD DIV-DUNN LORING STATION</Name><RouteID>2B</RouteID></Route><Route><LineDescription>Fair Oaks-Jermantown Road Line</LineDescription><Name>2B - WEST OX RD-DUNN LORING STA(NO MALL)</Name><RouteID>2Bv1</RouteID></Route><Route><LineDescription>Fair Oaks-Jermantown Road Line</LineDescription><Name>2B - FAIR OAKS MALL-DUNN LORING STATION</Name><RouteID>2Bv2</RouteID></Route><Route><LineDescription>Fair Oaks-Jermantown Road Line</LineDescription><Name>2B - DUNN LORING STA - FAIR OAKS MALL</Name><RouteID>2Bv3</RouteID></Route><Route><LineDescription>Friendship Heights-Southeast Line</LineDescription><Name>30N - FRIENDSHIP HGTS- NAYLOR RD STA</Name><RouteID>30N</RouteID></Route><Route><LineDescription>Friendship Heights-Southeast Line</LineDescription><Name>30S - FRIENDSHIP HGTS- SOUTHRN AVE STA</Name><RouteID>30S</RouteID></Route><Route><LineDescription>Wisconsin Avenue Line</LineDescription><Name>31 - POTOMAC PARK-FRIENDSHIP HGTS</Name><RouteID>31</RouteID></Route><Route><LineDescription>Pennsylvania Avenue Line</LineDescription><Name>32 - VIRGINIA AVE+E ST- SOUTHRN AVE</Name><RouteID>32</RouteID></Route><Route><LineDescription>Pennsylvania Avenue Line</LineDescription><Name>32 - PENN AVE + 8TH ST - SOUTHRN AVE</Name><RouteID>32v1</RouteID></Route><Route><LineDescription>Wisconsin Avenue Line</LineDescription><Name>33 - 10TH ST+PA AV NW - FRIENDSHIP HGTS</Name><RouteID>33</RouteID></Route><Route><LineDescription>Pennsylvania Avenue Line</LineDescription><Name>34 - 10TH ST + PA AVE- NAYLOR RD STA</Name><RouteID>34</RouteID></Route><Route><LineDescription>Pennsylvania Avenue Line</LineDescription><Name>36 - VIRGINIA AVE+E ST - NAYLOR RD STA</Name><RouteID>36</RouteID></Route><Route><LineDescription>Wisconsin Avenue Limited Line</LineDescription><Name>37 - 10TH ST+PA AV NW - FRIENDSHIP HGTS</Name><RouteID>37</RouteID></Route><Route><LineDescription>Ballston-Farragut Square Line</LineDescription><Name>38B - BALLSTON - FARRAGUT</Name><RouteID>38B</RouteID></Route><Route><LineDescription>Ballston-Farragut Square Line</LineDescription><Name>38B - WASH &amp; QUINCY - FARRAGUT</Name><RouteID>38Bv1</RouteID></Route><Route><LineDescription>Ballston-Farragut Square Line</LineDescription><Name>38B - WASHINGTON-LEE HS - FARRAGUT SQ</Name><RouteID>38Bv2</RouteID></Route><Route><LineDescription>Pennsylvania Avenue Limited Line</LineDescription><Name>39 - VIRGINIA AVE+21ST NW- NAYLOR RD STA</Name><RouteID>39</RouteID></Route><Route><LineDescription>Annandale Road Line</LineDescription><Name>3A - ANNANDALE - E FALLS CHURCH</Name><RouteID>3A</RouteID></Route><Route><LineDescription>Annandale Road Line</LineDescription><Name>3A - ANNANDALE - 7 CORNERS</Name><RouteID>3Av1</RouteID></Route><Route><LineDescription>Pimmit Hills Line</LineDescription><Name>3T - MCLEAN STATION - E FALLS CH STA</Name><RouteID>3T</RouteID></Route><Route><LineDescription>Pimmit Hills Line</LineDescription><Name>3T - MCLEAN STATION - W FALLS CHURCH</Name><RouteID>3Tv1</RouteID></Route><Route><LineDescription>Lee Highway-Farragut Square Line</LineDescription><Name>3Y - E FALLS CHURCH - MCPHERSON SQ</Name><RouteID>3Y</RouteID></Route><Route><LineDescription>Mount Pleasant Line</LineDescription><Name>42 - 9TH + F ST  - MT PLEASANT</Name><RouteID>42</RouteID></Route><Route><LineDescription>Mount Pleasant Line</LineDescription><Name>43 - I + 13TH NW - MT PLEASANT</Name><RouteID>43</RouteID></Route><Route><LineDescription>Pershing Dr-Arlington Blvd Line</LineDescription><Name>4A - SEVEN CORNERS - ROSSLYN</Name><RouteID>4A</RouteID></Route><Route><LineDescription>Pershing Dr-Arlington Blvd Line</LineDescription><Name>4B - SEVEN CORNERS - ROSSLYN</Name><RouteID>4B</RouteID></Route><Route><LineDescription>14th Street Line</LineDescription><Name>52 - L ENFNT PLAZA - TAKOMA STATION</Name><RouteID>52</RouteID></Route><Route><LineDescription>14th Street Line</LineDescription><Name>52 - L ENFNT PLAZA - 14TH+COLORADO</Name><RouteID>52v1</RouteID></Route><Route><LineDescription>14th Street Line</LineDescription><Name>52 - 14TH+COLORADO - L ENFANT PLAZA</Name><RouteID>52v2</RouteID></Route><Route><LineDescription>14th Street Line</LineDescription><Name>52 - 14TH &amp; U - TAKOMA STATION</Name><RouteID>52v3</RouteID></Route><Route><LineDescription>14th Street Line</LineDescription><Name>54 - METRO CENTER - TAKOMA STA</Name><RouteID>54</RouteID></Route><Route><LineDescription>14th Street Line</LineDescription><Name>54 - 14TH+COLORADO - METRO CENTER</Name><RouteID>54v1</RouteID></Route><Route><LineDescription>14th Street Limited Line</LineDescription><Name>59 - FEDERAL TRIANGLE - TAKOMA STATION</Name><RouteID>59</RouteID></Route><Route><LineDescription>DC-Dulles Line</LineDescription><Name>5A - DULLES AIRPORT - LENFANT PLAZA</Name><RouteID>5A</RouteID></Route><Route><LineDescription>Fort Totten-Petworth Line</LineDescription><Name>60 - GEORGIA + PETWORTH - FT TOTTEN</Name><RouteID>60</RouteID></Route><Route><LineDescription>Takoma-Petworth Line</LineDescription><Name>62 - GEORGIA+PETWORTH - TAKOMA STATION</Name><RouteID>62</RouteID></Route><Route><LineDescription>Takoma-Petworth Line</LineDescription><Name>62 - COOLIDGE HS - GEORGIA + PETWORTH</Name><RouteID>62v1</RouteID></Route><Route><LineDescription>Takoma-Petworth Line</LineDescription><Name>63 - FED TRIANGLE - TAKOMA STA</Name><RouteID>63</RouteID></Route><Route><LineDescription>Fort Totten-Petworth Line</LineDescription><Name>64 - FEDERAL TRIANGLE -FORT TOTTEN</Name><RouteID>64</RouteID></Route><Route><LineDescription>Fort Totten-Petworth Line</LineDescription><Name>64 - GEORGIA + PETWOTH - FT TOTTEN</Name><RouteID>64v1</RouteID></Route><Route><LineDescription>Georgia Avenue-7th Street Line</LineDescription><Name>70 - ARCHIVES - SILVER SPRING</Name><RouteID>70</RouteID></Route><Route><LineDescription>Georgia Avenue-7th Street Line</LineDescription><Name>70 - GEORGIA &amp; EUCLID  - ARCHIVES</Name><RouteID>70v1</RouteID></Route><Route><LineDescription>Convention Center-Southwest Waterfront Line</LineDescription><Name>74 - NATIONALS PARK - CONVENTION CTR</Name><RouteID>74</RouteID></Route><Route><LineDescription>Georgia Avenue MetroExtra Line</LineDescription><Name>79 - ARCHIVES - SILVER SPRING STA</Name><RouteID>79</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7A - LINCOLNIA+QUANTRELL - PENTAGON</Name><RouteID>7A</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7A - PENTAGON - SOUTHERN TWRS</Name><RouteID>7Av1</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7A - SOUTHERN TWRS - PENTAGON</Name><RouteID>7Av2</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7A - LINCOLNIA/QUANTRELL - PENT VIA PENT</Name><RouteID>7Av3</RouteID></Route><Route><LineDescription>Park Center-Pentagon Line</LineDescription><Name>7C - PARK CENTER - PENTAGON</Name><RouteID>7C</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7F - LINCOLNIA+QUANTRELL - PENTAGON</Name><RouteID>7F</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7F - LINC + QUANT - PENT CITY - PENTAGON</Name><RouteID>7Fv1</RouteID></Route><Route><LineDescription>Mark Center-Pentagon Line</LineDescription><Name>7M - MARK CENTER - PENTAGON (NON-HOV)</Name><RouteID>7M</RouteID></Route><Route><LineDescription>Mark Center-Pentagon Line</LineDescription><Name>7M - MARK CENTER - PENTAGON (HOV)</Name><RouteID>7Mv1</RouteID></Route><Route><LineDescription>Park Center-Pentagon Line</LineDescription><Name>7P - PARK CTR - PENTAGON</Name><RouteID>7P</RouteID></Route><Route><LineDescription>Lincolnia-Pentagon Line</LineDescription><Name>7W - LNCLNA+QUANTRLL- PENTAGON</Name><RouteID>7W</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7Y - SOUTHERN TWRS - H+17TH ST</Name><RouteID>7Y</RouteID></Route><Route><LineDescription>Lincolnia-North Fairlington Line</LineDescription><Name>7Y - PENTAGON - H+17TH ST</Name><RouteID>7Yv1</RouteID></Route><Route><LineDescription>North Capitol Street Line</LineDescription><Name>80 - KENNEDY CTR   - FORT TOTTEN STA</Name><RouteID>80</RouteID></Route><Route><LineDescription>North Capitol Street Line</LineDescription><Name>80 - MCPHERSON SQ  - BROOKLAND</Name><RouteID>80v1</RouteID></Route><Route><LineDescription>North Capitol Street Line</LineDescription><Name>80 - MCPHERSON SQ  - FORT TOTTEN STA</Name><RouteID>80v2</RouteID></Route><Route><LineDescription>North Capitol Street Line</LineDescription><Name>80 - KENNEDY CTR   - BROOKLAND STA</Name><RouteID>80v3</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>83 - RHODE ISLAND AVE STA-CHERRY HILL</Name><RouteID>83</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>83 - MT RAINIER - RHODE ISLAND</Name><RouteID>83v1</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>83 - RHODE ISLAND - MT RAINIER</Name><RouteID>83v2</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>83 - RHODE ISLAND AVE STA-COLLEGE PARK</Name><RouteID>83v3</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>83 - COLLEGE PARK-RHODE ISLAND AVE STA</Name><RouteID>83v4</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>86 - RHODE ISLAND AVE STA- CALVERTON</Name><RouteID>86</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>86 - RHODE ISLAND AVE STA- COLLEGE PARK</Name><RouteID>86v1</RouteID></Route><Route><LineDescription>College Park Line</LineDescription><Name>86 - MT RAINIER   - CALVERTON</Name><RouteID>86v2</RouteID></Route><Route><LineDescription>Laurel Express Line</LineDescription><Name>87 - NEW CARROLTON -CYPRESS+LAURL LAKES</Name><RouteID>87</RouteID></Route><Route><LineDescription>Laurel Express Line</LineDescription><Name>87 - GRNBELT STA -CYPRESS+LAURL LAKES</Name><RouteID>87v1</RouteID></Route><Route><LineDescription>Laurel Express Line</LineDescription><Name>87 - GRNBELT-CYP+LRL LAKES (NO P&amp;R)</Name><RouteID>87v2</RouteID></Route><Route><LineDescription>Laurel Express Line</LineDescription><Name>87 - GRNBELT STA - BALTIMORE+MAIN ST</Name><RouteID>87v3</RouteID></Route><Route><LineDescription>Laurel Express Line</LineDescription><Name>87 - BALTIMORE+MAIN ST - GRNBELT STA</Name><RouteID>87v4</RouteID></Route><Route><LineDescription>Laurel Express Line</LineDescription><Name>87 - CYPRESS+LAURL LAKES -GRNBELT STA</Name><RouteID>87v5</RouteID></Route><Route><LineDescription>Laurel Line</LineDescription><Name>89 - GREENBELT STA - 4TH &amp; GREEN HILL</Name><RouteID>89</RouteID></Route><Route><LineDescription>Laurel Line</LineDescription><Name>89 - GREENBELT STA - CHERRY LA+4TH ST</Name><RouteID>89v1</RouteID></Route><Route><LineDescription>Laurel Line</LineDescription><Name>89M - GREENBELT STA - S LAUREL P+R</Name><RouteID>89M</RouteID></Route><Route><LineDescription>Foxchase-Seminary Valley Line</LineDescription><Name>8S - RADFORD+QUAKER - PENTAGON</Name><RouteID>8S</RouteID></Route><Route><LineDescription>Foxchase-Seminary Valley Line</LineDescription><Name>8W - MARK CENTER - PENTAGON V FOXCHASE</Name><RouteID>8W</RouteID></Route><Route><LineDescription>Foxchase-Seminary Valley Line</LineDescription><Name>8Z - QUAKER+OSAGE - PENTAGON</Name><RouteID>8Z</RouteID></Route><Route><LineDescription>U Street-Garfield Line</LineDescription><Name>90 - ANACOSTIA - DK ELLNGTN BRDG</Name><RouteID>90</RouteID></Route><Route><LineDescription>U Street-Garfield Line</LineDescription><Name>90 - 8TH ST + L ST  - DK ELLNGTN BRDG</Name><RouteID>90v1</RouteID></Route><Route><LineDescription>U Street-Garfield Line</LineDescription><Name>90 - KIPP DC PREP- ANACOSTIA</Name><RouteID>90v2</RouteID></Route><Route><LineDescription>U Street-Garfield Line</LineDescription><Name>92 - CONGRESS HTS STA - REEVES CTR</Name><RouteID>92</RouteID></Route><Route><LineDescription>U Street-Garfield Line</LineDescription><Name>92 - EASTERN MARKET - CONGRESS HGTS STA</Name><RouteID>92v1</RouteID></Route><Route><LineDescription>U Street-Garfield Line</LineDescription><Name>92 - CONGRESS HTS STA- EASTERN MARKET</Name><RouteID>92v2</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>96 - TENLEYTOWN STA - CAPITOL HTS STA</Name><RouteID>96</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>96 - ELLINGTON BR - CAPITOL HTS</Name><RouteID>96v1</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>96 - CAPITOL HTS  - REEVES CTR</Name><RouteID>96v2</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>96 - CAPITOL HTS - ELLINGTON BRDG</Name><RouteID>96v3</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>96 - REEVES CTR  - CAPITOL HTS</Name><RouteID>96v4</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>96 - TENLEYTOWN STA - STADIUM ARMORY STA</Name><RouteID>96v5</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>97 - UNION STATION - CAPITOL HTS</Name><RouteID>97</RouteID></Route><Route><LineDescription>East Capitol Street-Cardoza Line</LineDescription><Name>97 - EASTERN HS - CAPITOL HTS</Name><RouteID>97v1</RouteID></Route><Route><LineDescription>Martin Luther King Jr Highway Line</LineDescription><Name>A12 - ADDISON RD STA - CAPITAL PLAZA</Name><RouteID>A12</RouteID></Route><Route><LineDescription>Martin Luther King Jr Highway Line</LineDescription><Name>A12 - BARLWE+MATHEW HENSON - ADDISON RD</Name><RouteID>A12v1</RouteID></Route><Route><LineDescription>Martin Luther King Jr Highway Line</LineDescription><Name>A12 - CAPITOL HTS STA - CAPITAL PLAZA</Name><RouteID>A12v2</RouteID></Route><Route><LineDescription>Martin Luther King Jr Highway Line</LineDescription><Name>A12 - CAPITAL PLAZA - CAPITOL HTS</Name><RouteID>A12v3</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A2 - SOUTHERN AVE - ANACOSTIA (VIA HOSP)</Name><RouteID>A2</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A2 - ANACOSTIA - MISS+ATLANTIC</Name><RouteID>A2v1</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A2 - SOUTHERN AVE STA - ANACOSTIA</Name><RouteID>A2v2</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A2 - MISS+ATLANTIC - ANACOSTIA</Name><RouteID>A2v3</RouteID></Route><Route><LineDescription>Minnesota Ave-Anacostia Line</LineDescription><Name>A31 - ANACOSTIA HIGH - MINNESOTA STA</Name><RouteID>A31</RouteID></Route><Route><LineDescription>Minnesota Ave-Anacostia Line</LineDescription><Name>A32 - ANACOSTIA HIGH - SOUTHRN AVE STA</Name><RouteID>A32</RouteID></Route><Route><LineDescription>Minnesota Ave-Anacostia Line</LineDescription><Name>A33 - ANACOSTIA HIGH - ANACOSTIA STA</Name><RouteID>A33</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>A4 - DC VILLAGE - ANACOSTIA</Name><RouteID>A4</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>A4 - USCG-FT DRUM (VIA ANAC)</Name><RouteID>A4v1</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>A4 - FT DRUM - ANACOSTIA</Name><RouteID>A4v2</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>A4 - ANACOSTIA - FT DRUM</Name><RouteID>A4v3</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>A4 - FT DRUM-USCG (VIA ANAC)</Name><RouteID>A4v4</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>A4 - DC VILL-USCG (VIA ANAC)</Name><RouteID>A4v5</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A6 - 4501 3RD ST - ANACOSTIA</Name><RouteID>A6</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A6 - SOUTHERN AVE+S CAPITOL - ANACOSTIA</Name><RouteID>A6v1</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A7 - SOUTHRN+S CAPITOL - ANACOSTIA</Name><RouteID>A7</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A8 - 4501 3RD ST - ANACOSTIA</Name><RouteID>A8</RouteID></Route><Route><LineDescription>Anacostia-Congress Heights Line</LineDescription><Name>A8 - SOUTHERN + S CAPITOL - ANACOSTIA</Name><RouteID>A8v1</RouteID></Route><Route><LineDescription>Martin Luther King Jr Ave Limited Line</LineDescription><Name>A9 - LIVINGSTON - MCPHERSON SQUARE</Name><RouteID>A9</RouteID></Route><Route><LineDescription>Bladensburg Road-Anacostia Line</LineDescription><Name>B2 - ANACOSTIA STA - MOUNT RAINIER</Name><RouteID>B2</RouteID></Route><Route><LineDescription>Bladensburg Road-Anacostia Line</LineDescription><Name>B2 - ANACOSTIA STA - BLDNSGRG+VST NE</Name><RouteID>B2v1</RouteID></Route><Route><LineDescription>Bladensburg Road-Anacostia Line</LineDescription><Name>B2 - POTOMAC AVE - MOUNT RAINIER</Name><RouteID>B2v2</RouteID></Route><Route><LineDescription>Bladensburg Road-Anacostia Line</LineDescription><Name>B2 - BLDNSBRG+26TH - ANACOSTIA STA</Name><RouteID>B2v3</RouteID></Route><Route><LineDescription>Bladensburg Road-Anacostia Line</LineDescription><Name>B2 - EASTERN HS - ANACOSTIA STA</Name><RouteID>B2v4</RouteID></Route><Route><LineDescription>Bowie State University Line</LineDescription><Name>B21 - NEW CARROLTON STA - BOWIE STATE</Name><RouteID>B21</RouteID></Route><Route><LineDescription>Bowie State University Line</LineDescription><Name>B22 - NEW CARROLTON STA - BOWIE STATE</Name><RouteID>B22</RouteID></Route><Route><LineDescription>Bowie State University Line</LineDescription><Name>B22 - OLD CHAPEL &amp; 197 - NEW CARRLTN STA</Name><RouteID>B22v1</RouteID></Route><Route><LineDescription>Bowie-Belair Line</LineDescription><Name>B24 - NEW CARLTN STA-BOWIE P+R(VIA BHC)</Name><RouteID>B24</RouteID></Route><Route><LineDescription>Bowie-Belair Line</LineDescription><Name>B24 - NEW CARROLTON STA - BOWIE P+R</Name><RouteID>B24v1</RouteID></Route><Route><LineDescription>Bowie-New Carrollton Line</LineDescription><Name>B27 - NEW CARROLTON STA - BOWIE STATE</Name><RouteID>B27</RouteID></Route><Route><LineDescription>Crofton-New Carrollton Line</LineDescription><Name>B29 - NEW CARROLTON - CROFTON CC (PM)(PR)</Name><RouteID>B29</RouteID></Route><Route><LineDescription>Crofton-New Carrollton Line</LineDescription><Name>B29 - NEW CARROLLTON STA - GATEWAY CTR</Name><RouteID>B29v1</RouteID></Route><Route><LineDescription>Crofton-New Carrollton Line</LineDescription><Name>B29 - NEW CARROLTON - CROFTON CC (NO PR)</Name><RouteID>B29v2</RouteID></Route><Route><LineDescription>Greenbelt-BWI Thurgood Marshall Airport Express Line</LineDescription><Name>B30 - GREENBELT STA - BWI LT RAIL STA</Name><RouteID>B30</RouteID></Route><Route><LineDescription>Fort Lincoln Shuttle Line</LineDescription><Name>B8 - RHODE ISLAND AV -PETERSBRG APTS</Name><RouteID>B8</RouteID></Route><Route><LineDescription>Fort Lincoln Shuttle Line</LineDescription><Name>B8 - BLDNSBRG+S DKTA -PETERSBRG APTS</Name><RouteID>B8v1</RouteID></Route><Route><LineDescription>Fort Lincoln Shuttle Line</LineDescription><Name>B8 - PETERSBRG APTS  -BLDNSBRG+S DKTA</Name><RouteID>B8v2</RouteID></Route><Route><LineDescription>Fort Lincoln Shuttle Line</LineDescription><Name>B9 - RHODE ISLAND AVE - COLMAR MANOR</Name><RouteID>B9</RouteID></Route><Route><LineDescription>Clinton Line</LineDescription><Name>C11 - CLINTON P+R - BRANCH AVE STA</Name><RouteID>C11</RouteID></Route><Route><LineDescription>Hillcrest Heights Line</LineDescription><Name>C12 - NAYLOR RD STA  - BRANCH AVE STA</Name><RouteID>C12</RouteID></Route><Route><LineDescription>Clinton Line</LineDescription><Name>C13 - CLINTON P+R - BRANCH AVE STA</Name><RouteID>C13</RouteID></Route><Route><LineDescription>Hillcrest Heights Line</LineDescription><Name>C14 - NAYLOR RD STA  - BRANCH AVE STA</Name><RouteID>C14</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C2 - WHEATN STA - GRNBELT STA UMD ALT</Name><RouteID>C2</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C2 - TAKOMA LANGLEY XROADS - GRNBELT STA</Name><RouteID>C2v1</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C2 - GREENBELT STA - RANDOLPH + PARKLAWN</Name><RouteID>C2v2</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C2 - TAKOMA LANGLEY XROADS - WHEATON</Name><RouteID>C2v3</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C21 - ADDISON RD STA - COLLINGTON</Name><RouteID>C21</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C21 - ADDISON RD STA - POINTER RIDGE</Name><RouteID>C21v1</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C21 - ADDISON RD STA - CAMPUS WAY S</Name><RouteID>C21v2</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C22 - ADDISON RD STA - COLLINGTON</Name><RouteID>C22</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C22 - ADDISON RD STA- POINTER RIDGE</Name><RouteID>C22v1</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C26 - LARGO TOWN CTR - WATKNS+CHESTERTON</Name><RouteID>C26</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C26 - LARGO TOWN CTR-WATKINS+CAMBLETON</Name><RouteID>C26v1</RouteID></Route><Route><LineDescription>Pointer Ridge Line</LineDescription><Name>C28 - PT RIDGE -NEW CAROLTN VIA HLTH CTR</Name><RouteID>C28</RouteID></Route><Route><LineDescription>Pointer Ridge Line</LineDescription><Name>C28 - PT RIDGE - NEW CARROLLTON STA</Name><RouteID>C28v1</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C29 - POINTER RIDGE - ADDISON RD STA</Name><RouteID>C29*1</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C29 - WATKNS+CAMBLETON - ADDISN RD STA</Name><RouteID>C29*2</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C29 - ADDISON RD STA - BOWIE STATE</Name><RouteID>C29*4</RouteID></Route><Route><LineDescription>Central Avenue Line</LineDescription><Name>C29 - ADDISON RD STA - POINTER RIDGE</Name><RouteID>C29/</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C4 - TWINBROOK STA - PG PLAZA STA</Name><RouteID>C4</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C4 - TLTC-TWINBROOK</Name><RouteID>C4v1</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C4 - TWINBROOK STA - WHEATON STA</Name><RouteID>C4v2</RouteID></Route><Route><LineDescription>Greenbelt-Twinbrook Line</LineDescription><Name>C4 - PG PLAZA STA - WHEATON STA</Name><RouteID>C4v3</RouteID></Route><Route><LineDescription>College Park-White Flint Line</LineDescription><Name>C8 - WHITE FLINT - COLLEGE PARK</Name><RouteID>C8</RouteID></Route><Route><LineDescription>College Park-White Flint Line</LineDescription><Name>C8 - WHITE FLNT-COLLEGE PK (NO FDA/ARCH)</Name><RouteID>C8v1</RouteID></Route><Route><LineDescription>College Park-White Flint Line</LineDescription><Name>C8 - WHITE FLINT-COLLEGE PARK (NO FDA)</Name><RouteID>C8v2</RouteID></Route><Route><LineDescription>College Park-White Flint Line</LineDescription><Name>C8 - GLENMONT-COLLEGE PK (NO FDA/ARCH)</Name><RouteID>C8v3</RouteID></Route><Route><LineDescription>Glover Park-Franklin Square Line</LineDescription><Name>D1 - GLOVER PARK - FRANKLIN SQUARE</Name><RouteID>D1</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D12 - SOUTHERN AVE STA - SUITLAND STA</Name><RouteID>D12</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D12 - SUITLAND STA - SOUTHERN AVE STA</Name><RouteID>D12v1</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D12 - ST BARNABAS RD   - SUITLAND STA</Name><RouteID>D12v2</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D13 - SOUTHERN AVE STA - SUITLAND STA</Name><RouteID>D13</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D13 - SOUTHRN STA - ALLENTWN+OLD BRNCH</Name><RouteID>D13v1</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D14 - SOUTHERN AVE STA - SUITLAND STA</Name><RouteID>D14</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D14 - ALLENTWN+OLD BRNCH - SUITLND STA</Name><RouteID>D14v1</RouteID></Route><Route><LineDescription>Oxon Hill-Suitland Line</LineDescription><Name>D14 - SUITLND STA - ALLENTWN+OLD BRNCH</Name><RouteID>D14v2</RouteID></Route><Route><LineDescription>Glover Park-Dupont Circle Line</LineDescription><Name>D2 - GLOVER PARK   - CONNETICUT +Q ST</Name><RouteID>D2</RouteID></Route><Route><LineDescription>Glover Park-Dupont Circle Line</LineDescription><Name>D2 - DUPONT CIR - GLOVER PARK</Name><RouteID>D2v1</RouteID></Route><Route><LineDescription>16th Street-Tenleytown Line</LineDescription><Name>D31 - TENLEYTOWN STA - 16TH + EASTERN</Name><RouteID>D31</RouteID></Route><Route><LineDescription>16th Street-Tenleytown Line</LineDescription><Name>D32 - TENLEYTOWN STA - COLUMBIA HTS STA</Name><RouteID>D32</RouteID></Route><Route><LineDescription>16th Street-Tenleytown Line</LineDescription><Name>D33 - TENLEYTOWN STA - 16TH + SHEPHERD</Name><RouteID>D33</RouteID></Route><Route><LineDescription>16th Street-Tenleytown Line</LineDescription><Name>D34 - TENLEYTOWN STA - 14TH + COLORADO</Name><RouteID>D34</RouteID></Route><Route><LineDescription>Ivy City-Franklin Square Line</LineDescription><Name>D4 - DUPONT CIRCLE - IVY CITY</Name><RouteID>D4</RouteID></Route><Route><LineDescription>Ivy City-Franklin Square Line</LineDescription><Name>D4 - FRANKLIN SQUARE - IVY CITY</Name><RouteID>D4v1</RouteID></Route><Route><LineDescription>Ivy City-Franklin Square Line</LineDescription><Name>D4 - IVY CITY - FRANKLIN SQUARE</Name><RouteID>D4v2</RouteID></Route><Route><LineDescription>MacArthur Blvd-Georgetown Line</LineDescription><Name>D5 - MASS LTTL FLWR CHRCH- FARRGT SQR</Name><RouteID>D5</RouteID></Route><Route><LineDescription>Sibley Hospital–Stadium-Armory Line</LineDescription><Name>D6 - SIBLEY HOSP - STADIUM ARMRY</Name><RouteID>D6</RouteID></Route><Route><LineDescription>Sibley Hospital–Stadium-Armory Line</LineDescription><Name>D6 - STADIUM ARMRY STA - FARRAGUT SQUARE</Name><RouteID>D6v1</RouteID></Route><Route><LineDescription>Sibley Hospital–Stadium-Armory Line</LineDescription><Name>D6 - SIBLEY HOSP - FARRAGUT SQ</Name><RouteID>D6v2</RouteID></Route><Route><LineDescription>Sibley Hospital–Stadium-Armory Line</LineDescription><Name>D6 - FARRAGUT SQUARE - STADIUM ARMRY</Name><RouteID>D6v3</RouteID></Route><Route><LineDescription>Hospital Center Line</LineDescription><Name>D8 - UNION STATION - VA MED CTR</Name><RouteID>D8</RouteID></Route><Route><LineDescription>Hospital Center Line</LineDescription><Name>D8 - RHODE ISLAND STA - UNION STA</Name><RouteID>D8v1</RouteID></Route><Route><LineDescription>Ivy City-Fort Totten Line</LineDescription><Name>E2 - IVY CITY - FT TOTTEN</Name><RouteID>E2</RouteID></Route><Route><LineDescription>Military Road-Crosstown Line</LineDescription><Name>E4 - FRIENDSHP HTS - RIGGS PK</Name><RouteID>E4</RouteID></Route><Route><LineDescription>Military Road-Crosstown Line</LineDescription><Name>E4 - FRIENDSHP HTS - FT TOTTEN</Name><RouteID>E4v1</RouteID></Route><Route><LineDescription>Military Road-Crosstown Line</LineDescription><Name>E4 - FT TOTTEN - FRIENDSHP HTS</Name><RouteID>E4v2</RouteID></Route><Route><LineDescription>Chevy Chase Line</LineDescription><Name>E6 - FRIENDSHP HTS  -KNOLLWOOD</Name><RouteID>E6</RouteID></Route><Route><LineDescription>Chillum Road Line</LineDescription><Name>F1 - CHEVERLY STA - TAKOMA STA</Name><RouteID>F1</RouteID></Route><Route><LineDescription>Ardwick Industrial Park Shuttle Line</LineDescription><Name>F12 - CHEVERLY STA - NEW CARROLTON STA</Name><RouteID>F12</RouteID></Route><Route><LineDescription>Ardwick Industrial Park Shuttle Line</LineDescription><Name>F12 - CHEVERLY STA - LANDOVER STA</Name><RouteID>F12v1</RouteID></Route><Route><LineDescription>Cheverly-Washington Business Park Line</LineDescription><Name>F13 - CHEVERLY STA-WASHINGTON BUS PARK</Name><RouteID>F13</RouteID></Route><Route><LineDescription>Cheverly-Washington Business Park Line</LineDescription><Name>F13 - CHEVERLY STA - WASHINGTON BUS PARK</Name><RouteID>F13v1</RouteID></Route><Route><LineDescription>Cheverly-Washington Business Park Line</LineDescription><Name>F13 - NEW CARROLTON - WASHINGTON BUS PARK</Name><RouteID>F13v2</RouteID></Route><Route><LineDescription>Cheverly-Washington Business Park Line</LineDescription><Name>F13 - WHITFIELD + VOLTA - CHEVERLY STA</Name><RouteID>F13v3</RouteID></Route><Route><LineDescription>Sheriff Road-Capitol Heights Line</LineDescription><Name>F14 - NAYLOR RD STA -NEW CARROLTON STA</Name><RouteID>F14</RouteID></Route><Route><LineDescription>Sheriff Road-Capitol Heights Line</LineDescription><Name>F14 - BRADBURY HGTS -NEW CARROLTON STA</Name><RouteID>F14v1</RouteID></Route><Route><LineDescription>Chillum Road Line</LineDescription><Name>F2 - CHEVERLY STA - TAKOMA STA</Name><RouteID>F2</RouteID></Route><Route><LineDescription>Chillum Road Line</LineDescription><Name>F2 - CHEVRLY STA-QUEENS CHAPL+CARSN CIR</Name><RouteID>F2v1</RouteID></Route><Route><LineDescription>Chillum Road Line</LineDescription><Name>F2 - 34TH + OTIS - TAKOMA STA</Name><RouteID>F2v2</RouteID></Route><Route><LineDescription>New Carrollton-Silver Spring Line</LineDescription><Name>F4 - SILVR SPRING STA - NEW CARRLLTON</Name><RouteID>F4</RouteID></Route><Route><LineDescription>New Carrollton-Silver Spring Line</LineDescription><Name>F4 - PG PLAZA STA -NEW CARROLTON STA</Name><RouteID>F4v1</RouteID></Route><Route><LineDescription>New Carrollton-Silver Spring Line</LineDescription><Name>F4 - NEW CARRLLTON - PG PLAZA STA</Name><RouteID>F4v2</RouteID></Route><Route><LineDescription>New Carrollton-Fort Totten Line</LineDescription><Name>F6 - FT TOTTEN - NEW CARROLLTN</Name><RouteID>F6</RouteID></Route><Route><LineDescription>New Carrollton-Fort Totten Line</LineDescription><Name>F6 - PG PLAZA - NEW CARROLLTON STA</Name><RouteID>F6v1</RouteID></Route><Route><LineDescription>New Carrollton-Fort Totten Line</LineDescription><Name>F6 - NEW CARROLLTON - PG PLAZA STA</Name><RouteID>F6v2</RouteID></Route><Route><LineDescription>Langley Park-Cheverly Line</LineDescription><Name>F8 - CHEVERLY STA - TLTC</Name><RouteID>F8</RouteID></Route><Route><LineDescription>Greenbelt-New Carrollton Line</LineDescription><Name>G12 - GREENBELT STA - NEW CARROLLTON STA</Name><RouteID>G12</RouteID></Route><Route><LineDescription>Greenbelt-New Carrollton Line</LineDescription><Name>G12 - GREENBELT STA - ROOSEVELT CENTER</Name><RouteID>G12v1</RouteID></Route><Route><LineDescription>Greenbelt-New Carrollton Line</LineDescription><Name>G12 - ROOSEVELT CTR - NEW CARROLLTON STA</Name><RouteID>G12v2</RouteID></Route><Route><LineDescription>Greenbelt-New Carrollton Line</LineDescription><Name>G14 - GREENBELT STA -NEW CARROLTON STA</Name><RouteID>G14</RouteID></Route><Route><LineDescription>Greenbelt-New Carrollton Line</LineDescription><Name>G14 - ROOSEVELT CTR -NEW CARROLTON STA</Name><RouteID>G14v1</RouteID></Route><Route><LineDescription>Greenbelt-New Carrollton Line</LineDescription><Name>G14 - GREENBELT STA - NEW CARROLTON STA</Name><RouteID>G14v2</RouteID></Route><Route><LineDescription>P Street-LeDroit Park Line</LineDescription><Name>G2 - GEORGETOWN UNIV - HOWARD UNIV</Name><RouteID>G2</RouteID></Route><Route><LineDescription>P Street-LeDroit Park Line</LineDescription><Name>G2 - GEORGETOWN UNIV - P+14TH ST</Name><RouteID>G2v1</RouteID></Route><Route><LineDescription>Rhode Island Avenue Line</LineDescription><Name>G8 - FARRAGUT SQUARE - AVONDALE</Name><RouteID>G8</RouteID></Route><Route><LineDescription>Rhode Island Avenue Line</LineDescription><Name>G8 - RHODE ISLAND AVE STA-FARRAGUT SQ</Name><RouteID>G8v1</RouteID></Route><Route><LineDescription>Rhode Island Avenue Line</LineDescription><Name>G8 - FARRAGUT SQ - RHODE ISLAND STA</Name><RouteID>G8v2</RouteID></Route><Route><LineDescription>Rhode Island Avenue Line</LineDescription><Name>G8 - BROOKLAND STA - AVONDALE</Name><RouteID>G8v3</RouteID></Route><Route><LineDescription>Rhode Island Avenue Limited Line</LineDescription><Name>G9 - FRANKLIN SQ - RHODE ISLD + EAST PM</Name><RouteID>G9</RouteID></Route><Route><LineDescription>Rhode Island Avenue Limited Line</LineDescription><Name>G9 - FRANKLIN SQ - RHODE ISLD + EASTERN</Name><RouteID>G9v1</RouteID></Route><Route><LineDescription>Brookland-Potomac Park Line</LineDescription><Name>H1 - C + 17TH ST - BROOKLAND CUA STA</Name><RouteID>H1</RouteID></Route><Route><LineDescription>Marlow Heights-Temple Hills Line</LineDescription><Name>H11 - HEATHER HILL - NAYLOR RD STA</Name><RouteID>H11</RouteID></Route><Route><LineDescription>Marlow Heights-Temple Hills Line</LineDescription><Name>H12 - HEATHER HILL-NAYLOR RD (MACYS)</Name><RouteID>H12</RouteID></Route><Route><LineDescription>Marlow Heights-Temple Hills Line</LineDescription><Name>H12 - HEATHER HILL-NAYLOR RD STA (P&amp;R)</Name><RouteID>H12v1</RouteID></Route><Route><LineDescription>Marlow Heights-Temple Hills Line</LineDescription><Name>H13 - HEATHER HILL - NAYLOR RD STA</Name><RouteID>H13</RouteID></Route><Route><LineDescription>Crosstown Line</LineDescription><Name>H2 - TENLEYTOWN AU-ST - BROOKLND CUA STA</Name><RouteID>H2</RouteID></Route><Route><LineDescription>Crosstown Line</LineDescription><Name>H3 - TENLEYTOWN STA -BROOKLND CUA STA</Name><RouteID>H3</RouteID></Route><Route><LineDescription>Crosstown Line</LineDescription><Name>H4 - TENLEYTWN AU-STA -BROOKLAND CUA STA</Name><RouteID>H4</RouteID></Route><Route><LineDescription>Crosstown Line</LineDescription><Name>H4 - COLUMBIA RD+14TH -TENLEYTOWN-AU STA</Name><RouteID>H4v1</RouteID></Route><Route><LineDescription>Brookland-Fort Lincoln Line</LineDescription><Name>H6 - BROOKLAND CUA STA - FORT LINCOLN</Name><RouteID>H6</RouteID></Route><Route><LineDescription>Brookland-Fort Lincoln Line</LineDescription><Name>H6 - FORT LINCOLN - FORT LINCOLN</Name><RouteID>H6v1</RouteID></Route><Route><LineDescription>Park Road-Brookland Line</LineDescription><Name>H8 - MT PLEASANT+17TH - RHODE ISLAND</Name><RouteID>H8</RouteID></Route><Route><LineDescription>Park Road-Brookland Line</LineDescription><Name>H9 - RHODE ISLAND - FORT DR + 1ST</Name><RouteID>H9</RouteID></Route><Route><LineDescription>Bethesda-Silver Spring Line</LineDescription><Name>J1 - MEDCAL CTR STA - SILVR SPRNG STA</Name><RouteID>J1</RouteID></Route><Route><LineDescription>Bethesda-Silver Spring Line</LineDescription><Name>J1 - SILVR SPRNG STA - MONT MALL/BAT LN</Name><RouteID>J1v1</RouteID></Route><Route><LineDescription>Marlboro Pike Line</LineDescription><Name>J12 - ADDISON RD STA - FORESTVILLE</Name><RouteID>J12</RouteID></Route><Route><LineDescription>Marlboro Pike Line</LineDescription><Name>J12 - ADDISON RD-FORESTVILLE VIA PRES PKY</Name><RouteID>J12v1</RouteID></Route><Route><LineDescription>Bethesda-Silver Spring Line</LineDescription><Name>J2 - MONTGOMRY MALL - SILVR SPRNG STA</Name><RouteID>J2</RouteID></Route><Route><LineDescription>Bethesda-Silver Spring Line</LineDescription><Name>J2 - MEDICAL CTR STA - SILVR SPRNG STA</Name><RouteID>J2v1</RouteID></Route><Route><LineDescription>Bethesda-Silver Spring Line</LineDescription><Name>J2 - SILVER SPRNG - MONT MALL/BATTRY LA</Name><RouteID>J2v2</RouteID></Route><Route><LineDescription>College Park-Bethesda Limited</LineDescription><Name>J4 - BETHESDA STA - COLLEGE PARK STA</Name><RouteID>J4</RouteID></Route><Route><LineDescription>Forestville Line</LineDescription><Name>K12 - BRANCH AVE ST-SUITLAND ST</Name><RouteID>K12</RouteID></Route><Route><LineDescription>Forestville Line</LineDescription><Name>K12 - PENN MAR - SUITLAND ST</Name><RouteID>K12v1</RouteID></Route><Route><LineDescription>Forestville Line</LineDescription><Name>K12 - BRANCH AVE - PENN MAR</Name><RouteID>K12v2</RouteID></Route><Route><LineDescription>Takoma-Fort Totten Line</LineDescription><Name>K2 - FT TOTTEN STA - TAKOMA STA</Name><RouteID>K2</RouteID></Route><Route><LineDescription>New Hampshire Ave-Maryland Line</LineDescription><Name>K6 - FORT TOTTEN STA - WHITE OAK</Name><RouteID>K6</RouteID></Route><Route><LineDescription>New Hampshire Ave-Maryland Line</LineDescription><Name>K6 - TLTC - FORT TOTTEN STA</Name><RouteID>K6v1</RouteID></Route><Route><LineDescription>New Hampshire Ave-Maryland Limited Line</LineDescription><Name>K9 - FORT TOTTEN STA - FDA/FRC (PM)</Name><RouteID>K9</RouteID></Route><Route><LineDescription>New Hampshire Ave-Maryland Limited Line</LineDescription><Name>K9 - FORT TOTTEN STA - FDA/FRC (AM)</Name><RouteID>K9v1</RouteID></Route><Route><LineDescription>Connecticut Ave Line</LineDescription><Name>L1 - POTOMAC PK  - CHEVY CHASE</Name><RouteID>L1</RouteID></Route><Route><LineDescription>Connecticut Ave Line</LineDescription><Name>L2 - FARRAGUT SQ - CHEVY CHASE</Name><RouteID>L2</RouteID></Route><Route><LineDescription>Connecticut Ave Line</LineDescription><Name>L2 - VAN NESS-UDC STA - CHEVY CHASE</Name><RouteID>L2v1</RouteID></Route><Route><LineDescription>Connecticut Ave Line</LineDescription><Name>L2 - FARRAGUT SQ - BETHESDA</Name><RouteID>L2v2</RouteID></Route><Route><LineDescription>Connecticut Ave-Maryland Line</LineDescription><Name>L8 - FRIENDSHIP HTS STA - ASPEN HILL</Name><RouteID>L8</RouteID></Route><Route><LineDescription>Nebraska Ave Line</LineDescription><Name>M4 - SIBLEY HOSPITAL - TENLEYTOWN/AU STA</Name><RouteID>M4</RouteID></Route><Route><LineDescription>Nebraska Ave Line</LineDescription><Name>M4 - TENLEYTOWN   - PINEHRST CIR</Name><RouteID>M4v1</RouteID></Route><Route><LineDescription>Nebraska Ave Line</LineDescription><Name>M4 - PINEHRST CIR - TENLEYTOWN</Name><RouteID>M4v2</RouteID></Route><Route><LineDescription>Fairfax Village Line</LineDescription><Name>M6 - POTOMAC AVE - ALABAMA + PENN</Name><RouteID>M6</RouteID></Route><Route><LineDescription>Fairfax Village Line</LineDescription><Name>M6 - ALABAMA + PENN - FAIRFAX VILLAGE</Name><RouteID>M6v1</RouteID></Route><Route><LineDescription>Metroway-Potomac Yard Line</LineDescription><Name>MW1 - BRADDOCK RD - PENTAGON CITY</Name><RouteID>MW1</RouteID></Route><Route><LineDescription>Metroway-Potomac Yard Line</LineDescription><Name>MW1 - POTOMAC YARD - CRYSTAL CITY</Name><RouteID>MW1v1</RouteID></Route><Route><LineDescription>Metroway-Potomac Yard Line</LineDescription><Name>MW1 - CRYSTAL CITY - BRADDOCK RD</Name><RouteID>MW1v2</RouteID></Route><Route><LineDescription>Metroway-Potomac Yard Line</LineDescription><Name>MW1 - BRADDOCK RD - CRYSTAL CITY</Name><RouteID>MW1v3</RouteID></Route><Route><LineDescription>Massachusetts Ave Line</LineDescription><Name>N2 - FRIENDSHIP HTS - FARRAGUT SQ</Name><RouteID>N2</RouteID></Route><Route><LineDescription>Massachusetts Ave Line</LineDescription><Name>N4 - FRIENDSHP HTS - POTOMAC PARK</Name><RouteID>N4</RouteID></Route><Route><LineDescription>Massachusetts Ave Line</LineDescription><Name>N4 - FRIENDSHP HTS - FARRAGUT  SQ</Name><RouteID>N4v1</RouteID></Route><Route><LineDescription>Massachusetts Ave Line</LineDescription><Name>N6 - FRNDSHIP HTS - FARRAGUT SQ</Name><RouteID>N6</RouteID></Route><Route><LineDescription>National Harbor-Southern Avenue Line</LineDescription><Name>NH1 - NATIONAL HARBOR-SOUTHERN AVE STA</Name><RouteID>NH1</RouteID></Route><Route><LineDescription>National Harbor-Alexandria Line</LineDescription><Name>NH2 - HUNTINGTON STA-NATIONAL HARBOR</Name><RouteID>NH2</RouteID></Route><Route><LineDescription>Eastover-Addison Road Line</LineDescription><Name>P12 - EASTOVER - ADDISON RD STA (NO HOSP)</Name><RouteID>P12</RouteID></Route><Route><LineDescription>Eastover-Addison Road Line</LineDescription><Name>P12 - IVERSON MALL - ADDISON RD STA</Name><RouteID>P12v1</RouteID></Route><Route><LineDescription>Eastover-Addison Road Line</LineDescription><Name>P12 - SUITLAND STA - ADDISON RD STA</Name><RouteID>P12v2</RouteID></Route><Route><LineDescription>Oxon Hill-Fort Washington Line</LineDescription><Name>P18 - FT WASH P+R LOT - SOUTHERN AVE</Name><RouteID>P18</RouteID></Route><Route><LineDescription>Oxon Hill-Fort Washington Line</LineDescription><Name>P19 - FT WASH P+R LOT-SOUTHERN AVE STA</Name><RouteID>P19</RouteID></Route><Route><LineDescription>Anacostia-Eckington Line</LineDescription><Name>P6 - ANACOSTIA STA - RHODE ISLAND STA</Name><RouteID>P6</RouteID></Route><Route><LineDescription>Anacostia-Eckington Line</LineDescription><Name>P6 - ECKINGTON - RHODE ISLAND AVE</Name><RouteID>P6v1</RouteID></Route><Route><LineDescription>Anacostia-Eckington Line</LineDescription><Name>P6 - RHODE ISLAND AVE - ECKINGTON</Name><RouteID>P6v2</RouteID></Route><Route><LineDescription>Anacostia-Eckington Line</LineDescription><Name>P6 - ANACOSTIA STA - ARCHIVES</Name><RouteID>P6v3</RouteID></Route><Route><LineDescription>Anacostia-Eckington Line</LineDescription><Name>P6 - ARCHIVES - ANACOSTIA</Name><RouteID>P6v4</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q1 - SILVR SPRNG STA - SHADY GRVE STA</Name><RouteID>Q1</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q2 - SILVR SPRNG STA - SHADY GRVE STA</Name><RouteID>Q2</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q2 - MONT COLLEGE - SILVR SPRNG STA</Name><RouteID>Q2v1</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q2 - SILVR SPRNG STA - MONT COLLEGE</Name><RouteID>Q2v2</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q4 - SILVER SPRNG STA - ROCKVILLE STA</Name><RouteID>Q4</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q4 - WHEATON STA - ROCKVILLE STA</Name><RouteID>Q4v1</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q5 - WHEATON STA - SHADY GRVE STA</Name><RouteID>Q5</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q6 - WHEATON STA - SHADY GRVE STA</Name><RouteID>Q6</RouteID></Route><Route><LineDescription>Viers Mill Road Line</LineDescription><Name>Q6 - ROCKVILLE STA - WHEATON STA</Name><RouteID>Q6v1</RouteID></Route><Route><LineDescription>Riggs Road Line</LineDescription><Name>R1 - FORT TOTTEN STA - ADELPHI</Name><RouteID>R1</RouteID></Route><Route><LineDescription>Kenilworth Avenue Line</LineDescription><Name>R12 - DEANWOOD STA - GREENBELT STA</Name><RouteID>R12</RouteID></Route><Route><LineDescription>Kenilworth Avenue Line</LineDescription><Name>R12 - DEANWOOD STA - GREENBELT STA</Name><RouteID>R12v1</RouteID></Route><Route><LineDescription>Riggs Road Line</LineDescription><Name>R2 - FORT TOTTEN - CALVERTON</Name><RouteID>R2</RouteID></Route><Route><LineDescription>Riggs Road Line</LineDescription><Name>R2 - HIGH POINT HS - FORT TOTTEN</Name><RouteID>R2v1</RouteID></Route><Route><LineDescription>Riggs Road Line</LineDescription><Name>R2 - POWDER MILL+CHERRY HILL - CALVERTON</Name><RouteID>R2v2</RouteID></Route><Route><LineDescription>Queens Chapel Road Line</LineDescription><Name>R4 - BROOKLAND STA- HIGHVIEW</Name><RouteID>R4</RouteID></Route><Route><LineDescription>Richmond Highway Express</LineDescription><Name>REX - FT BELVOIR POST - KING ST STA</Name><RouteID>REX</RouteID></Route><Route><LineDescription>Richmond Highway Express</LineDescription><Name>REX - FT BELVOIR COMM HOSP - KING ST STA</Name><RouteID>REXv1</RouteID></Route><Route><LineDescription>Richmond Highway Express</LineDescription><Name>REX - KING ST STA - FT BELVOIR COMM HOSP</Name><RouteID>REXv2</RouteID></Route><Route><LineDescription>Richmond Highway Express</LineDescription><Name>REX - KING ST STA - WOODLAWN</Name><RouteID>REXv3</RouteID></Route><Route><LineDescription>Richmond Highway Express</LineDescription><Name>REX - WOODLAWN - KING ST STA</Name><RouteID>REXv4</RouteID></Route><Route><LineDescription>16th Street-Potomac Park Line</LineDescription><Name>S1 - NORTHERN DIVISION - POTOMAC PK</Name><RouteID>S1</RouteID></Route><Route><LineDescription>16th Street-Potomac Park Line</LineDescription><Name>S1 - VIRGINIA+E - COLORDO+16TH</Name><RouteID>S1v1</RouteID></Route><Route><LineDescription>16th Street Line</LineDescription><Name>S2 - FED TRIANGLE  - SILVER SPRNG</Name><RouteID>S2</RouteID></Route><Route><LineDescription>16th Street Line</LineDescription><Name>S2 - 16TH &amp; HARVARD - MCPHERSON SQ</Name><RouteID>S2v1</RouteID></Route><Route><LineDescription>Fort Dupont Shuttle Line</LineDescription><Name>S35 - BRANCH + RANDLE CIR - FT DUPONT</Name><RouteID>S35</RouteID></Route><Route><LineDescription>16th Street Line</LineDescription><Name>S4 - FED TRIANGLE - SILVER SPRNG</Name><RouteID>S4</RouteID></Route><Route><LineDescription>16th Street Line</LineDescription><Name>S4 - SILVER SPRING STA - FRANKLIN SQ</Name><RouteID>S4v1</RouteID></Route><Route><LineDescription>Rhode Island Ave-Carver Terrace Line</LineDescription><Name>S41 - CARVER TERRACE - RHODE ISLAND AVE</Name><RouteID>S41</RouteID></Route><Route><LineDescription>Springfield Circulator-Metro Park Shuttle (TAGS)</LineDescription><Name>S80 - FRANCONIA-SPRNGFLD - METRO PARK</Name><RouteID>S80</RouteID></Route><Route><LineDescription>Springfield Circulator-Metro Park Shuttle (TAGS)</LineDescription><Name>S80 - FRANCONIA-SPRINGFLD - HILTON</Name><RouteID>S80v1</RouteID></Route><Route><LineDescription>Springfield Circulator-Metro Park Shuttle (TAGS)</LineDescription><Name>S80 - HILTON - FRANCONIA-SPRNGFLD</Name><RouteID>S80v2</RouteID></Route><Route><LineDescription>16th Street Limited Line</LineDescription><Name>S9 - FRANKLIN SQ - SILVER SPRING STA</Name><RouteID>S9</RouteID></Route><Route><LineDescription>16th Street Limited Line</LineDescription><Name>S9 - FRANKLIN SQ - COLORADO + 16TH</Name><RouteID>S9v1</RouteID></Route><Route><LineDescription>Springfield Circulator-Metro Park Shuttle (TAGS)</LineDescription><Name>S91 - FRANCONIA SPRINGFLD STA SHUTTLE</Name><RouteID>S91</RouteID></Route><Route><LineDescription>Springfield Circulator-Metro Park Shuttle (TAGS)</LineDescription><Name>S91 - FRANCONIA SPRINGFLD STA SHUTTLE</Name><RouteID>S91v1</RouteID></Route><Route><LineDescription>Rhode Island Ave-New Carrollton Line</LineDescription><Name>T14 - RHD ISLND AVE STA-NEW CARRLTN STA</Name><RouteID>T14</RouteID></Route><Route><LineDescription>Rhode Island Ave-New Carrollton Line</LineDescription><Name>T14 - MT RAINIER - NEW CARRLTN STA</Name><RouteID>T14v1</RouteID></Route><Route><LineDescription>Annapolis Road Line</LineDescription><Name>T18 - R I AVE STA - NEW CARROLLTON STA</Name><RouteID>T18</RouteID></Route><Route><LineDescription>Annapolis Road Line</LineDescription><Name>T18 - BLADENSBURG HS - NEW CARROLLTON STA</Name><RouteID>T18v1</RouteID></Route><Route><LineDescription>River Road Line</LineDescription><Name>T2 - FRIENDSHIP HTS - ROCKVILLE STA</Name><RouteID>T2</RouteID></Route><Route><LineDescription>Sheriff Road-River Terrace Line</LineDescription><Name>U4 - MINNESOTA AVE - SHERIFF RD</Name><RouteID>U4</RouteID></Route><Route><LineDescription>Sheriff Road-River Terrace Line</LineDescription><Name>U4 - SHERIFF RD - MINNESOTA STA</Name><RouteID>U4v1</RouteID></Route><Route><LineDescription>Sheriff Road-River Terrace Line</LineDescription><Name>U4 - RIVER TERRACE - MINNESOTA AVE</Name><RouteID>U4v2</RouteID></Route><Route><LineDescription>Marshall Heights Line</LineDescription><Name>U5 - MINNESOTA AVE-MARSHALL HTS</Name><RouteID>U5</RouteID></Route><Route><LineDescription>Marshall Heights Line</LineDescription><Name>U6 - MINNESOTA - LINCOLN HEIGHTS</Name><RouteID>U6</RouteID></Route><Route><LineDescription>Marshall Heights Line</LineDescription><Name>U6 - 37TH + RIDGE - PLUMMER ES</Name><RouteID>U6v1</RouteID></Route><Route><LineDescription>Marshall Heights Line</LineDescription><Name>U6 - LINCOLN HTS - E CAP + 47TH ST NE</Name><RouteID>U6v2</RouteID></Route><Route><LineDescription>Deanwood-Minnesota Ave Line</LineDescription><Name>U7 - RIDGE + ANACOSTIA - DEANWOOD</Name><RouteID>U7</RouteID></Route><Route><LineDescription>Deanwood-Minnesota Ave Line</LineDescription><Name>U7 - MINNESOTA STA - KENILWORTH HAYES</Name><RouteID>U7v1</RouteID></Route><Route><LineDescription>Deanwood-Minnesota Ave Line</LineDescription><Name>U7 - KENILWORTH HAYES - MINNESOTA STA</Name><RouteID>U7v2</RouteID></Route><Route><LineDescription>Deanwood-Minnesota Ave Line</LineDescription><Name>U7 - MINNESOTA STA - DEANWOOD</Name><RouteID>U7v3</RouteID></Route><Route><LineDescription>Deanwood-Minnesota Ave Line</LineDescription><Name>U7 - DEANWOOD - MINNESOTA AVE</Name><RouteID>U7v4</RouteID></Route><Route><LineDescription>Benning Heights-M Street Line</LineDescription><Name>V1 - BUR OF ENGRVNG - BENNING HTS</Name><RouteID>V1</RouteID></Route><Route><LineDescription>District Heights-Suitland Line</LineDescription><Name>V12 - SUITLAND STA - ADDISON RD STA</Name><RouteID>V12</RouteID></Route><Route><LineDescription>District Heights - Seat Pleasant Line</LineDescription><Name>V14 - PENN MAR - DEANWOOD STA</Name><RouteID>V14</RouteID></Route><Route><LineDescription>District Heights - Seat Pleasant Line</LineDescription><Name>V14 - PENN MAR  - ADDISON RD STA</Name><RouteID>V14v1</RouteID></Route><Route><LineDescription>Capitol Heights-Minnesota Avenue Line</LineDescription><Name>V2 - ANACOSTIA - CAPITOL HGTS</Name><RouteID>V2</RouteID></Route><Route><LineDescription>Capitol Heights-Minnesota Avenue Line</LineDescription><Name>V2 - MINNESOTA AVE - ANACOSTIA</Name><RouteID>V2v1</RouteID></Route><Route><LineDescription>Capitol Heights-Minnesota Avenue Line</LineDescription><Name>V4 - 1ST + K ST SE - CAPITOL HGTS</Name><RouteID>V4</RouteID></Route><Route><LineDescription>Capitol Heights-Minnesota Avenue Line</LineDescription><Name>V4 - MINN AVE STA-CAPITOL HGTS</Name><RouteID>V4v1</RouteID></Route><Route><LineDescription>Benning Heights-Alabama Ave Line</LineDescription><Name>V7 - CONGRESS HGTS - MINN STA</Name><RouteID>V7</RouteID></Route><Route><LineDescription>Benning Heights-Alabama Ave Line</LineDescription><Name>V8 - BENNING HGTS - MINN STA</Name><RouteID>V8</RouteID></Route><Route><LineDescription>Shipley Terrace - Fort Drum Line</LineDescription><Name>W1 - FORT DRUM  - SOUTHERN AVE STA</Name><RouteID>W1</RouteID></Route><Route><LineDescription>Bock Road Line</LineDescription><Name>W14 - FT WASHINGTON-SOUTHERN AVE STA</Name><RouteID>W14</RouteID></Route><Route><LineDescription>Bock Road Line</LineDescription><Name>W14 - SOUTHERN AVE - FRIENDLY</Name><RouteID>W14v1</RouteID></Route><Route><LineDescription>Bock Road Line</LineDescription><Name>W14 - FRIENDLY - SOUTHERN AVE</Name><RouteID>W14v2</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - MALCOM X+OAKWD - UNITED MEDICAL CTR</Name><RouteID>W2</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - NYLDR+GOOD HOP- HOWARD+ANACOSTIA</Name><RouteID>W2v1</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - NAYLOR+GOODHOPE - MALCM X+OAKWOOD</Name><RouteID>W2v2</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - HOWRD+ANACOSTIA-NAYLOR+GOODHOPE</Name><RouteID>W2v3</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - ANACOSTIA STA - UNITED MEDICAL CTR</Name><RouteID>W2v4</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - ANACOSTIA STA - SOUTHERN AVE STA</Name><RouteID>W2v5</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - MELLN+M L KNG - UNITED MEDICAL CTR</Name><RouteID>W2v6</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W2 - SOUTHERN AVE-WASHINGTON OVERLOOK</Name><RouteID>W2v7</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W3 - MALCOM X+OAKWD - UNITED MEDICAL CTR</Name><RouteID>W3</RouteID></Route><Route><LineDescription>United Medical Center-Anacostia Line</LineDescription><Name>W3 - MELLN+M L KNG - UNITED MEDICAL CTR</Name><RouteID>W3v1</RouteID></Route><Route><LineDescription>Deanwood-Alabama Ave Line</LineDescription><Name>W4 - ANACOSTIA STA - DEANWOOD STA</Name><RouteID>W4</RouteID></Route><Route><LineDescription>Deanwood-Alabama Ave Line</LineDescription><Name>W4 - MALCOLM X &amp; PORTLAND - DEANWOOD</Name><RouteID>W4v1</RouteID></Route><Route><LineDescription>Deanwood-Alabama Ave Line</LineDescription><Name>W4 - DEANWOOD STA - MALCLM X+ ML KING</Name><RouteID>W4v2</RouteID></Route><Route><LineDescription>Mt Pleasant-Tenleytown Line</LineDescription><Name>W45 - TENLEYTOWN STA - 16TH + SHEPHERD</Name><RouteID>W45</RouteID></Route><Route><LineDescription>Mt Pleasant-Tenleytown Line</LineDescription><Name>W47 - TENLEYTOWN STA - COLUMBIA HTS STA</Name><RouteID>W47</RouteID></Route><Route><LineDescription>Anacostia-Fort Drum Line</LineDescription><Name>W5 - DC VILLAGE-USCG (VIA ANAC)</Name><RouteID>W5</RouteID></Route><Route><LineDescription>Garfield-Anacostia Loop Line</LineDescription><Name>W6 - ANACOSTIA - ANACOSTIA</Name><RouteID>W6</RouteID></Route><Route><LineDescription>Garfield-Anacostia Loop Line</LineDescription><Name>W6 - NAYLOR+GOODHOPE - ANACOSTIA</Name><RouteID>W6v1</RouteID></Route><Route><LineDescription>Garfield-Anacostia Loop Line</LineDescription><Name>W8 - ANACOSTIA - ANACOSTIA</Name><RouteID>W8</RouteID></Route><Route><LineDescription>Garfield-Anacostia Loop Line</LineDescription><Name>W8 - ANACOSTIA-NAYLOR+GOODHOPE</Name><RouteID>W8v1</RouteID></Route><Route><LineDescription>Garfield-Anacostia Loop Line</LineDescription><Name>W8 - NAYLOR+GOODHOPE - ANACOSTIA</Name><RouteID>W8v2</RouteID></Route><Route><LineDescription>Benning Road Line</LineDescription><Name>X1 - FOGGY BOTTOM+GWU- MINNESOTA STA</Name><RouteID>X1</RouteID></Route><Route><LineDescription>Benning Road-H Street Line</LineDescription><Name>X2 - LAFAYETTE SQ - MINNESOTA STA</Name><RouteID>X2</RouteID></Route><Route><LineDescription>Benning Road-H Street Line</LineDescription><Name>X2 - PHELPS HS - MINNESOTA STA</Name><RouteID>X2v1</RouteID></Route><Route><LineDescription>Benning Road-H Street Line</LineDescription><Name>X2 - FRIENDSHIP EDISON PCS-MINNESOTA STA</Name><RouteID>X2v2</RouteID></Route><Route><LineDescription>Benning Road-H Street Line</LineDescription><Name>X2 - PHELPS HS - LAFAYTTE SQ</Name><RouteID>X2v3</RouteID></Route><Route><LineDescription>Benning Road Line</LineDescription><Name>X3 - DUKE ELLINGTON BR - MINNESOTA STN</Name><RouteID>X3</RouteID></Route><Route><LineDescription>Benning Road Line</LineDescription><Name>X3 - KIPP DC - MINNESOTA AVE STN</Name><RouteID>X3v1</RouteID></Route><Route><LineDescription>Maryland Ave Line</LineDescription><Name>X8 - UNION STATION - CARVER TERR</Name><RouteID>X8</RouteID></Route><Route><LineDescription>Benning Road-H Street Limited Line</LineDescription><Name>X9 - NY AVE &amp; 12TH NW - CAPITOL HTS STA</Name><RouteID>X9</RouteID></Route><Route><LineDescription>Benning Road-H Street Limited Line</LineDescription><Name>X9 - NY AVE &amp; 12TH ST NW - MINNESOTA AVE</Name><RouteID>X9v1</RouteID></Route><Route><LineDescription>Benning Road-H Street Limited Line</LineDescription><Name>X9 - MINNESOTA AVE ST - NY AVE &amp; 12TH ST</Name><RouteID>X9v2</RouteID></Route><Route><LineDescription>Georgia Ave-Maryland Line</LineDescription><Name>Y2 - SILVER SPRING STA - MONTG MED CTR</Name><RouteID>Y2</RouteID></Route><Route><LineDescription>Georgia Ave-Maryland Line</LineDescription><Name>Y7 - SILVER SPRING STA - ICC P&amp;R</Name><RouteID>Y7</RouteID></Route><Route><LineDescription>Georgia Ave-Maryland Line</LineDescription><Name>Y8 - SILVER SPR STA - MONTGOMERY MED CTR</Name><RouteID>Y8</RouteID></Route><Route><LineDescription>Greencastle-Briggs Chaney Express Line</LineDescription><Name>Z11 - SILVR SPRING - BURTONSVILLE P&amp;R</Name><RouteID>Z11</RouteID></Route><Route><LineDescription>Greencastle-Briggs Chaney Express Line</LineDescription><Name>Z11 - GREENCASTLE - SILVR SPRING</Name><RouteID>Z11v1</RouteID></Route><Route><LineDescription>Colesville - Ashton Line</LineDescription><Name>Z2 - SILVR SPRING - OLNEY (NO BLAKE HS)</Name><RouteID>Z2</RouteID></Route><Route><LineDescription>Colesville - Ashton Line</LineDescription><Name>Z2 - SILVER SPRING - BONIFANT &amp; NH</Name><RouteID>Z2v1</RouteID></Route><Route><LineDescription>Colesville - Ashton Line</LineDescription><Name>Z2 - SILVER SPRING STA-OLNEY (BLAKE HS)</Name><RouteID>Z2v2</RouteID></Route><Route><LineDescription>Colesville - Ashton Line</LineDescription><Name>Z2 - COLESVILLE-SILVER SPRING</Name><RouteID>Z2v3</RouteID></Route><Route><LineDescription>Calverton-Westfarm Line</LineDescription><Name>Z6 - SILVR SPRNG STA - BURTONSVILLE</Name><RouteID>Z6</RouteID></Route><Route><LineDescription>Calverton-Westfarm Line</LineDescription><Name>Z6 - CASTLE BLVD - SILVER SPRING STA</Name><RouteID>Z6v1</RouteID></Route><Route><LineDescription>Calverton-Westfarm Line</LineDescription><Name>Z6 - SILVER SPRING -CASTLE BLVD</Name><RouteID>Z6v2</RouteID></Route><Route><LineDescription>Laurel-Burtonsville Express Line</LineDescription><Name>Z7 - SLVER SPRNG STA-S LAUREL P&amp;R (4COR)</Name><RouteID>Z7</RouteID></Route><Route><LineDescription>Laurel-Burtonsville Express Line</LineDescription><Name>Z7 - S LAUREL P&amp;R-SILVR SPR (NO 4COR)</Name><RouteID>Z7v1</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - SILVER SRING STA - BRIGGS CHANEY</Name><RouteID>Z8</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - WHITE OAK - SILVER SPRING STA</Name><RouteID>Z8v1</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - SILVR SPRNG - CSTLE BLVD VERIZON</Name><RouteID>Z8v2</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - SILVER SPRING STA - CASTLE BLVD</Name><RouteID>Z8v3</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - SILVER SPRING - GRNCSTLE (VERIZON)</Name><RouteID>Z8v4</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - SILVER SPRING STA - GREENCASTLE</Name><RouteID>Z8v5</RouteID></Route><Route><LineDescription>Fairland Line</LineDescription><Name>Z8 - SILVER SPRING STA - WHITE OAK</Name><RouteID>Z8v6</RouteID></Route></Routes></RoutesResp>`,
+			unmarshalledResponse: &GetRoutesResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "RoutesResp",
+				},
+				Routes: []Route{
+					{
+						RouteID:         "10A",
+						Name:            "10A - HUNTINGTON STA - PENTAGON",
+						LineDescription: "Alexandria-Pentagon Line",
+					},
+					{
+						RouteID:         "10B",
+						Name:            "10B - HUNTING POINT - BALLSTON STA",
+						LineDescription: "Hunting Point-Ballston Line",
+					},
+					{
+						RouteID:         "10E",
+						Name:            "10E - HUNTING POINT - PENTAGON",
+						LineDescription: "Alexandria-Pentagon Line",
+					},
+					{
+						RouteID:         "10N",
+						Name:            "10N - NATIONAL AIRPORT - PENTAGON",
+						LineDescription: "Alexandria-Pentagon Line",
+					},
+					{
+						RouteID:         "11Y",
+						Name:            "11Y - MOUNT VERNON - POTOMAC PARK",
+						LineDescription: "Mt Vernon Express Line",
+					},
+					{
+						RouteID:         "11Yv1",
+						Name:            "11Y - POTOMAC PARK - HUNTING POINT",
+						LineDescription: "Mt Vernon Express Line",
+					},
+					{
+						RouteID:         "11Yv2",
+						Name:            "11Y - HUNTING POINT - POTOMAC PARK",
+						LineDescription: "Mt Vernon Express Line",
+					},
+					{
+						RouteID:         "15K",
+						Name:            "15K - E FALLS CH STA-MCLEAN LANGLEY",
+						LineDescription: "Chain Bridge Road Line",
+					},
+					{
+						RouteID:         "15Kv1",
+						Name:            "15K - CIA - EAST FALLS CHURCH STA",
+						LineDescription: "Chain Bridge Road Line",
+					},
+					{
+						RouteID:         "16A",
+						Name:            "16A - PATRIOT+AMERICANA - PENTAGON",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16C",
+						Name:            "16C - CULMORE - PENTAGON",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16Cv1",
+						Name:            "16C - CULMORE - FEDERAL TRIANGLE",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16E",
+						Name:            "16E - GLN CARLYN+VISTA - FRANKLIN SQ",
+						LineDescription: "Columbia Pike Line",
+					},
+					{
+						RouteID:         "16G",
+						Name:            "16G - DINWIDDIE+COLUMBIA - PENTAGON CITY",
+						LineDescription: "Columbia Pike-Pentagon City Line",
+					},
+					{
+						RouteID:         "16Gv1",
+						Name:            "16G - COL PIKE+CARLIN SPR - DINWD+COL PK",
+						LineDescription: "Columbia Pike-Pentagon City Line",
+					},
+					{
+						RouteID:         "16H",
+						Name:            "16H - SKYLINE CITY - PENTAGON CITY STA",
+						LineDescription: "Columbia Pike-Pentagon City Line",
+					},
+					{
+						RouteID:         "16L",
+						Name:            "16L - ANNANDALE - PENTAGON HOV",
+						LineDescription: "Annandale-Skyline City-Pentagon Line",
+					},
+					{
+						RouteID:         "16Y",
+						Name:            "16Y - FOUR MILE+COLUMBIA - MCPHERSON SQ",
+						LineDescription: "Columbia Pike-Farragut Square Line",
+					},
+					{
+						RouteID:         "16Yv1",
+						Name:            "16Y - COLUMBIA PIKE - MCPHERSON SQ",
+						LineDescription: "Columbia Pike-Farragut Square Line",
+					},
+					{
+						RouteID:         "17B",
+						Name:            "17B - BURKE CENTRE - PENTAGON HOV",
+						LineDescription: "Kings Park-North Springfield Line",
+					},
+					{
+						RouteID:         "17G",
+						Name:            "17G - G MASON UNIV - PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17H",
+						Name:            "17H - TWNBRK RD+TWNBRK RN- PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17K",
+						Name:            "17K - TWNBRK RD+TWNBRK RN- PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17L",
+						Name:            "17L - TWNBRK RD+TWNBRK RUN-PENTAGON",
+						LineDescription: "Kings Park Express Line",
+					},
+					{
+						RouteID:         "17M",
+						Name:            "17M - EDSALL+CANARD - PENTAGON",
+						LineDescription: "Kings Park-North Springfield Line",
+					},
+					{
+						RouteID:         "18G",
+						Name:            "18G - ROLLING VALLEY - PENTAGON",
+						LineDescription: "Orange Hunt Line",
+					},
+					{
+						RouteID:         "18H",
+						Name:            "18H - HUNTSMAN+CORK CTY - PENTAGON",
+						LineDescription: "Orange Hunt Line",
+					},
+					{
+						RouteID:         "18J",
+						Name:            "18J - ROLLING VALLEY - PENTAGON",
+						LineDescription: "Orange Hunt Line",
+					},
+					{
+						RouteID:         "18P",
+						Name:            "18P - BURKE CENTRE - PENTAGON",
+						LineDescription: "Burke Centre Line",
+					},
+					{
+						RouteID:         "18Pv1",
+						Name:            "18P - PENTAGON - ROLLING VALLEY MALL",
+						LineDescription: "Burke Centre Line",
+					},
+					{
+						RouteID:         "18Pv2",
+						Name:            "18P - ROLLING VALLEY P+R - PENTAGON",
+						LineDescription: "Burke Centre Line",
+					},
+					{
+						RouteID:         "1A",
+						Name:            "1A - VIENNA-BALLSTON (7 CORNERS)",
+						LineDescription: "Wilson Blvd-Vienna Line",
+					},
+					{
+						RouteID:         "1B",
+						Name:            "1B - DUNN LORING  - BALLSTON",
+						LineDescription: "Wilson Blvd-Vienna Line",
+					},
+					{
+						RouteID:         "1C",
+						Name:            "1C - WEST OX DIV-DUNN LORING (VIA MALL)",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv1",
+						Name:            "1C - FAIRFAX CO GOV CTR - DUNN LORING",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv2",
+						Name:            "1C - WEST OX DIV - DUNN LORING (NO MALL)",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv3",
+						Name:            "1C - FAIR OAKS MALL - DUNN LORING",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "1Cv4",
+						Name:            "1C - DUNN LORING - FAIR OAKS MALL",
+						LineDescription: "Fair Oaks-Fairfax Blvd Line",
+					},
+					{
+						RouteID:         "21A",
+						Name:            "21A - S REYNOLDS+EOS 21 CONDOS - PENTAGON",
+						LineDescription: "Landmark-Bren Mar Park-Pentagon Line",
+					},
+					{
+						RouteID:         "21D",
+						Name:            "21D - LANDMARK MEWS -PENTAGON",
+						LineDescription: "Landmark-Bren Mar Park-Pentagon Line",
+					},
+					{
+						RouteID:         "22A",
+						Name:            "22A - BALLSTON STA - PENTAGON",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "22Av1",
+						Name:            "22A - SHIRLINGTON - BALLSTON  STA",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "22C",
+						Name:            "22C - BALLSTON STA - PENTAGON",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "22F",
+						Name:            "22F - NVCC - PENTAGON VIA HOV",
+						LineDescription: "Barcroft-South Fairlington Line",
+					},
+					{
+						RouteID:         "23A",
+						Name:            "23A - TYSONS CORNER CTR - CRYSTAL CTY",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "23B",
+						Name:            "23B - BALLSTON STA - CRYSTAL CTY",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "23Bv1",
+						Name:            "23B - LINDEN RESOURCES - BALLSTON STATION",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "23T",
+						Name:            "23T - TYSONS CORNER CTR - SHIRLINGTON",
+						LineDescription: "McLean-Crystal City Line",
+					},
+					{
+						RouteID:         "25B",
+						Name:            "25B - VAN DORN - BALLSTON",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "25Bv1",
+						Name:            "25B - SOUTHERN TOWERS - BALLSTON",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "25Bv2",
+						Name:            "25B - VAN DORN - BALLSTON/NO LDMRK CTR",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "25Bv3",
+						Name:            "25B - BALLSTON - SOUTHERN TOWERS",
+						LineDescription: "Landmark-Ballston Line",
+					},
+					{
+						RouteID:         "26A",
+						Name:            "26A - NVCC ANNANDALE - E FALLS CHURCH STA",
+						LineDescription: "Annandale-East Falls Church Line",
+					},
+					{
+						RouteID:         "28A",
+						Name:            "28A - TYSONS CORNER STA-KING ST STA",
+						LineDescription: "Leesburg Pike Line",
+					},
+					{
+						RouteID:         "28Av1",
+						Name:            "28A - SOUTHERN TOWERS-TYSONS CORNER STA",
+						LineDescription: "Leesburg Pike Line",
+					},
+					{
+						RouteID:         "28F",
+						Name:            "28F - BLDG 5113 G MASON DR - PENTAGON",
+						LineDescription: "Skyline City Line",
+					},
+					{
+						RouteID:         "28G",
+						Name:            "28G - BLDG 5113 G MASON DR - PENTAGON",
+						LineDescription: "Skyline City Line",
+					},
+					{
+						RouteID:         "29C",
+						Name:            "29C - NVCC ANNANDALE - PENTAGON",
+						LineDescription: "Annandale Line",
+					},
+					{
+						RouteID:         "29G",
+						Name:            "29G - AMERICANA+HERITAGE - PENTAGON",
+						LineDescription: "Annandale Line",
+					},
+					{
+						RouteID:         "29K",
+						Name:            "29K - GMU - KING ST STA",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29Kv1",
+						Name:            "29K - GMU - KING ST/NO LDMRK",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29N",
+						Name:            "29N - VIENNA STA - KING ST (VIA MALL)",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29Nv1",
+						Name:            "29N - VIENNA STA-KING ST (NO MALL)",
+						LineDescription: "Alexandria-Fairfax Line",
+					},
+					{
+						RouteID:         "29W",
+						Name:            "29W - NVCC ANNANDALE - PENTAGON",
+						LineDescription: "Braeburn Drive-Pentagon Express Line",
+					},
+					{
+						RouteID:         "2A",
+						Name:            "2A - DUNN LORING STA - BALLSTON STA",
+						LineDescription: "Washington Blvd.-Dunn Loring Line",
+					},
+					{
+						RouteID:         "2B",
+						Name:            "2B - WEST OX RD DIV-DUNN LORING STATION",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "2Bv1",
+						Name:            "2B - WEST OX RD-DUNN LORING STA(NO MALL)",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "2Bv2",
+						Name:            "2B - FAIR OAKS MALL-DUNN LORING STATION",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "2Bv3",
+						Name:            "2B - DUNN LORING STA - FAIR OAKS MALL",
+						LineDescription: "Fair Oaks-Jermantown Road Line",
+					},
+					{
+						RouteID:         "30N",
+						Name:            "30N - FRIENDSHIP HGTS- NAYLOR RD STA",
+						LineDescription: "Friendship Heights-Southeast Line",
+					},
+					{
+						RouteID:         "30S",
+						Name:            "30S - FRIENDSHIP HGTS- SOUTHRN AVE STA",
+						LineDescription: "Friendship Heights-Southeast Line",
+					},
+					{
+						RouteID:         "31",
+						Name:            "31 - POTOMAC PARK-FRIENDSHIP HGTS",
+						LineDescription: "Wisconsin Avenue Line",
+					},
+					{
+						RouteID:         "32",
+						Name:            "32 - VIRGINIA AVE+E ST- SOUTHRN AVE",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "32v1",
+						Name:            "32 - PENN AVE + 8TH ST - SOUTHRN AVE",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "33",
+						Name:            "33 - 10TH ST+PA AV NW - FRIENDSHIP HGTS",
+						LineDescription: "Wisconsin Avenue Line",
+					},
+					{
+						RouteID:         "34",
+						Name:            "34 - 10TH ST + PA AVE- NAYLOR RD STA",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "36",
+						Name:            "36 - VIRGINIA AVE+E ST - NAYLOR RD STA",
+						LineDescription: "Pennsylvania Avenue Line",
+					},
+					{
+						RouteID:         "37",
+						Name:            "37 - 10TH ST+PA AV NW - FRIENDSHIP HGTS",
+						LineDescription: "Wisconsin Avenue Limited Line",
+					},
+					{
+						RouteID:         "38B",
+						Name:            "38B - BALLSTON - FARRAGUT",
+						LineDescription: "Ballston-Farragut Square Line",
+					},
+					{
+						RouteID:         "38Bv1",
+						Name:            "38B - WASH & QUINCY - FARRAGUT",
+						LineDescription: "Ballston-Farragut Square Line",
+					},
+					{
+						RouteID:         "38Bv2",
+						Name:            "38B - WASHINGTON-LEE HS - FARRAGUT SQ",
+						LineDescription: "Ballston-Farragut Square Line",
+					},
+					{
+						RouteID:         "39",
+						Name:            "39 - VIRGINIA AVE+21ST NW- NAYLOR RD STA",
+						LineDescription: "Pennsylvania Avenue Limited Line",
+					},
+					{
+						RouteID:         "3A",
+						Name:            "3A - ANNANDALE - E FALLS CHURCH",
+						LineDescription: "Annandale Road Line",
+					},
+					{
+						RouteID:         "3Av1",
+						Name:            "3A - ANNANDALE - 7 CORNERS",
+						LineDescription: "Annandale Road Line",
+					},
+					{
+						RouteID:         "3T",
+						Name:            "3T - MCLEAN STATION - E FALLS CH STA",
+						LineDescription: "Pimmit Hills Line",
+					},
+					{
+						RouteID:         "3Tv1",
+						Name:            "3T - MCLEAN STATION - W FALLS CHURCH",
+						LineDescription: "Pimmit Hills Line",
+					},
+					{
+						RouteID:         "3Y",
+						Name:            "3Y - E FALLS CHURCH - MCPHERSON SQ",
+						LineDescription: "Lee Highway-Farragut Square Line",
+					},
+					{
+						RouteID:         "42",
+						Name:            "42 - 9TH + F ST  - MT PLEASANT",
+						LineDescription: "Mount Pleasant Line",
+					},
+					{
+						RouteID:         "43",
+						Name:            "43 - I + 13TH NW - MT PLEASANT",
+						LineDescription: "Mount Pleasant Line",
+					},
+					{
+						RouteID:         "4A",
+						Name:            "4A - SEVEN CORNERS - ROSSLYN",
+						LineDescription: "Pershing Dr-Arlington Blvd Line",
+					},
+					{
+						RouteID:         "4B",
+						Name:            "4B - SEVEN CORNERS - ROSSLYN",
+						LineDescription: "Pershing Dr-Arlington Blvd Line",
+					},
+					{
+						RouteID:         "52",
+						Name:            "52 - L ENFNT PLAZA - TAKOMA STATION",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "52v1",
+						Name:            "52 - L ENFNT PLAZA - 14TH+COLORADO",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "52v2",
+						Name:            "52 - 14TH+COLORADO - L ENFANT PLAZA",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "52v3",
+						Name:            "52 - 14TH & U - TAKOMA STATION",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "54",
+						Name:            "54 - METRO CENTER - TAKOMA STA",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "54v1",
+						Name:            "54 - 14TH+COLORADO - METRO CENTER",
+						LineDescription: "14th Street Line",
+					},
+					{
+						RouteID:         "59",
+						Name:            "59 - FEDERAL TRIANGLE - TAKOMA STATION",
+						LineDescription: "14th Street Limited Line",
+					},
+					{
+						RouteID:         "5A",
+						Name:            "5A - DULLES AIRPORT - LENFANT PLAZA",
+						LineDescription: "DC-Dulles Line",
+					},
+					{
+						RouteID:         "60",
+						Name:            "60 - GEORGIA + PETWORTH - FT TOTTEN",
+						LineDescription: "Fort Totten-Petworth Line",
+					},
+					{
+						RouteID:         "62",
+						Name:            "62 - GEORGIA+PETWORTH - TAKOMA STATION",
+						LineDescription: "Takoma-Petworth Line",
+					},
+					{
+						RouteID:         "62v1",
+						Name:            "62 - COOLIDGE HS - GEORGIA + PETWORTH",
+						LineDescription: "Takoma-Petworth Line",
+					},
+					{
+						RouteID:         "63",
+						Name:            "63 - FED TRIANGLE - TAKOMA STA",
+						LineDescription: "Takoma-Petworth Line",
+					},
+					{
+						RouteID:         "64",
+						Name:            "64 - FEDERAL TRIANGLE -FORT TOTTEN",
+						LineDescription: "Fort Totten-Petworth Line",
+					},
+					{
+						RouteID:         "64v1",
+						Name:            "64 - GEORGIA + PETWOTH - FT TOTTEN",
+						LineDescription: "Fort Totten-Petworth Line",
+					},
+					{
+						RouteID:         "70",
+						Name:            "70 - ARCHIVES - SILVER SPRING",
+						LineDescription: "Georgia Avenue-7th Street Line",
+					},
+					{
+						RouteID:         "70v1",
+						Name:            "70 - GEORGIA & EUCLID  - ARCHIVES",
+						LineDescription: "Georgia Avenue-7th Street Line",
+					},
+					{
+						RouteID:         "74",
+						Name:            "74 - NATIONALS PARK - CONVENTION CTR",
+						LineDescription: "Convention Center-Southwest Waterfront Line",
+					},
+					{
+						RouteID:         "79",
+						Name:            "79 - ARCHIVES - SILVER SPRING STA",
+						LineDescription: "Georgia Avenue MetroExtra Line",
+					},
+					{
+						RouteID:         "7A",
+						Name:            "7A - LINCOLNIA+QUANTRELL - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Av1",
+						Name:            "7A - PENTAGON - SOUTHERN TWRS",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Av2",
+						Name:            "7A - SOUTHERN TWRS - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Av3",
+						Name:            "7A - LINCOLNIA/QUANTRELL - PENT VIA PENT",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7C",
+						Name:            "7C - PARK CENTER - PENTAGON",
+						LineDescription: "Park Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7F",
+						Name:            "7F - LINCOLNIA+QUANTRELL - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Fv1",
+						Name:            "7F - LINC + QUANT - PENT CITY - PENTAGON",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7M",
+						Name:            "7M - MARK CENTER - PENTAGON (NON-HOV)",
+						LineDescription: "Mark Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7Mv1",
+						Name:            "7M - MARK CENTER - PENTAGON (HOV)",
+						LineDescription: "Mark Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7P",
+						Name:            "7P - PARK CTR - PENTAGON",
+						LineDescription: "Park Center-Pentagon Line",
+					},
+					{
+						RouteID:         "7W",
+						Name:            "7W - LNCLNA+QUANTRLL- PENTAGON",
+						LineDescription: "Lincolnia-Pentagon Line",
+					},
+					{
+						RouteID:         "7Y",
+						Name:            "7Y - SOUTHERN TWRS - H+17TH ST",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "7Yv1",
+						Name:            "7Y - PENTAGON - H+17TH ST",
+						LineDescription: "Lincolnia-North Fairlington Line",
+					},
+					{
+						RouteID:         "80",
+						Name:            "80 - KENNEDY CTR   - FORT TOTTEN STA",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "80v1",
+						Name:            "80 - MCPHERSON SQ  - BROOKLAND",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "80v2",
+						Name:            "80 - MCPHERSON SQ  - FORT TOTTEN STA",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "80v3",
+						Name:            "80 - KENNEDY CTR   - BROOKLAND STA",
+						LineDescription: "North Capitol Street Line",
+					},
+					{
+						RouteID:         "83",
+						Name:            "83 - RHODE ISLAND AVE STA-CHERRY HILL",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v1",
+						Name:            "83 - MT RAINIER - RHODE ISLAND",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v2",
+						Name:            "83 - RHODE ISLAND - MT RAINIER",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v3",
+						Name:            "83 - RHODE ISLAND AVE STA-COLLEGE PARK",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "83v4",
+						Name:            "83 - COLLEGE PARK-RHODE ISLAND AVE STA",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "86",
+						Name:            "86 - RHODE ISLAND AVE STA- CALVERTON",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "86v1",
+						Name:            "86 - RHODE ISLAND AVE STA- COLLEGE PARK",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "86v2",
+						Name:            "86 - MT RAINIER   - CALVERTON",
+						LineDescription: "College Park Line",
+					},
+					{
+						RouteID:         "87",
+						Name:            "87 - NEW CARROLTON -CYPRESS+LAURL LAKES",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v1",
+						Name:            "87 - GRNBELT STA -CYPRESS+LAURL LAKES",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v2",
+						Name:            "87 - GRNBELT-CYP+LRL LAKES (NO P&R)",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v3",
+						Name:            "87 - GRNBELT STA - BALTIMORE+MAIN ST",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v4",
+						Name:            "87 - BALTIMORE+MAIN ST - GRNBELT STA",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "87v5",
+						Name:            "87 - CYPRESS+LAURL LAKES -GRNBELT STA",
+						LineDescription: "Laurel Express Line",
+					},
+					{
+						RouteID:         "89",
+						Name:            "89 - GREENBELT STA - 4TH & GREEN HILL",
+						LineDescription: "Laurel Line",
+					},
+					{
+						RouteID:         "89v1",
+						Name:            "89 - GREENBELT STA - CHERRY LA+4TH ST",
+						LineDescription: "Laurel Line",
+					},
+					{
+						RouteID:         "89M",
+						Name:            "89M - GREENBELT STA - S LAUREL P+R",
+						LineDescription: "Laurel Line",
+					},
+					{
+						RouteID:         "8S",
+						Name:            "8S - RADFORD+QUAKER - PENTAGON",
+						LineDescription: "Foxchase-Seminary Valley Line",
+					},
+					{
+						RouteID:         "8W",
+						Name:            "8W - MARK CENTER - PENTAGON V FOXCHASE",
+						LineDescription: "Foxchase-Seminary Valley Line",
+					},
+					{
+						RouteID:         "8Z",
+						Name:            "8Z - QUAKER+OSAGE - PENTAGON",
+						LineDescription: "Foxchase-Seminary Valley Line",
+					},
+					{
+						RouteID:         "90",
+						Name:            "90 - ANACOSTIA - DK ELLNGTN BRDG",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "90v1",
+						Name:            "90 - 8TH ST + L ST  - DK ELLNGTN BRDG",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "90v2",
+						Name:            "90 - KIPP DC PREP- ANACOSTIA",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "92",
+						Name:            "92 - CONGRESS HTS STA - REEVES CTR",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "92v1",
+						Name:            "92 - EASTERN MARKET - CONGRESS HGTS STA",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "92v2",
+						Name:            "92 - CONGRESS HTS STA- EASTERN MARKET",
+						LineDescription: "U Street-Garfield Line",
+					},
+					{
+						RouteID:         "96",
+						Name:            "96 - TENLEYTOWN STA - CAPITOL HTS STA",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v1",
+						Name:            "96 - ELLINGTON BR - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v2",
+						Name:            "96 - CAPITOL HTS  - REEVES CTR",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v3",
+						Name:            "96 - CAPITOL HTS - ELLINGTON BRDG",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v4",
+						Name:            "96 - REEVES CTR  - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "96v5",
+						Name:            "96 - TENLEYTOWN STA - STADIUM ARMORY STA",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "97",
+						Name:            "97 - UNION STATION - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "97v1",
+						Name:            "97 - EASTERN HS - CAPITOL HTS",
+						LineDescription: "East Capitol Street-Cardoza Line",
+					},
+					{
+						RouteID:         "A12",
+						Name:            "A12 - ADDISON RD STA - CAPITAL PLAZA",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A12v1",
+						Name:            "A12 - BARLWE+MATHEW HENSON - ADDISON RD",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A12v2",
+						Name:            "A12 - CAPITOL HTS STA - CAPITAL PLAZA",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A12v3",
+						Name:            "A12 - CAPITAL PLAZA - CAPITOL HTS",
+						LineDescription: "Martin Luther King Jr Highway Line",
+					},
+					{
+						RouteID:         "A2",
+						Name:            "A2 - SOUTHERN AVE - ANACOSTIA (VIA HOSP)",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A2v1",
+						Name:            "A2 - ANACOSTIA - MISS+ATLANTIC",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A2v2",
+						Name:            "A2 - SOUTHERN AVE STA - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A2v3",
+						Name:            "A2 - MISS+ATLANTIC - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A31",
+						Name:            "A31 - ANACOSTIA HIGH - MINNESOTA STA",
+						LineDescription: "Minnesota Ave-Anacostia Line",
+					},
+					{
+						RouteID:         "A32",
+						Name:            "A32 - ANACOSTIA HIGH - SOUTHRN AVE STA",
+						LineDescription: "Minnesota Ave-Anacostia Line",
+					},
+					{
+						RouteID:         "A33",
+						Name:            "A33 - ANACOSTIA HIGH - ANACOSTIA STA",
+						LineDescription: "Minnesota Ave-Anacostia Line",
+					},
+					{
+						RouteID:         "A4",
+						Name:            "A4 - DC VILLAGE - ANACOSTIA",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v1",
+						Name:            "A4 - USCG-FT DRUM (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v2",
+						Name:            "A4 - FT DRUM - ANACOSTIA",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v3",
+						Name:            "A4 - ANACOSTIA - FT DRUM",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v4",
+						Name:            "A4 - FT DRUM-USCG (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A4v5",
+						Name:            "A4 - DC VILL-USCG (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "A6",
+						Name:            "A6 - 4501 3RD ST - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A6v1",
+						Name:            "A6 - SOUTHERN AVE+S CAPITOL - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A7",
+						Name:            "A7 - SOUTHRN+S CAPITOL - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A8",
+						Name:            "A8 - 4501 3RD ST - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A8v1",
+						Name:            "A8 - SOUTHERN + S CAPITOL - ANACOSTIA",
+						LineDescription: "Anacostia-Congress Heights Line",
+					},
+					{
+						RouteID:         "A9",
+						Name:            "A9 - LIVINGSTON - MCPHERSON SQUARE",
+						LineDescription: "Martin Luther King Jr Ave Limited Line",
+					},
+					{
+						RouteID:         "B2",
+						Name:            "B2 - ANACOSTIA STA - MOUNT RAINIER",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v1",
+						Name:            "B2 - ANACOSTIA STA - BLDNSGRG+VST NE",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v2",
+						Name:            "B2 - POTOMAC AVE - MOUNT RAINIER",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v3",
+						Name:            "B2 - BLDNSBRG+26TH - ANACOSTIA STA",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B2v4",
+						Name:            "B2 - EASTERN HS - ANACOSTIA STA",
+						LineDescription: "Bladensburg Road-Anacostia Line",
+					},
+					{
+						RouteID:         "B21",
+						Name:            "B21 - NEW CARROLTON STA - BOWIE STATE",
+						LineDescription: "Bowie State University Line",
+					},
+					{
+						RouteID:         "B22",
+						Name:            "B22 - NEW CARROLTON STA - BOWIE STATE",
+						LineDescription: "Bowie State University Line",
+					},
+					{
+						RouteID:         "B22v1",
+						Name:            "B22 - OLD CHAPEL & 197 - NEW CARRLTN STA",
+						LineDescription: "Bowie State University Line",
+					},
+					{
+						RouteID:         "B24",
+						Name:            "B24 - NEW CARLTN STA-BOWIE P+R(VIA BHC)",
+						LineDescription: "Bowie-Belair Line",
+					},
+					{
+						RouteID:         "B24v1",
+						Name:            "B24 - NEW CARROLTON STA - BOWIE P+R",
+						LineDescription: "Bowie-Belair Line",
+					},
+					{
+						RouteID:         "B27",
+						Name:            "B27 - NEW CARROLTON STA - BOWIE STATE",
+						LineDescription: "Bowie-New Carrollton Line",
+					},
+					{
+						RouteID:         "B29",
+						Name:            "B29 - NEW CARROLTON - CROFTON CC (PM)(PR)",
+						LineDescription: "Crofton-New Carrollton Line",
+					},
+					{
+						RouteID:         "B29v1",
+						Name:            "B29 - NEW CARROLLTON STA - GATEWAY CTR",
+						LineDescription: "Crofton-New Carrollton Line",
+					},
+					{
+						RouteID:         "B29v2",
+						Name:            "B29 - NEW CARROLTON - CROFTON CC (NO PR)",
+						LineDescription: "Crofton-New Carrollton Line",
+					},
+					{
+						RouteID:         "B30",
+						Name:            "B30 - GREENBELT STA - BWI LT RAIL STA",
+						LineDescription: "Greenbelt-BWI Thurgood Marshall Airport Express Line",
+					},
+					{
+						RouteID:         "B8",
+						Name:            "B8 - RHODE ISLAND AV -PETERSBRG APTS",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "B8v1",
+						Name:            "B8 - BLDNSBRG+S DKTA -PETERSBRG APTS",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "B8v2",
+						Name:            "B8 - PETERSBRG APTS  -BLDNSBRG+S DKTA",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "B9",
+						Name:            "B9 - RHODE ISLAND AVE - COLMAR MANOR",
+						LineDescription: "Fort Lincoln Shuttle Line",
+					},
+					{
+						RouteID:         "C11",
+						Name:            "C11 - CLINTON P+R - BRANCH AVE STA",
+						LineDescription: "Clinton Line",
+					},
+					{
+						RouteID:         "C12",
+						Name:            "C12 - NAYLOR RD STA  - BRANCH AVE STA",
+						LineDescription: "Hillcrest Heights Line",
+					},
+					{
+						RouteID:         "C13",
+						Name:            "C13 - CLINTON P+R - BRANCH AVE STA",
+						LineDescription: "Clinton Line",
+					},
+					{
+						RouteID:         "C14",
+						Name:            "C14 - NAYLOR RD STA  - BRANCH AVE STA",
+						LineDescription: "Hillcrest Heights Line",
+					},
+					{
+						RouteID:         "C2",
+						Name:            "C2 - WHEATN STA - GRNBELT STA UMD ALT",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C2v1",
+						Name:            "C2 - TAKOMA LANGLEY XROADS - GRNBELT STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C2v2",
+						Name:            "C2 - GREENBELT STA - RANDOLPH + PARKLAWN",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C2v3",
+						Name:            "C2 - TAKOMA LANGLEY XROADS - WHEATON",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C21",
+						Name:            "C21 - ADDISON RD STA - COLLINGTON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C21v1",
+						Name:            "C21 - ADDISON RD STA - POINTER RIDGE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C21v2",
+						Name:            "C21 - ADDISON RD STA - CAMPUS WAY S",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C22",
+						Name:            "C22 - ADDISON RD STA - COLLINGTON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C22v1",
+						Name:            "C22 - ADDISON RD STA- POINTER RIDGE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C26",
+						Name:            "C26 - LARGO TOWN CTR - WATKNS+CHESTERTON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C26v1",
+						Name:            "C26 - LARGO TOWN CTR-WATKINS+CAMBLETON",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C28",
+						Name:            "C28 - PT RIDGE -NEW CAROLTN VIA HLTH CTR",
+						LineDescription: "Pointer Ridge Line",
+					},
+					{
+						RouteID:         "C28v1",
+						Name:            "C28 - PT RIDGE - NEW CARROLLTON STA",
+						LineDescription: "Pointer Ridge Line",
+					},
+					{
+						RouteID:         "C29*1",
+						Name:            "C29 - POINTER RIDGE - ADDISON RD STA",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C29*2",
+						Name:            "C29 - WATKNS+CAMBLETON - ADDISN RD STA",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C29*4",
+						Name:            "C29 - ADDISON RD STA - BOWIE STATE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C29/",
+						Name:            "C29 - ADDISON RD STA - POINTER RIDGE",
+						LineDescription: "Central Avenue Line",
+					},
+					{
+						RouteID:         "C4",
+						Name:            "C4 - TWINBROOK STA - PG PLAZA STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C4v1",
+						Name:            "C4 - TLTC-TWINBROOK",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C4v2",
+						Name:            "C4 - TWINBROOK STA - WHEATON STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C4v3",
+						Name:            "C4 - PG PLAZA STA - WHEATON STA",
+						LineDescription: "Greenbelt-Twinbrook Line",
+					},
+					{
+						RouteID:         "C8",
+						Name:            "C8 - WHITE FLINT - COLLEGE PARK",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "C8v1",
+						Name:            "C8 - WHITE FLNT-COLLEGE PK (NO FDA/ARCH)",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "C8v2",
+						Name:            "C8 - WHITE FLINT-COLLEGE PARK (NO FDA)",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "C8v3",
+						Name:            "C8 - GLENMONT-COLLEGE PK (NO FDA/ARCH)",
+						LineDescription: "College Park-White Flint Line",
+					},
+					{
+						RouteID:         "D1",
+						Name:            "D1 - GLOVER PARK - FRANKLIN SQUARE",
+						LineDescription: "Glover Park-Franklin Square Line",
+					},
+					{
+						RouteID:         "D12",
+						Name:            "D12 - SOUTHERN AVE STA - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D12v1",
+						Name:            "D12 - SUITLAND STA - SOUTHERN AVE STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D12v2",
+						Name:            "D12 - ST BARNABAS RD   - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D13",
+						Name:            "D13 - SOUTHERN AVE STA - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D13v1",
+						Name:            "D13 - SOUTHRN STA - ALLENTWN+OLD BRNCH",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D14",
+						Name:            "D14 - SOUTHERN AVE STA - SUITLAND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D14v1",
+						Name:            "D14 - ALLENTWN+OLD BRNCH - SUITLND STA",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D14v2",
+						Name:            "D14 - SUITLND STA - ALLENTWN+OLD BRNCH",
+						LineDescription: "Oxon Hill-Suitland Line",
+					},
+					{
+						RouteID:         "D2",
+						Name:            "D2 - GLOVER PARK   - CONNETICUT +Q ST",
+						LineDescription: "Glover Park-Dupont Circle Line",
+					},
+					{
+						RouteID:         "D2v1",
+						Name:            "D2 - DUPONT CIR - GLOVER PARK",
+						LineDescription: "Glover Park-Dupont Circle Line",
+					},
+					{
+						RouteID:         "D31",
+						Name:            "D31 - TENLEYTOWN STA - 16TH + EASTERN",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D32",
+						Name:            "D32 - TENLEYTOWN STA - COLUMBIA HTS STA",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D33",
+						Name:            "D33 - TENLEYTOWN STA - 16TH + SHEPHERD",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D34",
+						Name:            "D34 - TENLEYTOWN STA - 14TH + COLORADO",
+						LineDescription: "16th Street-Tenleytown Line",
+					},
+					{
+						RouteID:         "D4",
+						Name:            "D4 - DUPONT CIRCLE - IVY CITY",
+						LineDescription: "Ivy City-Franklin Square Line",
+					},
+					{
+						RouteID:         "D4v1",
+						Name:            "D4 - FRANKLIN SQUARE - IVY CITY",
+						LineDescription: "Ivy City-Franklin Square Line",
+					},
+					{
+						RouteID:         "D4v2",
+						Name:            "D4 - IVY CITY - FRANKLIN SQUARE",
+						LineDescription: "Ivy City-Franklin Square Line",
+					},
+					{
+						RouteID:         "D5",
+						Name:            "D5 - MASS LTTL FLWR CHRCH- FARRGT SQR",
+						LineDescription: "MacArthur Blvd-Georgetown Line",
+					},
+					{
+						RouteID:         "D6",
+						Name:            "D6 - SIBLEY HOSP - STADIUM ARMRY",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D6v1",
+						Name:            "D6 - STADIUM ARMRY STA - FARRAGUT SQUARE",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D6v2",
+						Name:            "D6 - SIBLEY HOSP - FARRAGUT SQ",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D6v3",
+						Name:            "D6 - FARRAGUT SQUARE - STADIUM ARMRY",
+						LineDescription: "Sibley Hospital–Stadium-Armory Line",
+					},
+					{
+						RouteID:         "D8",
+						Name:            "D8 - UNION STATION - VA MED CTR",
+						LineDescription: "Hospital Center Line",
+					},
+					{
+						RouteID:         "D8v1",
+						Name:            "D8 - RHODE ISLAND STA - UNION STA",
+						LineDescription: "Hospital Center Line",
+					},
+					{
+						RouteID:         "E2",
+						Name:            "E2 - IVY CITY - FT TOTTEN",
+						LineDescription: "Ivy City-Fort Totten Line",
+					},
+					{
+						RouteID:         "E4",
+						Name:            "E4 - FRIENDSHP HTS - RIGGS PK",
+						LineDescription: "Military Road-Crosstown Line",
+					},
+					{
+						RouteID:         "E4v1",
+						Name:            "E4 - FRIENDSHP HTS - FT TOTTEN",
+						LineDescription: "Military Road-Crosstown Line",
+					},
+					{
+						RouteID:         "E4v2",
+						Name:            "E4 - FT TOTTEN - FRIENDSHP HTS",
+						LineDescription: "Military Road-Crosstown Line",
+					},
+					{
+						RouteID:         "E6",
+						Name:            "E6 - FRIENDSHP HTS  -KNOLLWOOD",
+						LineDescription: "Chevy Chase Line",
+					},
+					{
+						RouteID:         "F1",
+						Name:            "F1 - CHEVERLY STA - TAKOMA STA",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F12",
+						Name:            "F12 - CHEVERLY STA - NEW CARROLTON STA",
+						LineDescription: "Ardwick Industrial Park Shuttle Line",
+					},
+					{
+						RouteID:         "F12v1",
+						Name:            "F12 - CHEVERLY STA - LANDOVER STA",
+						LineDescription: "Ardwick Industrial Park Shuttle Line",
+					},
+					{
+						RouteID:         "F13",
+						Name:            "F13 - CHEVERLY STA-WASHINGTON BUS PARK",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F13v1",
+						Name:            "F13 - CHEVERLY STA - WASHINGTON BUS PARK",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F13v2",
+						Name:            "F13 - NEW CARROLTON - WASHINGTON BUS PARK",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F13v3",
+						Name:            "F13 - WHITFIELD + VOLTA - CHEVERLY STA",
+						LineDescription: "Cheverly-Washington Business Park Line",
+					},
+					{
+						RouteID:         "F14",
+						Name:            "F14 - NAYLOR RD STA -NEW CARROLTON STA",
+						LineDescription: "Sheriff Road-Capitol Heights Line",
+					},
+					{
+						RouteID:         "F14v1",
+						Name:            "F14 - BRADBURY HGTS -NEW CARROLTON STA",
+						LineDescription: "Sheriff Road-Capitol Heights Line",
+					},
+					{
+						RouteID:         "F2",
+						Name:            "F2 - CHEVERLY STA - TAKOMA STA",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F2v1",
+						Name:            "F2 - CHEVRLY STA-QUEENS CHAPL+CARSN CIR",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F2v2",
+						Name:            "F2 - 34TH + OTIS - TAKOMA STA",
+						LineDescription: "Chillum Road Line",
+					},
+					{
+						RouteID:         "F4",
+						Name:            "F4 - SILVR SPRING STA - NEW CARRLLTON",
+						LineDescription: "New Carrollton-Silver Spring Line",
+					},
+					{
+						RouteID:         "F4v1",
+						Name:            "F4 - PG PLAZA STA -NEW CARROLTON STA",
+						LineDescription: "New Carrollton-Silver Spring Line",
+					},
+					{
+						RouteID:         "F4v2",
+						Name:            "F4 - NEW CARRLLTON - PG PLAZA STA",
+						LineDescription: "New Carrollton-Silver Spring Line",
+					},
+					{
+						RouteID:         "F6",
+						Name:            "F6 - FT TOTTEN - NEW CARROLLTN",
+						LineDescription: "New Carrollton-Fort Totten Line",
+					},
+					{
+						RouteID:         "F6v1",
+						Name:            "F6 - PG PLAZA - NEW CARROLLTON STA",
+						LineDescription: "New Carrollton-Fort Totten Line",
+					},
+					{
+						RouteID:         "F6v2",
+						Name:            "F6 - NEW CARROLLTON - PG PLAZA STA",
+						LineDescription: "New Carrollton-Fort Totten Line",
+					},
+					{
+						RouteID:         "F8",
+						Name:            "F8 - CHEVERLY STA - TLTC",
+						LineDescription: "Langley Park-Cheverly Line",
+					},
+					{
+						RouteID:         "G12",
+						Name:            "G12 - GREENBELT STA - NEW CARROLLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G12v1",
+						Name:            "G12 - GREENBELT STA - ROOSEVELT CENTER",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G12v2",
+						Name:            "G12 - ROOSEVELT CTR - NEW CARROLLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G14",
+						Name:            "G14 - GREENBELT STA -NEW CARROLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G14v1",
+						Name:            "G14 - ROOSEVELT CTR -NEW CARROLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G14v2",
+						Name:            "G14 - GREENBELT STA - NEW CARROLTON STA",
+						LineDescription: "Greenbelt-New Carrollton Line",
+					},
+					{
+						RouteID:         "G2",
+						Name:            "G2 - GEORGETOWN UNIV - HOWARD UNIV",
+						LineDescription: "P Street-LeDroit Park Line",
+					},
+					{
+						RouteID:         "G2v1",
+						Name:            "G2 - GEORGETOWN UNIV - P+14TH ST",
+						LineDescription: "P Street-LeDroit Park Line",
+					},
+					{
+						RouteID:         "G8",
+						Name:            "G8 - FARRAGUT SQUARE - AVONDALE",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G8v1",
+						Name:            "G8 - RHODE ISLAND AVE STA-FARRAGUT SQ",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G8v2",
+						Name:            "G8 - FARRAGUT SQ - RHODE ISLAND STA",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G8v3",
+						Name:            "G8 - BROOKLAND STA - AVONDALE",
+						LineDescription: "Rhode Island Avenue Line",
+					},
+					{
+						RouteID:         "G9",
+						Name:            "G9 - FRANKLIN SQ - RHODE ISLD + EAST PM",
+						LineDescription: "Rhode Island Avenue Limited Line",
+					},
+					{
+						RouteID:         "G9v1",
+						Name:            "G9 - FRANKLIN SQ - RHODE ISLD + EASTERN",
+						LineDescription: "Rhode Island Avenue Limited Line",
+					},
+					{
+						RouteID:         "H1",
+						Name:            "H1 - C + 17TH ST - BROOKLAND CUA STA",
+						LineDescription: "Brookland-Potomac Park Line",
+					},
+					{
+						RouteID:         "H11",
+						Name:            "H11 - HEATHER HILL - NAYLOR RD STA",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H12",
+						Name:            "H12 - HEATHER HILL-NAYLOR RD (MACYS)",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H12v1",
+						Name:            "H12 - HEATHER HILL-NAYLOR RD STA (P&R)",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H13",
+						Name:            "H13 - HEATHER HILL - NAYLOR RD STA",
+						LineDescription: "Marlow Heights-Temple Hills Line",
+					},
+					{
+						RouteID:         "H2",
+						Name:            "H2 - TENLEYTOWN AU-ST - BROOKLND CUA STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H3",
+						Name:            "H3 - TENLEYTOWN STA -BROOKLND CUA STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H4",
+						Name:            "H4 - TENLEYTWN AU-STA -BROOKLAND CUA STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H4v1",
+						Name:            "H4 - COLUMBIA RD+14TH -TENLEYTOWN-AU STA",
+						LineDescription: "Crosstown Line",
+					},
+					{
+						RouteID:         "H6",
+						Name:            "H6 - BROOKLAND CUA STA - FORT LINCOLN",
+						LineDescription: "Brookland-Fort Lincoln Line",
+					},
+					{
+						RouteID:         "H6v1",
+						Name:            "H6 - FORT LINCOLN - FORT LINCOLN",
+						LineDescription: "Brookland-Fort Lincoln Line",
+					},
+					{
+						RouteID:         "H8",
+						Name:            "H8 - MT PLEASANT+17TH - RHODE ISLAND",
+						LineDescription: "Park Road-Brookland Line",
+					},
+					{
+						RouteID:         "H9",
+						Name:            "H9 - RHODE ISLAND - FORT DR + 1ST",
+						LineDescription: "Park Road-Brookland Line",
+					},
+					{
+						RouteID:         "J1",
+						Name:            "J1 - MEDCAL CTR STA - SILVR SPRNG STA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J1v1",
+						Name:            "J1 - SILVR SPRNG STA - MONT MALL/BAT LN",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J12",
+						Name:            "J12 - ADDISON RD STA - FORESTVILLE",
+						LineDescription: "Marlboro Pike Line",
+					},
+					{
+						RouteID:         "J12v1",
+						Name:            "J12 - ADDISON RD-FORESTVILLE VIA PRES PKY",
+						LineDescription: "Marlboro Pike Line",
+					},
+					{
+						RouteID:         "J2",
+						Name:            "J2 - MONTGOMRY MALL - SILVR SPRNG STA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J2v1",
+						Name:            "J2 - MEDICAL CTR STA - SILVR SPRNG STA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J2v2",
+						Name:            "J2 - SILVER SPRNG - MONT MALL/BATTRY LA",
+						LineDescription: "Bethesda-Silver Spring Line",
+					},
+					{
+						RouteID:         "J4",
+						Name:            "J4 - BETHESDA STA - COLLEGE PARK STA",
+						LineDescription: "College Park-Bethesda Limited",
+					},
+					{
+						RouteID:         "K12",
+						Name:            "K12 - BRANCH AVE ST-SUITLAND ST",
+						LineDescription: "Forestville Line",
+					},
+					{
+						RouteID:         "K12v1",
+						Name:            "K12 - PENN MAR - SUITLAND ST",
+						LineDescription: "Forestville Line",
+					},
+					{
+						RouteID:         "K12v2",
+						Name:            "K12 - BRANCH AVE - PENN MAR",
+						LineDescription: "Forestville Line",
+					},
+					{
+						RouteID:         "K2",
+						Name:            "K2 - FT TOTTEN STA - TAKOMA STA",
+						LineDescription: "Takoma-Fort Totten Line",
+					},
+					{
+						RouteID:         "K6",
+						Name:            "K6 - FORT TOTTEN STA - WHITE OAK",
+						LineDescription: "New Hampshire Ave-Maryland Line",
+					},
+					{
+						RouteID:         "K6v1",
+						Name:            "K6 - TLTC - FORT TOTTEN STA",
+						LineDescription: "New Hampshire Ave-Maryland Line",
+					},
+					{
+						RouteID:         "K9",
+						Name:            "K9 - FORT TOTTEN STA - FDA/FRC (PM)",
+						LineDescription: "New Hampshire Ave-Maryland Limited Line",
+					},
+					{
+						RouteID:         "K9v1",
+						Name:            "K9 - FORT TOTTEN STA - FDA/FRC (AM)",
+						LineDescription: "New Hampshire Ave-Maryland Limited Line",
+					},
+					{
+						RouteID:         "L1",
+						Name:            "L1 - POTOMAC PK  - CHEVY CHASE",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L2",
+						Name:            "L2 - FARRAGUT SQ - CHEVY CHASE",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L2v1",
+						Name:            "L2 - VAN NESS-UDC STA - CHEVY CHASE",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L2v2",
+						Name:            "L2 - FARRAGUT SQ - BETHESDA",
+						LineDescription: "Connecticut Ave Line",
+					},
+					{
+						RouteID:         "L8",
+						Name:            "L8 - FRIENDSHIP HTS STA - ASPEN HILL",
+						LineDescription: "Connecticut Ave-Maryland Line",
+					},
+					{
+						RouteID:         "M4",
+						Name:            "M4 - SIBLEY HOSPITAL - TENLEYTOWN/AU STA",
+						LineDescription: "Nebraska Ave Line",
+					},
+					{
+						RouteID:         "M4v1",
+						Name:            "M4 - TENLEYTOWN   - PINEHRST CIR",
+						LineDescription: "Nebraska Ave Line",
+					},
+					{
+						RouteID:         "M4v2",
+						Name:            "M4 - PINEHRST CIR - TENLEYTOWN",
+						LineDescription: "Nebraska Ave Line",
+					},
+					{
+						RouteID:         "M6",
+						Name:            "M6 - POTOMAC AVE - ALABAMA + PENN",
+						LineDescription: "Fairfax Village Line",
+					},
+					{
+						RouteID:         "M6v1",
+						Name:            "M6 - ALABAMA + PENN - FAIRFAX VILLAGE",
+						LineDescription: "Fairfax Village Line",
+					},
+					{
+						RouteID:         "MW1",
+						Name:            "MW1 - BRADDOCK RD - PENTAGON CITY",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "MW1v1",
+						Name:            "MW1 - POTOMAC YARD - CRYSTAL CITY",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "MW1v2",
+						Name:            "MW1 - CRYSTAL CITY - BRADDOCK RD",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "MW1v3",
+						Name:            "MW1 - BRADDOCK RD - CRYSTAL CITY",
+						LineDescription: "Metroway-Potomac Yard Line",
+					},
+					{
+						RouteID:         "N2",
+						Name:            "N2 - FRIENDSHIP HTS - FARRAGUT SQ",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "N4",
+						Name:            "N4 - FRIENDSHP HTS - POTOMAC PARK",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "N4v1",
+						Name:            "N4 - FRIENDSHP HTS - FARRAGUT  SQ",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "N6",
+						Name:            "N6 - FRNDSHIP HTS - FARRAGUT SQ",
+						LineDescription: "Massachusetts Ave Line",
+					},
+					{
+						RouteID:         "NH1",
+						Name:            "NH1 - NATIONAL HARBOR-SOUTHERN AVE STA",
+						LineDescription: "National Harbor-Southern Avenue Line",
+					},
+					{
+						RouteID:         "NH2",
+						Name:            "NH2 - HUNTINGTON STA-NATIONAL HARBOR",
+						LineDescription: "National Harbor-Alexandria Line",
+					},
+					{
+						RouteID:         "P12",
+						Name:            "P12 - EASTOVER - ADDISON RD STA (NO HOSP)",
+						LineDescription: "Eastover-Addison Road Line",
+					},
+					{
+						RouteID:         "P12v1",
+						Name:            "P12 - IVERSON MALL - ADDISON RD STA",
+						LineDescription: "Eastover-Addison Road Line",
+					},
+					{
+						RouteID:         "P12v2",
+						Name:            "P12 - SUITLAND STA - ADDISON RD STA",
+						LineDescription: "Eastover-Addison Road Line",
+					},
+					{
+						RouteID:         "P18",
+						Name:            "P18 - FT WASH P+R LOT - SOUTHERN AVE",
+						LineDescription: "Oxon Hill-Fort Washington Line",
+					},
+					{
+						RouteID:         "P19",
+						Name:            "P19 - FT WASH P+R LOT-SOUTHERN AVE STA",
+						LineDescription: "Oxon Hill-Fort Washington Line",
+					},
+					{
+						RouteID:         "P6",
+						Name:            "P6 - ANACOSTIA STA - RHODE ISLAND STA",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v1",
+						Name:            "P6 - ECKINGTON - RHODE ISLAND AVE",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v2",
+						Name:            "P6 - RHODE ISLAND AVE - ECKINGTON",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v3",
+						Name:            "P6 - ANACOSTIA STA - ARCHIVES",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "P6v4",
+						Name:            "P6 - ARCHIVES - ANACOSTIA",
+						LineDescription: "Anacostia-Eckington Line",
+					},
+					{
+						RouteID:         "Q1",
+						Name:            "Q1 - SILVR SPRNG STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q2",
+						Name:            "Q2 - SILVR SPRNG STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q2v1",
+						Name:            "Q2 - MONT COLLEGE - SILVR SPRNG STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q2v2",
+						Name:            "Q2 - SILVR SPRNG STA - MONT COLLEGE",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q4",
+						Name:            "Q4 - SILVER SPRNG STA - ROCKVILLE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q4v1",
+						Name:            "Q4 - WHEATON STA - ROCKVILLE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q5",
+						Name:            "Q5 - WHEATON STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q6",
+						Name:            "Q6 - WHEATON STA - SHADY GRVE STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "Q6v1",
+						Name:            "Q6 - ROCKVILLE STA - WHEATON STA",
+						LineDescription: "Viers Mill Road Line",
+					},
+					{
+						RouteID:         "R1",
+						Name:            "R1 - FORT TOTTEN STA - ADELPHI",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R12",
+						Name:            "R12 - DEANWOOD STA - GREENBELT STA",
+						LineDescription: "Kenilworth Avenue Line",
+					},
+					{
+						RouteID:         "R12v1",
+						Name:            "R12 - DEANWOOD STA - GREENBELT STA",
+						LineDescription: "Kenilworth Avenue Line",
+					},
+					{
+						RouteID:         "R2",
+						Name:            "R2 - FORT TOTTEN - CALVERTON",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R2v1",
+						Name:            "R2 - HIGH POINT HS - FORT TOTTEN",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R2v2",
+						Name:            "R2 - POWDER MILL+CHERRY HILL - CALVERTON",
+						LineDescription: "Riggs Road Line",
+					},
+					{
+						RouteID:         "R4",
+						Name:            "R4 - BROOKLAND STA- HIGHVIEW",
+						LineDescription: "Queens Chapel Road Line",
+					},
+					{
+						RouteID:         "REX",
+						Name:            "REX - FT BELVOIR POST - KING ST STA",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv1",
+						Name:            "REX - FT BELVOIR COMM HOSP - KING ST STA",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv2",
+						Name:            "REX - KING ST STA - FT BELVOIR COMM HOSP",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv3",
+						Name:            "REX - KING ST STA - WOODLAWN",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "REXv4",
+						Name:            "REX - WOODLAWN - KING ST STA",
+						LineDescription: "Richmond Highway Express",
+					},
+					{
+						RouteID:         "S1",
+						Name:            "S1 - NORTHERN DIVISION - POTOMAC PK",
+						LineDescription: "16th Street-Potomac Park Line",
+					},
+					{
+						RouteID:         "S1v1",
+						Name:            "S1 - VIRGINIA+E - COLORDO+16TH",
+						LineDescription: "16th Street-Potomac Park Line",
+					},
+					{
+						RouteID:         "S2",
+						Name:            "S2 - FED TRIANGLE  - SILVER SPRNG",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S2v1",
+						Name:            "S2 - 16TH & HARVARD - MCPHERSON SQ",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S35",
+						Name:            "S35 - BRANCH + RANDLE CIR - FT DUPONT",
+						LineDescription: "Fort Dupont Shuttle Line",
+					},
+					{
+						RouteID:         "S4",
+						Name:            "S4 - FED TRIANGLE - SILVER SPRNG",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S4v1",
+						Name:            "S4 - SILVER SPRING STA - FRANKLIN SQ",
+						LineDescription: "16th Street Line",
+					},
+					{
+						RouteID:         "S41",
+						Name:            "S41 - CARVER TERRACE - RHODE ISLAND AVE",
+						LineDescription: "Rhode Island Ave-Carver Terrace Line",
+					},
+					{
+						RouteID:         "S80",
+						Name:            "S80 - FRANCONIA-SPRNGFLD - METRO PARK",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S80v1",
+						Name:            "S80 - FRANCONIA-SPRINGFLD - HILTON",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S80v2",
+						Name:            "S80 - HILTON - FRANCONIA-SPRNGFLD",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S9",
+						Name:            "S9 - FRANKLIN SQ - SILVER SPRING STA",
+						LineDescription: "16th Street Limited Line",
+					},
+					{
+						RouteID:         "S9v1",
+						Name:            "S9 - FRANKLIN SQ - COLORADO + 16TH",
+						LineDescription: "16th Street Limited Line",
+					},
+					{
+						RouteID:         "S91",
+						Name:            "S91 - FRANCONIA SPRINGFLD STA SHUTTLE",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "S91v1",
+						Name:            "S91 - FRANCONIA SPRINGFLD STA SHUTTLE",
+						LineDescription: "Springfield Circulator-Metro Park Shuttle (TAGS)",
+					},
+					{
+						RouteID:         "T14",
+						Name:            "T14 - RHD ISLND AVE STA-NEW CARRLTN STA",
+						LineDescription: "Rhode Island Ave-New Carrollton Line",
+					},
+					{
+						RouteID:         "T14v1",
+						Name:            "T14 - MT RAINIER - NEW CARRLTN STA",
+						LineDescription: "Rhode Island Ave-New Carrollton Line",
+					},
+					{
+						RouteID:         "T18",
+						Name:            "T18 - R I AVE STA - NEW CARROLLTON STA",
+						LineDescription: "Annapolis Road Line",
+					},
+					{
+						RouteID:         "T18v1",
+						Name:            "T18 - BLADENSBURG HS - NEW CARROLLTON STA",
+						LineDescription: "Annapolis Road Line",
+					},
+					{
+						RouteID:         "T2",
+						Name:            "T2 - FRIENDSHIP HTS - ROCKVILLE STA",
+						LineDescription: "River Road Line",
+					},
+					{
+						RouteID:         "U4",
+						Name:            "U4 - MINNESOTA AVE - SHERIFF RD",
+						LineDescription: "Sheriff Road-River Terrace Line",
+					},
+					{
+						RouteID:         "U4v1",
+						Name:            "U4 - SHERIFF RD - MINNESOTA STA",
+						LineDescription: "Sheriff Road-River Terrace Line",
+					},
+					{
+						RouteID:         "U4v2",
+						Name:            "U4 - RIVER TERRACE - MINNESOTA AVE",
+						LineDescription: "Sheriff Road-River Terrace Line",
+					},
+					{
+						RouteID:         "U5",
+						Name:            "U5 - MINNESOTA AVE-MARSHALL HTS",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U6",
+						Name:            "U6 - MINNESOTA - LINCOLN HEIGHTS",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U6v1",
+						Name:            "U6 - 37TH + RIDGE - PLUMMER ES",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U6v2",
+						Name:            "U6 - LINCOLN HTS - E CAP + 47TH ST NE",
+						LineDescription: "Marshall Heights Line",
+					},
+					{
+						RouteID:         "U7",
+						Name:            "U7 - RIDGE + ANACOSTIA - DEANWOOD",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v1",
+						Name:            "U7 - MINNESOTA STA - KENILWORTH HAYES",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v2",
+						Name:            "U7 - KENILWORTH HAYES - MINNESOTA STA",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v3",
+						Name:            "U7 - MINNESOTA STA - DEANWOOD",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "U7v4",
+						Name:            "U7 - DEANWOOD - MINNESOTA AVE",
+						LineDescription: "Deanwood-Minnesota Ave Line",
+					},
+					{
+						RouteID:         "V1",
+						Name:            "V1 - BUR OF ENGRVNG - BENNING HTS",
+						LineDescription: "Benning Heights-M Street Line",
+					},
+					{
+						RouteID:         "V12",
+						Name:            "V12 - SUITLAND STA - ADDISON RD STA",
+						LineDescription: "District Heights-Suitland Line",
+					},
+					{
+						RouteID:         "V14",
+						Name:            "V14 - PENN MAR - DEANWOOD STA",
+						LineDescription: "District Heights - Seat Pleasant Line",
+					},
+					{
+						RouteID:         "V14v1",
+						Name:            "V14 - PENN MAR  - ADDISON RD STA",
+						LineDescription: "District Heights - Seat Pleasant Line",
+					},
+					{
+						RouteID:         "V2",
+						Name:            "V2 - ANACOSTIA - CAPITOL HGTS",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V2v1",
+						Name:            "V2 - MINNESOTA AVE - ANACOSTIA",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V4",
+						Name:            "V4 - 1ST + K ST SE - CAPITOL HGTS",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V4v1",
+						Name:            "V4 - MINN AVE STA-CAPITOL HGTS",
+						LineDescription: "Capitol Heights-Minnesota Avenue Line",
+					},
+					{
+						RouteID:         "V7",
+						Name:            "V7 - CONGRESS HGTS - MINN STA",
+						LineDescription: "Benning Heights-Alabama Ave Line",
+					},
+					{
+						RouteID:         "V8",
+						Name:            "V8 - BENNING HGTS - MINN STA",
+						LineDescription: "Benning Heights-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W1",
+						Name:            "W1 - FORT DRUM  - SOUTHERN AVE STA",
+						LineDescription: "Shipley Terrace - Fort Drum Line",
+					},
+					{
+						RouteID:         "W14",
+						Name:            "W14 - FT WASHINGTON-SOUTHERN AVE STA",
+						LineDescription: "Bock Road Line",
+					},
+					{
+						RouteID:         "W14v1",
+						Name:            "W14 - SOUTHERN AVE - FRIENDLY",
+						LineDescription: "Bock Road Line",
+					},
+					{
+						RouteID:         "W14v2",
+						Name:            "W14 - FRIENDLY - SOUTHERN AVE",
+						LineDescription: "Bock Road Line",
+					},
+					{
+						RouteID:         "W2",
+						Name:            "W2 - MALCOM X+OAKWD - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v1",
+						Name:            "W2 - NYLDR+GOOD HOP- HOWARD+ANACOSTIA",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v2",
+						Name:            "W2 - NAYLOR+GOODHOPE - MALCM X+OAKWOOD",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v3",
+						Name:            "W2 - HOWRD+ANACOSTIA-NAYLOR+GOODHOPE",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v4",
+						Name:            "W2 - ANACOSTIA STA - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v5",
+						Name:            "W2 - ANACOSTIA STA - SOUTHERN AVE STA",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v6",
+						Name:            "W2 - MELLN+M L KNG - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W2v7",
+						Name:            "W2 - SOUTHERN AVE-WASHINGTON OVERLOOK",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W3",
+						Name:            "W3 - MALCOM X+OAKWD - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W3v1",
+						Name:            "W3 - MELLN+M L KNG - UNITED MEDICAL CTR",
+						LineDescription: "United Medical Center-Anacostia Line",
+					},
+					{
+						RouteID:         "W4",
+						Name:            "W4 - ANACOSTIA STA - DEANWOOD STA",
+						LineDescription: "Deanwood-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W4v1",
+						Name:            "W4 - MALCOLM X & PORTLAND - DEANWOOD",
+						LineDescription: "Deanwood-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W4v2",
+						Name:            "W4 - DEANWOOD STA - MALCLM X+ ML KING",
+						LineDescription: "Deanwood-Alabama Ave Line",
+					},
+					{
+						RouteID:         "W45",
+						Name:            "W45 - TENLEYTOWN STA - 16TH + SHEPHERD",
+						LineDescription: "Mt Pleasant-Tenleytown Line",
+					},
+					{
+						RouteID:         "W47",
+						Name:            "W47 - TENLEYTOWN STA - COLUMBIA HTS STA",
+						LineDescription: "Mt Pleasant-Tenleytown Line",
+					},
+					{
+						RouteID:         "W5",
+						Name:            "W5 - DC VILLAGE-USCG (VIA ANAC)",
+						LineDescription: "Anacostia-Fort Drum Line",
+					},
+					{
+						RouteID:         "W6",
+						Name:            "W6 - ANACOSTIA - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W6v1",
+						Name:            "W6 - NAYLOR+GOODHOPE - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W8",
+						Name:            "W8 - ANACOSTIA - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W8v1",
+						Name:            "W8 - ANACOSTIA-NAYLOR+GOODHOPE",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "W8v2",
+						Name:            "W8 - NAYLOR+GOODHOPE - ANACOSTIA",
+						LineDescription: "Garfield-Anacostia Loop Line",
+					},
+					{
+						RouteID:         "X1",
+						Name:            "X1 - FOGGY BOTTOM+GWU- MINNESOTA STA",
+						LineDescription: "Benning Road Line",
+					},
+					{
+						RouteID:         "X2",
+						Name:            "X2 - LAFAYETTE SQ - MINNESOTA STA",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X2v1",
+						Name:            "X2 - PHELPS HS - MINNESOTA STA",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X2v2",
+						Name:            "X2 - FRIENDSHIP EDISON PCS-MINNESOTA STA",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X2v3",
+						Name:            "X2 - PHELPS HS - LAFAYTTE SQ",
+						LineDescription: "Benning Road-H Street Line",
+					},
+					{
+						RouteID:         "X3",
+						Name:            "X3 - DUKE ELLINGTON BR - MINNESOTA STN",
+						LineDescription: "Benning Road Line",
+					},
+					{
+						RouteID:         "X3v1",
+						Name:            "X3 - KIPP DC - MINNESOTA AVE STN",
+						LineDescription: "Benning Road Line",
+					},
+					{
+						RouteID:         "X8",
+						Name:            "X8 - UNION STATION - CARVER TERR",
+						LineDescription: "Maryland Ave Line",
+					},
+					{
+						RouteID:         "X9",
+						Name:            "X9 - NY AVE & 12TH NW - CAPITOL HTS STA",
+						LineDescription: "Benning Road-H Street Limited Line",
+					},
+					{
+						RouteID:         "X9v1",
+						Name:            "X9 - NY AVE & 12TH ST NW - MINNESOTA AVE",
+						LineDescription: "Benning Road-H Street Limited Line",
+					},
+					{
+						RouteID:         "X9v2",
+						Name:            "X9 - MINNESOTA AVE ST - NY AVE & 12TH ST",
+						LineDescription: "Benning Road-H Street Limited Line",
+					},
+					{
+						RouteID:         "Y2",
+						Name:            "Y2 - SILVER SPRING STA - MONTG MED CTR",
+						LineDescription: "Georgia Ave-Maryland Line",
+					},
+					{
+						RouteID:         "Y7",
+						Name:            "Y7 - SILVER SPRING STA - ICC P&R",
+						LineDescription: "Georgia Ave-Maryland Line",
+					},
+					{
+						RouteID:         "Y8",
+						Name:            "Y8 - SILVER SPR STA - MONTGOMERY MED CTR",
+						LineDescription: "Georgia Ave-Maryland Line",
+					},
+					{
+						RouteID:         "Z11",
+						Name:            "Z11 - SILVR SPRING - BURTONSVILLE P&R",
+						LineDescription: "Greencastle-Briggs Chaney Express Line",
+					},
+					{
+						RouteID:         "Z11v1",
+						Name:            "Z11 - GREENCASTLE - SILVR SPRING",
+						LineDescription: "Greencastle-Briggs Chaney Express Line",
+					},
+					{
+						RouteID:         "Z2",
+						Name:            "Z2 - SILVR SPRING - OLNEY (NO BLAKE HS)",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z2v1",
+						Name:            "Z2 - SILVER SPRING - BONIFANT & NH",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z2v2",
+						Name:            "Z2 - SILVER SPRING STA-OLNEY (BLAKE HS)",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z2v3",
+						Name:            "Z2 - COLESVILLE-SILVER SPRING",
+						LineDescription: "Colesville - Ashton Line",
+					},
+					{
+						RouteID:         "Z6",
+						Name:            "Z6 - SILVR SPRNG STA - BURTONSVILLE",
+						LineDescription: "Calverton-Westfarm Line",
+					},
+					{
+						RouteID:         "Z6v1",
+						Name:            "Z6 - CASTLE BLVD - SILVER SPRING STA",
+						LineDescription: "Calverton-Westfarm Line",
+					},
+					{
+						RouteID:         "Z6v2",
+						Name:            "Z6 - SILVER SPRING -CASTLE BLVD",
+						LineDescription: "Calverton-Westfarm Line",
+					},
+					{
+						RouteID:         "Z7",
+						Name:            "Z7 - SLVER SPRNG STA-S LAUREL P&R (4COR)",
+						LineDescription: "Laurel-Burtonsville Express Line",
+					},
+					{
+						RouteID:         "Z7v1",
+						Name:            "Z7 - S LAUREL P&R-SILVR SPR (NO 4COR)",
+						LineDescription: "Laurel-Burtonsville Express Line",
+					},
+					{
+						RouteID:         "Z8",
+						Name:            "Z8 - SILVER SRING STA - BRIGGS CHANEY",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v1",
+						Name:            "Z8 - WHITE OAK - SILVER SPRING STA",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v2",
+						Name:            "Z8 - SILVR SPRNG - CSTLE BLVD VERIZON",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v3",
+						Name:            "Z8 - SILVER SPRING STA - CASTLE BLVD",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v4",
+						Name:            "Z8 - SILVER SPRING - GRNCSTLE (VERIZON)",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v5",
+						Name:            "Z8 - SILVER SPRING STA - GREENCASTLE",
+						LineDescription: "Fairland Line",
+					},
+					{
+						RouteID:         "Z8v6",
+						Name:            "Z8 - SILVER SPRING STA - WHITE OAK",
+						LineDescription: "Fairland Line",
+					},
+				},
+			},
+		},
+	},
 }
 
 // setupTestService creates a service struct with a mock http client
@@ -2588,7 +7342,7 @@ func TestGetPositions(t *testing.T) {
 
 		if !exist {
 			t.Errorf("no data found for GetPositions")
-			return
+			continue
 		}
 
 		for _, request := range testRequests {
@@ -2617,7 +7371,7 @@ func TestGetRouteDetails(t *testing.T) {
 
 		if !exist {
 			t.Errorf("no data found for GetRouteDetails")
-			return
+			continue
 		}
 
 		for _, request := range testRequests {
@@ -2625,6 +7379,34 @@ func TestGetRouteDetails(t *testing.T) {
 
 			if err != nil {
 				t.Errorf("error calling GetPostions, routeID: %s date: %s error: %s", request.stringParam1, request.stringParam2, err.Error())
+				continue
+			}
+
+			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
+			}
+		}
+	}
+}
+
+func TestGetRoutes(t *testing.T) {
+	jsonAndXmlPaths := []string{"/Bus.svc/json/jRoutes", "/Bus.svc/Routes"}
+	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
+
+	for i, path := range jsonAndXmlPaths {
+		testService := setupTestService(responseFormats[i])
+		testRequests, exist := testData[path]
+
+		if !exist {
+			t.Errorf("no data found for GetRoutes")
+			continue
+		}
+
+		for _, request := range testRequests {
+			response, err := testService.GetRoutes()
+
+			if err != nil {
+				t.Errorf("error calling GetRoutes, error: %s", err.Error())
 				continue
 			}
 
