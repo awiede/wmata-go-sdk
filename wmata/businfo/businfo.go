@@ -132,6 +132,20 @@ type StopTime struct {
 }
 
 type GetScheduleAtStopResponse struct {
+	XMLName          xml.Name          `json:"-" xml:"http://www.wmata.com StopScheduleInfo"`
+	ScheduleArrivals []ScheduleArrival `json:"ScheduleArrivals" xml:"ScheduleArrivals>StopScheduleArrival"`
+	StopInfo         Stop              `json:"Stop" xml:"Stop"`
+}
+
+type ScheduleArrival struct {
+	DirectionNumber string `json:"DirectionNum" xml:"DirectionNum"`
+	EndTime         string `json:"EndTime" xml:"EndTime"`
+	RouteID         string `json:"RouteID" xml:"RouteID"`
+	ScheduleTime    string `json:"ScheduleTime" xml:"ScheduleTime"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	TripDirection   string `json:"TripDirectionText" xml:"TripDirectionText"`
+	TripDestination string `json:"TripHeadsign" xml:"TripHeadsign"`
+	TripID          string `json:"TripID" xml:"TripID"`
 }
 
 type GetStopsRequest struct {
@@ -253,7 +267,31 @@ func (busService *Service) GetSchedule(routeID, date string, includeVariations b
 }
 
 func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleAtStopResponse, error) {
-	panic("implement me")
+	if stopID == "" {
+		return nil, errors.New("stopID is required")
+	}
+
+	var requestUrl strings.Builder
+	requestUrl.WriteString(busInfoBaseUrl)
+
+	switch busService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStopSchedule")
+	case wmata.XML:
+		requestUrl.WriteString("/StopSchedule")
+	}
+
+	queryParams := map[string]string{
+		"StopID": stopID,
+	}
+
+	if date != "" {
+		queryParams["Date"] = date
+	}
+
+	stopSchedule := GetScheduleAtStopResponse{}
+
+	return &stopSchedule, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &stopSchedule)
 }
 
 func (busService *Service) GetStopsResponse(request *GetStopsRequest) (*GetStopsResponse, error) {
