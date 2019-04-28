@@ -16,7 +16,7 @@ type BusInfo interface {
 	GetRoutes() (*GetRoutesResponse, error)
 	GetSchedule(routeID, date string, includeVariations bool) (*GetScheduleResponse, error)
 	GetScheduleAtStop(stopID, date string) (*GetScheduleAtStopResponse, error)
-	GetStopsResponse(request *GetStopsRequest) (*GetStopsResponse, error)
+	GetStops(request *GetStopsRequest) (*GetStopsResponse, error)
 }
 
 var _ BusInfo = (*Service)(nil)
@@ -149,9 +149,14 @@ type ScheduleArrival struct {
 }
 
 type GetStopsRequest struct {
+	Latitude  float64
+	Longitude float64
+	Radius    float64
 }
 
 type GetStopsResponse struct {
+	XMLName xml.Name `json:"-" xml:"http://www.wmata.com StopsResp"`
+	Stops   []Stop   `json:"Stops" xml:"Stops>Stop"`
 }
 
 func (busService *Service) GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error) {
@@ -294,6 +299,35 @@ func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleA
 	return &stopSchedule, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &stopSchedule)
 }
 
-func (busService *Service) GetStopsResponse(request *GetStopsRequest) (*GetStopsResponse, error) {
-	panic("implement me")
+func (busService *Service) GetStops(request *GetStopsRequest) (*GetStopsResponse, error) {
+	var requestUrl strings.Builder
+	requestUrl.WriteString(busInfoBaseUrl)
+
+	switch busService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jStops")
+	case wmata.XML:
+		requestUrl.WriteString("/Stops")
+	}
+
+	var queryParams map[string]string
+	if request != nil {
+		queryParams = make(map[string]string)
+
+		if request.Latitude != 0 {
+			queryParams["Lat"] = strconv.FormatFloat(request.Latitude, 'g', -1, 64)
+		}
+
+		if request.Longitude != 0 {
+			queryParams["Lon"] = strconv.FormatFloat(request.Longitude, 'g', -1, 64)
+		}
+
+		if request.Radius != 0 {
+			queryParams["Radius"] = strconv.FormatFloat(request.Radius, 'g', -1, 64)
+		}
+	}
+
+	stops := GetStopsResponse{}
+
+	return &stops, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &stops)
 }

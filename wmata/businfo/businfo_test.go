@@ -25784,6 +25784,204 @@ var testData = map[string][]testResponseData{
 			},
 		},
 	},
+	"/Bus.svc/json/jStops": {
+		{
+			rawQuery: "Lat=38.9289&Lon=-77.0324&Radius=200",
+			requestType: GetStopsRequest{
+				Latitude: 38.9289,
+				Longitude: -77.0324,
+				Radius: 200,
+			},
+			response: `{"Stops":[{"StopID":"1001996","Name":"14TH ST NW + IRVING ST NW","Lon":-77.032614,"Lat":38.929113,"Routes":["52","52v1","52v3","54","59","H8"]},{"StopID":"1003161","Name":"IRVING ST NW + 14TH ST NW","Lon":-77.032888,"Lat":38.928742,"Routes":["D32","H1","H2","H3","H4","H8","W47"]},{"StopID":"1003087","Name":"14TH ST NW + IRVING ST NW","Lon":-77.032733,"Lat":38.928471,"Routes":["52","52v2","54","54v1","59","D32"]},{"StopID":"1001964","Name":"COLUMBIA RD NW + 14TH ST NW","Lon":-77.033114,"Lat":38.927543,"Routes":["D32","H1","H2","H3","H4","H4v1"]},{"StopID":"1002060","Name":"14TH ST NW + PARK RD NW","Lon":-77.032859,"Lat":38.930487,"Routes":["52","52v2","54","54v1","59"]},{"StopID":"1003431","Name":"14TH ST NW + COLUMBIA RD NW","Lon":-77.032388,"Lat":38.92727,"Routes":["52","52v1","52v3","54"]}]}`,
+			unmarshalledResponse: &GetStopsResponse{
+				Stops: []Stop{
+					{
+						StopID: "1001996",
+						Name: "14TH ST NW + IRVING ST NW",
+						Longitude: -77.032614,
+						Latitude: 38.929113,
+						Routes: []string{
+							"52",
+							"52v1",
+							"52v3",
+							"54",
+							"59",
+							"H8",
+						},
+					},
+					{
+						StopID: "1003161",
+						Name: "IRVING ST NW + 14TH ST NW",
+						Longitude: -77.032888,
+						Latitude: 38.928742,
+						Routes: []string{
+							"D32",
+							"H1",
+							"H2",
+							"H3",
+							"H4",
+							"H8",
+							"W47",
+						},
+					},
+					{
+						StopID: "1003087",
+						Name: "14TH ST NW + IRVING ST NW",
+						Longitude: -77.032733,
+						Latitude: 38.928471,
+						Routes: []string{
+							"52",
+							"52v2",
+							"54",
+							"54v1",
+							"59",
+							"D32",
+						},
+					},
+					{
+						StopID: "1001964",
+						Name: "COLUMBIA RD NW + 14TH ST NW",
+						Longitude: -77.033114,
+						Latitude: 38.927543,
+						Routes: []string{
+							"D32",
+							"H1",
+							"H2",
+							"H3",
+							"H4",
+							"H4v1",
+						},
+					},
+					{
+						StopID: "1002060",
+						Name: "14TH ST NW + PARK RD NW",
+						Longitude: -77.032859,
+						Latitude: 38.930487,
+						Routes: []string{
+							"52",
+							"52v2",
+							"54",
+							"54v1",
+							"59",
+						},
+					},
+					{
+						StopID: "1003431",
+						Name: "14TH ST NW + COLUMBIA RD NW",
+						Longitude: -77.032388,
+						Latitude: 38.92727,
+						Routes: []string{
+							"52",
+							"52v1",
+							"52v3",
+							"54",
+						},
+					},
+				},
+			},
+		},
+	},
+	"/Bus.svc/Stops": {
+		{
+			rawQuery: "Lat=38.9289&Lon=-77.0324&Radius=200",
+			requestType: GetStopsRequest{
+				Latitude: 38.9289,
+				Longitude: -77.0324,
+				Radius: 200,
+			},
+			response: `<StopsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Stops><Stop><Lat>38.929113</Lat><Lon>-77.032614</Lon><Name>14TH ST NW + IRVING ST NW</Name><Routes xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>52</a:string><a:string>52v1</a:string><a:string>52v3</a:string><a:string>54</a:string><a:string>59</a:string><a:string>H8</a:string></Routes><StopID>1001996</StopID></Stop><Stop><Lat>38.928742</Lat><Lon>-77.032888</Lon><Name>IRVING ST NW + 14TH ST NW</Name><Routes xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>D32</a:string><a:string>H1</a:string><a:string>H2</a:string><a:string>H3</a:string><a:string>H4</a:string><a:string>H8</a:string><a:string>W47</a:string></Routes><StopID>1003161</StopID></Stop><Stop><Lat>38.928471</Lat><Lon>-77.032733</Lon><Name>14TH ST NW + IRVING ST NW</Name><Routes xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>52</a:string><a:string>52v2</a:string><a:string>54</a:string><a:string>54v1</a:string><a:string>59</a:string><a:string>D32</a:string></Routes><StopID>1003087</StopID></Stop><Stop><Lat>38.927543</Lat><Lon>-77.033114</Lon><Name>COLUMBIA RD NW + 14TH ST NW</Name><Routes xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>D32</a:string><a:string>H1</a:string><a:string>H2</a:string><a:string>H3</a:string><a:string>H4</a:string><a:string>H4v1</a:string></Routes><StopID>1001964</StopID></Stop><Stop><Lat>38.930487</Lat><Lon>-77.032859</Lon><Name>14TH ST NW + PARK RD NW</Name><Routes xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>52</a:string><a:string>52v2</a:string><a:string>54</a:string><a:string>54v1</a:string><a:string>59</a:string></Routes><StopID>1002060</StopID></Stop><Stop><Lat>38.927270</Lat><Lon>-77.032388</Lon><Name>14TH ST NW + COLUMBIA RD NW</Name><Routes xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>52</a:string><a:string>52v1</a:string><a:string>52v3</a:string><a:string>54</a:string></Routes><StopID>1003431</StopID></Stop></Stops></StopsResp>`,
+			unmarshalledResponse: &GetStopsResponse{
+				XMLName: xml.Name{
+					Space: "http://www.wmata.com",
+					Local: "StopsResp",
+				},
+				Stops: []Stop{
+					{
+						StopID: "1001996",
+						Name: "14TH ST NW + IRVING ST NW",
+						Longitude: -77.032614,
+						Latitude: 38.929113,
+						Routes: []string{
+							"52",
+							"52v1",
+							"52v3",
+							"54",
+							"59",
+							"H8",
+						},
+					},
+					{
+						StopID: "1003161",
+						Name: "IRVING ST NW + 14TH ST NW",
+						Longitude: -77.032888,
+						Latitude: 38.928742,
+						Routes: []string{
+							"D32",
+							"H1",
+							"H2",
+							"H3",
+							"H4",
+							"H8",
+							"W47",
+						},
+					},
+					{
+						StopID: "1003087",
+						Name: "14TH ST NW + IRVING ST NW",
+						Longitude: -77.032733,
+						Latitude: 38.928471,
+						Routes: []string{
+							"52",
+							"52v2",
+							"54",
+							"54v1",
+							"59",
+							"D32",
+						},
+					},
+					{
+						StopID: "1001964",
+						Name: "COLUMBIA RD NW + 14TH ST NW",
+						Longitude: -77.033114,
+						Latitude: 38.927543,
+						Routes: []string{
+							"D32",
+							"H1",
+							"H2",
+							"H3",
+							"H4",
+							"H4v1",
+						},
+					},
+					{
+						StopID: "1002060",
+						Name: "14TH ST NW + PARK RD NW",
+						Longitude: -77.032859,
+						Latitude: 38.930487,
+						Routes: []string{
+							"52",
+							"52v2",
+							"54",
+							"54v1",
+							"59",
+						},
+					},
+					{
+						StopID: "1003431",
+						Name: "14TH ST NW + COLUMBIA RD NW",
+						Longitude: -77.032388,
+						Latitude: 38.92727,
+						Routes: []string{
+							"52",
+							"52v1",
+							"52v3",
+							"54",
+						},
+					},
+				},
+			},
+		},
+	},
 }
 
 // setupTestService creates a service struct with a mock http client
@@ -25927,6 +26125,35 @@ func TestGetScheduleAtStop(t *testing.T) {
 
 			if err != nil {
 				t.Errorf("error calling GetScheuldeAtStop, stopID: %s, date: %s, error: %s", request.stringParam1, request.stringParam2, err.Error())
+				continue
+			}
+
+			if !reflect.DeepEqual(response, request.unmarshalledResponse) {
+				t.Error(pretty.Diff(response, request.unmarshalledResponse))
+			}
+		}
+	}
+}
+
+func TestGetStops(t *testing.T) {
+	jsonAndXmlPaths := []string{"/Bus.svc/json/jStops", "/Bus.svc/Stops"}
+	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
+
+	for i, path := range jsonAndXmlPaths {
+		testService := setupTestService(responseFormats[i])
+		testRequests, exist := testData[path]
+
+		if !exist {
+			t.Errorf("no data found for GetStops")
+			continue
+		}
+
+		for _, request := range testRequests {
+			getStopsRequest := request.requestType.(GetStopsRequest)
+			response, err := testService.GetStops(&getStopsRequest)
+
+			if err != nil {
+				t.Errorf("error calling GetStops, request: %v, error: %s", getStopsRequest, err.Error())
 				continue
 			}
 
