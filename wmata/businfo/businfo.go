@@ -107,6 +107,28 @@ type Route struct {
 }
 
 type GetScheduleResponse struct {
+	XMLName    xml.Name `json:"-" xml:"http://www.wmata.com RouteScheduleInfo"`
+	Direction0 []Trip   `json:"Direction0" xml:"Direction0>Trip"`
+	Direction1 []Trip   `json:"Direction1" xml:"Direction1>Trip"`
+	Name       string   `json:"Name" xml:"Name"`
+}
+
+type Trip struct {
+	DirectionNumber string     `json:"DirectionNum" xml:"DirectionNum"`
+	EndTime         string     `json:"EndTime" xml:"EndTime"`
+	RouteID         string     `json:"RouteID" xml:"RouteID"`
+	StartTime       string     `json:"StartTime" xml:"StartTime"`
+	StopTimes       []StopTime `json:"StopTimes" xml:"StopTimes>StopTime"`
+	TripDirection   string     `json:"TripDirectionText" xml:"TripDirectionText"`
+	TripDestination string     `json:"TripHeadsign" xml:"TripHeadsign"`
+	TripID          string     `json:"TripID" xml:"TripID"`
+}
+
+type StopTime struct {
+	StopID       string `json:"StopID" xml:"StopID"`
+	StopName     string `json:"StopName" xml:"StopName"`
+	StopSequence int    `json:"StopSeq" xml:"StopSeq"`
+	Time         string `json:"Time" xml:"Time"`
 }
 
 type GetScheduleAtStopResponse struct {
@@ -201,7 +223,33 @@ func (busService *Service) GetRoutes() (*GetRoutesResponse, error) {
 }
 
 func (busService *Service) GetSchedule(routeID, date string, includeVariations bool) (*GetScheduleResponse, error) {
-	panic("implement me")
+	if routeID == "" {
+		return nil, errors.New("routeID is required")
+	}
+
+	var requestUrl strings.Builder
+	requestUrl.WriteString(busInfoBaseUrl)
+
+	switch busService.responseType {
+	case wmata.JSON:
+		requestUrl.WriteString("/json/jRouteSchedule")
+	case wmata.XML:
+		requestUrl.WriteString("/RouteSchedule")
+	}
+
+	queryParams := map[string]string{
+		"RouteID":             routeID,
+		"IncludingVariations": strconv.FormatBool(includeVariations),
+	}
+
+	if date != "" {
+		queryParams["Date"] = date
+	}
+
+	schedule := GetScheduleResponse{}
+
+	return &schedule, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &schedule)
+
 }
 
 func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleAtStopResponse, error) {
