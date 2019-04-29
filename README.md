@@ -34,7 +34,7 @@ All requests using this SDK are routed through a `wmata.Client`. To create a cli
 ### Example
 
 ```go
-apiKey := "123456789"
+apiKey := "<your-api-key>"
 client := http.Client{
     Timeout: time.Second * 60,
 }
