@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const busInfoBaseUrl = "https://api.wmata.com/Bus.svc"
+const busInfoBaseURL = "https://api.wmata.com/Bus.svc"
 
 type BusInfo interface {
 	GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error)
@@ -161,7 +161,7 @@ type GetStopsResponse struct {
 
 func (busService *Service) GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error) {
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busInfoBaseUrl)
+	requestUrl.WriteString(busInfoBaseURL)
 
 	switch busService.responseType {
 	case wmata.JSON:
@@ -202,7 +202,7 @@ func (busService *Service) GetRouteDetails(routeID, date string) (*GetRouteDetai
 	}
 
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busInfoBaseUrl)
+	requestUrl.WriteString(busInfoBaseURL)
 
 	switch busService.responseType {
 	case wmata.JSON:
@@ -226,7 +226,7 @@ func (busService *Service) GetRouteDetails(routeID, date string) (*GetRouteDetai
 
 func (busService *Service) GetRoutes() (*GetRoutesResponse, error) {
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busInfoBaseUrl)
+	requestUrl.WriteString(busInfoBaseURL)
 
 	switch busService.responseType {
 	case wmata.JSON:
@@ -247,7 +247,7 @@ func (busService *Service) GetSchedule(routeID, date string, includeVariations b
 	}
 
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busInfoBaseUrl)
+	requestUrl.WriteString(busInfoBaseURL)
 
 	switch busService.responseType {
 	case wmata.JSON:
@@ -277,7 +277,7 @@ func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleA
 	}
 
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busInfoBaseUrl)
+	requestUrl.WriteString(busInfoBaseURL)
 
 	switch busService.responseType {
 	case wmata.JSON:
@@ -301,7 +301,7 @@ func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleA
 
 func (busService *Service) GetStops(request *GetStopsRequest) (*GetStopsResponse, error) {
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busInfoBaseUrl)
+	requestUrl.WriteString(busInfoBaseURL)
 
 	switch busService.responseType {
 	case wmata.JSON:

@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const busPredictionsServiceBaseUrl = "https://api.wmata.com/NextBusService.svc"
+const busPredictionsServiceBaseURL = "https://api.wmata.com/NextBusService.svc"
 
 type GetNextBusResponse struct {
 	XMLName            xml.Name            `json:"-" xml:"http://www.wmata.com NextBusResponse"`
@@ -49,7 +49,7 @@ func (service *Service) GetNextBuses(stopID string) (*GetNextBusResponse, error)
 	}
 
 	var requestUrl strings.Builder
-	requestUrl.WriteString(busPredictionsServiceBaseUrl)
+	requestUrl.WriteString(busPredictionsServiceBaseURL)
 
 	switch service.responseType {
 	case wmata.JSON:
