@@ -803,20 +803,6 @@ var testData = map[string][]testResponseData{
 		},
 	},
 	"/Incidents.svc/Incidents": {
-		//{
-		//	rawQuery: "",
-		//	param: "",
-		//	response: `<IncidentsResp xmlns="http://www.wmata.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Incidents/></IncidentsResp>`,
-		//	unmarshalledResponse: &GetRailIncidentsResponse{
-		//		XMLName: xml.Name{
-		//			Space: "http://www.wmata.com",
-		//			Local: "IncidentsResp",
-		//		},
-		//		RailIncidents: []RailIncident{
-		//			{},
-		//		},
-		//	},
-		//},
 		{
 			rawQuery: "",
 			param:    "",
@@ -913,7 +899,6 @@ func setupTestService(responseType wmata.ResponseType) *Service {
 	return NewService(&wmataClient, responseType)
 }
 
-// TODO fix XML response type
 func TestGetBusIncidents(t *testing.T) {
 	jsonAndXmlPaths := []string{"/Incidents.svc/json/BusIncidents", "/Incidents.svc/BusIncidents"}
 	responseFormats := []wmata.ResponseType{wmata.JSON, wmata.XML}
