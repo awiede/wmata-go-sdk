@@ -26,9 +26,36 @@ type TrainPosition struct {
 }
 
 type GetStandardRoutesResponse struct {
+	XMLName xml.Name `json:"-" xml:"http://www.wmata.com StandardRouteResp"`
+	Routes  []Route  `json:"StandardRoutes" xml:"StandardRoutes>StandardRoute"`
+}
+
+type Route struct {
+	LineCode      string                 `json:"LineCode" xml:"LineCode"`
+	TrackNumber   int                    `json:"TrackNum" xml:"TrackNum"`
+	TrackCircuits []StandardTrackCircuit `json:"TrackCircuits" xml:"TrackCircuits>TrackCircuit"`
+}
+
+type StandardTrackCircuit struct {
+	CircuitID      int    `json:"CircuitId" xml:"CircuitId"`
+	SequenceNumber int    `json:"SeqNum" xml:"SeqNum"`
+	StationCode    string `json:"StationCode" xml:"StationCode"`
 }
 
 type GetTrackCircuitsResponse struct {
+	XMLName       xml.Name       `json:"-" xml:"http://www.wmata.com TrackCircuitResp"`
+	TrackCircuits []TrackCircuit `json:"TrackCircuits" xml:"TrackCircuits>TrackCircuit"`
+}
+
+type TrackCircuit struct {
+	CircuitID int        `json:"CircuitId" xml:"CircuitId"`
+	Track     int        `json:"Track" xml:"Track"`
+	Neighbors []Neighbor `json:"Neighbors" xml:"Neighbors>TrackCircuitNeighbor"`
+}
+
+type Neighbor struct {
+	CircuitIDs   []int  `json:"CircuitIds" xml:"CircuitIds>int"`
+	NeighborType string `json:"NeighborType" xml:"NeighborType"`
 }
 
 type TrainPositions interface {
@@ -71,9 +98,37 @@ func (service *Service) GetLiveTrainPositions() (*GetLiveTrainPositionsResponse,
 }
 
 func (service *Service) GetStandardRoutes() (*GetStandardRoutesResponse, error) {
-	panic("implement me")
+	var requestUrl strings.Builder
+	requestUrl.WriteString(trainPositionsServiceBaseURL)
+	requestUrl.WriteString("/StandardRoutes")
+
+	queryParams := map[string]string{}
+	switch service.responseType {
+	case wmata.JSON:
+		queryParams["contentType"] = "json"
+	case wmata.XML:
+		queryParams["contentType"] = "xml"
+	}
+
+	routes := GetStandardRoutesResponse{}
+
+	return &routes, service.client.BuildAndSendGetRequest(service.responseType, requestUrl.String(), queryParams, &routes)
 }
 
 func (service *Service) GetTrackCircuits() (*GetTrackCircuitsResponse, error) {
-	panic("implement me")
+	var requestUrl strings.Builder
+	requestUrl.WriteString(trainPositionsServiceBaseURL)
+	requestUrl.WriteString("/TrackCircuits")
+
+	queryParams := map[string]string{}
+	switch service.responseType {
+	case wmata.JSON:
+		queryParams["contentType"] = "json"
+	case wmata.XML:
+		queryParams["contentType"] = "xml"
+	}
+
+	circuits := GetTrackCircuitsResponse{}
+
+	return &circuits, service.client.BuildAndSendGetRequest(service.responseType, requestUrl.String(), queryParams, &circuits)
 }
