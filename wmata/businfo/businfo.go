@@ -10,6 +10,7 @@ import (
 
 const busInfoBaseURL = "https://api.wmata.com/Bus.svc"
 
+// BusInfo defines the methods available in the WMATA "Bus Route and Stop Methods" API
 type BusInfo interface {
 	GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error)
 	GetRouteDetails(routeID, date string) (*GetRouteDetailsResponse, error)
@@ -35,6 +36,7 @@ func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service 
 	}
 }
 
+// GetPositionsRequest wraps a request to the "Bus Position" service
 type GetPositionsRequest struct {
 	RouteID   string
 	Latitude  float64
@@ -159,6 +161,8 @@ type GetStopsResponse struct {
 	Stops   []Stop   `json:"Stops" xml:"Stops>Stop"`
 }
 
+// GetPositions retrieves the bus positions for a given route.
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763629281d83086473f231/operations/5476362a281d830c946a3d68
 func (busService *Service) GetPositions(request *GetPositionsRequest) (*GetPositionsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(busInfoBaseURL)
@@ -196,6 +200,8 @@ func (busService *Service) GetPositions(request *GetPositionsRequest) (*GetPosit
 	return &positions, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &positions)
 }
 
+// GetRouteDetails gets bus latitude and longitude by route
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763629281d83086473f231/operations/5476362a281d830c946a3d69?
 func (busService *Service) GetRouteDetails(routeID, date string) (*GetRouteDetailsResponse, error) {
 	if routeID == "" {
 		return nil, errors.New("routeID is required")
@@ -224,6 +230,8 @@ func (busService *Service) GetRouteDetails(routeID, date string) (*GetRouteDetai
 	return &path, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &path)
 }
 
+// GetRoutes gets a list of all bus route variants
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763629281d83086473f231/operations/5476362a281d830c946a3d6a?
 func (busService *Service) GetRoutes() (*GetRoutesResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(busInfoBaseURL)
@@ -241,6 +249,8 @@ func (busService *Service) GetRoutes() (*GetRoutesResponse, error) {
 
 }
 
+// GetSchedule gets a schedule for a route on a given date
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763629281d83086473f231/operations/5476362a281d830c946a3d6b?
 func (busService *Service) GetSchedule(routeID, date string, includeVariations bool) (*GetScheduleResponse, error) {
 	if routeID == "" {
 		return nil, errors.New("routeID is required")
@@ -271,6 +281,8 @@ func (busService *Service) GetSchedule(routeID, date string, includeVariations b
 
 }
 
+// GetScheduleAtStop gets a list of all buses scheduled to arrive at a given stop and date
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763629281d83086473f231/operations/5476362a281d830c946a3d6c?
 func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleAtStopResponse, error) {
 	if stopID == "" {
 		return nil, errors.New("stopID is required")
@@ -299,6 +311,8 @@ func (busService *Service) GetScheduleAtStop(stopID, date string) (*GetScheduleA
 	return &stopSchedule, busService.client.BuildAndSendGetRequest(busService.responseType, requestUrl.String(), queryParams, &stopSchedule)
 }
 
+// GetStops gets a list of nearby bus stops based on provided coordinates
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763629281d83086473f231/operations/5476362a281d830c946a3d6d?
 func (busService *Service) GetStops(request *GetStopsRequest) (*GetStopsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(busInfoBaseURL)
