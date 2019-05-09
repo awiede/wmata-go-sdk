@@ -24,6 +24,7 @@ type NextBusPrediction struct {
 	VehicleID       string `json:"VehicleID" xml:"VehicleID"`
 }
 
+// BusPredictions defines the method available in the WMATA "Real-Time Bus Predictions" API
 type BusPredictions interface {
 	GetNextBuses(stopID string) (*GetNextBusResponse, error)
 }
@@ -38,11 +39,14 @@ func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service 
 	}
 }
 
+// Service provides all API methods for BusPredictions
 type Service struct {
 	client       *wmata.Client
 	responseType wmata.ResponseType
 }
 
+// GetNexBuses retrieves next bus arrival times by stopID
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476365e031f590f38092508/operations/5476365e031f5909e4fe331d
 func (service *Service) GetNextBuses(stopID string) (*GetNextBusResponse, error) {
 	if stopID == "" {
 		return nil, errors.New("stopID is required")
