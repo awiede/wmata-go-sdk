@@ -10,6 +10,7 @@ import (
 
 const railServiceBaseURL = "https://api.wmata.com/Rail.svc"
 
+// RailInfo defines the methods available in the WMATA "Rail Station Information" API
 type RailInfo interface {
 	GetLines() (*GetLinesResponse, error)
 	GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error)
@@ -197,6 +198,8 @@ type GetStationToStationInformationResponse struct {
 	StationToStationInformation []StationToStation `json:"StationToStationInfos" xml:"StationToStationInfos>StationToStationInfo"`
 }
 
+// GetLines retrieves information about all rail lines
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe330c
 func (railService *Service) GetLines() (*GetLinesResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(railServiceBaseURL)
@@ -213,6 +216,8 @@ func (railService *Service) GetLines() (*GetLinesResponse, error) {
 	return &lines, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), nil, &lines)
 }
 
+// GetParkingInformation retrieves parking information for a given station
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe330d?
 func (railService *Service) GetParkingInformation(stationCode string) (*GetParkingInformationResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(railServiceBaseURL)
@@ -229,6 +234,8 @@ func (railService *Service) GetParkingInformation(stationCode string) (*GetParki
 	return &parkingInformation, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &parkingInformation)
 }
 
+// GetPathBetweenStations retrieves an ordered list of stations and distances between two stations
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe330e?
 func (railService *Service) GetPathBetweenStations(fromStation, toStation string) (*GetPathBetweenStationsResponse, error) {
 	if fromStation == "" || toStation == "" {
 		return nil, errors.New("fromStation and toStation are required parameters")
@@ -250,6 +257,8 @@ func (railService *Service) GetPathBetweenStations(fromStation, toStation string
 
 }
 
+// GetStationEntrances retrieves a list of station entrances near the provided coordinates
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe330f?
 func (railService *Service) GetStationEntrances(getStationEntranceRequest *GetStationEntrancesRequest) (*GetStationEntrancesResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(railServiceBaseURL)
@@ -283,6 +292,8 @@ func (railService *Service) GetStationEntrances(getStationEntranceRequest *GetSt
 	return &entrances, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), queryParams, &entrances)
 }
 
+// GetStationInformation retrieves station location and address information by station code
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe3310?
 func (railService *Service) GetStationInformation(stationCode string) (*GetStationInformationResponse, error) {
 	if stationCode == "" {
 		return nil, errors.New("stationCode is a required parameter")
@@ -303,6 +314,8 @@ func (railService *Service) GetStationInformation(stationCode string) (*GetStati
 	return &stationInformation, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationInformation)
 }
 
+// GetStationList retrieves a list of station location and address information for all stations on a given line
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe3311?
 func (railService *Service) GetStationList(lineCode string) (*GetStationListResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(railServiceBaseURL)
@@ -319,6 +332,8 @@ func (railService *Service) GetStationList(lineCode string) (*GetStationListResp
 	return &stationList, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"LineCode": lineCode}, &stationList)
 }
 
+// GetStationTimings retrieves opening and scheduled first and last train times for a given station
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe3312?
 func (railService *Service) GetStationTimings(stationCode string) (*GetStationTimingsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(railServiceBaseURL)
@@ -335,6 +350,8 @@ func (railService *Service) GetStationTimings(stationCode string) (*GetStationTi
 	return &stationTimings, railService.client.BuildAndSendGetRequest(railService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &stationTimings)
 }
 
+// GetStationToStationInformation retrieves distance, fare and estimated travel time between the given two stations
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5476364f031f590f38092507/operations/5476364f031f5909e4fe3313?
 func (railService *Service) GetStationToStationInformation(fromStation, toStation string) (*GetStationToStationInformationResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(railServiceBaseURL)

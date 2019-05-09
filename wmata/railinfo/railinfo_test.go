@@ -45,6 +45,7 @@ type testResponseData struct {
 	requestType          interface{}
 	response             string
 	unmarshalledResponse interface{}
+	expectedError        error
 }
 
 var testData = map[string][]testResponseData{
@@ -265,6 +266,9 @@ var testData = map[string][]testResponseData{
 				},
 			},
 		},
+		{
+			expectedError: errors.New("fromStation and toStation are required parameters"),
+		},
 	},
 	"/Rail.svc/json/jStationEntrances": {
 		{
@@ -350,6 +354,9 @@ var testData = map[string][]testResponseData{
 				StationTogether1: "B01",
 				StationTogether2: "",
 			},
+		},
+		{
+			expectedError: errors.New("stationCode is a required parameter"),
 		},
 	},
 	"/Rail.svc/json/jStations": {
@@ -2067,6 +2074,10 @@ func TestGetPathBetweenStations(t *testing.T) {
 			response, err := testService.GetPathBetweenStations(request.stringParam1, request.stringParam2)
 
 			if err != nil {
+				if request.expectedError != nil && request.expectedError.Error() == err.Error() {
+					continue
+				}
+
 				t.Errorf("error calling GetPathBetweenStations for FromStation: %s ToStation: %s error: %s", request.stringParam1, request.stringParam2, err.Error())
 			}
 
@@ -2122,6 +2133,10 @@ func TestGetStationInformation(t *testing.T) {
 			response, err := testService.GetStationInformation(request.stringParam1)
 
 			if err != nil {
+				if request.expectedError != nil && request.expectedError.Error() == err.Error() {
+					continue
+				}
+
 				t.Errorf("error calling GetStationInfromation for station code: %s error: %s", request.stringParam1, err.Error())
 			}
 
