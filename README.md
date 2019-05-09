@@ -1,7 +1,7 @@
 # wmata-go-sdk
-[![Build Status](https://travis-ci.com/awiede/wmata-go-sdk.svg?branch=master)](https://travis-ci.com/awiede/wmata-go-sdk) [![Coverage Status](https://coveralls.io/repos/github/awiede/wmata-go-sdk/badge.svg?branch=master)](https://coveralls.io/github/awiede/wmata-go-sdk?branch=master)
+[![GoDoc](https://godoc.org/github.com/awiede/wmata-go-sdk?status.svg)](https://godoc.org/github.com/awiede/wmata-go-sdk) [![Build Status](https://travis-ci.com/awiede/wmata-go-sdk.svg?branch=master)](https://travis-ci.com/awiede/wmata-go-sdk) [![Coverage Status](https://coveralls.io/repos/github/awiede/wmata-go-sdk/badge.svg?branch=master)](https://coveralls.io/github/awiede/wmata-go-sdk?branch=master)
 
-Go client for WMATA API
+Go client for Washington DC Metro (WMATA) API
 
 # Install
 
