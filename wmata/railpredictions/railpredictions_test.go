@@ -30,8 +30,6 @@ func (client *testClient) Do(req *http.Request) (*http.Response, error) {
 	_, writeErr := rr.Write([]byte(testResponse.response))
 
 	return rr.Result(), writeErr
-
-	return nil, errors.New("no data found")
 }
 
 type testResponseData struct {

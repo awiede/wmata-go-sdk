@@ -70,6 +70,7 @@ type RailIncident struct {
 	StartLocationFullName string `json:"StartLocationFullName" xml:"StartLocationFullName"`
 }
 
+// Incidents defines the methods available in the WMATA "Incidents" API
 type Incidents interface {
 	GetBusIncidents(route string) (*GetBusIncidentsResponse, error)
 	GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error)
@@ -86,11 +87,14 @@ func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service 
 	}
 }
 
+// Service provides all API methods for the Incidents API
 type Service struct {
 	client       *wmata.Client
 	responseType wmata.ResponseType
 }
 
+// GetBusIncidents retrieves incidents and delays for a given bus route
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763641281d83086473f232/operations/54763641281d830c946a3d75
 func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(incidentsServiceBaseURL)
@@ -108,6 +112,8 @@ func (incidentService *Service) GetBusIncidents(route string) (*GetBusIncidentsR
 
 }
 
+// GetOutages retrieves all reported elevator and escalator outages for a given station
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763641281d83086473f232/operations/54763641281d830c946a3d76?
 func (incidentService *Service) GetOutages(stationCode string) (*GetElevatorEscalatorOutagesResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(incidentsServiceBaseURL)
@@ -124,6 +130,8 @@ func (incidentService *Service) GetOutages(stationCode string) (*GetElevatorEsca
 	return &outages, incidentService.client.BuildAndSendGetRequest(incidentService.responseType, requestUrl.String(), map[string]string{"StationCode": stationCode}, &outages)
 }
 
+// GetRailIncidents retrieves all reported rail incidents
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/54763641281d83086473f232/operations/54763641281d830c946a3d77?
 func (incidentService *Service) GetRailIncidents() (*GetRailIncidentsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(incidentsServiceBaseURL)
