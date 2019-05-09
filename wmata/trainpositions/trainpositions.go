@@ -58,6 +58,7 @@ type Neighbor struct {
 	NeighborType string `json:"NeighborType" xml:"NeighborType"`
 }
 
+// TrainPositions defines the methods available in the WMATA "Train Positions" API
 type TrainPositions interface {
 	GetLiveTrainPositions() (*GetLiveTrainPositionsResponse, error)
 	GetStandardRoutes() (*GetStandardRoutesResponse, error)
@@ -74,11 +75,14 @@ func NewService(client *wmata.Client, responseType wmata.ResponseType) *Service 
 	}
 }
 
+// Service provides all API methods for the TrainPositions API
 type Service struct {
 	client       *wmata.Client
 	responseType wmata.ResponseType
 }
 
+// GetLiveTrainPositions retrieves information on the trains that are currently in service and where they are
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5763fa6ff91823096cac1057/operations/5763fb35f91823096cac1058
 func (service *Service) GetLiveTrainPositions() (*GetLiveTrainPositionsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(trainPositionsServiceBaseURL)
@@ -97,6 +101,8 @@ func (service *Service) GetLiveTrainPositions() (*GetLiveTrainPositionsResponse,
 	return &livePositions, service.client.BuildAndSendGetRequest(service.responseType, requestUrl.String(), queryParams, &livePositions)
 }
 
+// GetStandardRoutes retrieves an ordered list of standard routes
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5763fa6ff91823096cac1057/operations/57641afc031f59363c586dca?
 func (service *Service) GetStandardRoutes() (*GetStandardRoutesResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(trainPositionsServiceBaseURL)
@@ -115,6 +121,8 @@ func (service *Service) GetStandardRoutes() (*GetStandardRoutesResponse, error) 
 	return &routes, service.client.BuildAndSendGetRequest(service.responseType, requestUrl.String(), queryParams, &routes)
 }
 
+// GetTrackCircuits retrieves a list of all track circuits with reference to neighbors
+// Documentation on service structure can be found here: https://developer.wmata.com/docs/services/5763fa6ff91823096cac1057/operations/57644238031f59363c586dcb?
 func (service *Service) GetTrackCircuits() (*GetTrackCircuitsResponse, error) {
 	var requestUrl strings.Builder
 	requestUrl.WriteString(trainPositionsServiceBaseURL)
